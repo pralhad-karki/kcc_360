@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {createEngine} from './server/engine.mjs';
+import {validateCommandForms} from './server/form-fields.mjs';
+const fields={summary:'My <script>summary</script>',education:'School A, 2020',training:'External provider',skills:'Python; Nepali',experience:'Volunteer'};
+const engine=createEngine(null,'s1'),before=engine.snapshot();
+validateCommandForms('saveCVDeclarations',[{form:fields}]);
+assert.throws(()=>validateCommandForms('saveCVDeclarations',[{form:{...fields,student:'s2'}}]));
+engine.run('saveCVDeclarations',[{form:fields}]);
+let saved=engine.snapshot();assert.deepEqual(saved.projects,before.projects);assert.deepEqual(saved.academicProfiles,before.academicProfiles);assert.equal(saved.cvDeclarations.s1.classification,'STUDENT_DECLARED');assert.equal(saved.cvDeclarations.s1.version,1);assert.equal(saved.cvDeclarations.s1.content.summary,fields.summary);
+for(const actor of engine.actors()){const e=createEngine(saved,actor.id);assert.deepEqual(Object.keys(e.view().cvDeclarations),actor.id==='s1'?['s1']:[]);if(!['s1','s2'].includes(actor.id)){e.run('saveCVDeclarations',[{form:fields}]);assert.deepEqual(e.snapshot().cvDeclarations,saved.cvDeclarations)}}
+const other=createEngine(saved,'s2');other.run('saveCVDeclarations',[{form:{...fields,education:'Other school'}}]);assert.deepEqual(other.snapshot().cvDeclarations.s1,saved.cvDeclarations.s1);assert.deepEqual(Object.keys(other.view().cvDeclarations),['s2']);
+for(const invalid of [{...fields,skills:'x'.repeat(2001)},{...fields,verified:'yes'},{...fields,training:'bad\u0000text'},{summary:'missing fields'}]){const e=createEngine(saved,'s1');e.run('saveCVDeclarations',[{form:invalid}]);assert.deepEqual(e.snapshot().cvDeclarations,saved.cvDeclarations)}
+const edit=createEngine(saved,'s1');edit.run('saveCVDeclarations',[{form:{...fields,education:''}}]);assert.equal(edit.snapshot().cvDeclarations.s1.version,2);assert.equal(edit.snapshot().cvDeclarations.s1.content.education,'');assert.equal(edit.snapshot().cvDeclarations.s1.content.training,fields.training);
+edit.run('saveCVDeclarations',[{form:{...fields,education:''}}]);assert.equal(edit.snapshot().cvDeclarations.s1.version,2);
+console.log('PASS: own-student declarations, field limits, empty-section removal, independent versions, staff/peer projection denial and unchanged verified/academic records.');
+const vm=await import('node:vm'),fs=await import('node:fs');let markup='';const ui={uid:'s1',sharedActor:'s1',sharedReady:true,sharedBusy:false,db:{cvDeclarations:saved.cvDeclarations},modal:s=>markup=s,toast(){},esc:s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;'),btn:()=>''};vm.createContext(ui);vm.runInContext(fs.readFileSync('prototype/portfolio-sharing.js','utf8'),ui);ui.openCVDeclarations();assert.ok(markup.includes('&lt;script&gt;summary'));assert.ok(!markup.includes('<script>summary'));assert.equal((markup.match(/maxlength="2000"/g)||[]).length,5);assert.ok(markup.includes('No KCC approval'));ui.uid='m1';markup='';ui.openCVDeclarations();assert.equal(markup,'');console.log('PASS: escaped declaration editor text, five bounded sections and staff UI guard. Browser interaction not tested.');

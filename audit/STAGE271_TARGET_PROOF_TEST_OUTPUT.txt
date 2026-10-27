@@ -1,0 +1,102 @@
+PASS default disabled; no automatic quota or catalogue creation
+PASS exact scoped Principal issues target with immutable strategic/version provenance
+PASS versioned correction preserves prior target, period and history
+PASS wrong role denied without mutation
+PASS revoked denied without mutation
+PASS foreign department denied without mutation
+PASS foreign institution denied without mutation
+PASS inactive Principal denied without mutation
+PASS unknown KPI denied without mutation
+PASS stale KPI denied without mutation
+PASS unapproved catalogue denied without mutation
+PASS broken parent denied without mutation
+PASS duplicate reference denied without mutation
+PASS unknown cycle denied without mutation
+PASS fractional count denied without mutation
+PASS negative denied without mutation
+PASS forged role denied without mutation
+PASS stale correction denied without mutation
+PASS scope reassignment denied without mutation
+PASS bound target correction denied without mutation
+PASS separate minor metric is explicit, not inferred from priority or title
+PASS duplicate department/cycle/KPI/scale prevented across target IDs
+PASS numeric, percent and currency units retain validation
+{"coreCases":23,"sqlite":"PASS: atomic audit rollback, replay/conflict, target/catalog/authority transaction fences, expiry and configuration change","institutionalActivation":false,"uiInstalled":false,"allocationCoverage":"separate check"}
+PASS club share binds exact issued target, cycle, scale and strategic provenance without mutation
+PASS department retained share uses same capacity and does not double count target
+PASS unbound correction appends history; zero frees capacity without deleting the allocation
+PASS before issuance denied without mutation
+PASS disabled denied without mutation
+PASS unknown target denied without mutation
+PASS stale parent denied without mutation
+PASS missing allocation grant denied without mutation
+PASS revoked grant denied without mutation
+PASS foreign tenant denied without mutation
+PASS foreign club denied without mutation
+PASS inactive club denied without mutation
+PASS ambiguous club denied without mutation
+PASS foreign department recipient denied without mutation
+PASS nonadditive rule denied without mutation
+PASS percentage allocation denied without mutation
+PASS stale catalogue KPI denied without mutation
+PASS changed cycle denied without mutation
+PASS over capacity denied without mutation
+PASS fractional event denied without mutation
+PASS forged scope metadata denied without mutation
+PASS duplicate recipient denied without mutation
+PASS stale correction denied without mutation
+PASS recipient reassignment denied without mutation
+PASS bound correction denied without mutation
+PASS changed issued source denied without mutation
+PASS exact decimal arithmetic and latest versions only
+PASS club-scoped grants cannot be borrowed for another recipient
+PASS Principal target revision requires reconciliation after any allocation, including zero history
+PASS ACADEMIC existing source → trusted identity → preview → persistent decision → history
+{"allocationCoreCases":29,"sqlite":"PASS: persistence, correction/history, replay/conflict, audit rollback, three transaction fences, competing allocations","institutionalActivation":false,"planItemBindingsInstalled":false,"uiInstalled":false}
+PASS exact target/allocation/draft plan/item binding, no plan mutation or authority gain
+PASS second named event consumes remaining share; third exceeds capacity
+PASS disabled denied without mutation
+PASS stale allocation denied without mutation
+PASS unknown item denied without mutation
+PASS stale plan version denied without mutation
+PASS wrong department denied without mutation
+PASS wrong club denied without mutation
+PASS duplicate source map denied without mutation
+PASS unapproved source denied without mutation
+PASS expired mapping denied without mutation
+PASS inactive club denied without mutation
+PASS suspended source club denied without mutation
+PASS missing owner mapping denied without mutation
+PASS different owner person denied without mutation
+PASS missing bind grant denied without mutation
+PASS missing allocation grant denied without mutation
+PASS revoked bind grant denied without mutation
+PASS raw approved plan denied without mutation
+PASS registered protected draft denied without mutation
+PASS submitted plan denied without mutation
+PASS outside cycle denied without mutation
+PASS missing date denied without mutation
+PASS cancelled row denied without mutation
+PASS one event claiming two event counts denied without mutation
+PASS zero contribution denied without mutation
+PASS forged approval field denied without mutation
+PASS duplicate binding ID denied without mutation
+PASS duplicate canonical item denied without mutation
+PASS source edit is reported stale, history retained
+PASS real stored binding prevents ordinary allocation correction
+PASS department own-work item uses exact department mapping
+PASS CLUB existing source → trusted identity → preview → persistent decision → history
+PASS unconfigured runtime exposes no records and accepts no decisions
+PASS browser-supplied identity, extra fields, stale hash and unconfirmed decision rejected
+PASS wrong subject, inactive identity and revoked grant cannot read private history
+PASS cross-plan scope and forged source mapping cannot authorize a review
+PASS legacy submitted or approved records cannot manufacture historical decisions
+PASS authority changing during preview does not return actionable stale content
+PASS ordinary academic controller cannot bypass a registered controlled review
+PASS controlled source family clone and academic/club execution are blocked; history remains editable
+PASS transaction-time fence change blocks review and keeps audit empty
+{"bindingCoreCases":32,"sqlite":"PASS: exact draft links; source unchanged; replay/conflict; four transaction fences; audit rollback; stale plan revision","institutionalActivation":false,"approvalAdoptionInstalled":false,"uiInstalled":false}
+PASS ordinary club controller cannot bypass controlled review
+PASS an already existing sibling cannot create new activity through an older family version
+13 trusted review integration cases passed with fictional identities and SQLite. No institutional activation or browser acceptance asserted.
+PASS target-proof adoption: exact prepared links, source/target/catalog validation, private reviewer summary, existing full AP001 runtime→SQLite route, immutable approved snapshot and no execution authority. Full ECO journeys are not established.

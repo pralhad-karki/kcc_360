@@ -1,0 +1,67 @@
+{
+  "stage": 152,
+  "scope": "Nine targeted existing local recruitment/volunteer scripts; documentation and metadata consolidation only, no full-suite rerun",
+  "testedBaseCommit": "9698207d8b9b5d5dc32ee82635307cd1116a2c37",
+  "total": 9,
+  "passed": 9,
+  "lastFullBaseline": "audit/AUTOMATED_BASELINE_STAGE151.json (135/135)",
+  "browserAcceptance": "Not run",
+  "workflowCommandSchemaPreservation": "Passed exact comparisons",
+  "results": [
+    {
+      "file": "check-club-recruitment-preview.cjs",
+      "exitCode": 0,
+      "seconds": 0.294,
+      "output": "PASS: actual approved club event audience preview is read-only and organizer-scoped; only organizing-club active general members qualify, no leadership-only/other-club/pending/withdrawn recipients, inconsistent memberships excluded for review, stale/cancelled/suspended source blocked, escaped output and existing event roster unchanged.\n"
+    },
+    {
+      "file": "check-club-recruitment-plan.mjs",
+      "exitCode": 0,
+      "seconds": 0.611,
+      "output": "PASS: shared engine saves versioned organizer-only position drafts, validates capacities/complete unique roles, preserves earlier versions/roster/tasks/notices, denies stale/context/role/source changes and hides drafts from ordinary participants; actual form renders.\n"
+    },
+    {
+      "file": "check-club-volunteer-applications.mjs",
+      "exitCode": 0,
+      "seconds": 1.442,
+      "output": "PASS: organizer-only confirmed opening freezes positions; only active unique organizing-club members apply without project visibility/enrolment; invalid/expired/stale/replayed/forged input blocked; own-only application projection, withdrawal/reapplication history and existing roster/tasks preserved.\n"
+    },
+    {
+      "file": "check-club-volunteer-selection.mjs",
+      "exitCode": 0,
+      "seconds": 0.727,
+      "output": "PASS: independent current organizer review, recorded selected/not-selected feedback, per-position capacity, revision/replay/source/member/role denials, return-for-review releases capacity with history, own-only feedback and unchanged rosters/tasks.\n"
+    },
+    {
+      "file": "check-club-volunteer-notifications.mjs",
+      "exitCode": 0,
+      "seconds": 0.584,
+      "output": "PASS: current organizing-club-only opening and applicant-only decision in-app notices; no reminder/escalation/mail expansion, duplicate/read preservation, stale eligibility/expiry/source resolution, corrected-decision supersession, minimal projected recipient visibility and source navigation without event access.\n"
+    },
+    {
+      "file": "check-club-volunteer-handoff.mjs",
+      "exitCode": 0,
+      "seconds": 0.635,
+      "output": "PASS controlled volunteer roster handoff: authority, full validation, stale/replay, private projection, record preservation, legacy roster and correction lock\n"
+    },
+    {
+      "file": "check-club-volunteer-domain-leads.mjs",
+      "exitCode": 0,
+      "seconds": 0.74,
+      "output": "PASS domain lead appointments: handed-off domain eligibility, owner/mentor scope, version history, revocation, source/participant invalidation, safe projection and no broader task grants\n"
+    },
+    {
+      "file": "check-club-volunteer-domain-tasks.mjs",
+      "exitCode": 0,
+      "seconds": 0.918,
+      "output": "PASS scoped domain delegation: authority, domain roster, stale/replay, private projected form/monitor, revocation, existing progress/submission and independent mentor verification\n"
+    },
+    {
+      "file": "check-club-volunteer-achievement-chain.mjs",
+      "exitCode": 0,
+      "seconds": 0.88,
+      "output": "PASS club achievement chain: selected roster/domain task, independent review, contribution hours, final reflection/evaluation, portfolio/report agreement, explicit issuance/consent, excluded cancelled/postponed/incomplete-delivery outcomes and preserved history\n"
+    }
+  ],
+  "guideMetadataAndRenderedPanel": "Passed"
+}

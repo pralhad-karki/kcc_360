@@ -1,0 +1,18 @@
+PASS no automatic department plan/sample creation
+PASS department author creates a draft without projects, participants, roles or approval
+PASS other demo personas cannot create or edit Student Affairs plans
+PASS all six service areas retain targets and evidence as planning declarations only
+PASS invalid dates, reversed periods, service area, budget and evidence block item mutation
+PASS current draft items update in place without duplicate IDs
+PASS submission needs complete items, exact version, reason and confirmation
+PASS submitted plan is locked; explicit pre-review withdrawal retains submission history
+PASS unit-plan data is private to the department view and retained in stored snapshots
+PASS forged owner, unit, role, actual/evaluation and approval form fields are rejected
+PASS backstop rejects raw final approval, deletion, scope reassignment and foreign-command writes
+PASS withdrawal cannot change submitted targets or overwrite preparation/submission history
+PASS departmental source joins existing AP policy only through exact approved unit/owner mapping
+PASS malformed or missing responsibility/date/evidence rows cannot be adopted by trusted review
+PASS registered departmental source locks every generic edit and withdrawal
+PASS new unit-linked execution cannot be manufactured through the generic path
+{"cases":16,"result":"PASS","institutionalActivation":false,"placementPipelineImplemented":false,"fixtures":"fictional owner-demo records only"}
+PASS department browser-script harness: six service areas, contextual navigation and forms, declarations vs outcomes, unavailable placement/internship sources, scoped factual club counts without private reflection bodies, submission locking, explicit withdrawal and unauthorized role denial. No native browser save asserted.

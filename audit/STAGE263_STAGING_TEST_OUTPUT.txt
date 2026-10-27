@@ -1,0 +1,27 @@
+PASS real pinned parser artifact integrity and unchanged CSV bytes
+PASS strict UTF8, filename, size and unsupported legacy formats rejected
+PASS real XLSX preserves text identity and requires explicit visible sheet
+PASS numeric IDs, formulas, hyperlinks, hidden and merged cells rejected
+PASS CSV staging preview commit links exact private bytes; no student changes before confirmation
+PASS XLSX stage uses the same reconciliation and original-byte report
+PASS stage and commit receipts idempotent; changed bytes conflict
+PASS invalid rows can be previewed but cannot partly commit
+PASS revoked staff, other identity and institution cannot read uploaded data
+PASS storage policy and upload authority required before private writes
+PASS raw object corruption and missing bytes block preview and commit
+PASS upload failure leaves an audited inaccessible reservation and retry succeeds
+PASS reservation audit failure rolls back before any object write
+PASS student commit audit failure preserves staged evidence and no partial records
+PASS expiry denies reads and commits but permits audited purge
+PASS purge failure is tracked, inaccessible and retryable; learning history retained
+PASS storage revision fence blocks purge racing a student commit
+PASS authority revocation fence blocks upload reservation
+PASS HTTP disabled service consumes no personal-data body and never accepts client activation
+PASS actual multipart request reaches private staging; JSON confirmation uses persisted bytes
+PASS HTTP cross-origin, oversized, forged metadata and revoked staff denied
+PASS authorized recovery listing omits raw bytes and other staff records
+PASS simultaneous reservations and commits have one durable winner
+PASS purge during an object write removes the late object and denies finalization
+PASS forged authority fields in metadata and JSON commands are rejected
+PASS receipt replay cannot exchange or drop original file provenance
+{"cases":26,"result":"PASS","database":"SQLite actual SQL transactions","objectStore":"in-memory R2-compatible test adapter","liveInstitutionalUploadTested":false}

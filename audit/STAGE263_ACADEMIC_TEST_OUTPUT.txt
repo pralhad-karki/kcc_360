@@ -1,0 +1,27 @@
+PASS out-of-order structures resolve stable typed parents in one atomic proposal
+PASS unknown enum, malformed row and parent reference are reported without partial commit
+PASS duplicate stable IDs and duplicate semester order are blocked
+PASS structure labels can change with history; parent/sequence reassignments need review
+PASS full snapshots never delete missing structures or close missing enrollments
+PASS enrollment requires exact student and programme/batch/session/semester references
+PASS class and course rosters coexist; repeat enrollment tuple under another ID is blocked
+PASS conflicting current class placements require explicit source correction
+PASS explicit historic enrollment preserves prior current observation
+PASS enrollment IDs cannot be reassigned to another student or batch
+PASS repeated operations replay without duplicate enrollment; changed operation contents denied
+PASS stale, equal-time conflicting and malformed dates remain blocked
+PASS authorization scope, unknown mapping and foreign institution are rejected
+PASS later MIS behind local progression enters reconciliation without mutating either history
+PASS MIS confirming local progression records observation without progressing twice
+PASS pre-effective export and ambiguous local progression are distinguished
+PASS shared SQLite save atomically commits enrollment and audit; other ledgers preserved
+PASS student and local progression dependency fences prevent stale-reference commits
+PASS audit failure and concurrent enrollment commits preserve all-or-nothing history
+PASS CSV and real XLSX staged enrollment share the same commit/history service
+PASS staged structures reuse private upload path and never become events/tasks
+PASS missing official progression snapshot and academic capability cannot be supplied by file
+PASS class/course roster projection preserves scope and grants no assignment or progression authority
+PASS invalid official local progression references block reconciliation confirmation
+PASS absent optional enrollment columns preserve previous section and effective dates
+PASS installed progression requires its snapshot; recorded progress cannot be hidden by a mode switch
+{"cases":26,"result":"PASS","fixtures":"fictional only","localProgression":"read-only comparator, no progression command added","liveMISIntegrationTested":false}

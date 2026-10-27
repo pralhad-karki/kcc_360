@@ -1,0 +1,15 @@
+# Stage178 — Controlled research department consultation requests
+
+Review finding: the legacy supporting-unit workflow uses fixed demonstration representatives and legacy routing/mentor bases. It cannot authorize institutional reviewed-team consultations. Reused its supportRequests history and INTAKE_SUPPORT_REQUEST audit type through the existing trusted command bridge; no SQL schema, route or module added.
+
+This bounded backend step adds requestIntakeTeamConsultation for reviewed MULTIDISCIPLINARY_RESEARCH only. The current Research Coordinator must also hold the explicit scoped mentor assignment authority. The latest mentor must have accepted with a valid declaration and unchanged current sources. The coordinator supplies a participating department, verified representative alias, responsibility, deliverable, date, reason and explicit confirmation.
+
+Representative authority is loaded from approved institutional sources using CONSULTATION_REVIEW scoped to institution, research kind and department. Exactly one current available delegate is required; active identity mapping is checked. Team members, the requesting coordinator and the current mentor cannot act as the independent representative. This capability is a source contract, not a provisioned grant; no live authorities are installed. Selection UI and representative discovery are pending.
+
+The first request per department creates REQUESTED v1 with current review, mentor acceptance and representative references. Dates must be valid, not past, and inside the submitted activity period. Two fresh source loads, workspace CAS and atomic audit save protect the operation. Duplicate department requests are blocked pending a later controlled revision/withdrawal step. Multiple participating departments can receive separate requests. This does not assume every participating department is mandatory or mark consultation complete.
+
+Demonstration support mutation commands explicitly deny institutional team cases. The ordinary team workspace projection exposes only support request ID, target, version and state; private narratives and source snapshots remain server-side. Existing individual demonstration workflows are preserved.
+
+Validation: actual reviewed research→mentor request→acceptance→department request fixtures and SQLite dispatcher. Checks include wrong roles and targets, missing/revoked/inactive/ambiguous representatives, current mentor/source checks, date validation, duplicate rejection, rollback on audit failure, concurrent revision conflict, multiple departments, preserved frozen records, minimal projections and demonstration-command bypass denial. HTTP default-disabled integration covered. Full suite evidence: AUTOMATED_BASELINE_STAGE178.json; TypeScript and build checked separately.
+
+Pending: consultation representative response, scoped request/response screens and notices, controlled consultation revision, policy-defined consultation completion and final approval/execution handoff. No real notices sent, live sources activated, or full demo dataset populated. Browser and institutional acceptance remain not run. Semester progression stays parked.

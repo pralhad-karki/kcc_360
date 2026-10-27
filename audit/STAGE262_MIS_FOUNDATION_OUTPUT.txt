@@ -1,0 +1,23 @@
+PASS disabled composition and strict CSV parser
+PASS configurable mapped student IDs preserve leading zeros and no accounts or privileges
+PASS malformed mapping, unknown headers and authority fields rejected
+PASS duplicate, invalid and conflicting rows block the entire file
+PASS missing snapshot students never exit, disappear or lose history
+PASS repeat receipt idempotent; changed operation content conflicts
+PASS changed values require newer source timestamp; official dated exit remains data only
+PASS stale and equal-time conflicting imports require reconciliation
+PASS unchanged newer observations fence later stale imports
+PASS names never merge identities; institutions and sources are scoped
+PASS authorization, revoked retry, explicit confirmation and preview revision enforced
+PASS omitted optional columns preserve official status and exit dates
+PASS mapped row timestamps are validated, not silently guessed
+PASS post-preview edits and identity remapping cannot reuse a confirmation
+PASS correction appends new provenance and preserves prior before-after values
+PASS SQLite atomic commit, immutable report, audit and exact replay; learning workspace untouched
+PASS SQLite audit failure rolls back every student, report and revision
+PASS concurrent commit has exactly one winner and audit
+PASS revocation fence blocks changes after trusted reads
+PASS changed authority between reads rejected without writes
+PASS clock expiry at commit and client authority escalation leave no writes
+PASS incremental missing rows are also non-destructive
+{"cases":22,"result":"PASS","fixtures":"fictional test-only records","liveInstitutionalUploadTested":false}

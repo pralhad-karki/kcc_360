@@ -1,0 +1,21 @@
+{
+  "stage": 269,
+  "baselineCommit": "2c8b291922592e2ec2c85a237dedd90ab8e459b6",
+  "allocationCoreCases": 29,
+  "allocationCoreResult": "PASS; final repeat includes before-issuance time guard",
+  "sqliteAllocationSave": "PASS: issuance/allocation/correction/historical replay; conflicts, audit rollback, three revision fences, competing allocations",
+  "broadGroups": 64,
+  "broadResult": "PASS before final narrow time guard; affected focused test repeated afterward",
+  "permissionPolicy": "PASS",
+  "identityGrantAdapter": "PASS",
+  "typeScript": "PASS",
+  "uiChanged": false,
+  "newBrowserQA": false,
+  "nativeD1Tested": false,
+  "institutionalActivation": false,
+  "planItemBindingsInstalled": false,
+  "allocationUIInstalled": false,
+  "officialCatalogAndClubDirectoryConfigured": false,
+  "productionDatabaseWritten": false,
+  "bundleBuild": "during final packaging"
+}

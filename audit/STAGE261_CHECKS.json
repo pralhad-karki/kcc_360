@@ -1,0 +1,16 @@
+{
+  "stage": 261,
+  "baselineCommit": "a022b0f542f9286c9075bc58bbfa8cf6fb725f7e",
+  "focusedCases": 22,
+  "focusedResult": "PASS",
+  "existingRegressionGroups": 47,
+  "existingRegressionResult": "PASS",
+  "regressionReport": "STAGE261_REGRESSION.json",
+  "typeScript": "PASS",
+  "bundleBuild": "PASS; final packaging repeats build",
+  "whitespace": "PASS",
+  "institutionalLiveUploadTested": false,
+  "realMISDataUsed": false,
+  "productionDatabaseChanged": false,
+  "note": "New focused group registered for future regression runs; completed broad run contains 47 existing groups. No UI/API transport activation."
+}

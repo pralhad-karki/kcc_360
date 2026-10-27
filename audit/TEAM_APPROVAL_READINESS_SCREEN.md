@@ -1,0 +1,13 @@
+# Stage185 — Team readiness dashboard/module/detail screen
+
+Added a source-scoped readiness queue and read-only detail screen in the existing Dashboard → Activity Intake overview → Detailed Process flow. Current coordinators and configured final reviewers see reviewed proposals within their explicit authority. One account with both grants retains both role labels. No approval or execution controls are rendered.
+
+ReadIntakeTeamApprovalQueue reuses the existing readiness projection, double-source fingerprint check and command bridge. It returns paged minimal proposal/reference/role/status summaries. Details are always fetched fresh with readIntakeTeamApprovalReadiness. Queue reads do not write records or audit rows. Invalid/revoked/out-of-scope proposals do not expose content.
+
+The screen shows current mentor status, final approval role availability, latest department request counts and human-readable items needing attention. READY_FOR_FINAL_REVIEW is labelled as a review stage; the screen explicitly retains separate final approval and permission to start. Research consultation scope is shown as unconfirmed until a controlled scope record is implemented. Accepted responsibilities do not imply completed deliverables or overall consultation completion.
+
+Controller checks validate references, known roles/statuses, count totals, required flags and strictly false approval/execution indicators. Display strings are escaped; malformed responses are rejected. Actor/snapshot/revision, modal/generation and lock-ownership guards prevent stale account responses from reopening or overwriting screens. Read responses never replace workspace snapshots. Default-disabled sources trigger no readiness calls. Existing screens, SQL schemas, routes and grants remain unchanged.
+
+Validation: new actual dispatcher/SQLite discovery checks cover current coordinator/final-reviewer scope, unrelated actor exclusion, minimal data, no writes, pagination bounds and source-change rejection. Actual controller VM checks cover dashboard/module/detail links, multi-role display, escaping, no forms/writes, malformed flags/counts/references, stale account lock, closed modal, failed read and paging. Existing readiness/domain suites retained. Full evidence: AUTOMATED_BASELINE_STAGE185.json. TypeScript and production build separately checked. Browser/keyboard and institutional acceptance not run.
+
+Next: implement the minimum explicit coordinator confirmation of required consultation scope before final approval. Final decisions/execution handoff, notifications and institutional activation remain pending. Semester progression and full demo data remain parked.

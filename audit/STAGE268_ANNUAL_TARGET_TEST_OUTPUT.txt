@@ -1,0 +1,24 @@
+PASS default disabled; no automatic quota or catalogue creation
+PASS exact scoped Principal issues target with immutable strategic/version provenance
+PASS versioned correction preserves prior target, period and history
+PASS wrong role denied without mutation
+PASS revoked denied without mutation
+PASS foreign department denied without mutation
+PASS foreign institution denied without mutation
+PASS inactive Principal denied without mutation
+PASS unknown KPI denied without mutation
+PASS stale KPI denied without mutation
+PASS unapproved catalogue denied without mutation
+PASS broken parent denied without mutation
+PASS duplicate reference denied without mutation
+PASS unknown cycle denied without mutation
+PASS fractional count denied without mutation
+PASS negative denied without mutation
+PASS forged role denied without mutation
+PASS stale correction denied without mutation
+PASS scope reassignment denied without mutation
+PASS bound target correction denied without mutation
+PASS separate minor metric is explicit, not inferred from priority or title
+PASS duplicate department/cycle/KPI/scale prevented across target IDs
+PASS numeric, percent and currency units retain validation
+{"coreCases":23,"sqlite":"PASS: atomic audit rollback, replay/conflict, target/catalog/authority transaction fences, expiry and configuration change","institutionalActivation":false,"uiInstalled":false,"clubAllocationImplemented":false}

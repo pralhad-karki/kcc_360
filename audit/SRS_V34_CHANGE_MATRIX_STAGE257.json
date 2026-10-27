@@ -1,0 +1,254 @@
+{
+  "stage": 257,
+  "date": "2026-10-25",
+  "baseline": "0078629e41768850c97a2ddb5cc432f6ba7267b0",
+  "specification": "requirements/KCC360_Master_SRS_v3_4_Event_Management_Public_Registration_Payment.docx",
+  "sha256": "5d8f2cf5dc2dfeb48ddd6431934140fb7126b5c3313caa5bc625bb3811462f8a",
+  "moduleCount": 35,
+  "newInterfaces": [
+    "X06",
+    "X07",
+    "X08",
+    "X09"
+  ],
+  "newConnections": [
+    "C153",
+    "C154",
+    "C155",
+    "C156",
+    "C157"
+  ],
+  "newAcceptanceStatus": "All Annex P criteria NOT RUN",
+  "rows": [
+    {
+      "requirement": "EV-001",
+      "subject": "Annual item execution authority",
+      "existingBehavior": "Existing plans can generate activities under legacy approved status",
+      "requiredChange": "Distinguish planning only from exact Principal-authorized execution",
+      "affectedModules": "M03 M10 M30 M32",
+      "dependencies": "AP-001 and Annex M",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-EV01"
+    },
+    {
+      "requirement": "EV-002",
+      "subject": "Independent event states",
+      "existingBehavior": "Legacy event chain remains in existing controllers",
+      "requiredChange": "Separate delivery registration learning report finance and closure; review legacy mappings",
+      "affectedModules": "M03 M10 M11 M16 M30 M32",
+      "dependencies": "Reviewed state migration",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-EV04"
+    },
+    {
+      "requirement": "EV-003",
+      "subject": "Venue and equipment reservations",
+      "existingBehavior": "Existing venue text is not a conflict-safe booking service",
+      "requiredChange": "Atomic setup/delivery/cleanup reservations and release",
+      "affectedModules": "M02 M03 M05 M10 M32",
+      "dependencies": "Resource masters and custodians",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-EV02"
+    },
+    {
+      "requirement": "EV-004",
+      "subject": "Sessions and parallel tracks",
+      "existingBehavior": "Existing session/attendance foundations do not prove timetable conflict control",
+      "requiredChange": "Version sessions rooms personnel selections and capacity",
+      "affectedModules": "M03 M05 M10 M32",
+      "dependencies": "Bookings and approved limits",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-EV02"
+    },
+    {
+      "requirement": "EV-005",
+      "subject": "Operational readiness",
+      "existingBehavior": "Existing workflow checks are not event readiness signoff",
+      "requiredChange": "Configured checklist and authorized lead/coordinator confirmation",
+      "affectedModules": "M03 M05 M10 M30 M32",
+      "dependencies": "Named operational authority",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-EV03"
+    },
+    {
+      "requirement": "EV-006",
+      "subject": "Emergency interruption",
+      "existingBehavior": "Existing postponement/cancellation is not a safety-stop authority model",
+      "requiredChange": "Immediate authorized stop and restricted incident history; reassess before resuming",
+      "affectedModules": "M03 M10 M22 M30 M32",
+      "dependencies": "Safety authority and incident privacy",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-EV03"
+    },
+    {
+      "requirement": "EV-007",
+      "subject": "Partial cancellation and postponement",
+      "existingBehavior": "Activity-change foundations exist; full event propagation unverified",
+      "requiredChange": "Freeze affected entry and retain delivered participation and financial obligations",
+      "affectedModules": "M03 M10 M11 M16 M22 M32",
+      "dependencies": "Annex M bookings registration refunds",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-EV04 AT-INT02"
+    },
+    {
+      "requirement": "EV-008",
+      "subject": "Session attendance and offline capture",
+      "existingBehavior": "Existing attendance/evidence workflows exist",
+      "requiredChange": "Add scanner-bound QR replay controls and provisional offline reconciliation",
+      "affectedModules": "M03 M05 M10 M14 M16",
+      "dependencies": "Approved attendance policy and scanner permissions",
+      "implementationStatus": "Partial foundations only",
+      "acceptanceEvidence": "AT-EV05"
+    },
+    {
+      "requirement": "EV-009",
+      "subject": "Speaker and supplier logistics",
+      "existingBehavior": "External participant and budget references exist",
+      "requiredChange": "Speaker lifecycle and approved procurement/asset references",
+      "affectedModules": "M03 M10 M11 M24 M32",
+      "dependencies": "Procurement contract and asset authority",
+      "implementationStatus": "Partial foundations only",
+      "acceptanceEvidence": "Annex N review; no executed acceptance"
+    },
+    {
+      "requirement": "EV-010",
+      "subject": "Communications feedback complaints",
+      "existingBehavior": "Existing notification foundations exist",
+      "requiredChange": "Role-appropriate event notices feedback complaint privacy and improvement follow-up",
+      "affectedModules": "M20 M22 M30 M32",
+      "dependencies": "Delivery provider and institutional policy",
+      "implementationStatus": "Partial foundations only",
+      "acceptanceEvidence": "Annex N review; no executed acceptance"
+    },
+    {
+      "requirement": "EV-011",
+      "subject": "Conference scope limit",
+      "existingBehavior": "No scholarly conference acceptance claimed",
+      "requiredChange": "Keep full peer review/proceedings separately scoped",
+      "affectedModules": "M10 M32",
+      "dependencies": "Separate scholarly specification",
+      "implementationStatus": "Boundary retained",
+      "acceptanceEvidence": "No peer-review acceptance claimed"
+    },
+    {
+      "requirement": "PUB-001",
+      "subject": "Canonical ownership",
+      "existingBehavior": "KCC360 and separate website projects exist",
+      "requiredChange": "One canonical KCC360 event and registration roster; CMS displays approved content",
+      "affectedModules": "M24 M32 M35",
+      "dependencies": "X06 X07 website contract",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-PUB01 AT-INT01"
+    },
+    {
+      "requirement": "PUB-002",
+      "subject": "Exact public version and acknowledgment",
+      "existingBehavior": "Existing listing draft/review/delivery foundations exist",
+      "requiredChange": "Versioned minimal payload and receiver acknowledgment distinct from queued delivery",
+      "affectedModules": "M20 M24 M32",
+      "dependencies": "Publisher assignments and receiver specification",
+      "implementationStatus": "Partial foundations only",
+      "acceptanceEvidence": "AT-PUB01"
+    },
+    {
+      "requirement": "PUB-003",
+      "subject": "Reliable updates and withdrawal",
+      "existingBehavior": "Earlier website delivery interfaces are not v3.4 acceptance evidence",
+      "requiredChange": "Service authentication replay controls retries dead letters and authoritative closure",
+      "affectedModules": "M22 M24 M32 M35",
+      "dependencies": "X06 and environment-managed service credentials",
+      "implementationStatus": "Partial foundations only",
+      "acceptanceEvidence": "AT-PUB01 AT-PUB02"
+    },
+    {
+      "requirement": "REG-001",
+      "subject": "Public entry and identity",
+      "existingBehavior": "Inhouse rosters and external records do not establish public self-service",
+      "requiredChange": "Four entry modes contact verification opaque revocable self-service; no accounts by registration",
+      "affectedModules": "M02 M24 M32 M35",
+      "dependencies": "X07 contact verification and privacy policy",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-REG01 AT-REG03"
+    },
+    {
+      "requirement": "REG-002",
+      "subject": "Seats holds and waitlists",
+      "existingBehavior": "Existing recruitment foundations are not atomic public seat allocation",
+      "requiredChange": "Event/session capacity invariants expiring offers holds and safe promotion",
+      "affectedModules": "M05 M24 M32",
+      "dependencies": "Current event capacity and hold policy",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-REG02"
+    },
+    {
+      "requirement": "REG-003",
+      "subject": "Registration versus payment",
+      "existingBehavior": "No implemented hosted paid-registration state machine asserted",
+      "requiredChange": "Independent seat eligibility payment attendance and recognition states",
+      "affectedModules": "M11 M16 M24 M32",
+      "dependencies": "Verified payments and approved waivers",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-REG01 AT-PAY03"
+    },
+    {
+      "requirement": "REG-004",
+      "subject": "Privacy and abuse controls",
+      "existingBehavior": "Existing file/session restrictions remain; public flow not active",
+      "requiredChange": "Scoped self-service validation consent abuse controls uploads and accessible forms",
+      "affectedModules": "M14 M24 M32 M35",
+      "dependencies": "Retention consent and operational limits",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-REG03"
+    },
+    {
+      "requirement": "PAY-001",
+      "subject": "Hosted checkout",
+      "existingBehavior": "No gateway contract or live merchant activation",
+      "requiredChange": "Server-priced hosted orders and visibly isolated sandbox adapters",
+      "affectedModules": "M11 M24 M32 M35",
+      "dependencies": "Official provider contract merchant configuration and fees",
+      "implementationStatus": "Disabled pending prerequisites",
+      "acceptanceEvidence": "AT-PAY01"
+    },
+    {
+      "requirement": "PAY-002",
+      "subject": "Verified payment and late success",
+      "existingBehavior": "No v3.4 callback implementation",
+      "requiredChange": "Provider verification unique transactions idempotent attempts and reconciliation exceptions",
+      "affectedModules": "M11 M24 M32",
+      "dependencies": "X08 official protocol sandbox and valid holds",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-PAY01 AT-PAY02 AT-PAY03"
+    },
+    {
+      "requirement": "PAY-003",
+      "subject": "Receipts refunds reconciliation",
+      "existingBehavior": "Existing expense settlement is not receipts/refunds integration",
+      "requiredChange": "Unique verified receipts authorized bounded refunds and gross/fees/net reconciliation",
+      "affectedModules": "M11 M24 M32",
+      "dependencies": "X08 X09 Finance rules and provider sandbox",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-PAY04 AT-PAY05"
+    },
+    {
+      "requirement": "PAY-004",
+      "subject": "Fee and cancellation authority",
+      "existingBehavior": "Plan approval is separate from financial execution",
+      "requiredChange": "Version fees/terms preserve quoted orders; stop checkout and review refunds on cancellation",
+      "affectedModules": "M11 M24 M30 M32",
+      "dependencies": "Annex M fee/refund/hold configuration",
+      "implementationStatus": "Pending",
+      "acceptanceEvidence": "AT-PAY05 AT-INT02"
+    },
+    {
+      "requirement": "AP-001 / Annex M",
+      "subject": "Shared approval persistence increment",
+      "existingBehavior": "Stage256 pure trusted-input policy; legacy academic/club routes remain",
+      "requiredChange": "Add exact-source projection CAS authority fence audit/receipt transaction and protected records",
+      "affectedModules": "Shared Academic and Club approval foundation",
+      "dependencies": "Trusted source mappings identity assignments authority fence; live composition pending",
+      "implementationStatus": "Partial: isolated persistence implemented and tested",
+      "acceptanceEvidence": "14 SQLite scenarios; policy 26 cases; source projection check. Not live end-to-end acceptance"
+    }
+  ]
+}

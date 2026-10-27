@@ -1,0 +1,25 @@
+PASS ACADEMIC existing source → trusted identity → preview → persistent decision → history
+PASS CLUB existing source → trusted identity → preview → persistent decision → history
+PASS unconfigured runtime exposes no records and accepts no decisions
+PASS browser-supplied identity, extra fields, stale hash and unconfirmed decision rejected
+PASS wrong subject, inactive identity and revoked grant cannot read private history
+PASS cross-plan scope and forged source mapping cannot authorize a review
+PASS legacy submitted or approved records cannot manufacture historical decisions
+PASS authority changing during preview does not return actionable stale content
+PASS ordinary academic controller cannot bypass a registered controlled review
+PASS controlled source family clone and academic/club execution are blocked; history remains editable
+PASS transaction-time fence change blocks review and keeps audit empty
+PASS ordinary club controller cannot bypass controlled review
+PASS an already existing sibling cannot create new activity through an older family version
+13 trusted review integration cases passed with fictional identities and SQLite. No institutional activation or browser acceptance asserted.
+PASS ACADEMIC amendment preserves approved baseline, retries once and follows full successor route
+PASS CLUB amendment preserves approved baseline, retries once and follows full successor route
+PASS two competing amendment drafts allocate only one successor version
+PASS amendment reason/id conflict, wrong owner, malformed changes and forged metadata denied
+PASS disabled per-plan amendment configuration and revoked owner capability deny draft
+PASS audit failure and authority-fence race preserve old baseline and no partial draft
+PASS returned successor creates a corrective version without erasing rejected content
+PASS initial returned plan may revise without inventing an approved baseline
+PASS additional activities retain zero cost, named actors and planning-only authority
+PASS newer approved baseline blocks pending successor review and requires rebase
+10 amendment integration cases passed; immutable source overlays, no live institutional activation or event propagation asserted.

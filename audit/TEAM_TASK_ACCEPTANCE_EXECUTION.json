@@ -1,0 +1,854 @@
+{
+  "stage": 211,
+  "preparedDate": "2026-10-22",
+  "timezone": "Asia/Katmandu",
+  "baselineCommit": "c9ddc737ebffd5863d08915224e978e50c7dce8d",
+  "baselinePublishedVersion": 231,
+  "guide": "audit/ACCEPTANCE_WALKTHROUGH_W10.md",
+  "scope": "Preparation and isolated developer checks only; no live data writes or runtime changes",
+  "preflight": {
+    "status": "Blocked",
+    "basis": "Source inspection: trusted runtime default disabled; no approved acceptance environment/providers designated. Live browser execution not attempted.",
+    "liveProbePerformed": false
+  },
+  "developerChecks": [
+    {
+      "file": "check-intake-trusted-loader.mjs",
+      "status": "Pass",
+      "environment": "isolated local fixture",
+      "institutionalAcceptance": false
+    },
+    {
+      "file": "check-team-command-route.mjs",
+      "status": "Pass",
+      "environment": "isolated local fixture",
+      "institutionalAcceptance": false
+    },
+    {
+      "file": "check-intake-team-task-history.mjs",
+      "status": "Pass",
+      "environment": "isolated local fixture",
+      "institutionalAcceptance": false
+    },
+    {
+      "stage": 219,
+      "file": "scripts/team-acceptance-server.mjs --self-test",
+      "status": "Pass",
+      "environment": "isolated local fixture",
+      "institutionalAcceptance": false
+    },
+    {
+      "stage": 219,
+      "file": "check-intake-team-task-progress-client.mjs",
+      "status": "Pass",
+      "environment": "isolated local fixture",
+      "institutionalAcceptance": false
+    }
+  ],
+  "manualCases": [
+    {
+      "id": "W10-01",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 213,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Disposable complete checkout; in-memory SQLite; fictional fixture mappings",
+          "sourceCommit": "cad8405d6cbd584be5c511368956da81b81815f6",
+          "actor": "s1 lead, then s2 assignee",
+          "projectId": "3f1e5c2a-981a-4e73-8799-b28326eb3c6d",
+          "taskReference": "W10 browser evidence synthesis (created through browser; generated task ID not recorded)",
+          "revisionBefore": 35,
+          "revisionAfter": 36,
+          "expected": "Save one exact assignment; preserve previous tasks; no automatic completion",
+          "observed": "Reopened lead preparation listed new task plus both earlier tasks. After Refresh shared data and s2 selection, assigned-student evidence preview displayed exact due date/output/responsibility/evidence requirement/Concept criterion; not verified complete; project remained Started.",
+          "status": "Pass",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE213.md",
+          "defectId": null
+        }
+      ]
+    },
+    {
+      "id": "W10-02",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 214,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Complete disposable checkout, frozen fictional fixture and adapter-only fixes",
+          "projectId": "197256c0-2657-4d2c-95fb-e2213b39d162",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE214.md",
+          "status": "Blocked",
+          "observed": "UI scope/privacy observed; explicit unauthorized-request probes remain unexecuted."
+        },
+        {
+          "stage": 215,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE215.md",
+          "institutionalAcceptance": false,
+          "status": "Pass",
+          "method": "Stage214 browser plus Stage215 local HTTP",
+          "observed": "Non-lead assignment prepare/save and peer task progress read returned 403; workspace and audit unchanged. Browser scope/privacy observations retained separately.",
+          "projectId": "Separate self-test fixture; not the browser run"
+        }
+      ]
+    },
+    {
+      "id": "W10-03",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 214,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Complete disposable checkout, frozen fictional fixture and adapter-only fixes",
+          "projectId": "197256c0-2657-4d2c-95fb-e2213b39d162",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE214.md",
+          "status": "Pass",
+          "observed": "s2 progress In progress at revision 36 and Blocked at 37; fresh previews persisted; no completion/score control. Retained-history evidence is separate automated progress-controller check."
+        }
+      ]
+    },
+    {
+      "id": "W10-04",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 214,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Complete disposable checkout, frozen fictional fixture and adapter-only fixes",
+          "projectId": "197256c0-2657-4d2c-95fb-e2213b39d162",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE214.md",
+          "status": "Blocked",
+          "observed": "Submission absent while blocked; clearance with blank detail/reason saved at 38 and restored submission. Explicit blocked-submit/no-op rejection probes unexecuted."
+        },
+        {
+          "stage": 215,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE215.md",
+          "institutionalAcceptance": false,
+          "status": "Pass",
+          "method": "Stage214 browser plus Stage215 local HTTP",
+          "observed": "Blocked submission prepare/save denied unchanged; valid no-op and invalid DONE denied; authorized blocker/clear retained history.",
+          "projectId": "Separate self-test fixture; not the browser run"
+        }
+      ]
+    },
+    {
+      "id": "W10-05",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 214,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Complete disposable checkout, frozen fictional fixture and adapter-only fixes",
+          "projectId": "197256c0-2657-4d2c-95fb-e2213b39d162",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE214.md",
+          "status": "Pass",
+          "observed": "New fictional evidence and own contribution saved at 39; history v1 unverified/awaiting mentor review; progress frozen; refresh retained revision; activity Started."
+        }
+      ]
+    },
+    {
+      "id": "W10-06",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 215,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE215.md",
+          "institutionalAcceptance": false,
+          "status": "Pass",
+          "method": "Isolated browser",
+          "observed": "s2 and s1 separately submitted different contributions against evidence #1; peer saw own private history only; mentor had one evidence item and two review entries.",
+          "projectId": "a9d1fae6-26bc-41cf-b523-69a582414843"
+        }
+      ]
+    },
+    {
+      "id": "W10-07",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 215,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE215.md",
+          "institutionalAcceptance": false,
+          "status": "Pass",
+          "method": "Isolated browser",
+          "observed": "Independent s7 partial review saved at revision38 with Concept0 and three Not assessed; completion unavailable with unverified evidence; s1 peer saw restricted feedback/scores.",
+          "projectId": "a9d1fae6-26bc-41cf-b523-69a582414843"
+        }
+      ]
+    },
+    {
+      "id": "W10-08",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 216,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Disposable reviewed fixture, existing frozen provider clock, notifications guard applied",
+          "projectId": "b365a198-1ce0-42ed-ba81-0245bb925868",
+          "taskId": "36083cb0-cc9c-406d-a808-5a12081b74f2",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE216.md",
+          "status": "Pass",
+          "observed": "Unchanged attempt did not append; genuine submission2 saved at49 with original review1 retained.",
+          "defectId": null
+        }
+      ]
+    },
+    {
+      "id": "W10-09",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 216,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Disposable reviewed fixture, existing frozen provider clock, notifications guard applied",
+          "projectId": "b365a198-1ce0-42ed-ba81-0245bb925868",
+          "taskId": "36083cb0-cc9c-406d-a808-5a12081b74f2",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE216.md",
+          "status": "Pass",
+          "observed": "Evidence verification at50 left submission2 under review and incomplete.",
+          "defectId": null
+        }
+      ]
+    },
+    {
+      "id": "W10-10",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 216,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Disposable reviewed fixture, existing frozen provider clock, notifications guard applied",
+          "projectId": "b365a198-1ce0-42ed-ba81-0245bb925868",
+          "taskId": "36083cb0-cc9c-406d-a808-5a12081b74f2",
+          "evidenceReference": "audit/TEAM_ACCEPTANCE_BROWSER_STAGE216.md",
+          "status": "Fail",
+          "observed": "Review2 saved51; submission3 saved52; review3 saved53 but automatic confirmation warning left stale UI. Explicit refresh confirmed exact saved review; no duplicate retry.",
+          "defectId": "D216-02"
+        },
+        {
+          "stage": 217,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Disposable HTTP preview, asserted second-review fixture prerequisites",
+          "projectId": "0cb1591e-7ff5-40fb-8f1b-2731ca5cc24f",
+          "status": "Pass",
+          "observed": "Missing crypto.subtle reproduced; fixed digest helper automatically confirmed review3 at64 and student submission4 at65. Existing native/fallback SQLite regressions pass; earlier failed attempt retained.",
+          "evidenceReference": "audit/TEAM_CONFIRMATION_DIGEST_STAGE217.md",
+          "defectId": "D216-02"
+        }
+      ]
+    },
+    {
+      "id": "W10-11",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 218,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "sourceCommit": "44e3d793ad736d8925289bc49ddb444ac846a400",
+          "tester": "Codex browser automation",
+          "environment": "Disposable complete checkout, frozen fictional second-review fixture",
+          "projectId": "eda28444-dbb3-42b3-9afc-4662788b1ef4",
+          "taskReference": "Next analysis task / s2; generated task ID not captured",
+          "evidenceReference": "audit/TEAM_HISTORY_COMPLETION_STAGE218.md",
+          "status": "Pass",
+          "observed": "Student/mentor expanded chronological three-round history; pending latest submission awaited review; original criteria/snapshots/partial reviews retained; peer private history omitted."
+        }
+      ]
+    },
+    {
+      "id": "W10-12",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 218,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "sourceCommit": "44e3d793ad736d8925289bc49ddb444ac846a400",
+          "tester": "Codex browser automation",
+          "environment": "Disposable complete checkout, frozen fictional second-review fixture",
+          "projectId": "eda28444-dbb3-42b3-9afc-4662788b1ef4",
+          "taskReference": "Next analysis task / s2; generated task ID not captured",
+          "evidenceReference": "audit/TEAM_HISTORY_COMPLETION_STAGE218.md",
+          "status": "Pass",
+          "observed": "Independent mentor explicit VERIFIED review3 saved/confirmed at64 against verified current evidence. Student refresh showed current completion only on round3; activity Started."
+        }
+      ]
+    },
+    {
+      "id": "W10-13",
+      "status": "Blocked",
+      "attempts": [
+        {
+          "stage": 218,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "sourceCommit": "44e3d793ad736d8925289bc49ddb444ac846a400",
+          "tester": "Codex browser automation",
+          "environment": "Disposable complete checkout, frozen fictional second-review fixture",
+          "projectId": "eda28444-dbb3-42b3-9afc-4662788b1ef4",
+          "taskReference": "Next analysis task / s2; generated task ID not captured",
+          "evidenceReference": "audit/TEAM_HISTORY_COMPLETION_STAGE218.md",
+          "status": "Blocked",
+          "observed": "Both student and peer portfolios remained at0 verified project contributions; activity Started. No approved official MIS/credit surface exists in fixture; external assertions unexecuted."
+        }
+      ]
+    },
+    {
+      "id": "W10-14",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 219,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex automated developer checks",
+          "environment": "Isolated in-memory SQLite HTTP adapter and VM controller tests",
+          "sourceCommit": "bfe78c09b99d4ae06b21b063b531e18a162a6e61",
+          "status": "Developer checks pass; browser case Not run",
+          "observed": "HTTP adapter plus real trusted dispatcher: academic-master source changes during save and revoked mentor grant deny with unchanged serialized workspace/audit. Browser stale-dialog observation remains pending.",
+          "evidenceReference": "audit/TEAM_EXCEPTION_CHECKS_STAGE219.md",
+          "defectId": null
+        },
+        {
+          "stage": 220,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Disposable complete checkout; fictional in-memory SQLite; default assignment then reviewed fixture",
+          "sourceCommit": "1173acecee57350b562a5614c9f4c37bcc71c5a1",
+          "status": "Pass",
+          "observed": "Two browser tabs prepared s2 progress at revision 35. Tab B saved In progress at revision 36. Tab A old dialog rejected with refresh-and-inspect message; refresh recovered winning revision 36. Stage219 independently proves changed/revoked trusted-source and rejected-write audit preservation.",
+          "evidenceReference": "audit/TEAM_BROWSER_EXCEPTIONS_STAGE220.md",
+          "defectId": null
+        }
+      ]
+    },
+    {
+      "id": "W10-15",
+      "status": "Pass",
+      "attempts": [
+        {
+          "stage": 219,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex automated developer checks",
+          "environment": "Isolated in-memory SQLite HTTP adapter and VM controller tests",
+          "sourceCommit": "bfe78c09b99d4ae06b21b063b531e18a162a6e61",
+          "status": "Developer checks pass; browser case Not run",
+          "observed": "HTTP actor mismatch and exact stale request replay deny unchanged; one valid request adds one revision/audit/history. Existing progress controller tests pass preparation/save/refresh account races, duplicate clicks and failed GET without replay. Browser asynchronous exception observation remains pending.",
+          "evidenceReference": "audit/TEAM_EXCEPTION_CHECKS_STAGE219.md",
+          "defectId": null
+        },
+        {
+          "stage": 220,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Disposable complete checkout; fictional in-memory SQLite; default assignment then reviewed fixture",
+          "sourceCommit": "1173acecee57350b562a5614c9f4c37bcc71c5a1",
+          "status": "Pass",
+          "observed": "Tab A prepared s2 update at revision 36; tab B changed shared session to s1; old tab save rejected without revision advance. Refresh applied s1 scoped view, showing own Interpret the pilot findings task rather than s2 controls. Stage219 controller tests separately cover pending prepare/save/GET races, duplicate clicks and failed GET without replay; those asynchronous cases are automated developer evidence, not browser observations.",
+          "evidenceReference": "audit/TEAM_BROWSER_EXCEPTIONS_STAGE220.md",
+          "defectId": null
+        }
+      ]
+    },
+    {
+      "id": "W10-16",
+      "status": "Partial",
+      "attempts": [
+        {
+          "stage": 220,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "environment": "Disposable complete checkout; fictional in-memory SQLite; default assignment then reviewed fixture",
+          "sourceCommit": "1173acecee57350b562a5614c9f4c37bcc71c5a1",
+          "status": "Blocked",
+          "observed": "Observed Enter navigation and save activation, Tab/Shift+Tab between labelled stage/blocker controls, Escape dismissal returning focus to opener, native history Enter expand/Space collapse. Desktop width and scrollWidth both 1348. Narrow viewport unavailable through documented browser APIs; full long-text and boundary-focus audit remains pending. No full accessibility acceptance claimed.",
+          "evidenceReference": "audit/TEAM_BROWSER_EXCEPTIONS_STAGE220.md",
+          "defectId": null
+        },
+        {
+          "stage": 221,
+          "date": "2026-10-22",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "sourceCommit": "16848e9a6c81bf8b40effffc5a4ef922ca47c69a (baseline; local fix retested)",
+          "environment": "Disposable fictional in-memory acceptance workspace",
+          "status": "Blocked; D221-01 fixed and retested",
+          "observed": "Baseline modal had null aria-label and aria-labelledby. Updated loading/form phases expose their visible headings as dialog names. Tab stage-to-blocker, Escape dismissal and opener focus return observed. No focus trap defect established. Narrow layout/full accessibility acceptance remain outstanding.",
+          "evidenceReference": "audit/DIALOG_ACCESSIBILITY_STAGE221.md",
+          "defectId": "D221-01"
+        },
+        {
+          "stage": 230,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "sourceCommit": "89e1c272d7a86053f518a81d54786006ea2131b7 (baseline; local layout fix retested)",
+          "environment": "Disposable UI-only preview; actual form functions and native dialog helper; fictional long text; fixed-width child viewports",
+          "status": "Partial; D230-01 fixed and retested",
+          "observed": "Baseline at 320 px: review dialog clientWidth 271, scrollWidth 5151. Review, rereview, progress and revision forms retested at 320/360/768 px: dialog scrollWidth equals clientWidth 271/309/565; document widths remain 320/360/768. Named dialogs, visible Cancel, Cancel/Escape opener return and required decision observed. Native top-level Tab after last left BODY active; Shift+Tab before first focused dialog. No custom focus trap added and no complete boundary/screen-reader/touch-device acceptance claimed. UI-only harness performs no workflow save.",
+          "evidenceReference": "audit/TASK_DIALOG_LAYOUT_STAGE230.md",
+          "defectId": "D230-01"
+        },
+        {
+          "stage": 231,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "sourceCommit": "ff06bab2e97c2990f97c0af12ba788fa5d615e88 (baseline; local fix retested)",
+          "environment": "Disposable UI-only preview with actual evidence form functions/native dialog helper and fictional long content",
+          "status": "Partial; D231-01 fixed and retested",
+          "observed": "At 320 px, evidence submission, evidence verification and revised-evidence verification each had clientWidth 271 and scrollWidth 5151 with no visible Cancel. After applying existing task-dialog-content layout and adding Cancel: all three forms at 320/360/768 px have matching clientWidth/scrollWidth 271/309/565 and matching document viewport widths. Named dialogs, Cancel/Escape opener return, required selection/reason focus, unchecked declarations and 2000-character textarea limits observed. UI-only checks made no workflow save. Full accessibility/institutional acceptance not claimed.",
+          "evidenceReference": "audit/EVIDENCE_DIALOG_LAYOUT_STAGE231.md",
+          "defectId": "D231-01"
+        },
+        {
+          "stage": 232,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "sourceCommit": "27312b3c1ca2a326781d8795b1bcba8eaf58ce0c (baseline; local fix retested)",
+          "environment": "Disposable UI-only preview, actual assignment renderer/table helper/native dialog, fictional student and task labels",
+          "status": "Partial; D232-01 fixed and retested",
+          "observed": "320 px baseline assignment dialog width 271 / scroll 4906, no Cancel. After existing task-dialog layout: at 320/360/768 px dialog client/scroll widths match 271/309/565, document width matches viewport, select widths 215/253/509. Existing table intentionally scrolls inside named focusable region (900 px content); Tab from region focuses task title. Required title, date input, unchecked confirmation, 120-character title, 200-character student display name and 2000-character criterion/responsibility checked. Cancel/Escape opener return observed. Arrow-key horizontal scrolling unconfirmed (probe scrollLeft remained 0). No browser workflow save; full accessibility/institutional acceptance not claimed.",
+          "evidenceReference": "audit/TASK_ASSIGNMENT_LAYOUT_STAGE232.md",
+          "defectId": "D232-01"
+        },
+        {
+          "stage": 233,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "sourceCommit": "ef93c15e55826f12330c8cd70432c4ffd95b8cdc (baseline; local fix retested)",
+          "environment": "Disposable read-only UI preview, actual history/results renderers, fictional scoped task records and fixed-width child viewports",
+          "status": "Partial; D233-01 fixed and retested",
+          "observed": "At 320 px child width, baseline usable client width 305, collapsed scrollWidth 4432 and expanded 4512. After scoped wrapping/spacing, collapsed and expanded scroll/client widths match at 305/345/753 for 320/360/768 px children (15 px vertical scrollbar). Enter expands, Space collapses; Tab and Shift+Tab move between native summary and before/after fixture focus markers. One current and one historical assessment retained; zero/Not assessed distinct; injected script/img nodes absent; projected peer restriction preserved. Visible summary focus observed. Scoped paragraph contrast adjusted after browser layout run: calculated 7.01:1 on workspace and 7.59:1 on white; no geometry changed. UI-only fixture does not cover complete application overview or institutional acceptance.",
+          "evidenceReference": "audit/TASK_HISTORY_LAYOUT_STAGE233.md",
+          "defectId": "D233-01"
+        },
+        {
+          "stage": 242,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "sourceCommit": "2269dc28ed905ee9df45bee702c6bf8b2b814656",
+          "environment": "Disposable UI-only actual task/table/native dialog renderers; fictional long-content fixture; 320 px child viewport; no API or saves",
+          "status": "Partial overall; native task-table horizontal keyboard scrolling verified",
+          "observed": "Named Existing task assignments region focused. Native ArrowRight moved scrollLeft 0\u219240; repeated Right reached exact maximum685 and State column was fully visible. Left returned0. Region/client/content widths215/900; modal client/scroll widths271/271. Tab focused Task title; ArrowLeft edited its caret without table movement; Shift+Tab returned region. Escape closed and returned opener; no submission result or application write. No custom keyboard handler/code fix needed. Full dialog-boundary/screen-reader/touch/institutional acceptance remains unfinished.",
+          "evidenceReference": "audit/TASK_TABLE_KEYBOARD_STAGE242.md",
+          "defectId": null
+        },
+        {
+          "stage": 243,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "sourceCommit": "6a3cb5c0ddaae495b2d631d8daddcbb3fe3243d7",
+          "environment": "Disposable top-level fictional UI-only actual task renderers and native dialog helper; no API or saves",
+          "status": "Partial overall; keyboard boundary reentry and dismissal observed, no runtime defect established",
+          "observed": "Eight dialogs: initial control receives focus; reverse first step focuses dialog. Tab after Cancel leaves BODY active; next Tab returns to dialog and next reaches first control. No background control focused in observed sequences. Third reverse step reaches Cancel in assignment and revised-evidence verification. Escape and Cancel close all eight and return opener; empty submission status. Browser chrome ownership unverified; document.hasFocus unavailable in read-only evaluation. No custom trap or runtime change. Full application/screen-reader/touch/institutional acceptance remains unfinished.",
+          "evidenceReference": "audit/TASK_DIALOG_FOCUS_STAGE243.md",
+          "defectId": null
+        },
+        {
+          "stage": 244,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex automated checks; browser attempt blocked",
+          "sourceCommit": "0693bd48b15081e4e2cdafb6ff2d6a40b3685f19",
+          "environment": "Existing isolated fictional VM/SQLite fixtures; attempted managed UI-only preview",
+          "status": "Partial overall; native required-field recovery not run to completion",
+          "observed": "Eight targeted client/dialog commands exited 0. Initial browser navigation before preview startup returned ERR_CONNECTION_REFUSED; after managed preview started, acquisition of error tab was denied by browser URL security policy. No policy workaround or alternate browser control used; preview stopped. No new native validation/focus observation or runtime change. Earlier acceptance evidence retained.",
+          "evidenceReference": "audit/TASK_VALIDATION_CHECKPOINT_STAGE244.md",
+          "defectId": null
+        },
+        {
+          "stage": 245,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex browser automation",
+          "sourceCommit": "58b2f0a7d5dfd1f39b97ce2a010145682d1b7e5d",
+          "environment": "Managed preview started before permitted top-level HTTP fixture navigation; 12 actual renderer/helper/style inputs match checkout; fictional data; no controller/API/saves",
+          "status": "Partial overall; initial required-field keyboard recovery subcheck verified",
+          "observed": "Eight dialogs: submit Enter focused first invalid required control. Correcting it retained value and moved validation to next required control. Tab/Shift+Tab navigated to adjacent field/declaration and back. Escape after validation closed all eight and restored opener; separate invalid-submission plus Cancel Enter also closed/restored all eight. Submission status stayed empty; at least one required field deliberately invalid throughout. No runtime fix. Conditional controller validation, every required field, screen-reader/touch/full application/institutional acceptance not asserted. Stage244 failed attempt retained.",
+          "evidenceReference": "audit/TASK_VALIDATION_RECOVERY_STAGE245.md",
+          "defectId": null
+        },
+        {
+          "stage": 246,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex automated and browser checks",
+          "sourceCommit": "f2e62eb3eb8d8046d994a0805724180f05b4fb48 (baseline; local feedback fix retested)",
+          "environment": "Actual controller VM tests/isolated trusted SQLite saves plus fictional UI-only actual renderer/validator/helper preview; no browser API or storage commands",
+          "status": "Partial overall; D246-01 fixed and retested for two dialogs",
+          "observed": "NEW evidence title/description and assignment missing/unselected domain criteria produce persistent focused modal alert with retained entries and no request. Correction clears summary. Tab from evidence error reaches selection; Escape/Cancel opener recovery observed. Controller tests assert unchanged payload/open marker and no requests on rejected input, then existing exact save/GET after correction. Six targeted checks, TypeScript and production build pass. Wider screen-reader/touch/full institutional acceptance not asserted.",
+          "evidenceReference": "audit/TASK_CONDITIONAL_FEEDBACK_STAGE246.md",
+          "defectId": "D246-01"
+        },
+        {
+          "stage": 247,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex automated and browser checks",
+          "sourceCommit": "fae1f23934a31a61240bb93752564a8121dcc250 (baseline; local revision feedback fix retested)",
+          "environment": "Actual revision controller VM and trusted SQLite/scoped-view tests; fictional UI-only actual form/validator/helper fixture with explicit prior snapshot",
+          "status": "Partial overall; D247-01 fixed and retested",
+          "observed": "Revision missing NEW title/description, mixed NEW/EXISTING fields and unchanged content produce persistent focused modal feedback; values/reason/declarations retained and controller rejection sends no request. Correction clears feedback; trusted save tests retain append-only histories. Browser Tab and Escape/Cancel opener recovery observed. Fixture trailing whitespace normalized after initial false-positive unchanged-content rehearsal; self-test now protects unchanged/changed cases; reopening clears stale local status. Four targeted checks, TypeScript/build pass. No browser API saves or institutional acceptance.",
+          "evidenceReference": "audit/REVISION_VALIDATION_FEEDBACK_STAGE247.md",
+          "defectId": "D247-01"
+        },
+        {
+          "stage": 248,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex automated and browser checks",
+          "sourceCommit": "af000a7b0f2b2fd46751a40c06f418025d4ab00c (baseline; local review feedback fix retested)",
+          "environment": "Actual individual-review controller VM and trusted SQLite/scoped-view tests; fictional UI-only actual form/validator/helper browser fixture",
+          "status": "Partial overall; D248-01 fixed and retested",
+          "observed": "Spaces-only feedback rejected with persistent focused modal alert; PARTIAL/RETURNED decision, 0/Not assessed raw score distinction and declarations retained. Correction clears summary; Tab reaches decision; Escape/keyboard Cancel restore opener. Invalid controller inputs send no request and keep payload/marker; corrected exact save/GET and all three real isolated decisions pass. Review/rereview, dialog/fixture, TypeScript/build pass. Shared revised-work renderer inherits hidden paragraph, but its separate error controller not activated here. No browser API saves/full institutional acceptance.",
+          "evidenceReference": "audit/MENTOR_REVIEW_FEEDBACK_STAGE248.md",
+          "defectId": "D248-01"
+        },
+        {
+          "stage": 249,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex automated and browser checks",
+          "sourceCommit": "782007be20d5d391f8309947cec0546f3a641d31 (baseline; local revised-review feedback fix retested)",
+          "environment": "Actual revised-work controller VM and trusted SQLite/scoped-view tests; fictional UI-only actual renderer/validator/helper browser fixture",
+          "status": "Partial overall; D249-01 fixed and retested",
+          "observed": "Fresh review inputs blank, earlier feedback/explanation rendered. Invalid REVIEW input retains current decision/scores/feedback/declarations with focused local alert, unchanged open marker and zero requests/no toast; correction clears feedback. EVIDENCE mode explicitly retains old toast/no summary focus. Browser PARTIAL/RETURNED whitespace rejection, 0/Not assessed retention, Tab, Escape/Cancel recovery observed. Review/rereview, dialog/fixture, TypeScript/build pass; controlled saves retain prior submissions and reviews. No browser API saves/full institutional acceptance.",
+          "evidenceReference": "audit/REREVIEW_VALIDATION_FEEDBACK_STAGE249.md",
+          "defectId": "D249-01"
+        },
+        {
+          "stage": 250,
+          "date": "2026-10-23",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex automated and browser checks",
+          "sourceCommit": "4c42ad3a5ea1cb79e6f6fa273063b7f6b6685032 (baseline; local verification feedback fix retested)",
+          "environment": "Actual verification/revised-work controller VM and trusted SQLite/scoped-view tests; fictional UI-only actual renderer/validator/helper browser fixture",
+          "status": "Partial overall; D250-01 fixed and retested",
+          "observed": "Both verification dialogs reject spaces-only reason with focused persistent alert and retain reason/declarations; no score controls. Tab reaches reason; correction clears feedback; Escape/keyboard Cancel restore opener. Invalid controller inputs preserve payload/open marker and send no request; corrected controlled verification keeps tasks/history unchanged. Five targeted commands, TypeScript/build pass. No browser API/storage saves or full institutional acceptance.",
+          "evidenceReference": "audit/EVIDENCE_VERIFICATION_FEEDBACK_STAGE250.md",
+          "defectId": "D250-01"
+        },
+        {
+          "stage": 251,
+          "date": "2026-10-24",
+          "timezone": "Asia/Kathmandu",
+          "tester": "Codex automated and browser checks",
+          "sourceCommit": "1c895a3e7d088a9172c8b5a0e4e7d6ad41000152 (baseline; local progress feedback fix retested)",
+          "environment": "Actual progress controller VM and trusted SQLite/scoped-view tests; fictional UI-only actual renderer/validator/helper browser fixture",
+          "status": "Partial overall; D251-01 fixed and retested",
+          "observed": "No-change, missing blocked detail and leftover detail for Not blocked produce focused persistent modal feedback, retained entries and empty local status. Correction clears feedback; Tab reaches stage; Escape/keyboard Cancel restore opener. Rejected controller payloads/markers unchanged with zero requests; corrected trusted set/clear blocker cases retain snapshots and done false. Four targeted commands, TypeScript/build pass. Scoped local feedback pass covers eight task dialogs; full accessibility and institutional acceptance not asserted.",
+          "evidenceReference": "audit/PROGRESS_VALIDATION_FEEDBACK_STAGE251.md",
+          "defectId": "D251-01"
+        }
+      ]
+    }
+  ],
+  "institutionalTester": null,
+  "institutionalApprover": null,
+  "institutionalAcceptance": "Not run",
+  "environmentPreparation": {
+    "stage": 212,
+    "launcher": "scripts/team-acceptance-server.mjs",
+    "scope": "Local in-memory SQLite fixture with three fictional accounts; no live database",
+    "selfTest": "Pass",
+    "managedPreview": "Blocked",
+    "reason": "Nested preview filesystem omits parent repository; launcher not found before startup",
+    "browserCasesExecuted": false,
+    "next": "Complete disposable preview checkout through supported supervisor"
+  },
+  "environmentPreparations": [
+    {
+      "stage": 212,
+      "launcher": "scripts/team-acceptance-server.mjs",
+      "scope": "Local in-memory SQLite fixture with three fictional accounts; no live database",
+      "selfTest": "Pass",
+      "managedPreview": "Blocked",
+      "reason": "Nested preview filesystem omits parent repository; launcher not found before startup",
+      "browserCasesExecuted": false,
+      "next": "Complete disposable preview checkout through supported supervisor"
+    },
+    {
+      "stage": 213,
+      "status": "Ready for isolated browser execution",
+      "sourceCommit": "cad8405d6cbd584be5c511368956da81b81815f6",
+      "method": "Complete git archive checkout, copied installed dependencies, disposable package dev entry only",
+      "managedPreview": "Started successfully",
+      "entry": "http://terminal.local:4173/workspace/",
+      "productionChanged": false
+    }
+  ],
+  "currentExecutionGate": {
+    "stage": 253,
+    "status": "Partial integrated browser checkpoint. Run B: 13 scoped assertions pass, 1 browser upload/session failure; actual application routes/services with persistent fictional SQLite and filesystem objects. Run A observations retained separately; its temporary DB/journal did not survive interruption. Academic semester mapping corrected; 32/32 workflow, 7/7 targeted rechecks, 6/6 module checks and TypeScript/build pass. Research execution, club closure and internship completion remain incomplete in browser.",
+    "institutionalActivation": "Still disabled",
+    "institutionalAcceptance": "Not run",
+    "evidence": "audit/INTEGRATED_BROWSER_STAGE253.md"
+  },
+  "defects": [
+    {
+      "id": "D216-01",
+      "status": "Fixed and browser retested",
+      "description": "Peer dashboard dereferenced omitted private review in completion notification"
+    },
+    {
+      "id": "D216-02",
+      "status": "Fixed and browser retested",
+      "description": "Third-round saved review failed automatic client confirmation; refresh confirmed successful write",
+      "rootCause": "HTTP preview omitted crypto.subtle; third-round confirmation threw after successful save",
+      "resolutionStage": 217
+    },
+    {
+      "id": "D221-01",
+      "status": "Fixed and browser retested",
+      "description": "Shared native modal lacked an accessible name despite a visible heading",
+      "resolutionStage": 221
+    },
+    {
+      "id": "D230-01",
+      "status": "Fixed and browser retested",
+      "description": "Task review dialog horizontal overflow with long unbroken text and page-level section/fieldset/control sizing at narrow widths",
+      "resolutionStage": 230
+    },
+    {
+      "id": "D231-01",
+      "status": "Fixed and browser retested",
+      "description": "Evidence submission/verification dialogs and inherited revised-evidence verification overflowed with long content at narrow widths and lacked a visible Cancel action",
+      "resolutionStage": 231
+    },
+    {
+      "id": "D232-01",
+      "status": "Fixed and browser retested",
+      "description": "Task-assignment dialog overflow with long labels/content and no visible Cancel; existing-task scroll area lacked an accessible region name and keyboard focus",
+      "resolutionStage": 232
+    },
+    {
+      "id": "D233-01",
+      "status": "Fixed and browser retested",
+      "description": "Long retained task history/review-result content overflowed narrow overview sections",
+      "resolutionStage": 233
+    },
+    {
+      "id": "D233-02",
+      "status": "Fixed; contrast calculation passed",
+      "description": "Default paragraph color below 4.5:1 on workspace/white; scoped history/results paragraph color now above 7:1",
+      "resolutionStage": 233
+    },
+    {
+      "id": "D246-01",
+      "status": "Fixed and retested for assignment and initial evidence dialogs",
+      "description": "Conditional input errors used an expiring global toast outside the native modal; persistent focused text alert now stays inside these forms without replacing entries or weakening validation. Other dialog feedback remains separately pending.",
+      "resolutionStage": 246
+    },
+    {
+      "id": "D247-01",
+      "status": "Fixed and retested for student revision dialog",
+      "description": "Revision conditional input errors used the expiring global toast outside the modal; persistent focused local feedback now retains entries and declarations. Genuine-change and append-only save requirements preserved.",
+      "resolutionStage": 247
+    },
+    {
+      "id": "D248-01",
+      "status": "Fixed and retested for initial individual mentor review",
+      "description": "Initial mentor-review conditional input errors used an expiring global toast outside the modal; persistent focused local feedback now retains decision/scores/declarations. Separate revised-work controller activation remains pending.",
+      "resolutionStage": 248
+    },
+    {
+      "id": "D249-01",
+      "status": "Fixed and retested for revised-work individual REVIEW mode",
+      "description": "Separate revised-work individual-review input errors used an expiring external toast; existing persistent focused review feedback is now activated for REVIEW mode. EVIDENCE mode remains unchanged.",
+      "resolutionStage": 249
+    },
+    {
+      "id": "D250-01",
+      "status": "Fixed and retested for initial and revised-work evidence verification",
+      "description": "Evidence-verification conditional input errors used an expiring external toast; both paths now use persistent focused modal feedback while preserving independence, reason/confirmation and unchanged individual task scores/completion.",
+      "resolutionStage": 250
+    },
+    {
+      "id": "D251-01",
+      "status": "Fixed and retested for task-progress conditional input feedback",
+      "description": "Blocker/detail and no-change validation used an expiring external toast; persistent focused modal feedback now retains report entries while preserving change requirements, history and separation from verified completion.",
+      "resolutionStage": 251
+    }
+  ],
+  "regressionCheckpoints": [
+    {
+      "stage": 234,
+      "date": "2026-10-23",
+      "timezone": "Asia/Kathmandu",
+      "baselineCommit": "51a3edee5b8dab87c702f9f6c2cae72a2d5720e1",
+      "baselinePublishedVersion": 245,
+      "report": "audit/TASK_WORKFLOW_REGRESSION_STAGE234.json",
+      "command": "npm run test:task-workflow",
+      "passed": 24,
+      "failed": 0,
+      "build": "Pass",
+      "typescript": "Pass",
+      "browserExecution": "Not rerun; prior evidence retained",
+      "institutionalAcceptance": "Not run",
+      "runtimeCodeChanged": false
+    },
+    {
+      "stage": 241,
+      "date": "2026-10-23",
+      "timezone": "Asia/Kathmandu",
+      "baselineCommit": "5b0efa1055f2867897365798fa6ba6309b88baa9",
+      "baselinePublishedVersion": 252,
+      "report": "audit/TASK_WORKFLOW_REGRESSION_STAGE241.json",
+      "command": "npm run test:task-workflow -- --report audit/TASK_WORKFLOW_REGRESSION_STAGE241.json",
+      "passed": 32,
+      "failed": 0,
+      "build": "Pass",
+      "buildCommand": "node scripts/run-framework.mjs build",
+      "typescript": "Pass",
+      "browserExecution": "Not rerun; prior isolated browser evidence retained separately",
+      "institutionalAcceptance": "Not run",
+      "runtimeCodeChanged": false
+    },
+    {
+      "stage": 252,
+      "date": "2026-10-24",
+      "timezone": "Asia/Kathmandu",
+      "baselineCommit": "18968981f7a9b1c864c006afc83ac7c3573d1b4c",
+      "baselinePublishedVersion": 263,
+      "report": "audit/TASK_WORKFLOW_REGRESSION_STAGE252.json",
+      "command": "node scripts/check-task-workflow.mjs --report audit/TASK_WORKFLOW_REGRESSION_STAGE252.json",
+      "passed": 32,
+      "failed": 0,
+      "build": "Pass",
+      "buildCommand": "node scripts/run-framework.mjs build",
+      "typescript": "Pass",
+      "browserExecution": "Not rerun; prior isolated browser evidence retained separately",
+      "institutionalAcceptance": "Not run",
+      "runtimeCodeChanged": false
+    },
+    {
+      "stage": 253,
+      "date": "2026-10-25",
+      "baselineCommit": "e35876f7114e24e8b8f515f90972574d1eadeeab",
+      "runtimeChange": "Linked intake task semester fallback; existing snapshots preserved",
+      "report": "audit/STAGE253_REGRESSION.json",
+      "passed": 32,
+      "failed": 0,
+      "targetedRecheck": "audit/STAGE253_TARGETED_RECHECK.json",
+      "moduleChecks": "audit/STAGE253_MODULE_REGRESSION.json",
+      "browserEvidence": "audit/STAGE253_BROWSER_RUN_B.json",
+      "institutionalAcceptance": "Not run"
+    }
+  ],
+  "executionGateHistory": [
+    {
+      "stage": 234,
+      "status": "24 automated task-workflow regression commands pass; prior browser evidence retained; W10-13 awaits official sources; W10-16 Partial; full application accessibility and institutional acceptance remain unfinished",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 241,
+      "status": "32 automated task/cohort-workflow regression commands pass; TypeScript and production build pass; prior browser evidence retained; W10-13 awaits official sources; W10-16 remains Partial; institutional acceptance and full application accessibility remain unfinished",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 242,
+      "status": "Stage241 32/32 automated workflow regression and TypeScript/build evidence retained; Stage242 native assignment-table keyboard scrolling verified with targeted checks passing; W10-13 awaits official sources; W10-16 remains Partial for remaining dialog-boundary/full accessibility/screen-reader/touch acceptance",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 243,
+      "status": "Stage241 32/32 regression and TypeScript/build evidence retained for unchanged runtime; Stage243 eight task-dialog keyboard reentry and Escape/Cancel opener recovery observed with four targeted checks passing; strict wrap/browser chrome ownership not asserted; W10-13 awaits official sources and W10-16 remains Partial for full application/screen-reader/touch acceptance",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 244,
+      "status": "Eight targeted client/dialog validation commands pass against unchanged runtime; native required-field keyboard recovery unfinished due to browser test environment restriction. Stage241 full 32/32 regression and TypeScript/build retained, not rerun. W10-16 remains Partial; W10-13 awaits official sources.",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 245,
+      "status": "Eight task-dialog initial required-field/correction/keyboard dismissal subchecks verified in fictional UI-only browser fixture; two fresh renderer/dialog checks pass and 12 fixture inputs match checkout. Stage244 eight targeted commands and Stage241 full regression/TypeScript/build retained for unchanged runtime. W10-16 remains Partial; W10-13 awaits official sources.",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 246,
+      "status": "Persistent focused conditional validation feedback added for assignment and initial evidence; targeted client/save checks, UI-only browser recovery, TypeScript/build pass. Stage241 full 32-command regression remains historical, not rerun after runtime change. W10-16 Partial overall; W10-13 awaits official sources.",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 247,
+      "status": "Student revision persistent focused validation feedback added; acknowledgment/genuine-change/history rules retained. Revision/rereview, dialog/fixture, fictional browser recovery, TypeScript/build pass. Stage241 aggregate regression remains historical. W10-16 Partial overall; W10-13 awaits official sources.",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 248,
+      "status": "Initial individual mentor-review persistent focused validation feedback added; independent decisions, assigned scores and verified-evidence rules retained. Review/rereview, dialog/fixture, fictional browser recovery, TypeScript/build pass. Stage241 aggregate regression remains historical. W10-16 Partial overall; W10-13 awaits official sources.",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 249,
+      "status": "Revised-work individual REVIEW mode persistent focused validation feedback activated; fresh input/independent reassessment/history rules retained and EVIDENCE mode unchanged. Review/rereview, dialog/fixture, fictional browser recovery, TypeScript/build pass. Stage241 aggregate regression remains historical. W10-16 Partial overall; W10-13 awaits official sources.",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 250,
+      "status": "Initial/revised evidence-verification persistent focused validation feedback activated; independent evidence-only behavior retained. Verification/review/rereview, dialog/fixture, fictional browser recovery, TypeScript/build pass. Stage241 aggregate regression remains historical. W10-16 Partial overall; W10-13 awaits official sources.",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 251,
+      "status": "Task-progress persistent focused conditional feedback added; blocker snapshots/change requirements/no-completion retained. Progress/evidence, dialog/fixture, fictional browser recovery, TypeScript/build pass. Eight-dialog local feedback pass complete; fresh aggregate regression next. Stage241 aggregate remains historical. W10-16 Partial overall; W10-13 awaits official sources.",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    },
+    {
+      "stage": 252,
+      "status": "Fresh full 32/32 workflow regression after eight-dialog feedback changes plus TypeScript/build pass against clean source 18968981f7a9b1c864c006afc83ac7c3573d1b4c. No runtime change or new browser acceptance in this checkpoint. Earlier evidence retained. W10-16 Partial overall; W10-13 awaits official sources. Integrated actual-controller browser rehearsal next.",
+      "institutionalActivation": "Still disabled",
+      "institutionalAcceptance": "Not run"
+    }
+  ]
+}

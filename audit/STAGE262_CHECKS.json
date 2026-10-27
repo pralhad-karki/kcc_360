@@ -1,0 +1,23 @@
+{
+  "stage": 262,
+  "baselineCommit": "2d40a515994a3f974a44126b944ae6ac82ec0277",
+  "stagingCases": 26,
+  "stagingResult": "PASS",
+  "foundationCases": 22,
+  "foundationResult": "PASS",
+  "compiledRoute": "PASS",
+  "existingXlsxParserAndBridge": "PASS",
+  "broadRegressionGroups": 49,
+  "broadRegressionResult": "PASS",
+  "broadReport": "STAGE262_REGRESSION.json",
+  "finalTargetedRerun": true,
+  "typeScript": "PASS",
+  "productionBuild": "PASS; packaging repeats final build",
+  "whitespace": "PASS",
+  "institutionalActivation": false,
+  "liveR2UploadTested": false,
+  "realMISDataUsed": false,
+  "productionDataChanged": false,
+  "browserUploadTested": false,
+  "note": "50 groups registered for future runs; added route harness and final staging refinements have separate targeted evidence after the completed49-group broad run."
+}

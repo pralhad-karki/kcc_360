@@ -1,0 +1,21 @@
+{
+  "stage": 268,
+  "baselineCommit": "6a63f48c070ce1bb56ab47c28a6334f51f7dffd4",
+  "coreCases": 23,
+  "coreResult": "PASS",
+  "sqliteSave": "PASS with fictional context; audit rollback/replay/correction/three transaction fences/expiry/configuration change",
+  "broadGroups": 63,
+  "broadResult": "PASS",
+  "permissionPolicy": "PASS",
+  "identityGrantAdapter": "PASS",
+  "typeScript": "PASS",
+  "uiChanged": false,
+  "newBrowserQA": false,
+  "nativeD1Tested": false,
+  "institutionalActivation": false,
+  "targetEntryUIInstalled": false,
+  "clubAllocationImplemented": false,
+  "officialStrategicCatalogConfigured": false,
+  "productionDatabaseWritten": false,
+  "bundleBuild": "during final packaging"
+}

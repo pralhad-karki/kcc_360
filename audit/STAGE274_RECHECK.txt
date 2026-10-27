@@ -1,0 +1,31 @@
+PASS department preview, assigned mentor review, department confirmation reuse individual task mappings
+PASS students, unrelated staff and wrong mentor cannot prepare, approve or apply batches
+PASS invalid roster, duplicate task references, deadlines and missing criteria block the whole batch
+PASS CSV quoting, UTF-8/BOM, exact header, width, empty and batch limits are checked
+PASS roster, source dates and mentor changes invalidate a reviewed import
+PASS a returned file can be corrected with prior rows and reasons preserved
+PASS changed existing import content never overwrites work even under a new source reference
+PASS club events and student-submitted project routes cannot use department class-task CSV
+PASS responsible unit scope, independent mentor and controlled parent execution remain required
+PASS raw batch/roster information is hidden from student and unrelated admin views
+PASS only approved CSV form fields are accepted; shared task recorder stays narrowly refactored
+PASS department and mentor control manual assignments for both workshops and seminars
+PASS completed event import history remains readable by scoped staff without reopening assignment
+13 department task CSV workflow cases passed. Fictional owner-controlled workflow; official MIS/SSO and institutional authority not asserted.
+PASS department preview, assigned mentor review, department confirmation reuse individual task mappings
+PASS students, unrelated staff and wrong mentor cannot prepare, approve or apply batches
+PASS invalid roster, duplicate task references, deadlines and missing criteria block the whole batch
+PASS CSV quoting, UTF-8/BOM, exact header, width, empty and batch limits are checked
+PASS roster, source dates and mentor changes invalidate a reviewed import
+PASS a returned file can be corrected with prior rows and reasons preserved
+PASS changed existing import content never overwrites work even under a new source reference
+PASS club events and student-submitted project routes cannot use department class-task CSV
+PASS responsible unit scope, independent mentor and controlled parent execution remain required
+PASS raw batch/roster information is hidden from student and unrelated admin views
+PASS only approved CSV form fields are accepted; shared task recorder stays narrowly refactored
+PASS department and mentor control manual assignments for both workshops and seminars
+PASS completed event import history remains readable by scoped staff without reopening assignment
+13 department task CSV workflow cases passed. Fictional owner-controlled workflow; official MIS/SSO and institutional authority not asserted.
+PASS shared department CSV save: real service/form checks and existing SQL schema; preview/review/apply, audit rollback, concurrent winner preservation, same-revision race, applied retry without duplicate tasks/audit, forged-field denial and student-private view. Fictional identities only.
+PASS scoped domain delegation: authority, domain roster, stale/replay, private projected form/monitor, revocation, existing progress/submission and independent mentor verification
+PASS operator: default disabled; session/role/department checks; forged actor/enablement/consent/publish rejection; prepare/send/independent approval/refresh; private projection; logout/re-login; withdrawal; escaped UI and no publisher action.

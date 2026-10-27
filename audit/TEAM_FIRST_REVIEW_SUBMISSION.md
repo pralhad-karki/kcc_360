@@ -1,0 +1,29 @@
+# Stage 168 — Controlled team submission and persisted first-review handoff
+
+## Minimum implementation and scope
+
+Add `submitIntakeTeamFirstReview` to the existing dedicated team-command dispatcher on the existing authenticated workspace endpoint. Keep its production runtime disabled with no approved providers installed. No engine command allowlist entry, endpoint, SQL table, module navigation, institutional role grant, roster or live team activation is added.
+
+`server/intake-team-first-review-save.mjs` composes existing normalization, source context, confirmed-team validation and first-review resolver. It requires a current DRAFT owned by the verified lead, explicit confirmation, current workspace/team revisions, current accepted members including the lead, and an unambiguous independent review/approval assignment. Team invitation editing retains its existing DRAFT/RETURNED semantics; no submitted-state invitation access is added.
+
+The saved proposal reuses the existing `submitActivityIntake` immutable submission and SUBMITTED state. Its trusted server-only engine option is supplied only after source/consent/routing validation; neither the ordinary engine command nor client-supplied options can activate team submission. Beside the submission, one immutable first-review handoff stores the submitted version/digest, frozen confirmed invitation record, source versions, normalization reference and selected route. The existing resolver selects subject faculty for same-batch academic work, the scoped coordinator for explicit faculty unavailability/unassigned faculty, and Research Coordinator for multidisciplinary research with consultation required. A separate configured final authority is retained. This records responsibility; it does not approve, appoint a mentor, record consultation completion or authorize execution.
+
+Fresh trusted sources are loaded twice; source/authority/workspace fingerprints must match. The existing workspace revision compare-and-swap and ledger insert commit atomically. Audit metadata identifies the intake/submitted version, actor, institution, state and commit without copying proposal content, names, private reasons, membership/source bindings or full route data. Duplicate/fresh-revision resubmission is rejected; stale revision, changed sources, missing consent, conflicting/self-review assignments and failed audit writes cannot produce a handoff. The payload retains the existing size limit.
+
+## Preserving adjacent workflows and privacy
+
+The small shared `prototype/intake-team-submission.js` extension is loaded by browser and generated engine. It protects opted-in institutional team cases from ordinary demo submission/coordinator review, hides them from unassigned legacy staff scopes, removes ordinary triage actions/notices and denies editing after the handoff. Legacy individual intakes use the existing functions unchanged. Historical withdrawal by the student remains available and retains the frozen submission; the projected team status then indicates SOURCE_CHANGED, not active submitted work.
+
+The normal owner workspace view receives only a minimal handoff status/reference, submitted version and route kind. Raw frozen review/assignment/source metadata, invitation records and pilot descriptors are omitted. A future scoped reviewer queue must use fresh institutional authority rather than broad demo visibility. Browser/controller access is not authority. No new live UI submit control is enabled; the existing team runtime remains disabled.
+
+## Verification
+
+`check-intake-team-first-review.mjs` uses actual engine-created intakes, the real trusted-loader factory, dedicated dispatcher, invitation creation/own acceptance and in-memory SQLite. It covers academic faculty routing, unavailable-faculty fallback, multidisciplinary Research routing, exact immutable submission and frozen-team preservation, minimal private projections, no automatic activity/mentor/approval, ordinary submission/edit/triage bypass rejection, no wrong coordinator notice, missing consent, wrong actor, client extra fields and confirmation, source change during double load, audit failure rollback/retry, duplicate rejection, a concurrent winning commit and retained student-withdrawal history. A first privacy assertion matched the public SUBJECT_FACULTY route label when checking for the internal FACULTY person ID; the assertion now checks the actual person-ID field. Runtime behavior was not changed to satisfy that false positive.
+
+`check-team-command-route.mjs` additionally verifies the actual HTTP route rejects the new command with disabled 503 and no stored change in current production composition. Full local results: `AUTOMATED_BASELINE_STAGE168.json`. TypeScript and production build are checked separately. Automated VM/SQLite checks are not browser or institutional acceptance; those remain **Not run**.
+
+## Remaining step
+
+Next: implement the read-only, freshly authorized reviewer queue/status projection for these frozen submissions. Then connect version-bound review/return decisions, mentor/consultation workflow and controlled team execution handoff. Source changes must be reevaluated before exposing actionable review status or accepting any decision; the stored route snapshot alone grants no current access. Post-submission invitation/member changes require a controlled future return/revision path and fresh consent, not direct edits. Live provider/identity/roster/assignment provisioning, recipient post-submission status, production notification transport and institutional acceptance remain pending. The v188 readiness report remains a historical pre-implementation checkpoint.
+
+Semester/year progression and full demonstration data remain parked. Existing MIS/LMS ownership boundaries and broader SRS gaps are unchanged.

@@ -1,0 +1,287 @@
+{
+  "kind": "KCC360_TASK_WORKFLOW_REGRESSION_V1",
+  "sourceCommit": "51a3edee5b8dab87c702f9f6c2cae72a2d5720e1",
+  "startedAt": "2026-10-23T08:24:46.575Z",
+  "scope": "Isolated developer checks with fictional fixtures; no browser or institutional acceptance execution",
+  "results": [
+    {
+      "id": "trusted-loader",
+      "command": [
+        "node",
+        "check-intake-trusted-loader.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 68
+    },
+    {
+      "id": "command-route",
+      "command": [
+        "node",
+        "check-team-command-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 431
+    },
+    {
+      "id": "assignment-save",
+      "command": [
+        "node",
+        "check-intake-team-task-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6857
+    },
+    {
+      "id": "assignment-client",
+      "command": [
+        "node",
+        "check-intake-team-task-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 76
+    },
+    {
+      "id": "progress-save",
+      "command": [
+        "node",
+        "check-intake-team-task-progress-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7595
+    },
+    {
+      "id": "progress-client",
+      "command": [
+        "node",
+        "check-intake-team-task-progress-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6787
+    },
+    {
+      "id": "submission-save",
+      "command": [
+        "node",
+        "check-intake-team-task-submission-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7681
+    },
+    {
+      "id": "evidence-client",
+      "command": [
+        "node",
+        "check-intake-team-task-evidence-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6808
+    },
+    {
+      "id": "evidence-verification-save",
+      "command": [
+        "node",
+        "check-intake-team-evidence-verification-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 8216
+    },
+    {
+      "id": "evidence-verification-client",
+      "command": [
+        "node",
+        "check-intake-team-evidence-verification-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7503
+    },
+    {
+      "id": "review-save",
+      "command": [
+        "node",
+        "check-intake-team-task-review-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 8864
+    },
+    {
+      "id": "review-client",
+      "command": [
+        "node",
+        "check-intake-team-task-review-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7828
+    },
+    {
+      "id": "revision-save",
+      "command": [
+        "node",
+        "check-intake-team-task-revision-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 10327
+    },
+    {
+      "id": "revision-client",
+      "command": [
+        "node",
+        "check-intake-team-task-revision-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 10085
+    },
+    {
+      "id": "rereview-save",
+      "command": [
+        "node",
+        "check-intake-team-task-rereview-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 13316
+    },
+    {
+      "id": "rereview-client",
+      "command": [
+        "node",
+        "check-intake-team-task-rereview-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 11043
+    },
+    {
+      "id": "multiple-cycles",
+      "command": [
+        "node",
+        "check-intake-team-task-cycles.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 19107
+    },
+    {
+      "id": "history",
+      "command": [
+        "node",
+        "check-intake-team-task-history.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 82
+    },
+    {
+      "id": "dialog-naming",
+      "command": [
+        "node",
+        "check-dialog-accessibility.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 84
+    },
+    {
+      "id": "mis-mock-isolation",
+      "command": [
+        "node",
+        "check-mis-adapter.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 94
+    },
+    {
+      "id": "server-regression",
+      "command": [
+        "node",
+        "check-server.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 806
+    },
+    {
+      "id": "academic-progression-regression",
+      "command": [
+        "node",
+        "check-academic-progression.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 669
+    },
+    {
+      "id": "layout-fixture",
+      "command": [
+        "node",
+        "scripts/task-layout-acceptance-server.mjs",
+        "--self-test"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 397
+    },
+    {
+      "id": "workflow-fixture",
+      "command": [
+        "node",
+        "scripts/team-acceptance-server.mjs",
+        "--self-test"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6976
+    }
+  ],
+  "finishedAt": "2026-10-23T08:27:08.279Z",
+  "passed": 24,
+  "failed": 0,
+  "externalDependencies": [
+    "Official MIS schema, access and sandbox for real roster/contact/status synchronization",
+    "Official SSO specification, trust registration and institutional identity activation",
+    "Approved Google sender and real mail/reconciliation configuration"
+  ],
+  "acceptanceNotExecuted": [
+    "Browser checks (prior recorded browser evidence remains separate)",
+    "Full application accessibility, screen reader and real touch-device acceptance",
+    "Official MIS/credit assertions and institutional acceptance"
+  ]
+}

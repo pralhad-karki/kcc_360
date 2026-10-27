@@ -1,0 +1,540 @@
+{
+  "kind": "KCC360_TASK_WORKFLOW_REGRESSION_V1",
+  "sourceCommit": "5336cad8c9d2e36ca599e19c35cb3a8ae9f952a5",
+  "startedAt": "2026-10-25T15:50:49.729Z",
+  "scope": "Isolated developer checks with fictional fixtures; no browser or institutional acceptance execution",
+  "results": [
+    {
+      "id": "department-task-csv",
+      "command": [
+        "node",
+        "check-department-task-csv.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1192
+    },
+    {
+      "id": "department-task-csv-save",
+      "command": [
+        "node",
+        "check-department-task-csv-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1751
+    },
+    {
+      "id": "department-task-csv-client",
+      "command": [
+        "node",
+        "check-department-task-csv-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 82
+    },
+    {
+      "id": "club-recruitment-plan",
+      "command": [
+        "node",
+        "check-club-recruitment-plan.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 381
+    },
+    {
+      "id": "club-volunteer-applications",
+      "command": [
+        "node",
+        "check-club-volunteer-applications.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 472
+    },
+    {
+      "id": "club-volunteer-selection",
+      "command": [
+        "node",
+        "check-club-volunteer-selection.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 484
+    },
+    {
+      "id": "club-volunteer-handoff",
+      "command": [
+        "node",
+        "check-club-volunteer-handoff.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 493
+    },
+    {
+      "id": "club-volunteer-domain-tasks",
+      "command": [
+        "node",
+        "check-club-volunteer-domain-tasks.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 796
+    },
+    {
+      "id": "club-volunteer-achievement-chain",
+      "command": [
+        "node",
+        "check-club-volunteer-achievement-chain.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 724
+    },
+    {
+      "id": "plan-approval-policy",
+      "command": [
+        "node",
+        "check-plan-approval-policy.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 82
+    },
+    {
+      "id": "plan-approval-source",
+      "command": [
+        "node",
+        "check-plan-approval-source.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 118
+    },
+    {
+      "id": "plan-approval-persistence",
+      "command": [
+        "node",
+        "check-plan-approval-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 352
+    },
+    {
+      "id": "plan-amendment-integration",
+      "command": [
+        "node",
+        "check-plan-amendment.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1213
+    },
+    {
+      "id": "plan-approval-client",
+      "command": [
+        "node",
+        "check-plan-approval-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 73
+    },
+    {
+      "id": "plan-approval-route",
+      "command": [
+        "node",
+        "check-plan-approval-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 441
+    },
+    {
+      "id": "trusted-loader",
+      "command": [
+        "node",
+        "check-intake-trusted-loader.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 88
+    },
+    {
+      "id": "command-route",
+      "command": [
+        "node",
+        "check-team-command-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 448
+    },
+    {
+      "id": "assignment-save",
+      "command": [
+        "node",
+        "check-intake-team-task-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6511
+    },
+    {
+      "id": "assignment-client",
+      "command": [
+        "node",
+        "check-intake-team-task-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 80
+    },
+    {
+      "id": "progress-save",
+      "command": [
+        "node",
+        "check-intake-team-task-progress-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7002
+    },
+    {
+      "id": "progress-client",
+      "command": [
+        "node",
+        "check-intake-team-task-progress-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6567
+    },
+    {
+      "id": "submission-save",
+      "command": [
+        "node",
+        "check-intake-team-task-submission-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7020
+    },
+    {
+      "id": "evidence-client",
+      "command": [
+        "node",
+        "check-intake-team-task-evidence-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6368
+    },
+    {
+      "id": "evidence-verification-save",
+      "command": [
+        "node",
+        "check-intake-team-evidence-verification-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 8419
+    },
+    {
+      "id": "evidence-verification-client",
+      "command": [
+        "node",
+        "check-intake-team-evidence-verification-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7197
+    },
+    {
+      "id": "review-save",
+      "command": [
+        "node",
+        "check-intake-team-task-review-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 8262
+    },
+    {
+      "id": "review-client",
+      "command": [
+        "node",
+        "check-intake-team-task-review-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7687
+    },
+    {
+      "id": "revision-save",
+      "command": [
+        "node",
+        "check-intake-team-task-revision-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 10425
+    },
+    {
+      "id": "revision-client",
+      "command": [
+        "node",
+        "check-intake-team-task-revision-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 8869
+    },
+    {
+      "id": "rereview-save",
+      "command": [
+        "node",
+        "check-intake-team-task-rereview-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 11816
+    },
+    {
+      "id": "rereview-client",
+      "command": [
+        "node",
+        "check-intake-team-task-rereview-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 10004
+    },
+    {
+      "id": "multiple-cycles",
+      "command": [
+        "node",
+        "check-intake-team-task-cycles.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 16190
+    },
+    {
+      "id": "history",
+      "command": [
+        "node",
+        "check-intake-team-task-history.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 63
+    },
+    {
+      "id": "dialog-naming",
+      "command": [
+        "node",
+        "check-dialog-accessibility.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 58
+    },
+    {
+      "id": "mis-mock-isolation",
+      "command": [
+        "node",
+        "check-mis-adapter.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 68
+    },
+    {
+      "id": "server-regression",
+      "command": [
+        "node",
+        "check-server.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 681
+    },
+    {
+      "id": "academic-progression-regression",
+      "command": [
+        "node",
+        "check-academic-progression.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 623
+    },
+    {
+      "id": "cohort-preview",
+      "command": [
+        "node",
+        "check-cohort-progression-preview.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 88
+    },
+    {
+      "id": "cohort-route",
+      "command": [
+        "node",
+        "check-cohort-progression-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 553
+    },
+    {
+      "id": "cohort-client",
+      "command": [
+        "node",
+        "check-cohort-progression-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 85
+    },
+    {
+      "id": "cohort-batch-core",
+      "command": [
+        "node",
+        "check-cohort-progression-batch.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 110
+    },
+    {
+      "id": "cohort-batch-storage-route",
+      "command": [
+        "node",
+        "check-cohort-progression-batches-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 768
+    },
+    {
+      "id": "cohort-batch-client",
+      "command": [
+        "node",
+        "check-cohort-progression-batches-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 159
+    },
+    {
+      "id": "cohort-batch-withdrawal",
+      "command": [
+        "node",
+        "check-cohort-progression-withdrawal.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 108
+    },
+    {
+      "id": "cohort-batch-comparison",
+      "command": [
+        "node",
+        "check-cohort-progression-comparison.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 132
+    },
+    {
+      "id": "layout-fixture",
+      "command": [
+        "node",
+        "scripts/task-layout-acceptance-server.mjs",
+        "--self-test"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 452
+    },
+    {
+      "id": "workflow-fixture",
+      "command": [
+        "node",
+        "scripts/team-acceptance-server.mjs",
+        "--self-test"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7299
+    }
+  ],
+  "finishedAt": "2026-10-25T15:53:12.590Z",
+  "passed": 47,
+  "failed": 0,
+  "externalDependencies": [
+    "Official MIS schema, access and sandbox for real roster/contact/status synchronization",
+    "Official SSO specification, trust registration and institutional identity activation",
+    "Approved Google sender and real mail/reconciliation configuration"
+  ],
+  "acceptanceNotExecuted": [
+    "Browser checks (prior recorded browser evidence remains separate)",
+    "Full application accessibility, screen reader and real touch-device acceptance",
+    "Official MIS/credit assertions and institutional acceptance"
+  ]
+}

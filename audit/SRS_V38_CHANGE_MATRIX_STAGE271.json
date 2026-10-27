@@ -1,0 +1,186 @@
+{
+  "baselineVersion": 282,
+  "baselineStage": 270,
+  "baselineCommit": "9ec50da5c4699d21bfc3ac8f8eca4fa8eda252f5",
+  "srsFile": "requirements/KCC360_Master_SRS_v3_8_Workflow_Ecosystem.docx",
+  "sha256": "f772912b4c8c24ea68cb0a1805f890a4e9dd1f18e19ad4ae82ec2c274ef64da2",
+  "inspection": "OOXML text including Annex X and table paragraphs; embedded diagrams not visually verified",
+  "requirements": [
+    {
+      "requirementId": "ECO-001",
+      "existingBehavior": "Annual target issuance, allocation and draft item links exist as disabled server composition; SA unit-plan drafts exist.",
+      "requiredChange": "Add multi-year contribution record and adopt exact target proofs in protected approval; complete applicable academic/semester links.",
+      "modulesConnections": "M30/M09/M03/M31/M28; C169",
+      "dependencies": "Official KPI/version catalogue, department/cycle maps, approved roles.",
+      "status": "partial",
+      "evidence": "STAGE268\u2013270 checks; annual-target*.mjs; unit-plan-guard.mjs"
+    },
+    {
+      "requirementId": "ECO-002",
+      "existingBehavior": "Shared activities exist; task/meeting controls are extensive. No versioned simple/standard/complex requirements selector.",
+      "requiredChange": "Version applicable templates and short forms; conditional tasks/meetings, never omit mandatory safeguards.",
+      "modulesConnections": "M03\u2013M05/M10/M30/M32; C170",
+      "dependencies": "Adopted templates, risks, report/evidence/closure rules.",
+      "status": "missing",
+      "evidence": "prototype/app.js; no current acceptance for template choice."
+    },
+    {
+      "requirementId": "ECO-003",
+      "existingBehavior": "AP001 unit\u2192Finance\u2192Principal policy, protected persistence/source locks; new execution remains off.",
+      "requiredChange": "Consume target proofs; validate complete authorized item scope and readiness, avoid duplicate approvals; incomplete items planning-only.",
+      "modulesConnections": "M30/M03/M09/M10; C153/C169/C170",
+      "dependencies": "Named source/reviewer/identity providers and readiness/execution policy.",
+      "status": "partial",
+      "evidence": "plan-approval-policy/save/runtime; STAGE258/264/267/270; no integrated execution acceptance."
+    },
+    {
+      "requirementId": "ECO-004",
+      "existingBehavior": "Protected root locks; immutable additions/end-date amendment overlays; generic creation shortcuts blocked.",
+      "requiredChange": "Extend material responsibility/capacity/budget changes and operational boundary; propagate authorized version coherently.",
+      "modulesConnections": "M30/M05/M29; Annex M; C170",
+      "dependencies": "Material-change and reassignment policies; execution adapter.",
+      "status": "partial",
+      "evidence": "check-plan-amendment; assertProtectedPlanChanges; STAGE259/264."
+    },
+    {
+      "requirementId": "ECO-005",
+      "existingBehavior": "Versioned task/rubric/evidence mapping and assigned evaluator checks exist in selected paths.",
+      "requiredChange": "Explicit curriculum/institution/discretionary obligations and omission review, communicated assessment/closure baseline.",
+      "modulesConnections": "M03/M09/M14/M15/M30; C169/C171",
+      "dependencies": "Official requirement sources, rubrics, deadlines, evaluator/workload rules.",
+      "status": "partial",
+      "evidence": "check-task-mapping, check-task-assessment; no whole obligation workflow."
+    },
+    {
+      "requirementId": "ECO-006",
+      "existingBehavior": "Class task CSV/manual routes; club positions/applications/selection/handoff; accepted-team services exist. Demo intake triage still coordinator-led.",
+      "requiredChange": "Correct subject-teacher/fallback and Academic\u2192Research forwarding on same proposal; join full approvals and supporting commitments.",
+      "modulesConnections": "M03/M04/M09/M10/M31/M32; C159/C170",
+      "dependencies": "Real roster/subject assignment, mentor and review role providers.",
+      "status": "partial",
+      "evidence": "STAGE260; club recruitment checks; intake-first-review and trusted team services; INTEGRATED_BROWSER_STAGE253 incomplete research/club journeys."
+    },
+    {
+      "requirementId": "ECO-007",
+      "existingBehavior": "Individual reflections and final human evaluations plus publication workflow exist; no canonical versioned learning-reflection state machine; AI separate pilot only.",
+      "requiredChange": "DRAFT/SUBMITTED/HUMAN_REVIEW_PENDING/VERIFIED/REVISION_REQUIRED mapping with human proof, AI-failure independence; separate evaluation levels and canonical completion.",
+      "modulesConnections": "M14/M15/M18/M26\u201328; C171; Annex W",
+      "dependencies": "Adopted rubrics, evaluator/AI configuration, completion rules.",
+      "status": "partial",
+      "evidence": "prototype/app.js submitReflection and evaluation; check-assessment/reflection*. No AT-ECO05 run."
+    },
+    {
+      "requirementId": "ECO-008",
+      "existingBehavior": "Workload calculation and assignment checks, activity schedule checks exist in isolated/scoped services.",
+      "requiredChange": "Shared resource reservation and live conflict resolution with missing-source visibility and exact approved baseline.",
+      "modulesConnections": "M03/M05/M14/M29/M30; C170",
+      "dependencies": "Approved workload thresholds, resource registry, coordinator scope.",
+      "status": "partial",
+      "evidence": "workload-policy-pilot.mjs; check-workload-policy-*; no integrated reservations."
+    },
+    {
+      "requirementId": "ECO-009",
+      "existingBehavior": "Role summaries, SA planning/club calendar/internship aggregate, private monitoring pilot exist.",
+      "requiredChange": "Connected quarterly/annual/semester submission and review; effective-dated reassignment, reminders/escalation, all dashboard measures.",
+      "modulesConnections": "M13/M28/M30/M35/M20/M22/M29; C172",
+      "dependencies": "Review calendar, role/scope/deadlines and notification providers.",
+      "status": "partial",
+      "evidence": "STAGE265\u2013267; monitoring-review/assignment/save pilots; default empty assignments."
+    },
+    {
+      "requirementId": "ECO-010",
+      "existingBehavior": "Independent corrective-action closure pilots and source/evidence checks exist.",
+      "requiredChange": "Canonical finding/disposition plus IMPLEMENTED_PENDING_VERIFICATION cycle, independent effectiveness and next-plan links.",
+      "modulesConnections": "M13/M28/M30/M35/M05/M20/M22; C172",
+      "dependencies": "Finding/action policy, reviewers, risk acceptance/mandatory obligations.",
+      "status": "partial",
+      "evidence": "club-action-closure-pilot; monitoring-review-pilot; not full live quarterly cycle."
+    },
+    {
+      "requirementId": "ECO-011",
+      "existingBehavior": "Scoped reports/portfolios exist; source histories retained. No frozen annual cut-off/carry-forward aggregate workflow.",
+      "requiredChange": "Issued annual snapshots and late-result revisions; approved remaining-work transfer without duplicate outcome counts; optional impact follow-up.",
+      "modulesConnections": "M13/M18/M26\u201330/M35; C172",
+      "dependencies": "Metric definitions, reporting cutoff, carry-forward authority and policy.",
+      "status": "missing",
+      "evidence": "prototype/reports.js; no AT-ECO07 end-to-end evidence."
+    },
+    {
+      "requirementId": "ECO-012",
+      "existingBehavior": "Independent individual appeal and rubric/mapping tests exist in owner-demo path.",
+      "requiredChange": "Formal institution-scoped deadlines/moderation and all dependent portfolio/certificate/analytics reconciliation.",
+      "modulesConnections": "M14/M15/M18/M26\u201328/M29; C171",
+      "dependencies": "Appeal roles/deadlines and moderation policy.",
+      "status": "partial",
+      "evidence": "prototype/appeals.js; check-appeals; no AT-ECO05 end-to-end acceptance."
+    },
+    {
+      "requirementId": "MIS/PRG boundary",
+      "existingBehavior": "Official CSV/XLSX staging/import student/structure/enrollment backend; local-vs-MIS reconciliation projector; mock cohort operation separate.",
+      "requiredChange": "Faculty/subject exports and official cohort operation/adapters; activate only with real mappings. No SSO invented.",
+      "modulesConnections": "M01/M02/M09/M29/M30; C158\u2013161/X10",
+      "dependencies": "Actual export columns/stable IDs, authority/storage/retention, official identity contract.",
+      "status": "partial",
+      "evidence": "STAGE261\u2013263; check-mis-*; cohort tests fictional, not official progression acceptance."
+    },
+    {
+      "requirementId": "Upload/session continuity",
+      "existingBehavior": "Historical Stage254 integrated compiled Worker browser upload/logout/login/access denials with native local D1/R2 retained.",
+      "requiredChange": "Retest current build and retain new native evidence; no institutional-login claim.",
+      "modulesConnections": "Framework iframe /api/session /api/workspace /api/files",
+      "dependencies": "Local fictional edge identity only; native Wrangler availability.",
+      "status": "implemented (historical); current retest pending",
+      "evidence": "WORKER_UPLOAD_CHECKPOINT_STAGE254.md; STAGE254_NATIVE_WORKER_EVIDENCE.json; current run pending."
+    }
+  ],
+  "acceptanceJourneys": [
+    {
+      "id": "AT-ECO01",
+      "status": "NOT RUN \u2014 blocked",
+      "reason": "Missing multi-year hierarchy, activated exact execution authorization and connected review/next-cycle flow."
+    },
+    {
+      "id": "AT-ECO02",
+      "status": "NOT RUN \u2014 blocked",
+      "reason": "Live identity/roster/subject routes unavailable; demo coordinator triage is not canonical academic/research routing."
+    },
+    {
+      "id": "AT-ECO03",
+      "status": "NOT RUN \u2014 blocked",
+      "reason": "Target proof adoption and execution adapters incomplete; clubs/SA calendar only partial, Principal propagation/report/closure not complete."
+    },
+    {
+      "id": "AT-ECO04",
+      "status": "NOT RUN \u2014 blocked",
+      "reason": "Shared reservation/conflict resolution and complete joint-event amendment/metric path missing."
+    },
+    {
+      "id": "AT-ECO05",
+      "status": "NOT RUN \u2014 blocked",
+      "reason": "Canonical reflection/AI-failure path and full appeal reconciliation missing."
+    },
+    {
+      "id": "AT-ECO06",
+      "status": "NOT RUN \u2014 blocked",
+      "reason": "Finding/effectiveness pilots are not connected institutional quarterly workflow/reminders."
+    },
+    {
+      "id": "AT-ECO07",
+      "status": "NOT RUN \u2014 blocked",
+      "reason": "Frozen annual report revision/carry-forward missing."
+    },
+    {
+      "id": "AT-ECO08",
+      "status": "NOT RUN \u2014 blocked",
+      "reason": "Proportional templates and required complex safeguards path incomplete."
+    }
+  ],
+  "stage271Result": {
+    "regression": "66/66 passed",
+    "typescript": "passed",
+    "nativeBrowser": "passed: upload, refresh, logout 401, fresh-login download 200, scoped denial 403; native local D1/R2; fictional session",
+    "wholeJourneys": "AT-ECO01\u2013AT-ECO08 NOT RUN / blocked",
+    "implementation": "Opt-in exact target proof approval snapshot with atomic source revision fences; disabled institutional providers; target-linked amendment rebase pending",
+    "next": "Versioned target-proof amendment rebase"
+  }
+}

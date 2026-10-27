@@ -1,0 +1,21 @@
+# Guarded invitation command connection — Stage 136
+
+2026-10-19. Existing workspace POST endpoint now recognizes four explicit invitation command names through a separate guarded dispatcher. The production runtime remains disabled with no trusted source loader installed. No live invitations, notifications, role grants, intakes or memberships have been changed.
+
+Commands: prepareIntakeTeamInvitations, reviseIntakeTeamInvitations, respondIntakeTeamInvitation and readOwnIntakeTeamInvitation. The ordinary execute service, engine command allowlist, SQL schema, existing command semantics and workspace GET are unchanged. A narrowly normalized source guard permits only the reviewed route import/dispatch addition and still compares all remaining route text with HEAD.
+
+Existing POST guards remain in the same order: same-origin/content type, authenticated owner, request size, JSON parsing; the invitation action additionally reloads the selected demo account and workspace revision before dispatch. Disabled configuration returns HTTP 503. A client cannot enable the runtime, provide identity/authority/source snapshots, accept for another person or change the target by adding form fields. There is no new endpoint or public data path.
+
+Configured dispatcher tests use only explicit server-owned dependencies: database, source loader and configuration. For every fresh load the authenticated subject, current actor ID and resolved stable-person mapping must match. The normalized invitation save then checks approved/current sources, exact field allowlists and workspace/team revisions and atomically stores invitation/audit changes. Read responses use the own-invitation projection and minimal source notices; neither raw workspace nor roster/grants/private intake content is returned. Notices are source contracts in the response, not persisted or delivered notifications. Error responses minimize source diagnostics.
+
+The actual runtime deliberately supplies no source loader and keeps enabled:false. Enabling it requires an installed authoritative roster/identity/master/subject/approval source loader and the existing session-to-person mapping, not merely flipping a flag or accepting client data. Fixed demo accounts are still simulation contexts, not institutional identities. No new UI controls or intake visibility grants are introduced here; the standalone fictional walkthrough remains available separately.
+
+## Evidence
+
+check-team-command-route.mjs executes the actual transpiled HTTP route and action against the existing service/SQLite harness. It proves owner/same-origin/account/revision guards, disabled 503, failed client enablement, no stored change and unchanged GET. check-team-command-bridge.mjs runs the configured dispatcher with actual normalization, invitation helpers and SQLite create/read/respond, checks own-only notices, and rejects injected fields/actor/subject/stale writes. Existing rollback/race and read/privacy suites retain their earlier coverage. The broader baseline and TypeScript are run before publication. These are automated fixtures, not real browser/institutional/MIS acceptance.
+
+Next: the smallest guarded UI/controller integration must recognize the dedicated INTAKE_TEAM_COMMAND response shape, preserve the main workspace snapshot, use recipient-scoped views, and remain hidden/disabled until runtime source capability is available. Do not feed the minimal invitation result into the generic full-workspace replacement path. Club-first event recruitment remains pending and must initially notify only active general members of the organizing club. Semester/year progression and full demonstration data remain deferred.
+
+Final Stage 136 baseline: 119/119 root check scripts passed in 70.879 seconds; TypeScript and diff validation passed. The initial TypeScript options-inference error was corrected with explicit bridge parameter types. Per-script regression evidence is in AUTOMATED_BASELINE_STAGE136.json. Browser/institutional acceptance remains Not run.
+
+Build compatibility correction: renamed the local command assertion helper to avoid CommonJS import detection. Both command suites and TypeScript were rechecked after this naming-only correction.

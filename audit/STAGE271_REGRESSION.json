@@ -1,0 +1,749 @@
+{
+  "kind": "KCC360_TASK_WORKFLOW_REGRESSION_V1",
+  "sourceCommit": "9ec50da5c4699d21bfc3ac8f8eca4fa8eda252f5",
+  "startedAt": "2026-10-26T07:50:50.789Z",
+  "scope": "Isolated developer checks with fictional fixtures; no browser or institutional acceptance execution",
+  "results": [
+    {
+      "id": "plan-target-proof",
+      "command": [
+        "node",
+        "check-plan-target-proof.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 541
+    },
+    {
+      "id": "annual-target-plan-binding",
+      "command": [
+        "node",
+        "check-annual-target-plan-binding.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 230
+    },
+    {
+      "id": "annual-target-allocation",
+      "command": [
+        "node",
+        "check-annual-target-allocation.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 129
+    },
+    {
+      "id": "annual-targets",
+      "command": [
+        "node",
+        "check-annual-targets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 106
+    },
+    {
+      "id": "approved-club-calendar",
+      "command": [
+        "node",
+        "check-approved-club-calendar.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 870
+    },
+    {
+      "id": "student-affairs-internship-summary",
+      "command": [
+        "node",
+        "check-student-affairs-internship-summary.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1612
+    },
+    {
+      "id": "student-affairs-planning",
+      "command": [
+        "node",
+        "check-student-affairs-planning.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1251
+    },
+    {
+      "id": "student-affairs-planning-save",
+      "command": [
+        "node",
+        "check-student-affairs-planning-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1914
+    },
+    {
+      "id": "student-affairs-planning-client",
+      "command": [
+        "node",
+        "check-student-affairs-planning-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1143
+    },
+    {
+      "id": "club-plan-governance",
+      "command": [
+        "node",
+        "check-club-plan-governance.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 781
+    },
+    {
+      "id": "club-plan-governance-save",
+      "command": [
+        "node",
+        "check-club-plan-governance-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1328
+    },
+    {
+      "id": "club-plan-governance-client",
+      "command": [
+        "node",
+        "check-club-plan-governance-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 816
+    },
+    {
+      "id": "club-evaluation",
+      "command": [
+        "node",
+        "check-club-evaluation.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 270
+    },
+    {
+      "id": "student-affairs-reports",
+      "command": [
+        "node",
+        "check-reports.cjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 222
+    },
+    {
+      "id": "monitoring-privacy",
+      "command": [
+        "node",
+        "check-monitoring-projection.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 334
+    },
+    {
+      "id": "mis-academic-import",
+      "command": [
+        "node",
+        "check-mis-academic-import.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 228
+    },
+    {
+      "id": "mis-upload-route",
+      "command": [
+        "node",
+        "check-mis-upload-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 417
+    },
+    {
+      "id": "mis-upload-staging",
+      "command": [
+        "node",
+        "check-mis-upload-staging.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 317
+    },
+    {
+      "id": "mis-manual-students",
+      "command": [
+        "node",
+        "check-mis-manual-import.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 122
+    },
+    {
+      "id": "department-task-csv",
+      "command": [
+        "node",
+        "check-department-task-csv.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1688
+    },
+    {
+      "id": "department-task-csv-save",
+      "command": [
+        "node",
+        "check-department-task-csv-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1979
+    },
+    {
+      "id": "department-task-csv-client",
+      "command": [
+        "node",
+        "check-department-task-csv-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 81
+    },
+    {
+      "id": "club-recruitment-plan",
+      "command": [
+        "node",
+        "check-club-recruitment-plan.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 385
+    },
+    {
+      "id": "club-volunteer-applications",
+      "command": [
+        "node",
+        "check-club-volunteer-applications.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 501
+    },
+    {
+      "id": "club-volunteer-selection",
+      "command": [
+        "node",
+        "check-club-volunteer-selection.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 446
+    },
+    {
+      "id": "club-volunteer-handoff",
+      "command": [
+        "node",
+        "check-club-volunteer-handoff.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 434
+    },
+    {
+      "id": "club-volunteer-domain-tasks",
+      "command": [
+        "node",
+        "check-club-volunteer-domain-tasks.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 855
+    },
+    {
+      "id": "club-volunteer-achievement-chain",
+      "command": [
+        "node",
+        "check-club-volunteer-achievement-chain.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 649
+    },
+    {
+      "id": "plan-approval-policy",
+      "command": [
+        "node",
+        "check-plan-approval-policy.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 88
+    },
+    {
+      "id": "plan-approval-source",
+      "command": [
+        "node",
+        "check-plan-approval-source.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 115
+    },
+    {
+      "id": "plan-approval-persistence",
+      "command": [
+        "node",
+        "check-plan-approval-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 393
+    },
+    {
+      "id": "plan-amendment-integration",
+      "command": [
+        "node",
+        "check-plan-amendment.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1354
+    },
+    {
+      "id": "plan-approval-client",
+      "command": [
+        "node",
+        "check-plan-approval-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 82
+    },
+    {
+      "id": "plan-approval-route",
+      "command": [
+        "node",
+        "check-plan-approval-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 413
+    },
+    {
+      "id": "trusted-loader",
+      "command": [
+        "node",
+        "check-intake-trusted-loader.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 85
+    },
+    {
+      "id": "command-route",
+      "command": [
+        "node",
+        "check-team-command-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 529
+    },
+    {
+      "id": "assignment-save",
+      "command": [
+        "node",
+        "check-intake-team-task-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6780
+    },
+    {
+      "id": "assignment-client",
+      "command": [
+        "node",
+        "check-intake-team-task-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 66
+    },
+    {
+      "id": "progress-save",
+      "command": [
+        "node",
+        "check-intake-team-task-progress-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7315
+    },
+    {
+      "id": "progress-client",
+      "command": [
+        "node",
+        "check-intake-team-task-progress-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6565
+    },
+    {
+      "id": "submission-save",
+      "command": [
+        "node",
+        "check-intake-team-task-submission-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 8315
+    },
+    {
+      "id": "evidence-client",
+      "command": [
+        "node",
+        "check-intake-team-task-evidence-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7156
+    },
+    {
+      "id": "evidence-verification-save",
+      "command": [
+        "node",
+        "check-intake-team-evidence-verification-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 9153
+    },
+    {
+      "id": "evidence-verification-client",
+      "command": [
+        "node",
+        "check-intake-team-evidence-verification-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 8181
+    },
+    {
+      "id": "review-save",
+      "command": [
+        "node",
+        "check-intake-team-task-review-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 9357
+    },
+    {
+      "id": "review-client",
+      "command": [
+        "node",
+        "check-intake-team-task-review-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7897
+    },
+    {
+      "id": "revision-save",
+      "command": [
+        "node",
+        "check-intake-team-task-revision-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 10254
+    },
+    {
+      "id": "revision-client",
+      "command": [
+        "node",
+        "check-intake-team-task-revision-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 9878
+    },
+    {
+      "id": "rereview-save",
+      "command": [
+        "node",
+        "check-intake-team-task-rereview-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 12014
+    },
+    {
+      "id": "rereview-client",
+      "command": [
+        "node",
+        "check-intake-team-task-rereview-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 9611
+    },
+    {
+      "id": "multiple-cycles",
+      "command": [
+        "node",
+        "check-intake-team-task-cycles.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 16596
+    },
+    {
+      "id": "history",
+      "command": [
+        "node",
+        "check-intake-team-task-history.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 63
+    },
+    {
+      "id": "dialog-naming",
+      "command": [
+        "node",
+        "check-dialog-accessibility.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 66
+    },
+    {
+      "id": "mis-mock-isolation",
+      "command": [
+        "node",
+        "check-mis-adapter.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 70
+    },
+    {
+      "id": "server-regression",
+      "command": [
+        "node",
+        "check-server.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 632
+    },
+    {
+      "id": "academic-progression-regression",
+      "command": [
+        "node",
+        "check-academic-progression.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 586
+    },
+    {
+      "id": "cohort-preview",
+      "command": [
+        "node",
+        "check-cohort-progression-preview.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 72
+    },
+    {
+      "id": "cohort-route",
+      "command": [
+        "node",
+        "check-cohort-progression-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 561
+    },
+    {
+      "id": "cohort-client",
+      "command": [
+        "node",
+        "check-cohort-progression-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 86
+    },
+    {
+      "id": "cohort-batch-core",
+      "command": [
+        "node",
+        "check-cohort-progression-batch.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 96
+    },
+    {
+      "id": "cohort-batch-storage-route",
+      "command": [
+        "node",
+        "check-cohort-progression-batches-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 785
+    },
+    {
+      "id": "cohort-batch-client",
+      "command": [
+        "node",
+        "check-cohort-progression-batches-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 117
+    },
+    {
+      "id": "cohort-batch-withdrawal",
+      "command": [
+        "node",
+        "check-cohort-progression-withdrawal.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 94
+    },
+    {
+      "id": "cohort-batch-comparison",
+      "command": [
+        "node",
+        "check-cohort-progression-comparison.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 104
+    },
+    {
+      "id": "layout-fixture",
+      "command": [
+        "node",
+        "scripts/task-layout-acceptance-server.mjs",
+        "--self-test"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 403
+    },
+    {
+      "id": "workflow-fixture",
+      "command": [
+        "node",
+        "scripts/team-acceptance-server.mjs",
+        "--self-test"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6933
+    }
+  ],
+  "finishedAt": "2026-10-26T07:53:33.318Z",
+  "passed": 66,
+  "failed": 0,
+  "externalDependencies": [
+    "Official MIS schema, access and sandbox for real roster/contact/status synchronization",
+    "Official SSO specification, trust registration and institutional identity activation",
+    "Approved Google sender and real mail/reconciliation configuration"
+  ],
+  "acceptanceNotExecuted": [
+    "Browser checks (prior recorded browser evidence remains separate)",
+    "Full application accessibility, screen reader and real touch-device acceptance",
+    "Official MIS/credit assertions and institutional acceptance"
+  ]
+}

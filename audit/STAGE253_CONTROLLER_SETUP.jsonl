@@ -1,0 +1,9 @@
+{"time":"2026-10-25T12:38:34.930Z","phase":"controller-fixture-setup","actor":"s1","command":"saveActivityIntake","status":200,"revisionBefore":0,"revisionAfter":1}
+{"time":"2026-10-25T12:38:34.951Z","phase":"controller-fixture-setup","actor":"s1","command":"submitActivityIntake","status":200,"revisionBefore":1,"revisionAfter":2}
+{"time":"2026-10-25T12:38:34.976Z","phase":"controller-fixture-setup","actor":"c1","command":"reviewActivityIntake","status":200,"revisionBefore":2,"revisionAfter":3}
+{"time":"2026-10-25T12:38:34.992Z","phase":"controller-fixture-setup","actor":"c1","command":"assignIntakeMentor","status":200,"revisionBefore":3,"revisionAfter":4}
+{"time":"2026-10-25T12:38:35.011Z","phase":"controller-fixture-setup","actor":"m1","command":"respondIntakeMentor","status":200,"revisionBefore":4,"revisionAfter":5}
+{"time":"2026-10-25T12:38:35.026Z","phase":"controller-fixture-setup","actor":"s1","command":"submitInternshipPlacement","status":200,"revisionBefore":5,"revisionAfter":6}
+{"time":"2026-10-25T12:38:35.043Z","phase":"controller-fixture-setup","actor":"m1","command":"reviewInternshipPlacement","status":200,"revisionBefore":6,"revisionAfter":7}
+{"time":"2026-10-25T12:38:35.062Z","phase":"controller-fixture-setup","actor":"d1","command":"reviewInternshipPlacement","status":200,"revisionBefore":7,"revisionAfter":8}
+{"time":"2026-10-25T12:38:35.083Z","phase":"controller-fixture-setup","actor":"d1","command":"issueInternshipLetter","status":200,"revisionBefore":8,"revisionAfter":9}

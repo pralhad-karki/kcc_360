@@ -1,0 +1,1 @@
+PASS operator: default disabled; session/role/department checks; forged actor/enablement/consent/publish rejection; prepare/send/independent approval/refresh; private projection; logout/re-login; withdrawal; escaped UI and no publisher action.

@@ -1,0 +1,876 @@
+{
+  "stage": 161,
+  "testedBaseCommit": "12d0f6b6ccba9d0778614ceca011100e2505feee",
+  "candidateIncludesWorkingTreeChanges": true,
+  "total": 144,
+  "passed": 130,
+  "seconds": 45.83,
+  "browserAcceptance": "Not run",
+  "scope": "Local fixtures/model/controller/SQLite only; individual intake draft handoff; institutional team/research activation remains disabled",
+  "results": [
+    {
+      "file": "check-academic-progression.mjs",
+      "exitCode": 0,
+      "seconds": 0.55,
+      "output": "PASS: explicit programme-year mappings, placement, advancement, repeat/hold/resume/correction, import authority, duplicate and replay guards, stale atomic approvals, final-period guard, private profiles, notifications and unchanged learning history.\nPASS: transfers, authority-policy invalidation, malformed CSV rejection, all-role progression page and configuration/import forms.\n"
+    },
+    {
+      "file": "check-activity-changes.mjs",
+      "exitCode": 0,
+      "seconds": 0.332,
+      "output": "PASS: independent activity decisions, pause/resume gates, deadline histories, stale/replay protection, immutable work, permanent cancellation, finance clearance and privacy, protected files and participant notices.\nPASS: approved delivery amendment preserves source plan, conducted-session schedule lock, effective session matching, cancelled-task metric exclusion and all-role change-page rendering.\n"
+    },
+    {
+      "file": "check-activity-intake.mjs",
+      "exitCode": 0,
+      "seconds": 0.415,
+      "output": "PASS: student-owned intake, content/date/alignment validation, role restrictions, immutable submissions, return/resubmit, stale-version checks, corrected routing, withdrawal, private projections and no execution/finance/membership grants.\nPASS: every role intake rendering, student entry point, optional fields, internship classification and routing history.\n"
+    },
+    {
+      "file": "check-activity-website-dashboard.mjs",
+      "exitCode": 0,
+      "seconds": 0.301,
+      "output": "PASS: activity lifecycle tracking for current preparers/scoped reviewers, minimal pure summary, dashboard/module/detail navigation, denied titles and stale links, approval/queue/ack/removal distinctions, grant/source/transfer/withdrawal privacy and escaping.\n"
+    },
+    {
+      "file": "check-activity-website-delivery.mjs",
+      "exitCode": 0,
+      "seconds": 0.428,
+      "output": "PASS: private scoped exact activity outbox, disabled default, shared authenticated receipts/retry/lease protocol, queue versus acknowledgment, stable update identity, simulated monotonic receiver/tombstones, stale/cancelled/withdrawn removal and late publish races; no live transport.\n"
+    },
+    {
+      "file": "check-activity-website-draft.mjs",
+      "exitCode": 0,
+      "seconds": 0.502,
+      "output": "PASS: private lead/current-mentor draft, immutable versions, source/version/context guards, field/date/time/URL validation, protected projection and transfer, incomplete preview warnings, escaping, cancelled/archive read-only history and no publication/academic mutation.\n"
+    },
+    {
+      "file": "check-activity-website-review.mjs",
+      "exitCode": 0,
+      "seconds": 0.599,
+      "output": "PASS: default-denied independent scoped review, exact submitted version, minimized projection, trusted grant scope/expiry/revocation, forged/self/wrong-version/context denial, queues/navigation, approval invalidation, return/new-version retry and immutable history; no live grants or website publication.\n"
+    },
+    {
+      "file": "check-activity-website-submission.mjs",
+      "exitCode": 0,
+      "seconds": 0.524,
+      "output": "PASS: exact private submission, confirmed complete approved-source snapshot, default role denial, version/source/context guards, edit freeze, immutable submit/withdraw history, new-version retry, current mentor transfer recovery, stale/cancelled withdrawal, unspecified time pair and no approval/publication/academic mutation.\n"
+    },
+    {
+      "file": "check-appeals.mjs",
+      "exitCode": 0,
+      "seconds": 0.277,
+      "output": "PASS: student ownership, duplicate and stale guards, independent review, decision reasons, original-rubric revisions, return/reverification, immutable history, idempotence, privacy and certificate supersession/revocation.\n"
+    },
+    {
+      "file": "check-assessment.mjs",
+      "exitCode": 0,
+      "seconds": 0.25,
+      "output": "PASS: criteria/weight validation, independent approval, role-scoped assignment, immutable activity snapshots, blank thresholds, zero/missing/N-A distinctions, weight renormalization, finalized evaluation provenance and explicit certificate-threshold enforcement.\nPASS: half-up/floor/ceil rounding, rounded-threshold comparison, zero scores and all-N/A rejection.\n"
+    },
+    {
+      "file": "check-attendance-delivery-queues.mjs",
+      "exitCode": 0,
+      "seconds": 0.607,
+      "output": "PASS: actual attendance submission/return/verification follow-ups, independent mentor scope, source revocation, delivery stage/version/recipient freshness, stored notice denial, privacy and projected parity.\n"
+    },
+    {
+      "file": "check-audit-command-map.mjs",
+      "exitCode": 1,
+      "seconds": 0.197,
+      "output": "PASS: actual guarded CV create/edit/clear version mapping, content-free audit metadata, legacy reader correlation, no-op/invalid/denied suppression, peer identity isolation, malformed/version/classification/peer mutation rejection, explicit unmapped commands and preserved schema/non-CV writers.\nnode:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at assertDiscussionCommandAdditions (file:///workspace/sites/kcc360-workflow/scripts/assert-discussion-command-additions.mjs:3:52)\n    at file:///workspace/sites/kcc360-workflow/check-audit-command-map.mjs:21:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-audit-record-format.mjs",
+      "exitCode": 1,
+      "seconds": 0.099,
+      "output": "PASS: strict versioned metadata codec, legacy/null references, unrelated pilot JSON withholding, unknown-version/malformed denial, identity/workspace/action/time/revision correlation, explicit unmapped/unknown institution, controlled state/reason references, no narrative fields and preserved schema/non-CV saves.\nnode:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at assertDiscussionCommandAdditions (file:///workspace/sites/kcc360-workflow/scripts/assert-discussion-command-additions.mjs:3:52)\n    at file:///workspace/sites/kcc360-workflow/check-audit-record-format.mjs:19:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-audit-repairs.mjs",
+      "exitCode": 0,
+      "seconds": 0.452,
+      "output": "PASS: G01\u2013G05 eligibility, independent decisions, immutable proposal versions, stale approval, annual cycles/corrections, zero-obligation finance guards and replay.\n"
+    },
+    {
+      "file": "check-audit-save.mjs",
+      "exitCode": 0,
+      "seconds": 0.621,
+      "output": "PASS: actual service CV atomic metadata save/read binding, no private fields or API metadata leak, create/edit/clear/no-op/denied/stale guards, audit-failure rollback/retry, client metadata rejection/ignoring, concurrent winner preservation, legacy command fallback and mapper-failure no-save. Real in-memory SQLite; no production database touched.\n"
+    },
+    {
+      "file": "check-budget-revisions.mjs",
+      "exitCode": 0,
+      "seconds": 0.418,
+      "output": "PASS: exact paisa/overflow validation, independent review/approval, old-ceiling spending guard, pending-settlement gate, immutable approvals and expenses, release preservation, expenditure-floor recheck, rejection/withdrawal and cleared-budget lock.\nPASS: finance/action UI rendering, current versus original approval exports, revised variance and strict monetary parsing.\n"
+    },
+    {
+      "file": "check-cancellation-preview.mjs",
+      "exitCode": 0,
+      "seconds": 0.415,
+      "output": "PASS: immutable server-captured approval snapshot, own-row/staff projection, Finance denial, source-change freshness, detached history, replay prevention, safe names, unchanged student outcomes/tasks/lead, legacy pending capture and no fabricated legacy snapshots.\nPASS: read-only cancellation previews in request/list/approval, current mapped verification versus legacy self-reports, evidence counts, retained outcomes/review flags, peer-only/staff/finance-denied scope, escaping, deduplication, stale/returned work and unchanged approval/Finance/outcome/task/lead/roster records. No new disposition outcomes assigned.\nPASS: scoped read-only historical follow-up list, own-row privacy, existing outcomes omitted, historical flags retained after later changes, denied roles, escaped names, detail anchors and no invented legacy cases.\n"
+    },
+    {
+      "file": "check-cash-settlement.mjs",
+      "exitCode": 0,
+      "seconds": 0.738,
+      "output": "PASS: independent cash authorization/evidence verification, reservation limits, duplicate references, reviewed-expense reimbursement, refund reconciliation, settlement locks, legacy opening reconciliation and revised-budget commitments.\nPASS: pending-advance settlement gate, rejected-evidence reservation release, all-role UI renders and known/unknown cash reporting.\n"
+    },
+    {
+      "file": "check-certificates.mjs",
+      "exitCode": 0,
+      "seconds": 0.182,
+      "output": "PASS: individual eligibility, duplicate issuance prevention, issuer authorization, reasoned correction, distinct version references, immutable supersession chain, role-scoped verification, revoked-reference permanence and minimal verification fields.\n"
+    },
+    {
+      "file": "check-club-action-assignment.mjs",
+      "exitCode": 0,
+      "seconds": 0.09,
+      "output": "PASS: default-denied trusted club action assignment contract, exact scope/source/revision, independent approval provenance, active stable identities/aliases, expiry/revocation, ambiguity denial, closure-record binding, detached outputs and end-to-end pilot submit/verify/read. No live grants.\n"
+    },
+    {
+      "file": "check-club-action-closure-pilot.mjs",
+      "exitCode": 0,
+      "seconds": 0.068,
+      "output": "PASS: isolated club action submission/return/resubmission/independent verification; exact source/assignment binding, expiry/revocation, revision/replay denial, current scoped evidence, immutable prior versions, detached data and no renewal/source mutation. No live activation.\nPASS: protected pure read projection, owner/reviewer state boundaries, outsider/expired/revoked/changed-source denial, latest-version feedback, stale-evidence flags without historical rewrite, explicit field whitelist and detached responses. No live endpoint or new grants.\n"
+    },
+    {
+      "file": "check-club-action-identity.mjs",
+      "exitCode": 0,
+      "seconds": 0.077,
+      "output": "PASS: synthetic identity-to-closure submit/review/read flow, stable owner aliases, same-person reviewer denial, inactive/unresolved/revoked identities, tenant/issuer/expiry/version checks, outsider denial, session renewal and exact source scope. No live authentication, assignment approval or policy adapter implemented.\n"
+    },
+    {
+      "file": "check-club-action-save-pilot.mjs",
+      "exitCode": 0,
+      "seconds": 0.219,
+      "output": "PASS: isolated SQLite closure save/audit rollback, idempotent retry/conflict, concurrent revision winner, fresh revocation checks, evidence freshness, protected read, minimal receipts/audit and all-role generic projection denial with raw persistence preserved. No live route or records.\n"
+    },
+    {
+      "file": "check-club-closure-sandbox.mjs",
+      "exitCode": 0,
+      "seconds": 0.075,
+      "output": "PASS: isolated club closure sandbox full submit/return/resubmit/verify sequence, scoped latest view, escaped text, stale/revoked simulations, immutable history, reset, delegated events, role/result focus restoration, rejected-form focus preservation and exact pure-helper copy; no API or persistent storage. Browser acceptance not run.\n"
+    },
+    {
+      "file": "check-club-committee-pilot.mjs",
+      "exitCode": 1,
+      "seconds": 0.097,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-club-committee-pilot.mjs:15:190\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-club-evaluation.mjs",
+      "exitCode": 0,
+      "seconds": 0.255,
+      "output": "PASS: ten SRS indicators, relevant verified source checks, unassessed ratings, required corrective action owner/deadline, independent verification, stale evidence, annual gates, private source bindings, revision history and reopening.\nPASS: programme/club means and counts, cancellation-adjusted denominators, safe exports, role rendering and evidence catalogue form.\nPASS: corrective-action summary preserves version/state context, access scope, read-only records, safe text, source anchors and empty state; no completion or renewal decision inferred.\n"
+    },
+    {
+      "file": "check-club-event-enrolment.mjs",
+      "exitCode": 0,
+      "seconds": 0.322,
+      "output": "PASS: creation-only selected/all modes, source binding, role denial, lead-only roster, application/selection without enrolment, confirmed handoff, duplicate/mode freeze, preserved legacy history and no automatic achievements.\n"
+    },
+    {
+      "file": "check-club-imports.mjs",
+      "exitCode": 0,
+      "seconds": 0.423,
+      "output": "PASS: club lead authority, active-member eligibility, row validation, explicit partial import, corrected-row retry, duplicates/conflicts, stale membership, suspension, atomic validation, approval/conversion gates, no budget approval and revision provenance.\nPASS: all-role club rendering, club-specific header/input and preview history.\nPASS: shared CSV file reading, extension/error preservation and stale-modal protection.\n"
+    },
+    {
+      "file": "check-club-recruitment-plan.mjs",
+      "exitCode": 0,
+      "seconds": 0.332,
+      "output": "PASS: shared engine saves versioned organizer-only position drafts, validates capacities/complete unique roles, preserves earlier versions/roster/tasks/notices, denies stale/context/role/source changes and hides drafts from ordinary participants; actual form renders.\n"
+    },
+    {
+      "file": "check-club-recruitment-preview.cjs",
+      "exitCode": 0,
+      "seconds": 0.156,
+      "output": "PASS: actual approved club event audience preview is read-only and organizer-scoped; only organizing-club active general members qualify, no leadership-only/other-club/pending/withdrawn recipients, inconsistent memberships excluded for review, stale/cancelled/suspended source blocked, escaped output and existing event roster unchanged.\n"
+    },
+    {
+      "file": "check-club-volunteer-achievement-chain.mjs",
+      "exitCode": 0,
+      "seconds": 0.58,
+      "output": "PASS club achievement chain: selected roster/domain task, independent review, contribution hours, final reflection/evaluation, portfolio/report agreement, explicit issuance/consent, excluded cancelled/postponed/incomplete-delivery outcomes and preserved history\n"
+    },
+    {
+      "file": "check-club-volunteer-applications.mjs",
+      "exitCode": 0,
+      "seconds": 0.403,
+      "output": "PASS: organizer-only confirmed opening freezes positions; only active unique organizing-club members apply without project visibility/enrolment; invalid/expired/stale/replayed/forged input blocked; own-only application projection, withdrawal/reapplication history and existing roster/tasks preserved.\n"
+    },
+    {
+      "file": "check-club-volunteer-dashboards.mjs",
+      "exitCode": 0,
+      "seconds": 0.878,
+      "output": "PASS dashboard club responsibility queues, all-persona raw/projected parity, self-review exclusion, eligibility attention, lifecycle removal, guarded module/detail navigation, role revocation, pure/private rendering and portfolio-count consistency\n"
+    },
+    {
+      "file": "check-club-volunteer-domain-leads.mjs",
+      "exitCode": 0,
+      "seconds": 0.457,
+      "output": "PASS domain lead appointments: handed-off domain eligibility, owner/mentor scope, version history, revocation, source/participant invalidation, safe projection and no broader task grants\n"
+    },
+    {
+      "file": "check-club-volunteer-domain-tasks.mjs",
+      "exitCode": 0,
+      "seconds": 0.608,
+      "output": "PASS scoped domain delegation: authority, domain roster, stale/replay, private projected form/monitor, revocation, existing progress/submission and independent mentor verification\n"
+    },
+    {
+      "file": "check-club-volunteer-handoff.mjs",
+      "exitCode": 0,
+      "seconds": 0.452,
+      "output": "PASS controlled volunteer roster handoff: authority, full validation, stale/replay, private projection, record preservation, legacy roster and correction lock\n"
+    },
+    {
+      "file": "check-club-volunteer-notifications.mjs",
+      "exitCode": 0,
+      "seconds": 0.433,
+      "output": "PASS: current organizing-club-only opening and applicant-only decision in-app notices; no reminder/escalation/mail expansion, duplicate/read preservation, stale eligibility/expiry/source resolution, corrected-decision supersession, minimal projected recipient visibility and source navigation without event access.\n"
+    },
+    {
+      "file": "check-club-volunteer-selection.mjs",
+      "exitCode": 0,
+      "seconds": 0.417,
+      "output": "PASS: independent current organizer review, recorded selected/not-selected feedback, per-position capacity, revision/replay/source/member/role denials, return-for-review releases capacity with history, own-only feedback and unchanged rosters/tasks.\n"
+    },
+    {
+      "file": "check-clubs.cjs",
+      "exitCode": 0,
+      "seconds": 0.157,
+      "output": "PASS: club authorization, activation prerequisites, membership deduplication, leadership eligibility/appointment, annual-plan review, event idempotency/inheritance, suspension/reactivation, completion sync, all-role rendering.\n"
+    },
+    {
+      "file": "check-continuity.cjs",
+      "exitCode": 0,
+      "seconds": 0.17,
+      "output": "PASS: item arithmetic, self-approval prevention, overspending/evidence guards, separation of finance duties, financial closure gate, annual review, incoming acknowledgment, handover verification, renewal prerequisites, history preservation, role/page renders.\n"
+    },
+    {
+      "file": "check-cv-declarations.mjs",
+      "exitCode": 0,
+      "seconds": 0.234,
+      "output": "PASS: own-student declarations, field limits, empty-section removal, independent versions, staff/peer projection denial and unchanged verified/academic records.\nPASS: escaped declaration editor text, five bounded sections and staff UI guard. Browser interaction not tested.\n"
+    },
+    {
+      "file": "check-delivery.mjs",
+      "exitCode": 0,
+      "seconds": 0.561,
+      "output": "PASS: independent plan approval/history, start gates, schedule-bound session recording, explicit attendance minima, authorized exceptions, distinct seminar outputs, individual group contributions, returned-output rework, final evaluation/verification gates and share invalidation after attendance amendment.\nPASS: generic-share fingerprint compatibility, primary activity classification and all-role delivery/action rendering.\nPASS: teammates see delivery progress while individual contribution/review history stays scoped.\n"
+    },
+    {
+      "file": "check-development.mjs",
+      "exitCode": 0,
+      "seconds": 0.283,
+      "output": "PASS: private mentor plans, student response/version guards, revisions, idempotent activation, academic snapshots, task verification gates, follow-up history, discontinuation, notifications and closed-work guards.\nPASS: all-role development page and action form rendering.\n"
+    },
+    {
+      "file": "check-discussion-audit-map.mjs",
+      "exitCode": 1,
+      "seconds": 0.167,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-discussion-audit-map.mjs:23:162\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-discussion-audit-save.mjs",
+      "exitCode": 0,
+      "seconds": 0.447,
+      "output": "PASS: real SQLite discussion atomic state/audit save, reason binding, mentor reopen, no-op/denied/stale rejection, insert-failure rollback/retry, concurrent winner preservation, client-field exclusion, content-free ledger and invalid mapping no-save.\n"
+    },
+    {
+      "file": "check-evidence-amendments.mjs",
+      "exitCode": 0,
+      "seconds": 0.322,
+      "output": "PASS: evidence amendment authority, content validation, request/withdraw/reject/approve, immutable original files and snapshots, replay, blocked completion/change, replacement verification, stale tasks, corrected resubmission and historical access.\nPASS: historical evidence labels, amendment form, all-role renders and exclusion of superseded contribution hours.\nPASS: superseded workshop output correction and history, reviewed replacement, shared contribution exclusion and amended-source fingerprints.\n"
+    },
+    {
+      "file": "check-external-participants.mjs",
+      "exitCode": 0,
+      "seconds": 0.292,
+      "output": "PASS: external record authority/counts, independent review, duplicate/stale/replay, privacy projection, version history, evidence-bound contribution verification, stale-source exclusion, no accounts/task/certificate access and closed/cancelled guards.\nPASS: all-role participant rendering, teammate summaries and external record form.\nPASS: separate external reporting, safe aggregate exports, cancelled-activity exclusion and unchanged internal roster.\n"
+    },
+    {
+      "file": "check-faculty-dashboard.mjs",
+      "exitCode": 0,
+      "seconds": 0.256,
+      "output": "PASS: faculty/mentor context switching without data or grant changes, owned plan scope, current submitted/returned actions, retained approved basis across revisions, authored proposal privacy, independent approval guards, projected parity, navigation and escaping.\n"
+    },
+    {
+      "file": "check-faculty-responsibilities.mjs",
+      "exitCode": 0,
+      "seconds": 0.16,
+      "output": "PASS: recorded faculty mentor assignments, dedup/student/task counts, filters/search, source labels, no private feedback, paused/completed/resolved handling, no mutations, guarded source drill-down, stale transfer/role denial and all-persona raw/projected parity.\n"
+    },
+    {
+      "file": "check-files.mjs",
+      "exitCode": 0,
+      "seconds": 0.469,
+      "output": "PASS: upload format/size/signature checks, PDF active-content rejection, private object persistence, SHA-256, protected downloads, stale/role/verified-evidence guards, orphan cleanup, record association and server form-field tampering prevention.\n"
+    },
+    {
+      "file": "check-freshness.mjs",
+      "exitCode": 0,
+      "seconds": 0.314,
+      "output": "PASS: Nepal midnight/year/offset handling, date-only preservation, invalid/missing timestamps, immutable load time, failure/conflict persistence, report/activity context, read-only metadata and every-role/every-screen freshness rendering.\nPASS: server/client time formatting parity and public portfolio event timezone.\n"
+    },
+    {
+      "file": "check-governance.cjs",
+      "exitCode": 0,
+      "seconds": 0.189,
+      "output": "PASS: version-specific acknowledgments, independent approvals, future effectiveness, supersession, historical access, withdrawal alerts, audience filtering, notice corrections, immutable university source, separate scoped instructions, expiry, versioned rejection and all-role renders.\n"
+    },
+    {
+      "file": "check-identity-grant-adapter.mjs",
+      "exitCode": 0,
+      "seconds": 0.081,
+      "output": "PASS: trusted snapshot/issuer/person mapping, multi-role preparation, same-person aliases, unresolved legacy records, tenant/version/expiry/revocation denial, independent approval provenance, duplicate binding rejection, context transition horizon, detached outputs and unchanged live entry points.\n"
+    },
+    {
+      "file": "check-initiation-sandbox.mjs",
+      "exitCode": 1,
+      "seconds": 0.08,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-initiation-sandbox.mjs:10:158\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-intake-mentors.mjs",
+      "exitCode": 0,
+      "seconds": 0.407,
+      "output": "PASS: coordinator-only assignment, confirmed/current routing, fit/capacity assessments, independent mentor acceptance/declaration, reassignment and withdrawal history, replay/stale checks, scope revocation, notifications and no execution/finance grants.\nPASS: all-role rendering, assignment workload context, acceptance form and history.\n"
+    },
+    {
+      "file": "check-intake-normalization-pilot.mjs",
+      "exitCode": 1,
+      "seconds": 0.125,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-intake-normalization-pilot.mjs:14:158\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-intake-routing-pilot.mjs",
+      "exitCode": 1,
+      "seconds": 0.084,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-intake-routing-pilot.mjs:16:158\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-intake-source-adapter.mjs",
+      "exitCode": 1,
+      "seconds": 0.08,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-intake-source-adapter.mjs:13:158\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-intake-support.mjs",
+      "exitCode": 0,
+      "seconds": 0.531,
+      "output": "PASS: accepted-mentor gate, coordinator-defined scoped support, independent designated responses, declarations, decline/retry, immutable decisions, stale mentor/club eligibility, fresh acceptance, privacy and no approval/finance/execution grants.\nPASS: all-role rendering, complete-support status and scoped representative display.\nPASS: dashboard \u2192 module overview \u2192 detailed process, actor-scoped Action Centre links and module return navigation.\n"
+    },
+    {
+      "file": "check-intake-team-access.mjs",
+      "exitCode": 0,
+      "seconds": 0.193,
+      "output": "PASS: trusted discovery derives only lead search/current CREATE or authorized-next-version REVISE and own-invitee references, rejects forged fields/source changes, defaults disabled, hides stale/legacy/duplicate records and never writes records or audit.\n"
+    },
+    {
+      "file": "check-intake-team-chain.mjs",
+      "exitCode": 0,
+      "seconds": 0.232,
+      "output": "PASS: configured discovery \u2192 directory \u2192 invitation \u2192 recipient discovery/read/acceptance \u2192 confirmed team \u2192 faculty/research first-review routing across actual engine intakes and SQLite, with unavailable-faculty fallback, no pre-consent routing and no execution grant. This is fixture integration, not browser/live institutional acceptance.\n"
+    },
+    {
+      "file": "check-intake-team-client.mjs",
+      "exitCode": 0,
+      "seconds": 0.064,
+      "output": "PASS: invitation UI defaults hidden, uses own-only response shape, escapes title, rejects stale account/malformed replies, never replaces workspace with invitation data, refreshes after save and does not replay conflicts. Browser acceptance not run.\n"
+    },
+    {
+      "file": "check-intake-team-discovery-client.mjs",
+      "exitCode": 0,
+      "seconds": 0.059,
+      "output": "PASS: workspace invitation discovery handoff drops stored flags, accepts only current minimal server access, hides disabled/errors, rejects malformed/cross-role/stale replies and never replaces workspace records.\n"
+    },
+    {
+      "file": "check-intake-team-lead-client.mjs",
+      "exitCode": 0,
+      "seconds": 0.063,
+      "output": "PASS: lead directory UI defaults hidden, escapes minimal rows, bounds requests, supports paging/selection/deduplication, discards changed-source selections and stale/closed replies, clears failures and never saves memberships or invitations. Browser acceptance not run.\n"
+    },
+    {
+      "file": "check-intake-team-preparation-client.mjs",
+      "exitCode": 0,
+      "seconds": 0.065,
+      "output": "PASS: lead invitation confirmation requires explicit current capability and review, sends lead plus unique selected IDs/current revisions, distinguishes creation/replacement and fresh acceptance, applies only full refresh, clears errors and never replays uncertain saves. Browser acceptance not run.\n"
+    },
+    {
+      "file": "check-internship-date-amendments.mjs",
+      "exitCode": 0,
+      "seconds": 0.854,
+      "output": "PASS: evidence-backed end-date requests, student consent, versioned return/resubmission, current-proof checks, independent mentor/head decisions, replay protection, effective deadline/schedule consistency, retained source/letters/tasks/logbooks, final-review invalidation, privacy and stale-source withdrawal.\n"
+    },
+    {
+      "file": "check-internship-execution.mjs",
+      "exitCode": 0,
+      "seconds": 0.586,
+      "output": "PASS: authorized/idempotent coordinator handoff, one student/mentor, future start restrictions, immutable learning mappings, logbook dates/duplicates/versioned corrections, artifact verification binding, mentor follow-ups, private projections, source revocation and preserved records/no finance grants.\nPASS: execution workspace tab, private logbook history and coordinator source-resolution navigation.\n"
+    },
+    {
+      "file": "check-internship-final.mjs",
+      "exitCode": 0,
+      "seconds": 0.736,
+      "output": "PASS: final internship reports, uploaded workplace assessment, distinct verified evidence, mentor declarations, independent head approval, versioned returns, duplicate/context/privacy guards, evidence/logbook/mentor invalidation, completion gate and no automatic grades/credit/certificates.\n"
+    },
+    {
+      "file": "check-internship-host-replacement.mjs",
+      "exitCode": 0,
+      "seconds": 0.821,
+      "output": "PASS: distinct-host linked request, duplicate/role/context guards, withdrawal/retry, fixed academic mapping, fresh mentor/placement/letter/host evidence/learning agreement, predecessor-cancellation handoff gate, idempotent successor, immutable prior work, no automatic transfer of scores/hours/credit and scoped continuity navigation.\n"
+    },
+    {
+      "file": "check-internship-letters.mjs",
+      "exitCode": 0,
+      "seconds": 0.59,
+      "output": "PASS: eligibility, private placement records, independent mentor/HoD review, returns and immutable revisions, idempotent authorized issuance, escaped printable letter/QR, supersession/revocation, stale supporting scope and no execution/finance grants.\nPASS: all-role intake rendering, letter links and private placement panel boundaries.\n"
+    },
+    {
+      "file": "check-internship-readiness.mjs",
+      "exitCode": 0,
+      "seconds": 0.859,
+      "output": "PASS: actual private file upload/download and locks, student agreement, independent host/supervisor verification, declarations, immutable return/revision and proof binding, start authorization, withdrawal, stale letter rejection, scope privacy and no execution/credit/finance grants.\nPASS: all-role readiness rendering, retained supervisor/authorization history and private panel scope.\n"
+    },
+    {
+      "file": "check-internship-schedule.mjs",
+      "exitCode": 0,
+      "seconds": 0.531,
+      "output": "PASS: internship schedule bounds, workshop-field rejection, independent within-period change, deadline history, immutable authorization/letter, duplicate protection, stale-source approval blocking and preserved postponement/cancellation.\n"
+    },
+    {
+      "file": "check-leadership-dashboard.mjs",
+      "exitCode": 0,
+      "seconds": 0.184,
+      "output": "PASS: leadership reporting context under existing admin scope, deduplicated verified/plan/finance metrics, canceled evaluation-queue exclusion, inclusive filters/empty N-A, no individual reflection/assessment/contact content, no mutation controls, pure snapshots, scope denial, projected parity and report navigation.\n"
+    },
+    {
+      "file": "check-membership.mjs",
+      "exitCode": 0,
+      "seconds": 0.424,
+      "output": "PASS: independent exit review, current-period binding, duplicate/replay guards, duty checks, cancellation/rejection, separate rejoin periods, historical project access and privacy.\nPASS: current-member event rosters, departed-lead event guard, approved-plan duty checks and membership/action UI renders.\n"
+    },
+    {
+      "file": "check-mentor-record-queues.mjs",
+      "exitCode": 0,
+      "seconds": 0.834,
+      "output": "PASS mentor evidence/contribution queues: correct role, read-only/privacy, evidence prerequisite, returned/resubmitted and verified resolution, current source/mentor; final evaluation delivery/self/outcome/reassignment/current-notice checks and preserved history\n"
+    },
+    {
+      "file": "check-mentor-transfers.mjs",
+      "exitCode": 0,
+      "seconds": 0.259,
+      "output": "PASS: independent mentor handover, stale snapshots, role scope, historical attribution, effective intervals, sharing stability, replay and closed-work guards.\nPASS: mentor assignment page renders for every demo role.\n"
+    },
+    {
+      "file": "check-monitoring-assignment-adapter.mjs",
+      "exitCode": 0,
+      "seconds": 0.118,
+      "output": "PASS: empty default configuration, trusted identity/approved plan/exact scoped assignment, independent approved authority, alias self-review/closure denial, unknown/inactive/outsider denial, revocation/expiry/cache boundaries, session renewal, detached provenance, safe pilot handoff and disconnected live routes. No live permission granted.\nPASS: per-read trusted scope/identity/revocation checks, narrative/evidence/identity minimization, draft privacy, action-owner-only statuses/deadlines, zero/null distinction, stale verification flag, detached outputs, failure without record disclosure and immutable storage inputs. No live read endpoint enabled.\n"
+    },
+    {
+      "file": "check-monitoring-projection.mjs",
+      "exitCode": 0,
+      "seconds": 0.27,
+      "output": "PASS: every demo actor gets unchanged generic views with raw monitoring reviews/feedback/actions/identities/receipts omitted; command response projection remains private, internal snapshots and storage data preserved, malformed optional collection omitted without disclosure.\n"
+    },
+    {
+      "file": "check-monitoring-review-pilot.mjs",
+      "exitCode": 0,
+      "seconds": 0.11,
+      "output": "PASS: isolated approved-plan snapshot, valid periods, zero/missing distinction, evidence-backed achievement, separate effectiveness finding, versioned return/resubmission, stale/conflict/revocation/role denial, independent decisions/action closure, corrective evidence freshness/history/overdue/reopen, minimized private summary, immutable inputs and disconnected live routes. No faculty ratings or live records created.\n"
+    },
+    {
+      "file": "check-monitoring-sandbox.mjs",
+      "exitCode": 0,
+      "seconds": 0.064,
+      "output": "PASS: fictional isolated screen, submitter/reviewer controls and delegated handlers, return/resubmit, missing versus zero, escaped text, unsupported effectiveness denial, independent follow-up closure/reopening, overdue/stale evidence display, reset, exact policy reuse and no API/storage access. Browser/keyboard acceptance not performed.\n"
+    },
+    {
+      "file": "check-monitoring-save-pilot.mjs",
+      "exitCode": 0,
+      "seconds": 0.278,
+      "output": "PASS: end-to-end trusted submitter/reviewer save and audit, independent action closure, authorized minimized SQL-backed read, stale evidence without history loss, every-role generic-response exclusion, revocation/scope denial and one-to-one receipt/audit provenance. Isolated automated acceptance only.\nPASS: real in-memory SQLite atomic workspace/audit save, workspace+review revision guards, simultaneous editors, replay/conflicting request IDs, audit-failure rollback/retry, revocation recheck, CAS winner preservation, evidence spoof denial, minimal receipts and unchanged live routes. No production database touched.\n"
+    },
+    {
+      "file": "check-multi-club.cjs",
+      "exitCode": 0,
+      "seconds": 0.206,
+      "output": "PASS: multiple rows and totals, approved-state edit guard, per-item conversion deduplication, partial completion, revision approval, reasoned cancellation, original preservation, cancelled-row conversion guards, migration and all-role table rendering.\n"
+    },
+    {
+      "file": "check-multi-role-sandbox.mjs",
+      "exitCode": 1,
+      "seconds": 0.163,
+      "output": "PASS: fictional one-person multi-role capabilities, view-only contexts, scope/classification/explicit-deny/self-review constraints, independent role revocation, expiry/reset, safe rendering/controller focus, no network/storage/live authority changes and exact copied adapter bytes. Browser interaction not tested.\nnode:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at assertDiscussionCommandAdditions (file:///workspace/sites/kcc360-workflow/scripts/assert-discussion-command-additions.mjs:3:52)\n    at file:///workspace/sites/kcc360-workflow/check-multi-role-sandbox.mjs:19:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-normalized-team-save-pilot.mjs",
+      "exitCode": 1,
+      "seconds": 0.186,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-normalized-team-save-pilot.mjs:22:158 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-notifications.mjs",
+      "exitCode": 0,
+      "seconds": 0.251,
+      "output": "PASS: persistent recipient/version deduplication, scoped read/ack states, approved policy separation, Nepal-day deadline boundaries, all escalation levels, confidential routing, no invented due dates, source resolution/reopening, mandatory preference protection and all-role rendering.\n"
+    },
+    {
+      "file": "check-outcomes.mjs",
+      "exitCode": 0,
+      "seconds": 0.293,
+      "output": "PASS: independent outcome authorization, request ownership, pending gates, task reassignment/history, successor consent, historical access, write/upload restrictions, certificate eligibility, privacy and replay guards.\nPASS: outcome/report rendering, distinct successful-student count, categorized outcomes, privacy-safe exports and portfolio/certificate controls.\n"
+    },
+    {
+      "file": "check-participation.mjs",
+      "exitCode": 0,
+      "seconds": 0.292,
+      "output": "PASS: roster snapshots, duplicate/overlap rejection, attendance bounds, mentor-only verification, immutable verified versions, corrected-version totals, learner/lead visibility, evidence-bound contribution deduplication, evidence verification and daily contribution limits.\n"
+    },
+    {
+      "file": "check-performance.mjs",
+      "exitCode": 0,
+      "seconds": 0.161,
+      "output": "PASS: domain means, zero/unassessed distinction, assigned/verified/assessed counts, coverage, legacy and stale exclusion, historical semester mapping, gap-preserving trends, missing-axis radar, filters, read-only behavior, role scope and server projection.\nPASS: department task/domain parity, assigned/verified/assessed denominators, zero/missing scores, coverage, deduplication, stale evidence, reopened work, cancellation, unmapped/plan-only rows, filters, privacy and access denial.\nPASS: department JSON/CSV metric parity, zero/null, metadata and filters, safe formulas, focused aggregate-only JSON, empty-result provenance and all-persona export scope.\nPASS: department chart means and coverage, zero marker versus absent score, no-opportunity/empty states, safe labels, accessible text, pure rendering and denied roles.\nPASS: task-source denominator parity, current scores, privacy, escaped labels, guarded activity-task navigation, report return, denied roles, stale filters, missing/cancelled sources and unchanged data.\n"
+    },
+    {
+      "file": "check-permission-policy.mjs",
+      "exitCode": 0,
+      "seconds": 0.103,
+      "output": "PASS: scoped multi-role capability union, complete-grant matching, tenant isolation, classification, explicit deny precedence, relationship constraints, pending/revoked/expired boundaries, same-person aliases, unknown legacy identity denial, provenance, input immutability and unchanged live authorization entry points.\n"
+    },
+    {
+      "file": "check-plan-imports.mjs",
+      "exitCode": 0,
+      "seconds": 0.45,
+      "output": "PASS: CSV headers/quoting, owner authorization, row validation, explicit partial import, failed-row retry, duplicate/conflicting sources, stale preview, atomic validation, draft approval gates, idempotent conversion and revision ledger preservation.\nPASS: all-role academic plan rendering, CSV form and versioned preview history.\n"
+    },
+    {
+      "file": "check-plan-xlsx-bridge.mjs",
+      "exitCode": 0,
+      "seconds": 0.581,
+      "output": "PASS: offline XLSX conversion feeds unchanged academic/club preview validators, invalid-date row reporting, explicit valid-row confirmation, quoted-text preservation, duplicate confirmation denial and draft approval gates. No browser parser or live import enabled.\n"
+    },
+    {
+      "file": "check-plan-xlsx-browser-pilot.mjs",
+      "exitCode": 0,
+      "seconds": 0.364,
+      "output": "PASS: pinned real SheetJS mini parser, XLSX byte/archive limits, exact headers, quoted/Unicode text, text identifiers, explicit visible worksheets, dates/epochs, unsupported formulas/hyperlinks/hidden/merged layouts, macro/external-link paths, detached bytes and manifest integrity. No live form or browser acceptance.\nPASS: real pinned JavaScript XLSX bytes flow into unchanged server preview and explicit draft confirmation.\n"
+    },
+    {
+      "file": "check-plan-xlsx-reader.py",
+      "exitCode": 0,
+      "seconds": 0.332,
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.121s\n\nOK\n"
+    },
+    {
+      "file": "check-plan-xlsx-upload.mjs",
+      "exitCode": 0,
+      "seconds": 0.118,
+      "output": "PASS: real parser worker protocol, cancellation/timeout/failure cleanup, stale worker denial, explicit worksheet choice, no implicit import, text preservation on errors/cancellation/new edits/stale form, local exact assets and no API/storage calls. Browser worker execution not tested.\n"
+    },
+    {
+      "file": "check-plans.cjs",
+      "exitCode": 0,
+      "seconds": 0.119,
+      "output": "PASS: plan review routing, self-approval guard, idempotent conversion, mapping inheritance, version history, completion sync, plan rendering for all roles.\n"
+    },
+    {
+      "file": "check-portfolio-export-api.mjs",
+      "exitCode": 0,
+      "seconds": 0.604,
+      "output": "PASS: combined/declarations-only CV, selected-section whitelist, safe print text, peer isolation, empty/duplicate denial, changed-declaration digest rejection and no storage writes.\nPASS: own-current certificate-only CV, escaped minimal fields, duplicate/peer/revoked/superseded/paused/stale-evaluation denial, replacement re-selection, changed-content digest, independent public QR state and no writes.\nPASS: authenticated owner/student-only private export POST, exact actor/revision/selection, fresh digest/identity/session/storage rechecks, no workspace/audit/share writes, origin/type/size/JSON guards, protected no-store HTML headers and no public GET/token. No browser/PDF acceptance.\n"
+    },
+    {
+      "file": "check-portfolio-export-client.mjs",
+      "exitCode": 0,
+      "seconds": 0.07,
+      "output": "PASS: private portfolio selection/preview/print controller, unselected defaults, safe text, current actor/revision guards, exact digest, no public consent/share calls, popup/content-marker/error handling, stale-response cancellation and no content released to stale/closed contexts. Browser popup/printing not tested.\nPASS: explicit unselected CV sections, declarations-only preview request, safe declared text and no workspace/public-sharing mutation.\nPASS: declaration-only CV builder opens when no campus achievements exist.\nPASS: empty CV selection permits declaration-only guidance, makes no request, and preview states official-source coverage limits.\nPASS: unselected own-certificate choices, certificate-only CV preview, exact references and safe certificate rendering.\n"
+    },
+    {
+      "file": "check-portfolio-export-pilot.mjs",
+      "exitCode": 0,
+      "seconds": 0.133,
+      "output": "PASS: isolated own-student private achievement export projection, current eligibility/control/outcome checks, exact selection, minimal fields, no private/peer/certificate data, separate verified hours, detached inputs, source-change digest and independence from public consent/link state. No PDF/live route.\n"
+    },
+    {
+      "file": "check-portfolio-print-pilot.mjs",
+      "exitCode": 0,
+      "seconds": 0.116,
+      "output": "PASS: isolated A4 private achievement HTML layout, Nepal generation time, strict projection whitelist, escaped hostile/Unicode/long text, 1\u201320 items, optional separate hours, no scripts/links/private data, fresh source-digest check, current eligibility, consent independence and no live route/PDF. Browser/visual pagination acceptance not run.\n"
+    },
+    {
+      "file": "check-project-discussion.mjs",
+      "exitCode": 0,
+      "seconds": 0.392,
+      "output": "PASS: preserved legacy messages, record-bound replies, author/current-mentor reasoned resolve/reopen history, resolved/stale/cross-record/invalid/role/outcome/control denial, safe read-only rendering and all-role raw/projected privacy parity. No browser acceptance.\n"
+    },
+    {
+      "file": "check-project-resource-policy.mjs",
+      "exitCode": 0,
+      "seconds": 0.18,
+      "output": "PASS: trusted project scope/classification binding, CAS revision/index freshness, actual-record relationship derivation, same-person approval denial, protected summary read intersecting existing access, no private fields, scope/clearance denials, no input mutation and preserved route authentication with only reviewed disabled invitation dispatch.\nPASS: isolated one-person Faculty/Mentor reads across separate projects, Coordinator alias identity, complete grant provenance, private-field minimization, partial revocation, expiry, explicit denial, stale authority, actor mismatch, same-person approval denial and no data mutation. This does not implement faculty evaluation or live multi-role sessions.\n"
+    },
+    {
+      "file": "check-project-workload.mjs",
+      "exitCode": 0,
+      "seconds": 0.268,
+      "output": "PASS: scoped read-only student workload counts, own-only student scope, mentor/current-role access, excluded roles, raw/projected parity, separate proposals/paused work, cancelled/closed/completed/outcome exclusions, legacy classification, duplicate-source protection, safe names and unchanged records. No limits or eligibility decisions.\nPASS: current verified-task counts follow actual task mapping/submission/mentor review; later evidence changes invalidate the count without changing stored history.\n"
+    },
+    {
+      "file": "check-public-certificates.mjs",
+      "exitCode": 0,
+      "seconds": 0.374,
+      "output": "PASS: recipient-only explicit consent, secure opaque tokens, minimal status disclosure, stale source, close transition, rotation/withdrawal, original superseded QR, revoked replacement, private role scope and independently decoded QR.\nPASS: QR decodes at print size, all-role certificate rendering and recipient consent/print controls.\n"
+    },
+    {
+      "file": "check-publication-assigned-dashboard.mjs",
+      "exitCode": 0,
+      "seconds": 0.354,
+      "output": "PASS: explicit assigned editorial/publisher lifecycle dashboard, submitted-only minimized content, three-level guarded navigation, denied defaults/title inference, expiry/revocation/source/nomination/consent/withdrawal, completed review/approval and separate queued delivery.\n"
+    },
+    {
+      "file": "check-publication-categories.mjs",
+      "exitCode": 0,
+      "seconds": 0.381,
+      "output": "PASS: all five categories, validation, immutable revisions, submitted lock, exact consent/category invalidation, editorial retention, legacy Reflection fallback and unchanged academics.\n"
+    },
+    {
+      "file": "check-publication-mentor.mjs",
+      "exitCode": 0,
+      "seconds": 0.313,
+      "output": "PASS: mentor submitted-only tracking, scoped roles, guarded three-level navigation, pure minimized rendering, approval/queue distinction, stale source, mentor transfer, escaping, withdrawal and private-draft exclusion.\n"
+    },
+    {
+      "file": "check-publication-navigation.mjs",
+      "exitCode": 0,
+      "seconds": 0.374,
+      "output": "PASS: cross-role dashboard/module wiring, shared protected lifecycle parity, pending-vs-completed queues, version wording, detail-scope denial and navigation acceptance evidence; fictional fixtures only.\n"
+    },
+    {
+      "file": "check-publication-portfolio.mjs",
+      "exitCode": 0,
+      "seconds": 0.329,
+      "output": "PASS: private My Portfolio publication status, current source/consent/editorial/approval/delivery distinctions, cancellation/withdrawal/removal history, lead/peer/non-student denial, guarded/stale source navigation, minimal escaped content and pure rendering.\n"
+    },
+    {
+      "file": "check-reflection-approval.mjs",
+      "exitCode": 0,
+      "seconds": 0.657,
+      "output": "PASS: separately scoped independent publisher; exact current editorial/consent snapshot approval/decline; self-editor, stale/forged/duplicate/context/form denial; projection/privacy/queue/navigation parity; immutable approvals; source/grant/content/consent/request invalidation; no academic/showcase or website publication side effect.\n"
+    },
+    {
+      "file": "check-reflection-consent.mjs",
+      "exitCode": 0,
+      "seconds": 0.305,
+      "output": "PASS: exact escaped public-field preview, own optional version-specific consent, bound source/nomination/content, stale/forged/duplicate/context/role denial, immutable consent history, withdrawal without reminders, mentor-change reconsent, projected parity and unchanged academics/public sharing.\n"
+    },
+    {
+      "file": "check-reflection-delivery.mjs",
+      "exitCode": 0,
+      "seconds": 0.463,
+      "output": "PASS: private exact approved outbox, scoped enqueue/duplicate denial, disabled default, minimal opaque public payload, authenticated digest/version/site-bound receipts, idempotent leases/retries, acknowledged-only publication, withdrawal/race/late-receipt removal, stable version identity, integrity and unchanged academics. No network sender or public route activated.\n"
+    },
+    {
+      "file": "check-reflection-editorial.mjs",
+      "exitCode": 0,
+      "seconds": 0.481,
+      "output": "PASS: default-denied editorial assignments; trusted constructor fixture scope/authority/expiry/revocation validation; client spoof and wrong-role denial; private immutable drafts/reviews; exact reviewed-content reconsent; assignment-version invalidation; projection/form/navigation parity and unchanged academics. Live assignment configuration remains empty.\n"
+    },
+    {
+      "file": "check-reflection-nomination.mjs",
+      "exitCode": 0,
+      "seconds": 0.273,
+      "output": "PASS: independent assigned-mentor nomination/decline, submitted-only projection, private draft exclusion, version/source/context/form denial, current queues/navigation, completed queue removal, mentor-change renominations, withdrawal privacy, retained decisions and unchanged academics/public sharing.\n"
+    },
+    {
+      "file": "check-reflection-publication.mjs",
+      "exitCode": 0,
+      "seconds": 0.516,
+      "output": "PASS: own-only private publication drafts, immutable source/revision history, stale/duplicate/version/form/context denial, eligibility, submission/withdrawal, projection privacy, unchanged academic records, projected bindings and safe reflection-context rendering. No public publication workflow added.\n"
+    },
+    {
+      "file": "check-reports.cjs",
+      "exitCode": 0,
+      "seconds": 0.183,
+      "output": "PASS: known-fixture activity deduplication, latest approved plan denominator, cancelled exclusions, zero/N-A handling, inclusive filters, distinct verified participants, evaluation turnaround, budget variance, scoped reports/exports, CSV safety and coverage renders.\n"
+    },
+    {
+      "file": "check-research-report.mjs",
+      "exitCode": 0,
+      "seconds": 0.204,
+      "output": "PASS: explicit Research type only, distinct activities and submitted requests, immutable submitted fields/current-source warning, private draft/publication omission, separate counts, unknown academic-year exclusion, scoped filters/navigation, no mutation and all-persona raw/projected parity.\n"
+    },
+    {
+      "file": "check-role-dashboards.mjs",
+      "exitCode": 0,
+      "seconds": 0.419,
+      "output": "PASS: all existing persona profiles, raw/projected role scope parity, live research support resolution, dashboard/module/detail navigation, stale-action denial, club responsibilities, finance/admin distinctions, pure rendering, task completion/cancellation, verified basis and escaping. Dedicated Faculty/Leadership accounts and multi-role grants remain pending.\nPASS: department report card eligibility across every persona, focused module/detail navigation, preserved filters, return path, stale-role denial, leadership context and unchanged records.\n"
+    },
+    {
+      "file": "check-server.mjs",
+      "exitCode": 0,
+      "seconds": 0.646,
+      "output": "PASS: authenticated owner restriction, same-origin writes, durable reads, server role guards, actor-switch conflict, command allowlist, optimistic concurrency and atomic audit integrity.\nPASS: CV declarations persist through existing service, stale writes conflict, peer/staff reads omit declarations while storage retains them.\nPASS: shared discussion root/reply/resolution persistence, existing atomic audit entries and stale request rejection.\n"
+    },
+    {
+      "file": "check-share-qr.mjs",
+      "exitCode": 0,
+      "seconds": 0.164,
+      "output": "PASS: an independent QR decoder reads the exact revocable link from the generated SVG.\n"
+    },
+    {
+      "file": "check-sharing-client.mjs",
+      "exitCode": 0,
+      "seconds": 0.061,
+      "output": "PASS: unselected defaults, preview-before-consent, no create without explicit consent, bound request, one-time link/QR UI and revocation flow.\n"
+    },
+    {
+      "file": "check-sharing.mjs",
+      "exitCode": 0,
+      "seconds": 0.543,
+      "output": "PASS: preview-bound explicit consent, minimal public snapshots, token hashing/entropy, anonymous selective route, cache/CSP/robots/referrer controls, expiry, ownership, permanent revocation, source/consent invalidation, HTML escaping and atomic conflict/audit handling.\n"
+    },
+    {
+      "file": "check-special-activities.mjs",
+      "exitCode": 0,
+      "seconds": 0.435,
+      "output": "PASS: source/role eligibility, independent reviews, stale sources, withdrawal/rejection, frozen proposal/version provenance, ordinary mentor approval/return, idempotency, privacy, no denominator or budget inflation.\nPASS: all-role plan/club rendering and request forms/history.\n"
+    },
+    {
+      "file": "check-student-directory-pilot.mjs",
+      "exitCode": 1,
+      "seconds": 0.118,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-student-directory-pilot.mjs:12:158\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-student-responsibilities.mjs",
+      "exitCode": 0,
+      "seconds": 0.176,
+      "output": "PASS: read-only scoped student responsibility report, activity/student dedup, name/ID search, recorded task/legacy counts, current verification and stale-source exclusion, paused/cancelled/resolved history, filters, escaping/privacy, source drill/stale-role denial and raw/projected parity across all personas.\n"
+    },
+    {
+      "file": "check-sync.mjs",
+      "exitCode": 0,
+      "seconds": 0.169,
+      "output": "PASS: client boot, global command interception, server-backed action response, role switching and absence of browser record writes.\nPASS: conflict/failure freshness survives unlock, failed requests do not renew load time, and successful refresh clears stale warnings.\n"
+    },
+    {
+      "file": "check-task-assessment.mjs",
+      "exitCode": 0,
+      "seconds": 0.24,
+      "output": "PASS: individual submissions, verified evidence gate, independent review, 0 versus unassessed, partial/returned outcomes, resubmission history, privacy, stale evidence, correction, notifications and closed-work guards.\nPASS: all-role task rendering, contribution form, domain review form and historical reviews.\n"
+    },
+    {
+      "file": "check-task-execution.mjs",
+      "exitCode": 0,
+      "seconds": 0.27,
+      "output": "PASS: task execution roles, progress, blockers, submission gate, metadata validation, optimistic version, review lock, unassessed scores, correction history, inactive activity and context guards.\nPASS: board states, stale-verification exclusion, all-role renders and separate student/manager forms.\nPASS: actual returned review renders In progress without changing completion, review feedback/history or stored records.\n"
+    },
+    {
+      "file": "check-task-mapping.mjs",
+      "exitCode": 0,
+      "seconds": 0.176,
+      "output": "PASS: task mapping validation, ownership, mentor management, academic snapshots, revision and assignment histories, completion and closed-work guards.\nPASS: task board and mapping form render with mapped and historical records.\n"
+    },
+    {
+      "file": "check-task-progress-notifications.mjs",
+      "exitCode": 0,
+      "seconds": 0.353,
+      "output": "PASS: one versioned correction action with recipient-only escaped reason, no duplicate/escalation leakage, resubmission resolution/fresh returns, optional informational completion/no acknowledgment or pending count, preference/scope/source invalidation, partial/reopen/stale/cancel denial and guarded task navigation.\n"
+    },
+    {
+      "file": "check-task-queue-consistency.mjs",
+      "exitCode": 0,
+      "seconds": 0.62,
+      "output": "PASS current task queues: independent eligible submission, inactive/stale/self/source denial, old-notice privacy and receipts, mentor changes, approved escalation chain, correction/resubmission versions, verified resolution and retained history\n"
+    },
+    {
+      "file": "check-task-templates.mjs",
+      "exitCode": 0,
+      "seconds": 0.303,
+      "output": "PASS: template author scope, draft/publish/archive, validation, stale/replay, published-only assignment, immutable template/task snapshots, defaults, adjusted criteria, no score inference, closed/cancelled and context guards.\nPASS: all-role template rendering, mentor draft form and published-version assignment form.\n"
+    },
+    {
+      "file": "check-team-command-bridge.mjs",
+      "exitCode": 0,
+      "seconds": 0.18,
+      "output": "PASS: configured trusted command dispatcher executes normalized create/own-read/accept through actual SQLite, emits own-only notices, rejects forged fields/actor/subject/stale revisions and defaults disabled without any engine permission expansion.\n"
+    },
+    {
+      "file": "check-team-command-route.mjs",
+      "exitCode": 0,
+      "seconds": 0.517,
+      "output": "PASS: actual workspace HTTP route retains owner/same-origin/session/revision guards, explicitly gates invitation commands with disabled 503, rejects client enablement and preserves all stored data/audit.\n"
+    },
+    {
+      "file": "check-team-directory-command.mjs",
+      "exitCode": 0,
+      "seconds": 0.143,
+      "output": "PASS: normalized actual intake directory command enforces lead/person/cohort/scoped grant, bounds queries and fields, minimizes rows, detects version/content changes, rejects forged context and performs no writes; runtime remains disabled.\n"
+    },
+    {
+      "file": "check-team-invitation-read-pilot.mjs",
+      "exitCode": 1,
+      "seconds": 0.146,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-team-invitation-read-pilot.mjs:20:158\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-team-invitation-save-pilot.mjs",
+      "exitCode": 1,
+      "seconds": 0.092,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-team-invitation-save-pilot.mjs:24:193 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-team-invitations-pilot.mjs",
+      "exitCode": 1,
+      "seconds": 0.079,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected command change outside the reviewed recruitment draft/application commands\n+ actual - expected\n... Skipped lines\n\n  [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n...\n    'setDiscussionState',\n+   'handoffIndividualIntake'\n  ]\n\n    at assertRecruitmentCommandAddition (file:///workspace/sites/kcc360-workflow/scripts/assert-recruitment-command-addition.mjs:2:651)\n    at file:///workspace/sites/kcc360-workflow/check-team-invitations-pilot.mjs:15:158\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 98 more items\n  ],\n  expected: [\n    'createProject',\n    'advance',\n    'doReturn',\n    'addTask',\n    'toggleTask',\n    'addEvidence',\n    'verifyEvidence',\n    'submitReflection',\n    'submitEvaluation',\n    'sendMessage',\n    'publishItem',\n    'issue',\n    'doRevoke',\n    'savePlanForm',\n    'saveItem',\n    'transitionPlan',\n    'returnPlan',\n    'revisePlan',\n    'convertItem',\n    'saveClubProposal',\n    'clubState',\n    'requestMembership',\n    'approveMember',\n    'nominateLeader',\n    'appointLeader',\n    'saveClubAnnual',\n    'clubPlanState',\n    'clubEvent',\n    'saveBudget',\n    'budgetState',\n    'recordRelease',\n    'recordExpense',\n    'markRenewal',\n    'saveAnnualReport',\n    'annualReviewState',\n    'annualCorrection',\n    'saveHandover',\n    'ackHandover',\n    'verifyHandover',\n    'renewClub',\n    'saveClubHeading',\n    'saveClubItem',\n    'addClubSamples',\n    'returnClubPlan',\n    'reviseClubPlan',\n    'cancelClubItem',\n    'restoreClubItem',\n    'saveDocument',\n    'documentState',\n    'documentRevision',\n    'readGovernance',\n    'ackGovernance',\n    'saveNotice',\n    'noticeState',\n    'reviseNotice',\n    'governanceReason',\n    'replaceCertificate',\n    'saveSession',\n    'saveAttendanceRow',\n    'submitAttendance',\n    'verifyAttendance',\n    'returnAttendance',\n    'reviseAttendance',\n    'saveContribution',\n    'verifyContribution',\n    'returnContribution',\n    'reviseContribution',\n    'saveRubric',\n    'rubricState',\n    'returnRubric',\n    'reviseRubric',\n    'assignRubric',\n    'requestEvaluationAppeal',\n    'startEvaluationAppeal',\n    'decideEvaluationAppeal',\n    'proposeEvaluationRevision',\n    'reverifyEvaluationRevision',\n    'requestParticipantOutcome',\n    'acknowledgeOutcomeLead',\n    'decideParticipantOutcome',\n    'reassignParticipantTask',\n    'requestMembershipExit',\n    'reviewMembershipExit',\n    'decideMembershipApplication',\n    'endClubAppointment',\n    'requestBudgetRevision',\n    'reviewBudgetRevision',\n    'declareCashOpening',\n    'requestCashMovement',\n    'reviewCashMovement',\n    'recordCashMovement',\n    'reviewSettlementExpenses',\n    'saveDeliveryPlan',\n    'deliveryPlanState',\n    'reviewDeliveryPlan',\n    'reviseDeliveryPlan',\n    'recordDeliverySession',\n    'submitDeliveryOutput',\n    'reviewDeliveryOutput',\n    'refreshNotifications',\n    ... 97 more items\n  ],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    },
+    {
+      "file": "check-workload-policy-calculation.mjs",
+      "exitCode": 0,
+      "seconds": 0.068,
+      "output": "PASS: isolated matched-reference activity/task counts, below/at/above comparisons, known zero versus unknown/incomplete coverage, disabled/unconfigured states, duplicate/exclusion/parent checks, detached inputs/results and no live warnings/decisions. Thresholds remain fictional.\n"
+    },
+    {
+      "file": "check-workload-policy-matching.mjs",
+      "exitCode": 0,
+      "seconds": 0.081,
+      "output": "PASS: isolated exact policy/subject/record matching, fresh complete versioned mapping, distinct task/activity refs, paused/proposal/resolved/history exclusion, deduplicated identical records, conflicting/ambiguous/version/cross-scope review, disabled defaults, detached minimal outputs and no counts/warnings/eligibility decisions.\n"
+    },
+    {
+      "file": "check-workload-policy-pilot.mjs",
+      "exitCode": 0,
+      "seconds": 0.066,
+      "output": "PASS: isolated workload definition validator, frozen empty/disabled defaults, exact scope/measure/counting rules, positive explicit thresholds, independent scoped approval, version/date/revocation, overlapping-policy review, detached outputs and no live warnings/counting/eligibility decisions. All thresholds are fictional fixtures.\n"
+    },
+    {
+      "file": "check-intake-trusted-loader.mjs",
+      "exitCode": 0,
+      "seconds": 0.075,
+      "output": "PASS trusted intake loader: default disabled, server provider requirements, fresh verified person/tenant mapping, approved dated sources, workspace/proposal scope, revocation/expiry during load, detached outputs, captured providers, forged-field denial and sanitized failures.\n"
+    },
+    {
+      "file": "check-intake-mentor-suggestion.mjs",
+      "exitCode": 0,
+      "seconds": 0.257,
+      "output": "PASS optional student mentor suggestion: bounded name/reason, legacy and clear behavior, immutable revisions/submissions, own/stale/privacy denial, no assignment/notification/access grant, independent coordinator selection and mentor acceptance, escaped student/staff forms and unchanged execution. Browser acceptance not run.\n"
+    },
+    {
+      "file": "check-intake-progress.mjs",
+      "exitCode": 0,
+      "seconds": 0.351,
+      "output": "PASS intake guidance: actual draft/return/submission/routing/mentor/support transitions, stale-source/reassignment/withdrawal and internship/linked-workspace branches, raw/projected role parity, support-only privacy, read-only rendering and existing page integration. Browser acceptance not run.\n"
+    },
+    {
+      "file": "check-intake-activity-handoff.mjs",
+      "exitCode": 0,
+      "seconds": 0.645,
+      "output": "PASS individual intake handoff: accepted/current prerequisites, coordinator-only confirmed draft creation, one initiating participant, source/history/output preservation, no private staff basis, duplicates/stale/inconsistent-link denial, existing independent proposal approval/start, projected privacy and excluded research/team/club paths. Browser acceptance not run.\n"
+    }
+  ]
+}

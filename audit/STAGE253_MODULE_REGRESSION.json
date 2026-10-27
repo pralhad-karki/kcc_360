@@ -1,0 +1,40 @@
+{
+  "results": [
+    {
+      "file": "check-internship-letters.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS: eligibility, private placement records, independent mentor/HoD review, returns and immutable revisions, idempotent authorized issuance, escaped printable letter/QR, supersession/revocation, stale supporting scope and no execution/finance grants.\nPASS: all-role intake rendering, letter links and private placement panel boundaries.\n"
+    },
+    {
+      "file": "check-internship-execution.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS: authorized/idempotent coordinator handoff, one student/mentor, future start restrictions, immutable learning mappings, logbook dates/duplicates/versioned corrections, artifact verification binding, mentor follow-ups, private projections, source revocation and preserved records/no finance grants.\nPASS: execution workspace tab, private logbook history and coordinator source-resolution navigation.\n"
+    },
+    {
+      "file": "check-internship-final.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS: final internship reports, uploaded workplace assessment, distinct verified evidence, mentor declarations, independent head approval, versioned returns, duplicate/context/privacy guards, evidence/logbook/mentor invalidation, completion gate and no automatic grades/credit/certificates.\n"
+    },
+    {
+      "file": "check-club-volunteer-achievement-chain.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS club achievement chain: selected roster/domain task, independent review, contribution hours, final reflection/evaluation, portfolio/report agreement, explicit issuance/consent, excluded cancelled/postponed/incomplete-delivery outcomes and preserved history\n"
+    },
+    {
+      "file": "check-reflection-sharing-client.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS reflection-share client: own submitted entry before review, escaped exact preview, explicit consent, duplicate/failed-save no replay, old-account and closed-window response suppression.\nPASS server-confirmed reflection submission appreciation and immediate/later sharing guidance.\n"
+    },
+    {
+      "file": "check-reflection-email.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS reflection email foundation: default disabled, actual final evaluation event, approved registered identity/contact/relationship/consent guards, minimal appreciation without reflection/scores, recipient/event deduplication, private outbox projection and isolated atomic staging rollback. Production composition remains disabled; no mail transport or email delivery is enabled.\n"
+    }
+  ]
+}

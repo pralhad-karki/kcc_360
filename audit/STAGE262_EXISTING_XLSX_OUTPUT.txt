@@ -1,0 +1,2 @@
+PASS: pinned real SheetJS mini parser, XLSX byte/archive limits, exact headers, quoted/Unicode text, text identifiers, explicit visible worksheets, dates/epochs, unsupported formulas/hyperlinks/hidden/merged layouts, macro/external-link paths, detached bytes and manifest integrity. No live form or browser acceptance.
+PASS: real pinned JavaScript XLSX bytes flow into unchanged server preview and explicit draft confirmation.

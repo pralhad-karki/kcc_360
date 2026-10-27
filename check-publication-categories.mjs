@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';import {createEngine} from './server/engine.mjs';import {validateCommandForms} from './server/form-fields.mjs';
+const nodes={},ctx={console,localStorage:{getItem:()=>null,setItem(){}},document:{querySelector:s=>nodes[s]||(nodes[s]={style:{},showModal(){},close(){}})},setTimeout(){},URL,Blob};vm.createContext(ctx);for(const n of ['governance','participation','assessment','appeals','outcomes','membership','budget-revisions','cash-settlement','portfolio-sharing','delivery','mentor-transfers','notifications','reports','app'])vm.runInContext(fs.readFileSync('prototype/'+n+'.js','utf8'),ctx);
+const categories=['REFLECTION','SEMINAR_SUMMARY','RESEARCH_SUMMARY','IMPACT_PROJECT_SUMMARY','POLICY_BRIEF'];
+for(const category of categories){
+ let data=createEngine(null,'s1').snapshot(),pid=data.projects[0].id;const p=()=>data.projects[0],r=()=>p().reflectionPublicationRequests?.at(-1),f=form=>({form});p().state='CLOSED';p().reflections.s1={version:1,text:'Verified learning reflection with sufficient detail',time:'2026-10-17T10:00:00Z'};p().evaluations.s1={version:1,final:true,pass:true,total:80,scores:[20,20,20,20],reflectionVersion:1,time:'2026-10-17T11:00:00Z',by:'m1'};const academic=JSON.stringify([p().reflections,p().evaluations,p().state]);
+ function run(actor,command,args){validateCommandForms(command,args);data=createEngine(data,actor).run(command,args,{selected:pid}).data}
+ function inspect(code,actor='s1'){ctx.fixture=createEngine(data,actor).view();ctx.pid=pid;ctx.actor=actor;return vm.runInContext('db=fixture;uid=actor;selected=pid;'+code,ctx)}
+ const fields={category,publicTitle:'Verified student work',publicText:'A public summary of verified learning, findings and contributions.',reason:'Share learning'};
+ run('s1','saveReflectionPublicationRequest',[f({...fields,category:'UNKNOWN'}),'',0]);assert.equal(r(),undefined);
+ run('s1','saveReflectionPublicationRequest',[f(fields),'',0]);assert.equal(r().versions[0].category,category);const id=r().id;
+ const alternate=categories[(categories.indexOf(category)+1)%categories.length];run('s1','saveReflectionPublicationRequest',[f({...fields,category:alternate}),id,1]);assert.equal(r().versions[0].category,category);assert.equal(r().versions[1].category,alternate);
+ run('s1','submitReflectionPublicationRequest',[id,2]);run('m1','reviewReflectionPublicationRequest',[f({decision:'NOMINATED',reason:'Verified source and public summary reviewed'}),id,2]);
+ const basis=inspect('reflectionPublicationConsentBasis(current(),current().reflectionPublicationRequests.at(-1))');assert.equal(JSON.parse(basis).publicContent.category,alternate);
+ run('s1','grantReflectionPublicationConsent',[f({preview:basis,consent:'yes'}),id,2]);assert.equal(r().consentHistory.at(-1).publicSnapshot.category,alternate);assert.equal(inspect('reflectionPublicationConsentCurrent(current(),current().reflectionPublicationRequests.at(-1))'),true);
+ inspect('previewReflectionPublicationConsent(current().reflectionPublicationRequests.at(-1).id)');assert.ok(inspect('reflectionPublicationPanel(current())').includes('Category:'));
+ const before=JSON.stringify(r().versions);run('s1','saveReflectionPublicationRequest',[f(fields),id,2]);assert.equal(JSON.stringify(r().versions),before,'Submitted category must stay locked');
+ r().versions[1].category=category;assert.equal(inspect('reflectionPublicationConsentCurrent(current(),current().reflectionPublicationRequests.at(-1))'),false,'Changed category must invalidate consent');r().versions[1].category=alternate;
+ // Editorial text must retain the submitted category in the public preview.
+ inspect("var savedEditorialReader=reflectionEditorialReviewedContent;reflectionEditorialReviewedContent=()=>({authorName:'Student',title:'Edited public summary',text:'Reviewed summary'});if(reflectionPublicationPublicPreview(current(),current().reflectionPublicationRequests.at(-1)).category!==current().reflectionPublicationRequests.at(-1).versions[1].category)throw Error('Editorial category lost');reflectionEditorialReviewedContent=savedEditorialReader");
+ assert.equal(JSON.stringify([p().reflections,p().evaluations,p().state]),academic);
+}
+assert.equal(vm.runInContext("studentPublicationCategory({})",ctx),'Reflection');console.log('PASS: all five categories, validation, immutable revisions, submitted lock, exact consent/category invalidation, editorial retention, legacy Reflection fallback and unchanged academics.');

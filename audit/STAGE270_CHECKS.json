@@ -1,0 +1,22 @@
+{
+  "stage": 270,
+  "baselineCommit": "b8aec22a84e37e049b42d165f115a956cb052ed9",
+  "sourceRecoveredFromPublishedCheckpoint": true,
+  "bindingCoreCases": 32,
+  "bindingCoreResult": "PASS",
+  "sqliteBindingSave": "PASS: source unchanged; replay/conflict; four transaction fences; audit rollback; stale source and grant horizon",
+  "broadGroups": 65,
+  "broadResult": "PASS; focused target/binding test repeated after shared expiry tightening",
+  "permissionPolicy": "PASS",
+  "identityGrantAdapter": "PASS",
+  "typeScript": "PASS",
+  "uiChanged": false,
+  "newBrowserQA": false,
+  "nativeD1Tested": false,
+  "institutionalActivation": false,
+  "approvalSnapshotAdoptionInstalled": false,
+  "bindingUIInstalled": false,
+  "productionDatabaseWritten": false,
+  "currentRequirementsScopedTextReview": "v3.7 revision authority and Annexes T/U; not complete comparison or acceptance",
+  "bundleBuild": "during final packaging"
+}

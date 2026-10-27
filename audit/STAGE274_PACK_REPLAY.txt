@@ -1,0 +1,130 @@
+{
+  "fixture_pack": "stage98",
+  "passed": true,
+  "checks": 24,
+  "results": [
+    {
+      "case": "event",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "independent_website_publication",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "registration_full_refresh_and_cancellation",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "unavailable_retry",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "event",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "duplicate_conflict",
+      "status": 409,
+      "passed": true
+    },
+    {
+      "case": "no_consent",
+      "status": 403,
+      "passed": true
+    },
+    {
+      "case": "invalid_date",
+      "status": 422,
+      "passed": true
+    },
+    {
+      "case": "invalid_pdf",
+      "status": 422,
+      "passed": true
+    },
+    {
+      "case": "unknown_field",
+      "status": 422,
+      "passed": true
+    },
+    {
+      "case": "missing_parent",
+      "status": 409,
+      "passed": true
+    },
+    {
+      "case": "reflection",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "reflection_independent_release",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "report",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "pdf_quarantine_review_and_publication",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "event_correction",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "correction_holds_public_routes",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "stale_event",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "withdraw_reflection",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "late_reflection",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "withdraw_report",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "late_report",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "withdraw_event",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "case": "late_event",
+      "status": 200,
+      "passed": true
+    }
+  ],
+  "actual_kcc360_tested": false,
+  "agreed_by_both_teams": false,
+  "live_integration": false
+}

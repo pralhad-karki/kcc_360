@@ -1,0 +1,30 @@
+{
+  "stage": 260,
+  "baseline": "5336cad8c9d2e36ca599e19c35cb3a8ae9f952a5",
+  "finalRegression": "STAGE260_REGRESSION_FINAL.json",
+  "regressionChecksPassed": 47,
+  "departmentWorkflowCasesPassed": 13,
+  "sharedServiceSQLiteCheckExit": 0,
+  "clientCheckExit": 0,
+  "clubWorkflowChecksPassed": 6,
+  "typescriptExit": 0,
+  "productionBuildExit": 0,
+  "finalTargetedRerunsAfterHistoryRefinement": true,
+  "officialMISActivated": false,
+  "studentMasterImportImplemented": false,
+  "existingPlacementImportPreserved": true,
+  "browserScope": "Fictional frontend panel and chooser dialog only; no file selected or backend import performed",
+  "temporaryFixtureExcluded": true,
+  "sourceHashes": {
+    "prototype/department-task-csv.js": "594cabf8ab5cb4e5edf316cd56006a638597bcb8218d11e54db16b2e29b4f349",
+    "prototype/app.js": "548b27f9b734828be7be657dc0abca278dca4f85b3fd9aac83133ad2f283252b",
+    "server/form-fields.mjs": "f8736a6a2cf60d9ef9079b6ff4c0802690fcbb172766cb280f7b05e98bf27162",
+    "server/commands.json": "51d15baa27b27ac1332cdc40a79c969e2bd976e333e3326de0aacd711dadfc47",
+    "server/engine.mjs": "a3b2b6b2a1c8abf264d141925a1aa219d51c0919668e4951ba641cdb07214c8f",
+    "scripts/prepare-workspace.mjs": "7d4b501a013f994ab35581ff8db9e3854a6683888e0924418be7f85e8f99aa39",
+    "scripts/check-task-workflow.mjs": "09d9810a1386d8eb2f9418f50933b27937d725664e45f623a5342269b3c37c3f",
+    "check-department-task-csv.mjs": "ef6120bbfe5fd609e6da0d8c4eaa5e01c37b8de23f70b8d4f1b9fdd60b24d693",
+    "check-department-task-csv-save.mjs": "027cfe7e8e0bb46911715ff40ecdcb8b07b4960ec08a872e02ba5b3d90f0278b",
+    "check-department-task-csv-client.mjs": "d2706a6e5bba5cb2a25f8f34dd08f277ab29702bd25bb9c24975b567515eeeb2"
+  }
+}

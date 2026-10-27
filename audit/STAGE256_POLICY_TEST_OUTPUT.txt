@@ -1,0 +1,27 @@
+PASS ACADEMIC zero-budget full route and immutable inputs
+PASS DEPARTMENTAL zero-budget full route and immutable inputs
+PASS COURSE zero-budget full route and immutable inputs
+PASS CLUB zero-budget full route and immutable inputs
+PASS RESEARCH zero-budget full route and immutable inputs
+PASS INSTITUTIONAL zero-budget full route and immutable inputs
+PASS PARTNERSHIP zero-budget full route and immutable inputs
+PASS JOINT_EVENT zero-budget full route and immutable inputs
+PASS nonzero budget follows same route
+PASS principal cannot skip unit/finance
+PASS wrong reviewer denied
+PASS owner alias cannot review own plan
+PASS finance role required
+PASS assignment revoked denied
+PASS assignment expired denied
+PASS assignment inactive denied
+PASS assignment duplicate denied
+PASS assignment wrong-scope denied
+PASS final approval revalidates revoked-grant
+PASS final approval revalidates changed-assignment
+PASS final approval revalidates inactive-person
+PASS final approval revalidates missing-person
+PASS stale revision and changed content denied
+PASS return requires a new version; history retained
+PASS principal-originated approval fails closed
+PASS reasons, backdating and repeat approval denied
+26 approval-policy cases passed. Pure trusted-input policy only; no persistence, concurrency, idempotency or live authority asserted.

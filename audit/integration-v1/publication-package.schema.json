@@ -1,0 +1,570 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kcc:provisional:v1:publication-package",
+  "title": "KCC360 → Website provisional publication package",
+  "description": "PROVISIONAL: requires confirmation by both teams. Source flags are source attestations, never website publication approval. IDs are opaque; event source_id must equal kcc360_event_id; resource IDs must match payload IDs. Runtime additionally verifies time ordering, SHA256, PDF size and identity consistency.",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "contract_version",
+        "request_id",
+        "record_type",
+        "source_id",
+        "kcc360_event_id",
+        "source_version",
+        "action",
+        "occurred_at",
+        "payload"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "v1"
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "record_type": {
+          "const": "event"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "kcc360_event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "source_version": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "action": {
+          "const": "upsert"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+        },
+        "payload": {
+          "type": "object",
+          "required": [
+            "title",
+            "description",
+            "category",
+            "palette",
+            "starts_at",
+            "ends_at",
+            "time_zone",
+            "mode",
+            "venue",
+            "eligibility"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 250
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12000
+            },
+            "category": {
+              "enum": [
+                "institutional",
+                "student",
+                "international",
+                "academic"
+              ]
+            },
+            "palette": {
+              "enum": [
+                "institutional",
+                "student",
+                "international",
+                "academic"
+              ]
+            },
+            "starts_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+            },
+            "ends_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+            },
+            "time_zone": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "mode": {
+              "enum": [
+                "physical",
+                "virtual",
+                "hybrid"
+              ]
+            },
+            "venue": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "eligibility": {
+              "type": "object",
+              "required": [
+                "verified",
+                "consent",
+                "public_release",
+                "evidence_reference"
+              ],
+              "properties": {
+                "verified": {
+                  "const": true
+                },
+                "consent": {
+                  "const": true
+                },
+                "public_release": {
+                  "const": true
+                },
+                "evidence_reference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1000
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contract_version",
+        "request_id",
+        "record_type",
+        "source_id",
+        "kcc360_event_id",
+        "source_version",
+        "action",
+        "occurred_at",
+        "payload"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "v1"
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "record_type": {
+          "const": "event"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "kcc360_event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "source_version": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "action": {
+          "const": "withdraw"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+        },
+        "payload": {
+          "type": "object",
+          "required": [
+            "reason"
+          ],
+          "properties": {
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contract_version",
+        "request_id",
+        "record_type",
+        "source_id",
+        "kcc360_event_id",
+        "source_version",
+        "action",
+        "occurred_at",
+        "payload"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "v1"
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "record_type": {
+          "const": "reflection"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "kcc360_event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "source_version": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "action": {
+          "const": "upsert"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+        },
+        "payload": {
+          "type": "object",
+          "required": [
+            "title",
+            "body",
+            "reflection_id",
+            "portfolio_reference",
+            "eligibility"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 250
+            },
+            "body": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12000
+            },
+            "reflection_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            },
+            "portfolio_reference": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            },
+            "eligibility": {
+              "type": "object",
+              "required": [
+                "verified",
+                "consent",
+                "public_release",
+                "evidence_reference"
+              ],
+              "properties": {
+                "verified": {
+                  "const": true
+                },
+                "consent": {
+                  "const": true
+                },
+                "public_release": {
+                  "const": true
+                },
+                "evidence_reference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1000
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contract_version",
+        "request_id",
+        "record_type",
+        "source_id",
+        "kcc360_event_id",
+        "source_version",
+        "action",
+        "occurred_at",
+        "payload"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "v1"
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "record_type": {
+          "const": "reflection"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "kcc360_event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "source_version": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "action": {
+          "const": "withdraw"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+        },
+        "payload": {
+          "type": "object",
+          "required": [
+            "reason"
+          ],
+          "properties": {
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contract_version",
+        "request_id",
+        "record_type",
+        "source_id",
+        "kcc360_event_id",
+        "source_version",
+        "action",
+        "occurred_at",
+        "payload"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "v1"
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "record_type": {
+          "const": "report"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "kcc360_event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "source_version": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "action": {
+          "const": "upsert"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+        },
+        "payload": {
+          "type": "object",
+          "required": [
+            "title",
+            "report_id",
+            "pdf_base64",
+            "sha256",
+            "eligibility"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 250
+            },
+            "report_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            },
+            "pdf_base64": {
+              "type": "string",
+              "maxLength": 13981016,
+              "contentEncoding": "base64"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "eligibility": {
+              "type": "object",
+              "required": [
+                "verified",
+                "consent",
+                "public_release",
+                "evidence_reference"
+              ],
+              "properties": {
+                "verified": {
+                  "const": true
+                },
+                "consent": {
+                  "const": true
+                },
+                "public_release": {
+                  "const": true
+                },
+                "evidence_reference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1000
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "contract_version",
+        "request_id",
+        "record_type",
+        "source_id",
+        "kcc360_event_id",
+        "source_version",
+        "action",
+        "occurred_at",
+        "payload"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "v1"
+        },
+        "request_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "record_type": {
+          "const": "report"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "kcc360_event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
+        },
+        "source_version": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "action": {
+          "const": "withdraw"
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+        },
+        "payload": {
+          "type": "object",
+          "required": [
+            "reason"
+          ],
+          "properties": {
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+PASS compiled MIS route: unauthenticated/non-owner denial, no-store availability, disabled JSON/multipart activation before reading data, same-origin protection, no database access. No live staff provider or browser upload asserted.

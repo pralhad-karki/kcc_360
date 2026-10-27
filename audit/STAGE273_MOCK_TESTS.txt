@@ -1,0 +1,20 @@
+PASS disabled default and live mode denied
+PASS role and department denial before mutation
+PASS release consent independently required
+PASS unapproved or tampered canonical listing cannot enqueue
+PASS zoned mapping must match approved wall-clock schedule
+PASS atomic audit failure rolls back outbox
+PASS concurrent workspace change rejects commit
+PASS approved source enqueue and privacy allowlist
+PASS timeout persists retry without altering source
+PASS stale versions foreign identity and unsafe URLs are rejected
+PASS lost acknowledgement reopen retry creates one private website draft
+PASS website approval remains independent and returned URL separate
+PASS revoked release blocks re-delivery
+PASS request rejection retained and not treated as publication
+PASS approved correction uses new version and preserves website identity
+PASS delayed older response cannot undo queued withdrawal
+PASS unauthorized withdrawal denied
+PASS withdrawal is durable terminal and clears URL
+PASS canonical source learning and approval records unchanged
+{"passed":19,"consumer":"bounded mock","live":false}

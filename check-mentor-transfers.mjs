@@ -1,0 +1,28 @@
+import assert from 'node:assert/strict';
+import {createEngine} from './server/engine.mjs';
+import {validateCommandForms} from './server/form-fields.mjs';
+import {authorizeFileTarget} from './server/file-policy.mjs';
+import {sourceBinding} from './server/share-policy.mjs';
+let state=createEngine(null,'s1').snapshot();const form=x=>({form:x});
+function run(actor,cmd,args=[]){validateCommandForms(cmd,args);let r=createEngine(state,actor).run(cmd,args,{page:'Mentor Assignments'});state=r.data;return r}
+let pid=state.projects.find(p=>p.mentor==='m1').id;const project=()=>state.projects.find(p=>p.id===pid),request=()=>state.mentorTransfers.at(-1);
+project().state='COMPLETION_VERIFIED';project().evaluations.s1={final:true,by:'m1',version:1,pass:true};project().reflections.s1={version:1,text:'PRIVATE REFLECTION'};project().evidence=[{by:'s1',verified:true,title:'Historical evidence',verifiedBy:'m1'}];
+const fingerprint=await sourceBinding(project(),'s1',false);
+run('s1','requestMentorTransfer',[form({to:'m2',reason:'Unauthorized'}),pid]);assert.equal(state.mentorTransfers.length,0);
+run('m1','requestMentorTransfer',[form({to:'m2',reason:'Operational cover'}),pid]);let id=request().id;
+run('c1','requestMentorTransfer',[form({to:'m2',reason:'Duplicate'}),pid]);assert.equal(state.mentorTransfers.length,1);
+assert.equal(authorizeFileTarget(state,'m2','evidence',pid,0),false);
+let incoming=createEngine(state,'m2').view();assert.ok(!incoming.projects.some(p=>p.id===pid));assert.ok(!JSON.stringify(incoming).includes('PRIVATE REFLECTION'));assert.equal(incoming.mentorTransfers[0].handoverBasis,undefined);
+assert.equal(createEngine(state,'s1').view().mentorTransfers[0].reason,undefined);
+run('d1','decideMentorTransfer',[form({reason:'Premature'}),id,'APPROVED']);assert.equal(project().mentor,'m1');
+const handover=()=>run('m1','submitMentorHandover',[form({responsibilities:'Verify remaining work',references:'Evidence record references',nextSteps:'Review pending duties'}),id]);
+handover();run('m1','ackMentorHandover',[id]);assert.equal(request().state,'HANDOVER_SUBMITTED');run('m2','ackMentorHandover',[id]);assert.equal(request().state,'ACKNOWLEDGED');
+project().tasks.push({id:'NEW',done:false,assignee:'s1'});run('d1','decideMentorTransfer',[form({reason:'Stale'}),id,'APPROVED']);assert.equal(project().mentor,'m1');
+handover();assert.equal(request().handoverVersion,2);assert.equal(request().acknowledgedBy,undefined);run('m2','ackMentorHandover',[id]);run('m1','decideMentorTransfer',[form({reason:'Self approval'}),id,'APPROVED']);assert.equal(project().mentor,'m1');run('d1','decideMentorTransfer',[form({reason:'Coverage reviewed'}),id,'APPROVED']);
+assert.equal(project().mentor,'m2');assert.equal(project().mentorAssignmentVersion,2);assert.equal(project().mentorHistory[0].validTo,project().mentorHistory[1].validFrom);assert.equal(project().mentorHistory[0].validFrom,null);assert.equal(project().evaluations.s1.by,'m1');assert.equal(project().evidence[0].verifiedBy,'m1');assert.equal(await sourceBinding(project(),'s1',false),fingerprint);assert.equal(authorizeFileTarget(state,'m1','evidence',pid,0),false);assert.equal(authorizeFileTarget(state,'m2','evidence',pid,0),true);assert.ok(createEngine(state,'m2').view().projects.some(p=>p.id===pid));assert.ok(!createEngine(state,'m1').view().projects.some(p=>p.id===pid));
+run('d1','decideMentorTransfer',[form({reason:'Replay'}),id,'APPROVED']);assert.equal(project().mentorAssignmentVersion,2);
+run('m2','requestMentorTransfer',[form({to:'m1',reason:'Return coverage'}),pid]);id=request().id;run('m1','decideMentorTransfer',[form({reason:'Unavailable'}),id,'DECLINED']);assert.equal(request().state,'DECLINED');assert.equal(project().mentor,'m2');
+project().state='CLOSED';run('m2','requestMentorTransfer',[form({to:'m1',reason:'Closed'}),pid]);assert.equal(state.mentorTransfers.length,2);
+console.log('PASS: independent mentor handover, stale snapshots, role scope, historical attribution, effective intervals, sharing stability, replay and closed-work guards.');
+const fs=await import('node:fs'),vm=await import('node:vm');const nodes={},ctx={console,localStorage:{getItem:()=>null,setItem(){}},document:{querySelector:s=>nodes[s]||(nodes[s]={style:{},showModal(){},close(){}})},setTimeout(){},URL,Blob};vm.createContext(ctx);for(const n of ['governance','participation','assessment','appeals','outcomes','membership','budget-revisions','cash-settlement','portfolio-sharing','delivery','mentor-transfers','notifications','reports','app'])vm.runInContext(fs.readFileSync('prototype/'+n+'.js','utf8'),ctx);vm.runInContext(`for(const actor of users){uid=actor.id;page='Mentor Assignments';selected=null;render();if(!document.querySelector('#app').innerHTML.includes('Mentor assignments'))throw Error('missing mentor page')}`,ctx);
+console.log('PASS: mentor assignment page renders for every demo role.');

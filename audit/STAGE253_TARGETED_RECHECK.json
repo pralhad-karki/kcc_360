@@ -1,0 +1,48 @@
+{
+  "sourceCommit": "e35876f7114e24e8b8f515f90972574d1eadeeab",
+  "localChanges": "See STAGE253_SOURCE_MANIFEST.json; test-only dialog stub corrected",
+  "results": [
+    {
+      "file": "check-linked-intake-delivery.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS linked Workshop/Seminar: protected intake programme/template, ordinary draft correction and retained return/resubmission versions, independent approval, delivery-plan return/approval before start, one-student verified session and required distinct outputs, returned-output correction, final reflection/evaluation and no automatic certificate/publication. Browser acceptance not run.\n"
+    },
+    {
+      "file": "check-task-mapping.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS: task mapping validation, ownership, mentor management, academic snapshots, revision and assignment histories, completion and closed-work guards.\nPASS: task board and mapping form render with mapped and historical records.\n"
+    },
+    {
+      "file": "check-intake-activity-handoff.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS individual intake handoff: accepted/current prerequisites, coordinator-only confirmed draft creation, one initiating participant, source/history/output preservation, no private staff basis, duplicates/stale/inconsistent-link denial, existing independent proposal approval/start, projected privacy and excluded research/team/club paths. Browser acceptance not run.\n"
+    },
+    {
+      "file": "check-internship-readiness.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS: actual private file upload/download and locks, student agreement, independent host/supervisor verification, declarations, immutable return/revision and proof binding, start authorization, withdrawal, stale letter rejection, scope privacy and no execution/credit/finance grants.\nPASS: all-role readiness rendering, retained supervisor/authorization history and private panel scope.\n"
+    },
+    {
+      "file": "check-club-event-enrolment.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS: creation-only selected/all modes, source binding, role denial, lead-only roster, application/selection without enrolment, confirmed handoff, duplicate/mode freeze, preserved legacy history and no automatic achievements.\n"
+    },
+    {
+      "file": "check-reflection-sharing.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS submitted-reflection sharing: actual submission before evaluation, preview/consent, minimal status-labelled snapshot, no achievement/publication side effects, anonymous escaped view, source invalidation, expiry/revocation/owner and atomic race guards.\n"
+    },
+    {
+      "file": "check-portfolio-export-api.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "output": "PASS: combined/declarations-only CV, selected-section whitelist, safe print text, peer isolation, empty/duplicate denial, changed-declaration digest rejection and no storage writes.\nPASS: own-current certificate-only CV, escaped minimal fields, duplicate/peer/revoked/superseded/paused/stale-evaluation denial, replacement re-selection, changed-content digest, independent public QR state and no writes.\nPASS: authenticated owner/student-only private export POST, exact actor/revision/selection, fresh digest/identity/session/storage rechecks, no workspace/audit/share writes, origin/type/size/JSON guards, protected no-store HTML headers and no public GET/token. No browser/PDF acceptance.\n"
+    }
+  ]
+}

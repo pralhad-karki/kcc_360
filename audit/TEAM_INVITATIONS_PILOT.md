@@ -1,0 +1,19 @@
+# Versioned team invitations — Stage 129
+
+2026-10-19. Pure isolated invitation model; no live screen, persistence, email, notification dispatch or project membership grant.
+
+A trusted proposal lead creates a round from explicitly selected current student IDs, including their own lead commitment. Other selected students begin PENDING. Only the exact stable-person invitee may accept or decline. An accepted invitee can withdraw; the lead can cancel pending/accepted invitations but cannot accept for another student. Replayed decisions and stale record revisions fail. Declined, withdrawn or cancelled members prevent all-member readiness until the lead makes a new team round with the intended roster.
+
+Every round binds proposal version, team version, institution/kind/academic scope, current roster source versions and an explicit current scoped TEAM_INVITE grant. No grants are created. Current identity, academic cohort/course and invitation source are rechecked on response and readiness; changed student data, revoked/changed inviter authority or stale proposal/team requires a fresh round. Updated rounds preserve earlier snapshots and response events and reset all nonlead confirmations. The lead's explicit round creation records their own participation commitment. Changes never overwrite former team records.
+
+confirmedTeamRoutingPilot exposes only current accepted student/version references to the existing isolated resolver. It requires every selected member's acceptance and current sources. That resolver then identifies one first reviewer and the configured final authority. Neither helper authorizes execution or grants live project access. The trusted server must eventually authenticate each person, load sources/assignments, enforce record permissions and persist with CAS/atomic audit; these pure functions are not authentication or tamper-proof storage boundaries. No invitation expiry policy or reminders are invented.
+
+## Event volunteer recruitment rule
+
+User instruction: first notify only active general members of the organizing club. Club membership alone does not enrol a student in an event. Domain/position applications and selection precede selected-student confirmation. Wider KCC recruitment, when needed, must be an explicit authorized later action, never automatic default distribution. Recruitment notification audiences must be derived from current club membership and rechecked before display/send. This rule is recorded for the forthcoming event recruitment implementation; live notification recipients and existing event rosters are unchanged by this checkpoint. Project-team invitations do not become a broadcast to club members.
+
+## Evidence and remaining work
+
+check-team-invitations-pilot.mjs tests lead creation, invitee-only responses, cancellation/withdrawal, replay/stale checks, current source/grant scope and revocation/expiry, fresh acceptance after revision, retained prior rounds, confidential-field exclusion and actual routing-resolver readiness. Existing directory/routing/intake/mentor/support/report tests remain regressions. All fixtures are fictional/local; no full demonstration data, schema, route, account permission, command or live membership changed. Browser/institutional acceptance remains Not run.
+
+Next: build a single isolated walkthrough that combines student search → selection → invitations → accept/decline → first-review routing, then assess the minimum controlled connection to existing intake forms, role queues and notifications. Keep real MIS roster/identity/subject assignments explicitly unresolved. After the shared flow, implement club-first volunteer recruitment with operational domains, positions and scoped domain leads; reuse existing evaluation/verification/portfolio pipelines. Semester/year progression remains deferred.

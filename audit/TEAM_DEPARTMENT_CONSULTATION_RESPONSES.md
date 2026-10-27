@@ -1,0 +1,13 @@
+# Stage179 — Controlled department consultation responses
+
+Added respondIntakeTeamConsultation through the existing trusted command dispatcher. The currently assigned active verified department representative may accept or decline the current unanswered request. Acceptance requires an explicit authority/capacity declaration; decline does not. Both decisions require a reason. Other actors and duplicate or stale references are rejected.
+
+Extracted the existing consultation source validation into a shared server helper so requests and responses revalidate the same reviewed research proposal, current Research Coordinator authority, accepted mentor, participating department and independent approved representative. No institutional permissions are provisioned. Source versions, revocation, current identity and latest mentor remain checked. The original request/basis, earlier records and other department responses are preserved.
+
+Response is stored on the existing support request with decision, reason, actor, date and authorityConfirmed; state becomes ACCEPTED or DECLINED. This accepts or declines the stated supporting responsibility only. It does not prove delivery, mark overall consultation complete, grant final project approval or authorize execution. Duplicate responses cannot overwrite the first decision. Controlled revision remains a later step.
+
+Two fresh source loads, workspace compare-and-swap and atomic server audit retain current protections. Minimal command responses and existing team projections keep private reasons and source snapshots out of general dashboards. No database schema, routes, modules, live providers or real notifications added.
+
+Validation: new actual dispatcher/SQLite request-response chain covers both decisions, invalid declarations/fields, unauthorized/inactive/revoked actors, changed mentor/delegation/source references, duplicate responses, immutable request and other departments, audit rollback, concurrent write conflict, alternate verified alias and private projection. Existing request tests run after the shared-helper extraction. HTTP integration remains disabled without approved sources. Full regression evidence: AUTOMATED_BASELINE_STAGE179.json; TypeScript and production build checked separately.
+
+Pending: scoped consultation queue/detail and response screens, coordinator selection/request screen, controlled withdrawal/revision, notifications, consultation completion policy and final approval/execution handoff. Browser/keyboard and institutional acceptance remain not run. Semester progression and full demonstration data remain deferred.

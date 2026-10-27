@@ -1,0 +1,13 @@
+PASS Student Affairs can endorse a zero-cost plan without final approval or execution
+PASS legacy direct final approval is denied for every demo actor
+PASS endorsement requires exact version, confirmation, valid rows and independent unit reviewer
+PASS repeated endorsement has no duplicate history; withdrawal retains the decision and permits a fresh cycle
+PASS unit review alone and retained legacy approval cannot create new events
+PASS independent server guard catches forged approved states, approval fields and baseline edits
+PASS server guard blocks new club project creation and relinking through other commands
+PASS new zero-cost or cancelled-only approved plan injection also fails
+PASS unit review history cannot be overwritten or manufactured through another command
+PASS existing club activities, learning history and legacy approval bytes are retained
+PASS forged role/approval form fields rejected by the existing whitelist
+PASS registered protected AP source still requires its protected reviewer route
+{"cases":12,"result":"PASS","institutionalActivation":false,"newExecutionAuthorization":false,"fixtures":"fictional owner-demo records only"}

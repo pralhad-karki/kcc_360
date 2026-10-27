@@ -1,0 +1,15 @@
+# Stage 202 — Mentor evidence-verification screen
+
+## Entry and form
+
+The existing activity overview offers Review evidence for the recorded mentor account on started institutional team activities with submitted, unreviewed tasks and unverified evidence. Shared evidence is listed once, rather than once per linked task. This display hint does not authorize verification: the existing backend checks the current accepted mentor's verified person, independence, approval/source/mapping/team and pending holds before returning a preview and again before saving. No role/access/source configuration changed. The new entry follows the existing recorded-account workspace convention; this increment does not broaden alternative-account workspace visibility.
+
+The modal shows the evidence title, author account, description, optional HTTP/HTTPS source link, selected task's evidence requirement/domain criteria and every individual contribution currently linked to the shared evidence. User content is escaped and links are validated before rendering, opened separately with noopener/noreferrer. No evidence is fetched automatically. Reason, independence declaration and explicit confirmation are required. Verification marks the evidence only; every task remains Under review and no score/completion decision is offered.
+
+The screen uses readIntakeTeamEvidenceVerification and verifyIntakeTeamEvidence. Exact fresh source/task/evidence references, version zero and preview token are retained. A separate full workspace GET must prove the expected verification metadata, original evidence binding, mentor account, retained content, source/team/start and unchanged task/submission records before a success message or workspace replacement. Save-response workspace data is ignored. Malformed results, stale previews, account resets and failed reconciliation invalidate the form; uncertain outcomes require refresh/inspection before retrying. Shared locking prevents repeated clicks; late reads cannot reopen a closed modal or change a new account's state.
+
+## Verification and remaining work
+
+check-intake-team-evidence-verification-client.mjs covers recorded-mentor entry, duplicate shared-evidence card suppression, exact evidence/criteria/contributions, escaped content and safe links, required reason/declaration/confirmation, strict response versions, stale/malformed records, changed tasks/provenance, account changes during prepare/save/refresh, duplicate clicks, failed refreshes and closed-modal handling. It also performs a real trusted dispatcher → SQLite → scoped mentor-workspace round trip using the existing approved/started/submitted fixture, checking that shared contributions and task states remain unchanged.
+
+Full regression evidence is in AUTOMATED_BASELINE_STAGE202.json. Actual browser/keyboard/institutional acceptance remains Not run. Individual completion review/scoring, return/revision, private uploads and live approved-source activation remain pending. Semester progression remains deferred. This increment changes no backend commands, SQL schema, grants, source providers or public access settings.

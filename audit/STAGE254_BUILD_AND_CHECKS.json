@@ -1,0 +1,27 @@
+{
+  "baseline": "56e1f62c95ac8a87f045b48378406be27b5aa3be",
+  "date": "2026-10-25",
+  "workflowRegression": "STAGE254_REGRESSION.json",
+  "targeted": [
+    {
+      "check": "check-files.mjs",
+      "beforeExit": 1,
+      "afterExit": 0,
+      "fix": "Server headless dialog stub now implements existing querySelector/removeAttribute/setAttribute methods"
+    },
+    {
+      "check": "check-internship-readiness.mjs",
+      "exitCode": 0
+    }
+  ],
+  "typescriptExit": 0,
+  "productionBuildExit": 0,
+  "runtimeSourceHashes": {
+    "scripts/prepare-workspace.mjs": "5914e9b56919b402bc02359835310c74acefa7dca9a59cbb7b4260e77e969ed9",
+    "server/engine.mjs": "2ac2e9d3f59bb4045c330aec1d24d5c9e995014b355b80d0e359a7a3e1a10550",
+    "prototype/app.js": "08db7a4fdd5b44926e056e526d6665ae1b3330ce3ce9cfe66757e2082aeea1cd",
+    "server/files.ts": "1b3427f06f30129b975ce2fc21bd2a897c4386b6cdb69768894afcd3b5005380",
+    "app/chatgpt-auth.ts": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc"
+  },
+  "browser": "Real compiled framework Worker with native Wrangler D1/R2 and isolated fictional edge identity; institutional sign-in not tested"
+}

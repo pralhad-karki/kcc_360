@@ -1,0 +1,15 @@
+PASS ACADEMIC existing source → trusted identity → preview → persistent decision → history
+PASS CLUB existing source → trusted identity → preview → persistent decision → history
+PASS unconfigured runtime exposes no records and accepts no decisions
+PASS browser-supplied identity, extra fields, stale hash and unconfirmed decision rejected
+PASS wrong subject, inactive identity and revoked grant cannot read private history
+PASS cross-plan scope and forged source mapping cannot authorize a review
+PASS legacy submitted or approved records cannot manufacture historical decisions
+PASS authority changing during preview does not return actionable stale content
+PASS ordinary academic controller cannot bypass a registered controlled review
+PASS controlled source family clone and academic/club execution are blocked; history remains editable
+PASS transaction-time fence change blocks review and keeps audit empty
+PASS ordinary club controller cannot bypass controlled review
+PASS an already existing sibling cannot create new activity through an older family version
+13 trusted review integration cases passed with fictional identities and SQLite. No institutional activation or browser acceptance asserted.
+PASS protected club calendar: exact persisted full approval route; no drafts, endorsements or legacy labels; private DTO; role/workspace scope; read-only preservation; pending amendments retain prior dates; final successor replaces once; duplicate, changed-source, tampered and incomplete records withheld without stale fallback. Fictional trust configuration only.

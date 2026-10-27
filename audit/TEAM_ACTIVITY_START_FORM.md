@@ -1,0 +1,23 @@
+# Stage194 — Start-readiness preview and confirmation form
+
+## Minimum change and impact
+
+Connected the Stage193 start backend to the existing Activity Intake readiness detail. A linked CREATED team activity with current accepted prerequisites offers a read-only start-permission check. It does not infer authority from a dashboard/display role. Only a fresh readIntakeTeamStartReadiness response proving current start authority, source/mapping consistency and canStart=true opens the form. No new module, route, schema, permission or live authority source was added. The backend preview now includes whitelisted verified student IDs/names paired with execution accounts so the reviewer can identify every member; no stable person IDs, financial data or private staff narratives are exposed.
+
+The form shows the exact linked activity/final submission, submitted/mapped type, programme, dates, expected outputs, complete verified team, team lead and accepted mentor. It requires a reason and unchecked-by-default explicit confirmation. It sends only exact source/final/project references, expected version, preview token, reason and confirmation to startIntakeTeamActivity. No editable membership, mentor, owner or activity-mapping fields are introduced. Final approval remains intact and is not repeated.
+
+Strict preview validation rejects inconsistent references, duplicate/missing members, incorrect account/lead alignment, unknown fields, malformed dates/types and premature execution flags. The controller checks the minimal STARTED result and then fetches a fresh scoped workspace. When that view contains the project, its unique link, original final references, activity scope, members/mentor and start status must match before it is applied. Command responses never replace workspace state.
+
+## Existing workspace visibility compatibility
+
+The existing generic workspace projector can legitimately omit a started project from a coordinator/final reviewer's view, even when the separately authorized institutional readiness view permits that person to review its start. This increment preserves that access boundary. When the fresh workspace omits the project entirely, the controller obtains a separate authorized readiness read at the fresh workspace revision and validates the same proposal, reviewed submission, final decision, linked project and recorded STARTED status. It applies only the original scoped workspace, without inserting an unauthorized project or widening generic access. A conflicting visible project/link fails instead of using this path. Actual backend/engine checks reproduce this scoped omission; VM checks cover success and mismatched/unauthorized status responses.
+
+## Freshness and deliberate limits
+
+Snapshot, actor, revision, queue, modal and generation checks prevent stale previews/actions. Duplicate clicks cannot enqueue a second write. A failed or ambiguous save/refresh clears the form and asks the user to refresh and inspect recorded status; no write is automatically replayed. Account changes during preview, save, full GET or subsequent status checks cannot apply old results or unlock another account's operation. A committed save still synchronizes when its modal was closed.
+
+Already-started records and proposals with prerequisite issues show no start action. Generic demo mutation/continuation remains blocked for controlled team activities. Further task assignment, progress/evidence and completion are separate pending controlled workflows. No real institutional provider/assignment/mapping was configured, no full demonstration dataset was populated and no notifications were sent.
+
+Validation: actual controller integration covers fresh authorized preview and exact commands, verified student identity/account alignment, escaped output, mandatory reason/confirmation, malformed previews/results/full snapshots, duplicate clicks, no replay, failed/closed modals, account changes at all stages, scoped workspace/status compatibility and terminal action removal. Existing SQLite start/rollback/CAS and HTTP default-disabled checks remain. Evidence: AUTOMATED_BASELINE_STAGE194.json. TypeScript and production build checked separately. Browser/keyboard and institutional acceptance remain Not run.
+
+Next: connect controlled task assignment and progress tracking for started team activities, preserving final approval and existing scope. Notifications, real source activation and formal acceptance remain pending. Semester progression remains parked and the full demonstration dataset is deferred. The prototype is not yet finalized or production-ready.

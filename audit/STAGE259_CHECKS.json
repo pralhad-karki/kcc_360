@@ -1,0 +1,28 @@
+{
+  "stage": 259,
+  "baseline": "cc12881e30c1b62325a97adb566428fe5b903d24",
+  "regression": "STAGE259_REGRESSION.json",
+  "regressionChecksPassed": 38,
+  "newAmendmentIntegrationCasesPassed": 10,
+  "existingTrustedReviewCasesPassed": 13,
+  "targetedFinalRerunsPassed": true,
+  "typescriptExit": 0,
+  "finalProductionBuildExit": 0,
+  "institutionalActivation": false,
+  "executionAuthorized": false,
+  "eventPropagationExecuted": false,
+  "annexPAcceptance": "NOT RUN",
+  "temporaryFixtureExcluded": true,
+  "sourceHashes": {
+    "server/plan-amendment.mjs": "009f1b5e4bca0bf359e380a43d499986f00afa353c0a97202669b1a8939e31cc",
+    "server/plan-amendment-save.mjs": "eb507f904110baf317f73eb199d93da041aa3ccd85d542ce50b12988706c22e5",
+    "server/plan-approval-source.mjs": "bf40b59ec90ef1bad1ee60e96c99dc23bd9fa819036811ab0dbac3c681aaaea8",
+    "server/plan-approval-save.mjs": "df211a604df68a4994d08414d2378f9ac7025f500b5100d23ad413d91ff0312b",
+    "server/plan-approval-review.mjs": "06f649837cb580b15b600f7fb67c80c46aa2b7672279d0d79726a21cb232019c",
+    "server/plan-approval-guard.mjs": "54b083dbf30e7d6589e8daaa08b2cb8cf1a9248d4b6a6c636599b24eec0cfcee",
+    "prototype/plan-approvals.js": "c7a1c7e1076f4b8d5e6e32fcf6a4760a0422d0c9852103db9c4ed2b49499799b",
+    "prototype/plan-approvals.html": "31cd89e40f56123aa0eb3217ce24ca85e3560c5056eac6d9786e95bd0161d72a",
+    "scripts/check-task-workflow.mjs": "88689b0f58f01ad976b38a799a04475fba97d1d2c9575cc974e22ea8c51fad99",
+    "check-plan-amendment.mjs": "a06daf398edbfb04a354b017e12ba6c9d07b21b513b89156641a831a896305cd"
+  }
+}

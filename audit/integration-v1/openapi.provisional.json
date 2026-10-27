@@ -1,0 +1,396 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "KCC Website integration readiness candidate",
+    "version": "v1-provisional",
+    "description": "Not an agreed shared specification; NOT live integration. No server URL is assigned. TLS, credential owner/rotation, scopes, identifier issuers, statuses and participant mapping need joint confirmation."
+  },
+  "x-contract-state": "provisional-pending-both-teams",
+  "x-live-enabled": false,
+  "security": [
+    {
+      "kccPeerKey": []
+    }
+  ],
+  "paths": {
+    "/api/integration/v1/publication-requests": {
+      "post": {
+        "operationId": "receivePublicationRequest",
+        "x-required-scope": "publication:write",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "./publication-package.schema.json"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Receipt plus CURRENT status. Same request ID/key/hash replays; changed key binding or same source-version correction conflicts."
+          },
+          "401": {
+            "description": "Invalid peer/signature/time"
+          },
+          "403": {
+            "description": "Scope or source eligibility denied"
+          },
+          "409": {
+            "description": "Identity/version/dependency conflict"
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-KCC-Timestamp",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-KCC-Signature",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        ]
+      }
+    },
+    "/api/integration/v1/publication-status": {
+      "get": {
+        "operationId": "readPublicationStatus",
+        "x-required-scope": "publication:read",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "record_type",
+            "required": true,
+            "schema": {
+              "enum": [
+                "event",
+                "reflection",
+                "report"
+              ]
+            }
+          },
+          {
+            "in": "query",
+            "name": "source_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            }
+          },
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-KCC-Timestamp",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-KCC-Signature",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current status, canonical_path reserved on creation; public_url is a relative permanent public URL only when currently published. Provisional status vocabulary: received,pending_website_review,published,withdrawn."
+          }
+        }
+      }
+    },
+    "/api/integration/v1/registrations": {
+      "post": {
+        "operationId": "registerForPublicEvent",
+        "security": [
+          {
+            "verifiedWebsiteIdentity": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "website_event_id"
+                ],
+                "properties": {
+                  "website_event_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 150
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Durable registration receipt; server-resolved verified subject, capacity and deadline enforced"
+          },
+          "409": {
+            "description": "Closed/unpublished/full/duplicate"
+          },
+          "503": {
+            "description": "Identity resolver or mock mode unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            }
+          }
+        ]
+      }
+    },
+    "/api/integration/v1/registration-exchange": {
+      "get": {
+        "operationId": "readRegistrationExchange",
+        "x-required-scope": "registration:read",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "website_event_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            }
+          },
+          {
+            "in": "query",
+            "name": "after",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            }
+          },
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 150
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-KCC-Timestamp",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(?:\\.\\d{3})?(?:Z|[+-]\\d\\d:\\d\\d)$"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-KCC-Signature",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bounded page: registration_id, website_event_id, participant_reference, state, created_at. No name/email/phone/portfolio access."
+          }
+        }
+      }
+    },
+    "/api/integration/v1/registrations/cancel": {
+      "post": {
+        "operationId": "cancelOwnRegistration",
+        "security": [
+          {
+            "verifiedWebsiteIdentity": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "registration_id"
+                ],
+                "properties": {
+                  "registration_id": {
+                    "type": "string",
+                    "maxLength": 150
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Owner-only idempotent cancellation; repeated cancellation creates no duplicate audit"
+          },
+          "404": {
+            "description": "Registration unavailable to this identity"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "kccPeerKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-KCC-Key-Id",
+        "description": "Provisional HMAC-SHA256 over METHOD + newline + exact path/query + newline + timestamp + newline + Idempotency-Key + newline + SHA256(raw body). Five-minute clock window. Key scopes configured server-side. HTTPS mandatory in deployment; local mock uses loopback only."
+      },
+      "verifiedWebsiteIdentity": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Provider/SSO undecided. Trusted server resolver only; request body must never self-assert identity."
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "code",
+          "safe_message",
+          "field_errors",
+          "correlation_id"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "safe_message": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "field_errors": {
+            "type": "array",
+            "items": {}
+          },
+          "correlation_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "x-provisional-decisions": [
+    "identifier issuers and cross-system reconciliation ownership",
+    "status/field vocabulary and localized event text",
+    "relative versus absolute public URL base",
+    "event eligibility, paid registration/refunds/waitlist policy",
+    "reflection source authenticity, consent expiry and guardians",
+    "PDF transfer mechanism/residency/retention and scan provider",
+    "HMAC versus mTLS/OAuth2, key rotation and replay retention",
+    "institutional owner grants and live source revocation SLA",
+    "cross-system contract approval and hosted Worker acceptance"
+  ],
+  "x-existing-website-status-vocabularies": {
+    "event_lifecycle": [
+      "unverified",
+      "scheduled",
+      "completed",
+      "cancelled"
+    ],
+    "event_calendar_position": [
+      "upcoming",
+      "ongoing",
+      "past"
+    ],
+    "website_editorial": [
+      "draft",
+      "submitted",
+      "verified",
+      "published",
+      "withdrawn"
+    ],
+    "integration_publication": [
+      "received",
+      "pending_website_review",
+      "published",
+      "withdrawn"
+    ],
+    "receipt_outcome": [
+      "draft_created",
+      "received",
+      "stale",
+      "withdrawn",
+      "blocked_by_withdrawal"
+    ],
+    "report_public_projection": [
+      "pending",
+      "published"
+    ],
+    "registration": [
+      "registered",
+      "cancelled"
+    ]
+  },
+  "x-status-notes": "Calendar position never proves completed execution. Source lifecycle-to-website evidence mapping and report/registration cancellation exchange remain provisional; current operator lifecycle review is required before PDF import."
+}

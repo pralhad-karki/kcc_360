@@ -1,0 +1,8 @@
+check-club-evaluation.mjs
+PASS: ten SRS indicators, relevant verified source checks, unassessed ratings, required corrective action owner/deadline, independent verification, stale evidence, annual gates, private source bindings, revision history and reopening.
+PASS: programme/club means and counts, cancellation-adjusted denominators, safe exports, role rendering and evidence catalogue form.
+PASS: corrective-action summary preserves version/state context, access scope, read-only records, safe text, source anchors and empty state; no completion or renewal decision inferred.
+check-reports.cjs
+PASS: known-fixture activity deduplication, latest approved plan denominator, cancelled exclusions, zero/N-A handling, inclusive filters, distinct verified participants, evaluation turnaround, budget variance, scoped reports/exports, CSV safety and coverage renders.
+check-monitoring-projection.mjs
+PASS: every demo actor gets unchanged generic views with raw monitoring reviews/feedback/actions/identities/receipts omitted; command response projection remains private, internal snapshots and storage data preserved, malformed optional collection omitted without disclosure.

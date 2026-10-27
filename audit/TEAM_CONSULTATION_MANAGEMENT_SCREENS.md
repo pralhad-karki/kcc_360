@@ -1,0 +1,13 @@
+# Stage183 — Consultation withdrawal/revision screens and history
+
+Connected Stage182 controls to the existing Dashboard → Activity Intake → consultation detail flow. The current authorized Research Coordinator can review per-department request history, withdraw the latest pending/accepted/declined request with an explicit confirmation and reason, then use the existing request section to issue a revision. Earlier requests and responses remain retained. Revised candidates carry the prior department version; save expects the next version and fresh representative acceptance.
+
+Read projections reuse the existing management validator for coordinators, allowing withdrawal visibility after old mentor/delegate eligibility changes. Representatives retain strict current-source validation and cannot see other departments or perform coordinator actions. Queue shows latest records; detail history contains only request ID/version, representative alias, state and dates. Private withdrawal narratives, source bindings and unrelated department details remain server-side. Withdrawn requests expose revision guidance without a response form.
+
+The existing candidate projection now includes withdrawn departments only after current coordinator authority and retained history checks. Current accepted mentor and eligible department representative are still mandatory before a revised request is offered. Client selection binds expected prior version and validates next-version response. It does not inherit old acceptance or automatically select a representative.
+
+Controller guards preserve current actor/snapshot/revision, fresh detail retrieval, exact response references, full-workspace refresh only, explicit confirmation and lock ownership. No new module, route, SQL schema, grant or notification sender added.
+
+Validation: new management projection/SQLite chain checks revoked-source visibility, scoped history, withdrawn records, per-department revision version and token-bound save. New withdrawal controller test checks authorization form, reason/confirmation, malformed refs, no replay, failed refresh, stale account lock, modal-close synchronization and history guidance. Revised request controller tests exercise v3→v4 with request/response controllers together. Full evidence: AUTOMATED_BASELINE_STAGE183.json. TypeScript and build separately checked. Browser/keyboard and institutional acceptance not run.
+
+Pending: review approved overall consultation readiness and final approval/execution handoff; notifications and institutional activation. No full demo dataset populated. Semester progression remains parked.

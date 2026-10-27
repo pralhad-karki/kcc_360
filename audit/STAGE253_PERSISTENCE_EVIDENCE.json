@@ -1,0 +1,3548 @@
+{
+  "kind": "KCC360_STAGE253_FICTIONAL_PERSISTENCE_EVIDENCE",
+  "run": "B",
+  "date": "2026-10-25",
+  "boundary": "Actual route/service/engine code; local SQLite D1 API and filesystem R2 API adapters. No production DB. Authentication/session tables omitted.",
+  "assertions": [
+    "15 consecutive main-workspace revision/audit commits",
+    "3 separate mock-ledger revision/audit commits",
+    "Stored object size and SHA-256 match DB",
+    "Readiness START_AUTHORIZED and execution APPROVED; no premature execution",
+    "Mock A,C,D,E,F advance; official Left College B unchanged",
+    "Rejected HTTP requests leave workspace hashes and audit count unchanged"
+  ],
+  "httpStatuses": {
+    "200": 34,
+    "503": 25,
+    "401": 3
+  },
+  "workspaces": [
+    {
+      "id": "KCC-MOCK-COHORT-LEDGER-V1",
+      "revision": 3,
+      "commit_id": "abc33466-07e9-4cf2-a609-8ae3b5de3255",
+      "updated_at": "2026-10-25T12:46:58.794Z",
+      "sha256": "daa3a8c8a5ed3d69b273f2e5708ef1da9e204a50d2afba71f405a2b92d4193f9",
+      "data": {
+        "kind": "KCC360_MOCK_COHORT_LEDGER_V1",
+        "ledger": {
+          "mode": "MOCK",
+          "fictional": true,
+          "revision": 3,
+          "placements": {
+            "MOCK_STUDENT_A": {
+              "studentId": "MOCK_STUDENT_A",
+              "personId": "MOCK_PERSON_A",
+              "enrollmentId": "MOCK_ENROLLMENT_A",
+              "programmeId": "MOCK_PROGRAMME",
+              "batchId": "MOCK_BATCH",
+              "semesterId": "MOCK_SEMESTER_4",
+              "version": 2
+            },
+            "MOCK_STUDENT_B": {
+              "studentId": "MOCK_STUDENT_B",
+              "personId": "MOCK_PERSON_B",
+              "enrollmentId": "MOCK_ENROLLMENT_B",
+              "programmeId": "MOCK_PROGRAMME",
+              "batchId": "MOCK_BATCH",
+              "semesterId": "MOCK_SEMESTER_3",
+              "version": 1
+            },
+            "MOCK_STUDENT_C": {
+              "studentId": "MOCK_STUDENT_C",
+              "personId": "MOCK_PERSON_C",
+              "enrollmentId": "MOCK_ENROLLMENT_C",
+              "programmeId": "MOCK_PROGRAMME",
+              "batchId": "MOCK_BATCH",
+              "semesterId": "MOCK_SEMESTER_4",
+              "version": 2
+            },
+            "MOCK_STUDENT_D": {
+              "studentId": "MOCK_STUDENT_D",
+              "personId": "MOCK_PERSON_D",
+              "enrollmentId": "MOCK_ENROLLMENT_D",
+              "programmeId": "MOCK_PROGRAMME",
+              "batchId": "MOCK_BATCH",
+              "semesterId": "MOCK_SEMESTER_4",
+              "version": 2
+            },
+            "MOCK_STUDENT_E": {
+              "studentId": "MOCK_STUDENT_E",
+              "personId": "MOCK_PERSON_E",
+              "enrollmentId": "MOCK_ENROLLMENT_E",
+              "programmeId": "MOCK_PROGRAMME",
+              "batchId": "MOCK_BATCH",
+              "semesterId": "MOCK_SEMESTER_4",
+              "version": 2
+            },
+            "MOCK_STUDENT_F": {
+              "studentId": "MOCK_STUDENT_F",
+              "personId": "MOCK_PERSON_F",
+              "enrollmentId": "MOCK_ENROLLMENT_F",
+              "programmeId": "MOCK_PROGRAMME",
+              "batchId": "MOCK_BATCH",
+              "semesterId": "MOCK_SEMESTER_4",
+              "version": 2
+            },
+            "MOCK_STUDENT_H": {
+              "studentId": "MOCK_STUDENT_H",
+              "personId": "MOCK_PERSON_H",
+              "enrollmentId": "MOCK_ENROLLMENT_H",
+              "programmeId": "MOCK_PROGRAMME",
+              "batchId": "MOCK_BATCH",
+              "semesterId": "MOCK_SEMESTER_4",
+              "version": 1
+            }
+          },
+          "batches": [
+            {
+              "id": "MOCK_BATCH_666A4891_A003_4597_BB20_CA15B17F5564",
+              "state": "APPLIED",
+              "preparedBy": "c1",
+              "preparedAt": "2026-10-25T12:46:37.598Z",
+              "reason": "Fictional Stage253B complete-cohort progression; only official Left College excluded.",
+              "preview": {
+                "ok": true,
+                "status": "MOCK_PREVIEW_ONLY",
+                "fictional": true,
+                "canApply": false,
+                "canApprove": false,
+                "canSubmit": false,
+                "source": {
+                  "snapshotId": "MOCK_COHORT_SNAPSHOT_1",
+                  "version": 1,
+                  "tenantId": "MOCK_KCC",
+                  "validUntil": "2028-01-01T00:00:00.000Z"
+                },
+                "structure": {
+                  "id": "MOCK_STRUCTURE_1",
+                  "version": 1,
+                  "fictional": true
+                },
+                "cohort": {
+                  "id": "MOCK_SEMESTER_3_COHORT",
+                  "label": "Fictional cohort \u2014 semester 3",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "from": {
+                    "semesterId": "MOCK_SEMESTER_3",
+                    "label": "Fictional semester 3",
+                    "year": "Fictional year 2"
+                  },
+                  "to": {
+                    "semesterId": "MOCK_SEMESTER_4",
+                    "label": "Fictional semester 4",
+                    "year": "Fictional year 2"
+                  }
+                },
+                "counts": {
+                  "cohort": 6,
+                  "included": 5,
+                  "excludedLeftCollege": 1,
+                  "advance": 5,
+                  "finalReview": 0
+                },
+                "rows": [
+                  {
+                    "studentId": "MOCK_STUDENT_A",
+                    "personId": "MOCK_PERSON_A",
+                    "displayName": "Fictional Student A",
+                    "collegeStatus": "ENROLLED",
+                    "studentVersion": 1,
+                    "enrollmentId": "MOCK_ENROLLMENT_A",
+                    "enrollmentVersion": 1,
+                    "from": {
+                      "semesterId": "MOCK_SEMESTER_3",
+                      "label": "Fictional semester 3",
+                      "year": "Fictional year 2"
+                    },
+                    "to": {
+                      "semesterId": "MOCK_SEMESTER_4",
+                      "label": "Fictional semester 4",
+                      "year": "Fictional year 2"
+                    },
+                    "decision": "ADVANCE_PREVIEW"
+                  },
+                  {
+                    "studentId": "MOCK_STUDENT_B",
+                    "personId": "MOCK_PERSON_B",
+                    "displayName": "Fictional Student B",
+                    "collegeStatus": "LEFT_COLLEGE",
+                    "studentVersion": 1,
+                    "enrollmentId": "MOCK_ENROLLMENT_B",
+                    "enrollmentVersion": 1,
+                    "from": {
+                      "semesterId": "MOCK_SEMESTER_3",
+                      "label": "Fictional semester 3",
+                      "year": "Fictional year 2"
+                    },
+                    "to": null,
+                    "decision": "EXCLUDED_LEFT_COLLEGE"
+                  },
+                  {
+                    "studentId": "MOCK_STUDENT_C",
+                    "personId": "MOCK_PERSON_C",
+                    "displayName": "Fictional Student C",
+                    "collegeStatus": "ON_BREAK",
+                    "studentVersion": 1,
+                    "enrollmentId": "MOCK_ENROLLMENT_C",
+                    "enrollmentVersion": 1,
+                    "from": {
+                      "semesterId": "MOCK_SEMESTER_3",
+                      "label": "Fictional semester 3",
+                      "year": "Fictional year 2"
+                    },
+                    "to": {
+                      "semesterId": "MOCK_SEMESTER_4",
+                      "label": "Fictional semester 4",
+                      "year": "Fictional year 2"
+                    },
+                    "decision": "ADVANCE_PREVIEW"
+                  },
+                  {
+                    "studentId": "MOCK_STUDENT_D",
+                    "personId": "MOCK_PERSON_D",
+                    "displayName": "Fictional Student D",
+                    "collegeStatus": "REPEATING",
+                    "studentVersion": 1,
+                    "enrollmentId": "MOCK_ENROLLMENT_D",
+                    "enrollmentVersion": 1,
+                    "from": {
+                      "semesterId": "MOCK_SEMESTER_3",
+                      "label": "Fictional semester 3",
+                      "year": "Fictional year 2"
+                    },
+                    "to": {
+                      "semesterId": "MOCK_SEMESTER_4",
+                      "label": "Fictional semester 4",
+                      "year": "Fictional year 2"
+                    },
+                    "decision": "ADVANCE_PREVIEW"
+                  },
+                  {
+                    "studentId": "MOCK_STUDENT_E",
+                    "personId": "MOCK_PERSON_E",
+                    "displayName": "Fictional Student E",
+                    "collegeStatus": "UNKNOWN",
+                    "studentVersion": 1,
+                    "enrollmentId": "MOCK_ENROLLMENT_E",
+                    "enrollmentVersion": 1,
+                    "from": {
+                      "semesterId": "MOCK_SEMESTER_3",
+                      "label": "Fictional semester 3",
+                      "year": "Fictional year 2"
+                    },
+                    "to": {
+                      "semesterId": "MOCK_SEMESTER_4",
+                      "label": "Fictional semester 4",
+                      "year": "Fictional year 2"
+                    },
+                    "decision": "ADVANCE_PREVIEW"
+                  },
+                  {
+                    "studentId": "MOCK_STUDENT_F",
+                    "personId": "MOCK_PERSON_F",
+                    "displayName": "Fictional Student F",
+                    "collegeStatus": "ENROLLED",
+                    "studentVersion": 1,
+                    "enrollmentId": "MOCK_ENROLLMENT_F",
+                    "enrollmentVersion": 1,
+                    "from": {
+                      "semesterId": "MOCK_SEMESTER_3",
+                      "label": "Fictional semester 3",
+                      "year": "Fictional year 2"
+                    },
+                    "to": {
+                      "semesterId": "MOCK_SEMESTER_4",
+                      "label": "Fictional semester 4",
+                      "year": "Fictional year 2"
+                    },
+                    "decision": "ADVANCE_PREVIEW"
+                  }
+                ]
+              },
+              "before": {
+                "MOCK_STUDENT_A": {
+                  "studentId": "MOCK_STUDENT_A",
+                  "personId": "MOCK_PERSON_A",
+                  "enrollmentId": "MOCK_ENROLLMENT_A",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_B": {
+                  "studentId": "MOCK_STUDENT_B",
+                  "personId": "MOCK_PERSON_B",
+                  "enrollmentId": "MOCK_ENROLLMENT_B",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_C": {
+                  "studentId": "MOCK_STUDENT_C",
+                  "personId": "MOCK_PERSON_C",
+                  "enrollmentId": "MOCK_ENROLLMENT_C",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_D": {
+                  "studentId": "MOCK_STUDENT_D",
+                  "personId": "MOCK_PERSON_D",
+                  "enrollmentId": "MOCK_ENROLLMENT_D",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_E": {
+                  "studentId": "MOCK_STUDENT_E",
+                  "personId": "MOCK_PERSON_E",
+                  "enrollmentId": "MOCK_ENROLLMENT_E",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_F": {
+                  "studentId": "MOCK_STUDENT_F",
+                  "personId": "MOCK_PERSON_F",
+                  "enrollmentId": "MOCK_ENROLLMENT_F",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                }
+              },
+              "bindingHash": "2f2c0e8986398e8efa9a6051a7403012b0a291cb397696ab49eb4fc7a0830cd9",
+              "decision": {
+                "by": "d1",
+                "at": "2026-10-25T12:46:52.698Z",
+                "reason": "Fictional independent complete-cohort review confirms only official Left College exclusion.",
+                "outcome": "APPROVED",
+                "bindingHash": "2f2c0e8986398e8efa9a6051a7403012b0a291cb397696ab49eb4fc7a0830cd9"
+              },
+              "appliedAt": "2026-10-25T12:46:58.794Z",
+              "appliedBy": "c1",
+              "after": {
+                "MOCK_STUDENT_A": {
+                  "studentId": "MOCK_STUDENT_A",
+                  "personId": "MOCK_PERSON_A",
+                  "enrollmentId": "MOCK_ENROLLMENT_A",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_4",
+                  "version": 2
+                },
+                "MOCK_STUDENT_B": {
+                  "studentId": "MOCK_STUDENT_B",
+                  "personId": "MOCK_PERSON_B",
+                  "enrollmentId": "MOCK_ENROLLMENT_B",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_C": {
+                  "studentId": "MOCK_STUDENT_C",
+                  "personId": "MOCK_PERSON_C",
+                  "enrollmentId": "MOCK_ENROLLMENT_C",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_4",
+                  "version": 2
+                },
+                "MOCK_STUDENT_D": {
+                  "studentId": "MOCK_STUDENT_D",
+                  "personId": "MOCK_PERSON_D",
+                  "enrollmentId": "MOCK_ENROLLMENT_D",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_4",
+                  "version": 2
+                },
+                "MOCK_STUDENT_E": {
+                  "studentId": "MOCK_STUDENT_E",
+                  "personId": "MOCK_PERSON_E",
+                  "enrollmentId": "MOCK_ENROLLMENT_E",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_4",
+                  "version": 2
+                },
+                "MOCK_STUDENT_F": {
+                  "studentId": "MOCK_STUDENT_F",
+                  "personId": "MOCK_PERSON_F",
+                  "enrollmentId": "MOCK_ENROLLMENT_F",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_4",
+                  "version": 2
+                }
+              }
+            }
+          ],
+          "history": [
+            {
+              "revision": 1,
+              "batchId": "MOCK_BATCH_666A4891_A003_4597_BB20_CA15B17F5564",
+              "action": "PROPOSE",
+              "actor": "c1",
+              "at": "2026-10-25T12:46:37.598Z",
+              "bindingHash": "2f2c0e8986398e8efa9a6051a7403012b0a291cb397696ab49eb4fc7a0830cd9"
+            },
+            {
+              "revision": 2,
+              "batchId": "MOCK_BATCH_666A4891_A003_4597_BB20_CA15B17F5564",
+              "action": "APPROVE",
+              "actor": "d1",
+              "at": "2026-10-25T12:46:52.698Z",
+              "bindingHash": "2f2c0e8986398e8efa9a6051a7403012b0a291cb397696ab49eb4fc7a0830cd9"
+            },
+            {
+              "revision": 3,
+              "batchId": "MOCK_BATCH_666A4891_A003_4597_BB20_CA15B17F5564",
+              "action": "APPLY",
+              "actor": "c1",
+              "at": "2026-10-25T12:46:58.794Z",
+              "bindingHash": "2f2c0e8986398e8efa9a6051a7403012b0a291cb397696ab49eb4fc7a0830cd9",
+              "before": {
+                "MOCK_STUDENT_A": {
+                  "studentId": "MOCK_STUDENT_A",
+                  "personId": "MOCK_PERSON_A",
+                  "enrollmentId": "MOCK_ENROLLMENT_A",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_B": {
+                  "studentId": "MOCK_STUDENT_B",
+                  "personId": "MOCK_PERSON_B",
+                  "enrollmentId": "MOCK_ENROLLMENT_B",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_C": {
+                  "studentId": "MOCK_STUDENT_C",
+                  "personId": "MOCK_PERSON_C",
+                  "enrollmentId": "MOCK_ENROLLMENT_C",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_D": {
+                  "studentId": "MOCK_STUDENT_D",
+                  "personId": "MOCK_PERSON_D",
+                  "enrollmentId": "MOCK_ENROLLMENT_D",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_E": {
+                  "studentId": "MOCK_STUDENT_E",
+                  "personId": "MOCK_PERSON_E",
+                  "enrollmentId": "MOCK_ENROLLMENT_E",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_F": {
+                  "studentId": "MOCK_STUDENT_F",
+                  "personId": "MOCK_PERSON_F",
+                  "enrollmentId": "MOCK_ENROLLMENT_F",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                }
+              },
+              "after": {
+                "MOCK_STUDENT_A": {
+                  "studentId": "MOCK_STUDENT_A",
+                  "personId": "MOCK_PERSON_A",
+                  "enrollmentId": "MOCK_ENROLLMENT_A",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_4",
+                  "version": 2
+                },
+                "MOCK_STUDENT_B": {
+                  "studentId": "MOCK_STUDENT_B",
+                  "personId": "MOCK_PERSON_B",
+                  "enrollmentId": "MOCK_ENROLLMENT_B",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_3",
+                  "version": 1
+                },
+                "MOCK_STUDENT_C": {
+                  "studentId": "MOCK_STUDENT_C",
+                  "personId": "MOCK_PERSON_C",
+                  "enrollmentId": "MOCK_ENROLLMENT_C",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_4",
+                  "version": 2
+                },
+                "MOCK_STUDENT_D": {
+                  "studentId": "MOCK_STUDENT_D",
+                  "personId": "MOCK_PERSON_D",
+                  "enrollmentId": "MOCK_ENROLLMENT_D",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_4",
+                  "version": 2
+                },
+                "MOCK_STUDENT_E": {
+                  "studentId": "MOCK_STUDENT_E",
+                  "personId": "MOCK_PERSON_E",
+                  "enrollmentId": "MOCK_ENROLLMENT_E",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_4",
+                  "version": 2
+                },
+                "MOCK_STUDENT_F": {
+                  "studentId": "MOCK_STUDENT_F",
+                  "personId": "MOCK_PERSON_F",
+                  "enrollmentId": "MOCK_ENROLLMENT_F",
+                  "programmeId": "MOCK_PROGRAMME",
+                  "batchId": "MOCK_BATCH",
+                  "semesterId": "MOCK_SEMESTER_4",
+                  "version": 2
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "KCC-OWNER-DEMO",
+      "revision": 15,
+      "commit_id": "86dce965-787e-46d7-90e3-339069636d26",
+      "updated_at": "2026-10-25T12:44:36.049Z",
+      "sha256": "e52e125e6a8aec87e72ed58b831b13991ee25eacb51eb76ab9b9497811f0f29b",
+      "data": {
+        "projects": [
+          {
+            "id": "P101",
+            "title": "Community Waste Mapping",
+            "description": "Map community waste practices and propose a practical action plan.",
+            "programme": "BCA",
+            "type": "SDG project",
+            "state": "CREATED",
+            "owner": "s1",
+            "mentor": "m1",
+            "members": [
+              "s1",
+              "s2"
+            ],
+            "due": "2026-11-15",
+            "sdg": "4",
+            "tasks": [
+              {
+                "id": "T0",
+                "title": "Prepare research and activity plan",
+                "assignee": "s1",
+                "done": false
+              },
+              {
+                "id": "U0",
+                "title": "Compile findings and deliverables",
+                "assignee": "s2",
+                "done": false
+              }
+            ],
+            "evidence": [],
+            "reflections": {},
+            "evaluations": {},
+            "certs": {},
+            "published": {},
+            "messages": [],
+            "history": []
+          },
+          {
+            "id": "P102",
+            "title": "Student Enterprise Studio",
+            "description": "Develop evidence-led solutions through student teamwork.",
+            "programme": "BBA",
+            "type": "Course project",
+            "state": "PENDING_APPROVAL",
+            "owner": "s2",
+            "mentor": "m1",
+            "members": [
+              "s1",
+              "s2"
+            ],
+            "due": "2026-11-15",
+            "sdg": "4",
+            "tasks": [
+              {
+                "id": "T1",
+                "title": "Prepare research and activity plan",
+                "assignee": "s1",
+                "done": false
+              },
+              {
+                "id": "U1",
+                "title": "Compile findings and deliverables",
+                "assignee": "s2",
+                "done": false
+              }
+            ],
+            "evidence": [],
+            "reflections": {},
+            "evaluations": {},
+            "certs": {},
+            "published": {},
+            "messages": [],
+            "history": []
+          },
+          {
+            "id": "P103",
+            "title": "Accessible Campus Audit",
+            "description": "Map community waste practices and propose a practical action plan.",
+            "programme": "BIT",
+            "type": "Field activity",
+            "state": "APPROVED",
+            "owner": "s2",
+            "mentor": "m1",
+            "members": [
+              "s1",
+              "s2"
+            ],
+            "due": "2026-11-15",
+            "sdg": "4",
+            "tasks": [
+              {
+                "id": "T2",
+                "title": "Prepare research and activity plan",
+                "assignee": "s1",
+                "done": false
+              },
+              {
+                "id": "U2",
+                "title": "Compile findings and deliverables",
+                "assignee": "s2",
+                "done": false
+              }
+            ],
+            "evidence": [],
+            "reflections": {},
+            "evaluations": {},
+            "certs": {},
+            "published": {},
+            "messages": [],
+            "history": []
+          },
+          {
+            "id": "P104",
+            "title": "Digital Literacy Outreach",
+            "description": "Develop evidence-led solutions through student teamwork.",
+            "programme": "Civil Engineering",
+            "type": "Workshop",
+            "state": "IN_PROGRESS",
+            "owner": "s1",
+            "mentor": "m1",
+            "members": [
+              "s1",
+              "s2"
+            ],
+            "due": "2026-11-15",
+            "sdg": "4",
+            "tasks": [
+              {
+                "id": "T3",
+                "title": "Prepare research and activity plan",
+                "assignee": "s1",
+                "done": true
+              },
+              {
+                "id": "U3",
+                "title": "Compile findings and deliverables",
+                "assignee": "s2",
+                "done": false
+              }
+            ],
+            "evidence": [],
+            "reflections": {},
+            "evaluations": {},
+            "certs": {},
+            "published": {},
+            "messages": [],
+            "history": []
+          },
+          {
+            "id": "P105",
+            "title": "Sustainable Water Survey",
+            "description": "Map community waste practices and propose a practical action plan.",
+            "programme": "BCA",
+            "type": "SDG project",
+            "state": "IN_PROGRESS",
+            "owner": "s2",
+            "mentor": "m1",
+            "members": [
+              "s1",
+              "s2"
+            ],
+            "due": "2026-11-15",
+            "sdg": "4",
+            "tasks": [
+              {
+                "id": "T4",
+                "title": "Prepare research and activity plan",
+                "assignee": "s1",
+                "done": false
+              },
+              {
+                "id": "U4",
+                "title": "Compile findings and deliverables",
+                "assignee": "s2",
+                "done": false
+              }
+            ],
+            "evidence": [],
+            "reflections": {},
+            "evaluations": {},
+            "certs": {},
+            "published": {},
+            "messages": [],
+            "history": []
+          },
+          {
+            "id": "P106",
+            "title": "AI for Learning Workshop",
+            "description": "Develop evidence-led solutions through student teamwork.",
+            "programme": "BBA",
+            "type": "Course project",
+            "state": "CREATED",
+            "owner": "s2",
+            "mentor": "m1",
+            "members": [
+              "s1",
+              "s2"
+            ],
+            "due": "2026-11-15",
+            "sdg": "4",
+            "tasks": [
+              {
+                "id": "T5",
+                "title": "Prepare research and activity plan",
+                "assignee": "s1",
+                "done": false
+              },
+              {
+                "id": "U5",
+                "title": "Compile findings and deliverables",
+                "assignee": "s2",
+                "done": false
+              }
+            ],
+            "evidence": [],
+            "reflections": {},
+            "evaluations": {},
+            "certs": {},
+            "published": {},
+            "messages": [],
+            "history": []
+          },
+          {
+            "id": "P107",
+            "title": "Local Heritage Seminar",
+            "description": "Map community waste practices and propose a practical action plan.",
+            "programme": "BIT",
+            "type": "Field activity",
+            "state": "PENDING_APPROVAL",
+            "owner": "s1",
+            "mentor": "m1",
+            "members": [
+              "s1",
+              "s2"
+            ],
+            "due": "2026-11-15",
+            "sdg": "4",
+            "tasks": [
+              {
+                "id": "T6",
+                "title": "Prepare research and activity plan",
+                "assignee": "s1",
+                "done": false
+              },
+              {
+                "id": "U6",
+                "title": "Compile findings and deliverables",
+                "assignee": "s2",
+                "done": false
+              }
+            ],
+            "evidence": [],
+            "reflections": {},
+            "evaluations": {},
+            "certs": {},
+            "published": {},
+            "messages": [],
+            "history": []
+          },
+          {
+            "id": "P108",
+            "title": "SDG Youth Research",
+            "description": "Develop evidence-led solutions through student teamwork.",
+            "programme": "Civil Engineering",
+            "type": "Workshop",
+            "state": "APPROVED",
+            "owner": "s2",
+            "mentor": "m1",
+            "members": [
+              "s1",
+              "s2"
+            ],
+            "due": "2026-11-15",
+            "sdg": "4",
+            "tasks": [
+              {
+                "id": "T7",
+                "title": "Prepare research and activity plan",
+                "assignee": "s1",
+                "done": false
+              },
+              {
+                "id": "U7",
+                "title": "Compile findings and deliverables",
+                "assignee": "s2",
+                "done": false
+              }
+            ],
+            "evidence": [],
+            "reflections": {},
+            "evaluations": {},
+            "certs": {},
+            "published": {},
+            "messages": [],
+            "history": []
+          },
+          {
+            "id": "INT1792932276042-1",
+            "title": "Fictional Stage253B internship",
+            "description": "Fictional supervised learning Expected outputs: Fictional individual report and reflection",
+            "programme": "BCA",
+            "type": "Internship",
+            "state": "APPROVED",
+            "createdBy": "c1",
+            "owner": "s1",
+            "mentor": "m1",
+            "members": [
+              "s1"
+            ],
+            "due": "2026-11-30",
+            "sdg": "",
+            "tasks": [],
+            "evidence": [],
+            "reflections": {},
+            "evaluations": {},
+            "certs": {},
+            "published": {},
+            "messages": [],
+            "history": [
+              {
+                "time": "2026-10-25T12:44:36.042Z",
+                "actor": "Programme Coordinator",
+                "action": "Created execution workspace from independently authorized internship readiness IRD1792931957386-1",
+                "project": "INT1792932276042-1"
+              }
+            ],
+            "planningMetadata": {
+              "academicYear": null,
+              "batch": null,
+              "semester": "3",
+              "course": null
+            },
+            "internshipProvenance": {
+              "intakeId": "IN1792931914919-1",
+              "placementId": "IP1792931915019-1",
+              "placementVersion": 1,
+              "readinessId": "IRD1792931957386-1",
+              "readinessVersion": 1,
+              "letterId": "IL1792931915075-1",
+              "letterReference": "KCC360/INT/2026/IL1792931915075-1",
+              "authorizedStart": "2026-11-01",
+              "placementStart": "2026-11-01",
+              "placementEnd": "2026-11-30",
+              "expectedHours": 40,
+              "organization": "Fictional Acceptance Host",
+              "role": "Fictional student intern",
+              "sourceProof": "{\"data\":{\"acceptanceReference\":\"MOCK-253B-ACCEPT\",\"supervisorName\":\"Fictional Workplace Supervisor\",\"supervisorDesignation\":\"Fictional training supervisor\",\"supervisorConfirmation\":\"MOCK-253B-SUP\",\"agreementReference\":\"MOCK-253B-PLAN\",\"supervisorEmail\":\"supervisor@example.test\",\"outcomes\":\"Fictional supervised learning outcomes\",\"milestones\":\"Fictional observation report and review milestones\",\"schedule\":\"Fictional supervised work within approved dates\",\"evidencePlan\":\"Fictional daily logbook and individual evidence\",\"assessmentPlan\":\"Fictional mentor and department evaluation\",\"conditions\":\"Fictional resolved host conditions and safety induction\",\"acceptanceDate\":\"2026-10-25\"},\"files\":[{\"id\":\"d59b3f9a-7939-47ca-a3d0-fe5a4c04b7cd\",\"sha256\":\"4ca5c9dd9f65cae8fb7502e42caed0fb718eb6c39abd8e1158b94ed3a9ec58c9\",\"name\":\"fictional-stage253B-host.txt\",\"size\":116,\"uploadedBy\":\"s1\"}]}",
+              "authorization": {
+                "decision": "START_AUTHORIZED",
+                "by": "d1",
+                "at": "2026-10-25T12:43:56.639Z",
+                "reason": "Fictional independent department authorization from approved placement date only.",
+                "authorizedStart": "2026-11-01"
+              },
+              "by": "c1",
+              "at": "2026-10-25T12:44:36.042Z"
+            },
+            "internshipLearning": {
+              "outcomes": "Fictional supervised learning outcomes",
+              "milestones": "Fictional observation report and review milestones",
+              "schedule": "Fictional supervised work within approved dates",
+              "evidencePlan": "Fictional daily logbook and individual evidence",
+              "assessmentPlan": "Fictional mentor and department evaluation",
+              "conditions": "Fictional resolved host conditions and safety induction"
+            },
+            "internshipLogbook": [],
+            "internshipCheckins": []
+          }
+        ],
+        "audit": [
+          {
+            "time": "2026-10-25T12:44:36.042Z",
+            "actor": "Programme Coordinator",
+            "action": "Created execution workspace from independently authorized internship readiness IRD1792931957386-1",
+            "project": "INT1792932276042-1"
+          },
+          {
+            "time": "2026-10-25T12:44:36.042Z",
+            "actor": "Programme Coordinator",
+            "action": "Authorized internship handed off to INT1792932276042-1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:43:56.639Z",
+            "actor": "Department Head",
+            "action": "Internship readiness START_AUTHORIZED v1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:43:47.425Z",
+            "actor": "Dr. Maya Adhikari",
+            "action": "Internship readiness MENTOR_VERIFIED v1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:43:25.163Z",
+            "actor": "Aarati Sharma",
+            "action": "Internship readiness submitted for mentor verification v1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:43:03.400Z",
+            "actor": "Aarati Sharma",
+            "action": "File attached: fictional-stage253B-host.txt",
+            "project": "IRD1792931957386-1"
+          },
+          {
+            "time": "2026-10-25T12:39:17.386Z",
+            "actor": "Aarati Sharma",
+            "action": "Internship readiness draft saved v1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:38:35.075Z",
+            "actor": "Department Head",
+            "action": "Internship approach letter issued IL1792931915075-1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:38:35.056Z",
+            "actor": "Department Head",
+            "action": "Internship placement APPROVED v1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:38:35.036Z",
+            "actor": "Dr. Maya Adhikari",
+            "action": "Internship placement MENTOR_REVIEWED v1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:38:35.020Z",
+            "actor": "Aarati Sharma",
+            "action": "Internship placement submitted v1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:38:35.006Z",
+            "actor": "Dr. Maya Adhikari",
+            "action": "Mentor assignment ACCEPTED v1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:38:34.986Z",
+            "actor": "Programme Coordinator",
+            "action": "Lead mentor acceptance requested v1 / Dr. Maya Adhikari",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:38:34.968Z",
+            "actor": "Programme Coordinator",
+            "action": "Activity intake ROUTING_CONFIRMED v1",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:38:34.944Z",
+            "actor": "Aarati Sharma",
+            "action": "Activity intake submitted v1 for coordinator routing",
+            "project": "IN1792931914919-1"
+          },
+          {
+            "time": "2026-10-25T12:38:34.919Z",
+            "actor": "Aarati Sharma",
+            "action": "Activity intake draft saved v1",
+            "project": "IN1792931914919-1"
+          }
+        ],
+        "notices": [
+          {
+            "id": "N1",
+            "title": "Semester project proposal deadline",
+            "body": "Submit your project proposal and expected outcomes by 15 November 2026.",
+            "ack": []
+          },
+          {
+            "id": "N2",
+            "title": "Evidence and reflection guidance",
+            "body": "Each participant must submit an individual reflection. Evidence verification precedes certificate eligibility.",
+            "ack": []
+          }
+        ],
+        "plans": [
+          {
+            "id": "AP101",
+            "family": "AP101",
+            "version": 1,
+            "title": "BCA Semester 3 \u2014 Experiential Learning",
+            "year": "2026\u201327",
+            "department": "Computer Applications",
+            "programme": "BCA",
+            "batch": "2025",
+            "semester": "3",
+            "course": "BCA-DEMO-301 \u00b7 Applied Learning",
+            "owner": "m1",
+            "coordinator": "c1",
+            "head": "d1",
+            "state": "DRAFT",
+            "history": [],
+            "items": [
+              {
+                "id": "PI101",
+                "title": "Community Digital Literacy Workshop",
+                "type": "Workshop",
+                "lead": "s1",
+                "mentor": "m1",
+                "start": "2026-11-01",
+                "end": "2026-11-15",
+                "duration": "3 hours",
+                "participants": "2",
+                "venue": "KCC Learning Studio",
+                "outcomes": "Design and facilitate an inclusive digital literacy session.",
+                "competencies": "Communication; facilitation; problem solving",
+                "outputs": "Workshop report and participant learning materials",
+                "sdg": "4",
+                "evidence": "Session plan, participant contributions, attendance and final report",
+                "evaluation": "Human review using an approved activity rubric",
+                "portfolio": "Semester 3 learning portfolio",
+                "reportDue": "2026-11-18",
+                "budget": "5000",
+                "resources": "Projector and participant devices",
+                "risks": "Obtain consent before photographs; supervised outreach",
+                "kpi": "2 verified student facilitators",
+                "baseline": "0",
+                "target": "2",
+                "template": "Workshop v1 (demonstration)"
+              }
+            ]
+          }
+        ],
+        "activityIntakes": [
+          {
+            "id": "IN1792931914919-1",
+            "student": "s1",
+            "state": "ROUTING_CONFIRMED",
+            "revision": 1,
+            "draftHistory": [
+              {
+                "revision": 1,
+                "priorContent": null,
+                "content": {
+                  "title": "Fictional Stage253B internship",
+                  "type": "Internship",
+                  "programme": "BCA",
+                  "semester": "3",
+                  "course": "",
+                  "purpose": "Fictional supervised learning",
+                  "outputs": "Fictional individual report and reflection",
+                  "start": "2026-11-01",
+                  "due": "2026-11-30",
+                  "primaryUnit": "ACADEMIC",
+                  "supportingUnits": [],
+                  "clubId": "",
+                  "alignmentReason": "Fictional academic placement",
+                  "sdgs": [],
+                  "host": "",
+                  "hostRole": ""
+                },
+                "by": "s1",
+                "at": "2026-10-25T12:38:34.919Z",
+                "reason": "Fictional browser acceptance preconditions"
+              }
+            ],
+            "submissions": [
+              {
+                "version": 1,
+                "revision": 1,
+                "content": {
+                  "title": "Fictional Stage253B internship",
+                  "type": "Internship",
+                  "programme": "BCA",
+                  "semester": "3",
+                  "course": "",
+                  "purpose": "Fictional supervised learning",
+                  "outputs": "Fictional individual report and reflection",
+                  "start": "2026-11-01",
+                  "due": "2026-11-30",
+                  "primaryUnit": "ACADEMIC",
+                  "supportingUnits": [],
+                  "clubId": "",
+                  "alignmentReason": "Fictional academic placement",
+                  "sdgs": [],
+                  "host": "",
+                  "hostRole": ""
+                },
+                "by": "s1",
+                "at": "2026-10-25T12:38:34.944Z"
+              }
+            ],
+            "decisions": [
+              {
+                "version": 1,
+                "decision": "ROUTING_CONFIRMED",
+                "by": "c1",
+                "at": "2026-10-25T12:38:34.968Z",
+                "reason": "Fictional routing confirmed",
+                "routing": {
+                  "primaryUnit": "ACADEMIC",
+                  "supportingUnits": [],
+                  "clubId": ""
+                }
+              }
+            ],
+            "history": [
+              {
+                "time": "2026-10-25T12:44:36.042Z",
+                "actor": "Programme Coordinator",
+                "action": "Authorized internship handed off to INT1792932276042-1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:43:56.639Z",
+                "actor": "Department Head",
+                "action": "Internship readiness START_AUTHORIZED v1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:43:47.425Z",
+                "actor": "Dr. Maya Adhikari",
+                "action": "Internship readiness MENTOR_VERIFIED v1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:43:25.163Z",
+                "actor": "Aarati Sharma",
+                "action": "Internship readiness submitted for mentor verification v1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:39:17.386Z",
+                "actor": "Aarati Sharma",
+                "action": "Internship readiness draft saved v1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:38:35.075Z",
+                "actor": "Department Head",
+                "action": "Internship approach letter issued IL1792931915075-1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:38:35.056Z",
+                "actor": "Department Head",
+                "action": "Internship placement APPROVED v1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:38:35.036Z",
+                "actor": "Dr. Maya Adhikari",
+                "action": "Internship placement MENTOR_REVIEWED v1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:38:35.020Z",
+                "actor": "Aarati Sharma",
+                "action": "Internship placement submitted v1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:38:35.006Z",
+                "actor": "Dr. Maya Adhikari",
+                "action": "Mentor assignment ACCEPTED v1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:38:34.986Z",
+                "actor": "Programme Coordinator",
+                "action": "Lead mentor acceptance requested v1 / Dr. Maya Adhikari",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:38:34.968Z",
+                "actor": "Programme Coordinator",
+                "action": "Activity intake ROUTING_CONFIRMED v1",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:38:34.944Z",
+                "actor": "Aarati Sharma",
+                "action": "Activity intake submitted v1 for coordinator routing",
+                "project": "IN1792931914919-1"
+              },
+              {
+                "time": "2026-10-25T12:38:34.919Z",
+                "actor": "Aarati Sharma",
+                "action": "Activity intake draft saved v1",
+                "project": "IN1792931914919-1"
+              }
+            ],
+            "createdAt": "2026-10-25T12:38:34.919Z",
+            "content": {
+              "title": "Fictional Stage253B internship",
+              "type": "Internship",
+              "programme": "BCA",
+              "semester": "3",
+              "course": "",
+              "purpose": "Fictional supervised learning",
+              "outputs": "Fictional individual report and reflection",
+              "start": "2026-11-01",
+              "due": "2026-11-30",
+              "primaryUnit": "ACADEMIC",
+              "supportingUnits": [],
+              "clubId": "",
+              "alignmentReason": "Fictional academic placement",
+              "sdgs": [],
+              "host": "",
+              "hostRole": ""
+            },
+            "routing": {
+              "primaryUnit": "ACADEMIC",
+              "supportingUnits": [],
+              "clubId": "",
+              "submissionVersion": 1,
+              "by": "c1",
+              "at": "2026-10-25T12:38:34.968Z",
+              "reason": "Fictional routing confirmed"
+            },
+            "mentorAssignments": [
+              {
+                "id": "IMA1792931914986-1",
+                "version": 1,
+                "mentor": "m1",
+                "by": "c1",
+                "at": "2026-10-25T12:38:34.986Z",
+                "fit": "Fictional relevant supervision",
+                "capacity": "Fictional available capacity",
+                "reason": "Fictional assignment",
+                "state": "ACCEPTED",
+                "basis": "{\"revision\":1,\"submission\":{\"version\":1,\"revision\":1,\"content\":{\"title\":\"Fictional Stage253B internship\",\"type\":\"Internship\",\"programme\":\"BCA\",\"semester\":\"3\",\"course\":\"\",\"purpose\":\"Fictional supervised learning\",\"outputs\":\"Fictional individual report and reflection\",\"start\":\"2026-11-01\",\"due\":\"2026-11-30\",\"primaryUnit\":\"ACADEMIC\",\"supportingUnits\":[],\"clubId\":\"\",\"alignmentReason\":\"Fictional academic placement\",\"sdgs\":[],\"host\":\"\",\"hostRole\":\"\"},\"by\":\"s1\",\"at\":\"2026-10-25T12:38:34.944Z\"},\"routing\":{\"primaryUnit\":\"ACADEMIC\",\"supportingUnits\":[],\"clubId\":\"\",\"submissionVersion\":1,\"by\":\"c1\",\"at\":\"2026-10-25T12:38:34.968Z\",\"reason\":\"Fictional routing confirmed\"}}",
+                "sourceSnapshot": {
+                  "submission": {
+                    "version": 1,
+                    "revision": 1,
+                    "content": {
+                      "title": "Fictional Stage253B internship",
+                      "type": "Internship",
+                      "programme": "BCA",
+                      "semester": "3",
+                      "course": "",
+                      "purpose": "Fictional supervised learning",
+                      "outputs": "Fictional individual report and reflection",
+                      "start": "2026-11-01",
+                      "due": "2026-11-30",
+                      "primaryUnit": "ACADEMIC",
+                      "supportingUnits": [],
+                      "clubId": "",
+                      "alignmentReason": "Fictional academic placement",
+                      "sdgs": [],
+                      "host": "",
+                      "hostRole": ""
+                    },
+                    "by": "s1",
+                    "at": "2026-10-25T12:38:34.944Z"
+                  },
+                  "routing": {
+                    "primaryUnit": "ACADEMIC",
+                    "supportingUnits": [],
+                    "clubId": "",
+                    "submissionVersion": 1,
+                    "by": "c1",
+                    "at": "2026-10-25T12:38:34.968Z",
+                    "reason": "Fictional routing confirmed"
+                  }
+                },
+                "response": {
+                  "decision": "ACCEPTED",
+                  "reason": "Fictional supervision accepted",
+                  "by": "m1",
+                  "at": "2026-10-25T12:38:35.006Z",
+                  "noUnresolvedConflict": true
+                }
+              }
+            ],
+            "internshipPlacements": [
+              {
+                "id": "IP1792931915019-1",
+                "version": 1,
+                "state": "APPROVED",
+                "data": {
+                  "studentNumber": "MOCK-STAGE253B",
+                  "organization": "Fictional Acceptance Host",
+                  "address": "Fictional test address",
+                  "recipient": "Fictional workplace supervisor",
+                  "role": "Fictional student intern",
+                  "mode": "CURRICULAR",
+                  "start": "2026-11-01",
+                  "end": "2026-11-30",
+                  "hours": "40",
+                  "objectives": "Fictional supervised learning and individual evidence"
+                },
+                "by": "s1",
+                "at": "2026-10-25T12:38:35.019Z",
+                "reason": "Fictional placement proposal",
+                "basis": "{\"intake\":\"{\\\"revision\\\":1,\\\"submission\\\":{\\\"version\\\":1,\\\"revision\\\":1,\\\"content\\\":{\\\"title\\\":\\\"Fictional Stage253B internship\\\",\\\"type\\\":\\\"Internship\\\",\\\"programme\\\":\\\"BCA\\\",\\\"semester\\\":\\\"3\\\",\\\"course\\\":\\\"\\\",\\\"purpose\\\":\\\"Fictional supervised learning\\\",\\\"outputs\\\":\\\"Fictional individual report and reflection\\\",\\\"start\\\":\\\"2026-11-01\\\",\\\"due\\\":\\\"2026-11-30\\\",\\\"primaryUnit\\\":\\\"ACADEMIC\\\",\\\"supportingUnits\\\":[],\\\"clubId\\\":\\\"\\\",\\\"alignmentReason\\\":\\\"Fictional academic placement\\\",\\\"sdgs\\\":[],\\\"host\\\":\\\"\\\",\\\"hostRole\\\":\\\"\\\"},\\\"by\\\":\\\"s1\\\",\\\"at\\\":\\\"2026-10-25T12:38:34.944Z\\\"},\\\"routing\\\":{\\\"primaryUnit\\\":\\\"ACADEMIC\\\",\\\"supportingUnits\\\":[],\\\"clubId\\\":\\\"\\\",\\\"submissionVersion\\\":1,\\\"by\\\":\\\"c1\\\",\\\"at\\\":\\\"2026-10-25T12:38:34.968Z\\\",\\\"reason\\\":\\\"Fictional routing confirmed\\\"}}\",\"mentor\":{\"id\":\"IMA1792931914986-1\",\"version\":1,\"response\":{\"decision\":\"ACCEPTED\",\"reason\":\"Fictional supervision accepted\",\"by\":\"m1\",\"at\":\"2026-10-25T12:38:35.006Z\",\"noUnresolvedConflict\":true}},\"support\":[]}",
+                "reviews": [
+                  {
+                    "decision": "MENTOR_REVIEWED",
+                    "by": "m1",
+                    "at": "2026-10-25T12:38:35.036Z",
+                    "reason": "Fictional mentor review"
+                  },
+                  {
+                    "decision": "APPROVED",
+                    "by": "d1",
+                    "at": "2026-10-25T12:38:35.056Z",
+                    "reason": "Fictional department approval"
+                  }
+                ]
+              }
+            ],
+            "internshipLetters": [
+              {
+                "id": "IL1792931915075-1",
+                "reference": "KCC360/INT/2026/IL1792931915075-1",
+                "placementId": "IP1792931915019-1",
+                "placementVersion": 1,
+                "issuedAt": "2026-10-25T12:38:35.075Z",
+                "by": "d1",
+                "state": "ISSUED",
+                "snapshot": {
+                  "student": "s1",
+                  "studentName": "Aarati Sharma",
+                  "title": "Fictional Stage253B internship",
+                  "programme": "BCA",
+                  "semester": "3",
+                  "course": "",
+                  "mentorName": "Dr. Maya Adhikari",
+                  "signatoryName": "Department Head",
+                  "signatoryRole": "Department Head \u2014 demonstration authorized issuer",
+                  "placement": {
+                    "studentNumber": "MOCK-STAGE253B",
+                    "organization": "Fictional Acceptance Host",
+                    "address": "Fictional test address",
+                    "recipient": "Fictional workplace supervisor",
+                    "role": "Fictional student intern",
+                    "mode": "CURRICULAR",
+                    "start": "2026-11-01",
+                    "end": "2026-11-30",
+                    "hours": "40",
+                    "objectives": "Fictional supervised learning and individual evidence"
+                  },
+                  "approval": {
+                    "decision": "APPROVED",
+                    "by": "d1",
+                    "at": "2026-10-25T12:38:35.056Z",
+                    "reason": "Fictional department approval"
+                  }
+                }
+              }
+            ],
+            "internshipReadiness": [
+              {
+                "id": "IRD1792931957386-1",
+                "version": 1,
+                "state": "START_AUTHORIZED",
+                "basis": "{\"placementId\":\"IP1792931915019-1\",\"placementVersion\":1,\"letterId\":\"IL1792931915075-1\",\"letterReference\":\"KCC360/INT/2026/IL1792931915075-1\",\"placementBasis\":\"{\\\"intake\\\":\\\"{\\\\\\\"revision\\\\\\\":1,\\\\\\\"submission\\\\\\\":{\\\\\\\"version\\\\\\\":1,\\\\\\\"revision\\\\\\\":1,\\\\\\\"content\\\\\\\":{\\\\\\\"title\\\\\\\":\\\\\\\"Fictional Stage253B internship\\\\\\\",\\\\\\\"type\\\\\\\":\\\\\\\"Internship\\\\\\\",\\\\\\\"programme\\\\\\\":\\\\\\\"BCA\\\\\\\",\\\\\\\"semester\\\\\\\":\\\\\\\"3\\\\\\\",\\\\\\\"course\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"purpose\\\\\\\":\\\\\\\"Fictional supervised learning\\\\\\\",\\\\\\\"outputs\\\\\\\":\\\\\\\"Fictional individual report and reflection\\\\\\\",\\\\\\\"start\\\\\\\":\\\\\\\"2026-11-01\\\\\\\",\\\\\\\"due\\\\\\\":\\\\\\\"2026-11-30\\\\\\\",\\\\\\\"primaryUnit\\\\\\\":\\\\\\\"ACADEMIC\\\\\\\",\\\\\\\"supportingUnits\\\\\\\":[],\\\\\\\"clubId\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"alignmentReason\\\\\\\":\\\\\\\"Fictional academic placement\\\\\\\",\\\\\\\"sdgs\\\\\\\":[],\\\\\\\"host\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"hostRole\\\\\\\":\\\\\\\"\\\\\\\"},\\\\\\\"by\\\\\\\":\\\\\\\"s1\\\\\\\",\\\\\\\"at\\\\\\\":\\\\\\\"2026-10-25T12:38:34.944Z\\\\\\\"},\\\\\\\"routing\\\\\\\":{\\\\\\\"primaryUnit\\\\\\\":\\\\\\\"ACADEMIC\\\\\\\",\\\\\\\"supportingUnits\\\\\\\":[],\\\\\\\"clubId\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"submissionVersion\\\\\\\":1,\\\\\\\"by\\\\\\\":\\\\\\\"c1\\\\\\\",\\\\\\\"at\\\\\\\":\\\\\\\"2026-10-25T12:38:34.968Z\\\\\\\",\\\\\\\"reason\\\\\\\":\\\\\\\"Fictional routing confirmed\\\\\\\"}}\\\",\\\"mentor\\\":{\\\"id\\\":\\\"IMA1792931914986-1\\\",\\\"version\\\":1,\\\"response\\\":{\\\"decision\\\":\\\"ACCEPTED\\\",\\\"reason\\\":\\\"Fictional supervision accepted\\\",\\\"by\\\":\\\"m1\\\",\\\"at\\\":\\\"2026-10-25T12:38:35.006Z\\\",\\\"noUnresolvedConflict\\\":true}},\\\"support\\\":[]}\",\"alignment\":\"{\\\"intake\\\":\\\"{\\\\\\\"revision\\\\\\\":1,\\\\\\\"submission\\\\\\\":{\\\\\\\"version\\\\\\\":1,\\\\\\\"revision\\\\\\\":1,\\\\\\\"content\\\\\\\":{\\\\\\\"title\\\\\\\":\\\\\\\"Fictional Stage253B internship\\\\\\\",\\\\\\\"type\\\\\\\":\\\\\\\"Internship\\\\\\\",\\\\\\\"programme\\\\\\\":\\\\\\\"BCA\\\\\\\",\\\\\\\"semester\\\\\\\":\\\\\\\"3\\\\\\\",\\\\\\\"course\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"purpose\\\\\\\":\\\\\\\"Fictional supervised learning\\\\\\\",\\\\\\\"outputs\\\\\\\":\\\\\\\"Fictional individual report and reflection\\\\\\\",\\\\\\\"start\\\\\\\":\\\\\\\"2026-11-01\\\\\\\",\\\\\\\"due\\\\\\\":\\\\\\\"2026-11-30\\\\\\\",\\\\\\\"primaryUnit\\\\\\\":\\\\\\\"ACADEMIC\\\\\\\",\\\\\\\"supportingUnits\\\\\\\":[],\\\\\\\"clubId\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"alignmentReason\\\\\\\":\\\\\\\"Fictional academic placement\\\\\\\",\\\\\\\"sdgs\\\\\\\":[],\\\\\\\"host\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"hostRole\\\\\\\":\\\\\\\"\\\\\\\"},\\\\\\\"by\\\\\\\":\\\\\\\"s1\\\\\\\",\\\\\\\"at\\\\\\\":\\\\\\\"2026-10-25T12:38:34.944Z\\\\\\\"},\\\\\\\"routing\\\\\\\":{\\\\\\\"primaryUnit\\\\\\\":\\\\\\\"ACADEMIC\\\\\\\",\\\\\\\"supportingUnits\\\\\\\":[],\\\\\\\"clubId\\\\\\\":\\\\\\\"\\\\\\\",\\\\\\\"submissionVersion\\\\\\\":1,\\\\\\\"by\\\\\\\":\\\\\\\"c1\\\\\\\",\\\\\\\"at\\\\\\\":\\\\\\\"2026-10-25T12:38:34.968Z\\\\\\\",\\\\\\\"reason\\\\\\\":\\\\\\\"Fictional routing confirmed\\\\\\\"}}\\\",\\\"mentor\\\":{\\\"id\\\":\\\"IMA1792931914986-1\\\",\\\"version\\\":1,\\\"response\\\":{\\\"decision\\\":\\\"ACCEPTED\\\",\\\"reason\\\":\\\"Fictional supervision accepted\\\",\\\"by\\\":\\\"m1\\\",\\\"at\\\":\\\"2026-10-25T12:38:35.006Z\\\",\\\"noUnresolvedConflict\\\":true}},\\\"support\\\":[]}\"}",
+                "letterId": "IL1792931915075-1",
+                "placementId": "IP1792931915019-1",
+                "data": {
+                  "acceptanceReference": "MOCK-253B-ACCEPT",
+                  "supervisorName": "Fictional Workplace Supervisor",
+                  "supervisorDesignation": "Fictional training supervisor",
+                  "supervisorConfirmation": "MOCK-253B-SUP",
+                  "agreementReference": "MOCK-253B-PLAN",
+                  "supervisorEmail": "supervisor@example.test",
+                  "outcomes": "Fictional supervised learning outcomes",
+                  "milestones": "Fictional observation report and review milestones",
+                  "schedule": "Fictional supervised work within approved dates",
+                  "evidencePlan": "Fictional daily logbook and individual evidence",
+                  "assessmentPlan": "Fictional mentor and department evaluation",
+                  "conditions": "Fictional resolved host conditions and safety induction",
+                  "acceptanceDate": "2026-10-25"
+                },
+                "studentAgreement": {
+                  "by": "s1",
+                  "at": "2026-10-25T12:39:17.386Z"
+                },
+                "by": "s1",
+                "at": "2026-10-25T12:39:17.386Z",
+                "reason": "Fictional browser readiness test",
+                "files": [
+                  {
+                    "id": "d59b3f9a-7939-47ca-a3d0-fe5a4c04b7cd",
+                    "name": "fictional-stage253B-host.txt",
+                    "size": 116,
+                    "mime": "text/plain",
+                    "sha256": "4ca5c9dd9f65cae8fb7502e42caed0fb718eb6c39abd8e1158b94ed3a9ec58c9",
+                    "uploadedBy": "s1",
+                    "createdAt": "2026-10-25T12:43:03.400Z",
+                    "checks": "Structural checks only; antivirus not connected"
+                  }
+                ],
+                "reviews": [
+                  {
+                    "decision": "MENTOR_VERIFIED",
+                    "by": "m1",
+                    "at": "2026-10-25T12:43:47.425Z",
+                    "reason": "Fictional independent mentor checked stored host evidence and agreed learning plan.",
+                    "checks": {
+                      "hostVerified": true,
+                      "supervisorVerified": true,
+                      "agreementVerified": true,
+                      "conditionsResolved": true
+                    }
+                  },
+                  {
+                    "decision": "START_AUTHORIZED",
+                    "by": "d1",
+                    "at": "2026-10-25T12:43:56.639Z",
+                    "reason": "Fictional independent department authorization from approved placement date only.",
+                    "authorizedStart": "2026-11-01"
+                  }
+                ],
+                "submittedProof": "{\"data\":{\"acceptanceReference\":\"MOCK-253B-ACCEPT\",\"supervisorName\":\"Fictional Workplace Supervisor\",\"supervisorDesignation\":\"Fictional training supervisor\",\"supervisorConfirmation\":\"MOCK-253B-SUP\",\"agreementReference\":\"MOCK-253B-PLAN\",\"supervisorEmail\":\"supervisor@example.test\",\"outcomes\":\"Fictional supervised learning outcomes\",\"milestones\":\"Fictional observation report and review milestones\",\"schedule\":\"Fictional supervised work within approved dates\",\"evidencePlan\":\"Fictional daily logbook and individual evidence\",\"assessmentPlan\":\"Fictional mentor and department evaluation\",\"conditions\":\"Fictional resolved host conditions and safety induction\",\"acceptanceDate\":\"2026-10-25\"},\"files\":[{\"id\":\"d59b3f9a-7939-47ca-a3d0-fe5a4c04b7cd\",\"sha256\":\"4ca5c9dd9f65cae8fb7502e42caed0fb718eb6c39abd8e1158b94ed3a9ec58c9\",\"name\":\"fictional-stage253B-host.txt\",\"size\":116,\"uploadedBy\":\"s1\"}]}",
+                "submittedAt": "2026-10-25T12:43:25.163Z"
+              }
+            ],
+            "projectId": "INT1792932276042-1",
+            "handoff": {
+              "by": "c1",
+              "at": "2026-10-25T12:44:36.042Z",
+              "readinessId": "IRD1792931957386-1",
+              "projectId": "INT1792932276042-1"
+            }
+          }
+        ],
+        "clubs": [
+          {
+            "id": "CL101",
+            "title": "KCC SDG & Community Action Club",
+            "purpose": "Develop student leadership through practical community learning and SDG action.",
+            "contribution": "Verified student-led community initiatives and reflection portfolios.",
+            "owner": "s1",
+            "mentor": "m1",
+            "state": "PROPOSED",
+            "members": [
+              {
+                "user": "s1",
+                "state": "ACTIVE",
+                "since": "2026-10-16",
+                "id": "CM-CL101-0",
+                "recordOrigin": "Existing demonstration membership"
+              }
+            ],
+            "leaders": [],
+            "plans": [],
+            "history": [],
+            "budgets": [],
+            "reviews": [],
+            "handovers": []
+          }
+        ],
+        "mentorTransfers": [],
+        "academicProfiles": {
+          "s1": {
+            "student": "s1",
+            "version": 0,
+            "programme": null,
+            "batch": null,
+            "academicYear": null,
+            "period": null,
+            "year": null,
+            "standing": "UNPLACED",
+            "history": []
+          },
+          "s2": {
+            "student": "s2",
+            "version": 0,
+            "programme": null,
+            "batch": null,
+            "academicYear": null,
+            "period": null,
+            "year": null,
+            "standing": "UNPLACED",
+            "history": []
+          }
+        },
+        "academicRules": [],
+        "academicBatches": [],
+        "clubEvaluations": [],
+        "notificationInbox": [
+          {
+            "id": "NF-005b0022005b005c002200500052004f004a004500430054005c0022002c005c00220050003100300032005c0022002c005c002200700072006f0070006f00730061006c005c0022002c0031002c005c0022006d0031005c0022005d0022002c00220041004300540049004f004e0022002c0022006d00310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"PROJECT\",\"P102\",\"proposal\",1,\"m1\"]",
+            "recipient": "m1",
+            "title": "Review activity proposal: Student Enterprise Studio",
+            "group": "PROJECT",
+            "sourceId": "P102",
+            "route": "Projects",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c002200500052004f004a004500430054005c0022002c005c00220050003100300033005c0022002c005c0022007400610073006b003a00540032005c0022002c0031002c005c002200730031005c0022005d0022002c00220041004300540049004f004e0022002c0022007300310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"PROJECT\",\"P103\",\"task:T2\",1,\"s1\"]",
+            "recipient": "s1",
+            "title": "Assigned task: Prepare research and activity plan",
+            "group": "PROJECT",
+            "sourceId": "P103",
+            "route": "Projects",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c002200500052004f004a004500430054005c0022002c005c00220050003100300033005c0022002c005c0022007400610073006b003a00550032005c0022002c0031002c005c002200730032005c0022005d0022002c00220041004300540049004f004e0022002c0022007300320022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"PROJECT\",\"P103\",\"task:U2\",1,\"s2\"]",
+            "recipient": "s2",
+            "title": "Assigned task: Compile findings and deliverables",
+            "group": "PROJECT",
+            "sourceId": "P103",
+            "route": "Projects",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c002200500052004f004a004500430054005c0022002c005c00220050003100300034005c0022002c005c0022007400610073006b003a00550033005c0022002c0031002c005c002200730032005c0022005d0022002c00220041004300540049004f004e0022002c0022007300320022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"PROJECT\",\"P104\",\"task:U3\",1,\"s2\"]",
+            "recipient": "s2",
+            "title": "Assigned task: Compile findings and deliverables",
+            "group": "PROJECT",
+            "sourceId": "P104",
+            "route": "Projects",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c002200500052004f004a004500430054005c0022002c005c00220050003100300035005c0022002c005c0022007400610073006b003a00540034005c0022002c0031002c005c002200730031005c0022005d0022002c00220041004300540049004f004e0022002c0022007300310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"PROJECT\",\"P105\",\"task:T4\",1,\"s1\"]",
+            "recipient": "s1",
+            "title": "Assigned task: Prepare research and activity plan",
+            "group": "PROJECT",
+            "sourceId": "P105",
+            "route": "Projects",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c002200500052004f004a004500430054005c0022002c005c00220050003100300035005c0022002c005c0022007400610073006b003a00550034005c0022002c0031002c005c002200730032005c0022005d0022002c00220041004300540049004f004e0022002c0022007300320022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"PROJECT\",\"P105\",\"task:U4\",1,\"s2\"]",
+            "recipient": "s2",
+            "title": "Assigned task: Compile findings and deliverables",
+            "group": "PROJECT",
+            "sourceId": "P105",
+            "route": "Projects",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c002200500052004f004a004500430054005c0022002c005c00220050003100300037005c0022002c005c002200700072006f0070006f00730061006c005c0022002c0031002c005c0022006d0031005c0022005d0022002c00220041004300540049004f004e0022002c0022006d00310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"PROJECT\",\"P107\",\"proposal\",1,\"m1\"]",
+            "recipient": "m1",
+            "title": "Review activity proposal: Local Heritage Seminar",
+            "group": "PROJECT",
+            "sourceId": "P107",
+            "route": "Projects",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c002200500052004f004a004500430054005c0022002c005c00220050003100300038005c0022002c005c0022007400610073006b003a00540037005c0022002c0031002c005c002200730031005c0022005d0022002c00220041004300540049004f004e0022002c0022007300310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"PROJECT\",\"P108\",\"task:T7\",1,\"s1\"]",
+            "recipient": "s1",
+            "title": "Assigned task: Prepare research and activity plan",
+            "group": "PROJECT",
+            "sourceId": "P108",
+            "route": "Projects",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c002200500052004f004a004500430054005c0022002c005c00220050003100300038005c0022002c005c0022007400610073006b003a00550037005c0022002c0031002c005c002200730032005c0022005d0022002c00220041004300540049004f004e0022002c0022007300320022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"PROJECT\",\"P108\",\"task:U7\",1,\"s2\"]",
+            "recipient": "s2",
+            "title": "Assigned task: Compile findings and deliverables",
+            "group": "PROJECT",
+            "sourceId": "P108",
+            "route": "Projects",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220043004c00550042005c0022002c005c00220043004c003100300031005c0022002c005c00220063006c00750062002d007200650076006900650077003a00500052004f0050004f005300450044005c0022002c0031002c005c0022007300610031005c0022005d0022002c00220041004300540049004f004e0022002c00220073006100310022002c006e0075006c006c005d",
+            "base": "[\"CLUB\",\"CL101\",\"club-review:PROPOSED\",1,\"sa1\"]",
+            "recipient": "sa1",
+            "title": "Review club authorization: KCC SDG & Community Action Club",
+            "group": "CLUB",
+            "sourceId": "CL101",
+            "route": "Clubs",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c00220044004f0043002d00440045004d004f002d0031005c0022002c005c00220064006f00630075006d0065006e0074002d00610063006b005c0022002c0031002c005c002200730031005c0022005d0022002c00220041004300540049004f004e0022002c0022007300310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"DOC-DEMO-1\",\"document-ack\",1,\"s1\"]",
+            "recipient": "s1",
+            "title": "Acknowledge document: Student Activity Evidence Guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "DOC-DEMO-1",
+            "route": "My Documents",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c00220044004f0043002d00440045004d004f002d0031005c0022002c005c00220064006f00630075006d0065006e0074002d00610063006b005c0022002c0031002c005c002200730032005c0022005d0022002c00220041004300540049004f004e0022002c0022007300320022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"DOC-DEMO-1\",\"document-ack\",1,\"s2\"]",
+            "recipient": "s2",
+            "title": "Acknowledge document: Student Activity Evidence Guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "DOC-DEMO-1",
+            "route": "My Documents",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200730031005c0022005d0022002c00220041004300540049004f004e0022002c0022007300310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"s1\"]",
+            "recipient": "s1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200730032005c0022005d0022002c00220041004300540049004f004e0022002c0022007300320022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"s2\"]",
+            "recipient": "s2",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006d0031005c0022005d0022002c00220041004300540049004f004e0022002c0022006d00310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"m1\"]",
+            "recipient": "m1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200630031005c0022005d0022002c00220041004300540049004f004e0022002c0022006300310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"c1\"]",
+            "recipient": "c1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200610031005c0022005d0022002c00220041004300540049004f004e0022002c0022006100310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"a1\"]",
+            "recipient": "a1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200640031005c0022005d0022002c00220041004300540049004f004e0022002c0022006400310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"d1\"]",
+            "recipient": "d1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200720031005c0022005d0022002c00220041004300540049004f004e0022002c0022007200310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"r1\"]",
+            "recipient": "r1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200670031005c0022005d0022002c00220041004300540049004f004e0022002c0022006700310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"g1\"]",
+            "recipient": "g1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022007300610031005c0022005d0022002c00220041004300540049004f004e0022002c00220073006100310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"sa1\"]",
+            "recipient": "sa1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200660031005c0022005d0022002c00220041004300540049004f004e0022002c0022006600310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"f1\"]",
+            "recipient": "f1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006600760031005c0022005d0022002c00220041004300540049004f004e0022002c00220066007600310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"fv1\"]",
+            "recipient": "fv1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006d0032005c0022005d0022002c00220041004300540049004f004e0022002c0022006d00320022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"m2\"]",
+            "recipient": "m2",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006400630031005c0022005d0022002c00220041004300540049004f004e0022002c00220064006300310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"dc1\"]",
+            "recipient": "dc1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006400610031005c0022005d0022002c00220041004300540049004f004e0022002c00220064006100310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"da1\"]",
+            "recipient": "da1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006e00700031005c0022005d0022002c00220041004300540049004f004e0022002c0022006e007000310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"np1\"]",
+            "recipient": "np1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006e00610031005c0022005d0022002c00220041004300540049004f004e0022002c0022006e006100310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N1\",\"notice-ack\",1,\"na1\"]",
+            "recipient": "na1",
+            "title": "Acknowledge notice: Semester project proposal deadline",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N1",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200730031005c0022005d0022002c00220041004300540049004f004e0022002c0022007300310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"s1\"]",
+            "recipient": "s1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200730032005c0022005d0022002c00220041004300540049004f004e0022002c0022007300320022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"s2\"]",
+            "recipient": "s2",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006d0031005c0022005d0022002c00220041004300540049004f004e0022002c0022006d00310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"m1\"]",
+            "recipient": "m1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200630031005c0022005d0022002c00220041004300540049004f004e0022002c0022006300310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"c1\"]",
+            "recipient": "c1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200610031005c0022005d0022002c00220041004300540049004f004e0022002c0022006100310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"a1\"]",
+            "recipient": "a1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200640031005c0022005d0022002c00220041004300540049004f004e0022002c0022006400310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"d1\"]",
+            "recipient": "d1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200720031005c0022005d0022002c00220041004300540049004f004e0022002c0022007200310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"r1\"]",
+            "recipient": "r1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200670031005c0022005d0022002c00220041004300540049004f004e0022002c0022006700310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"g1\"]",
+            "recipient": "g1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022007300610031005c0022005d0022002c00220041004300540049004f004e0022002c00220073006100310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"sa1\"]",
+            "recipient": "sa1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200660031005c0022005d0022002c00220041004300540049004f004e0022002c0022006600310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"f1\"]",
+            "recipient": "f1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006600760031005c0022005d0022002c00220041004300540049004f004e0022002c00220066007600310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"fv1\"]",
+            "recipient": "fv1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006d0032005c0022005d0022002c00220041004300540049004f004e0022002c0022006d00320022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"m2\"]",
+            "recipient": "m2",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006400630031005c0022005d0022002c00220041004300540049004f004e0022002c00220064006300310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"dc1\"]",
+            "recipient": "dc1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006400610031005c0022005d0022002c00220041004300540049004f004e0022002c00220064006100310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"da1\"]",
+            "recipient": "da1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006e00700031005c0022005d0022002c00220041004300540049004f004e0022002c0022006e007000310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"np1\"]",
+            "recipient": "np1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c0022004e004f0054004900430045002d004e0032005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c0022006e00610031005c0022005d0022002c00220041004300540049004f004e0022002c0022006e006100310022002c00220032003000320036002d00310031002d003100350022005d",
+            "base": "[\"GOVERNANCE\",\"NOTICE-N2\",\"notice-ack\",1,\"na1\"]",
+            "recipient": "na1",
+            "title": "Acknowledge notice: Evidence and reflection guidance",
+            "group": "GOVERNANCE",
+            "sourceId": "NOTICE-N2",
+            "route": "Notices",
+            "due": "2026-11-15",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c00220055004e0049002d00440045004d004f002d0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200730031005c0022005d0022002c00220041004300540049004f004e0022002c0022007300310022002c00220032003000320036002d00310031002d003200300022005d",
+            "base": "[\"GOVERNANCE\",\"UNI-DEMO-1\",\"notice-ack\",1,\"s1\"]",
+            "recipient": "s1",
+            "title": "Acknowledge notice: University experiential learning reporting circular \u2014 example",
+            "group": "GOVERNANCE",
+            "sourceId": "UNI-DEMO-1",
+            "route": "Notices",
+            "due": "2026-11-20",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220047004f005600450052004e0041004e00430045005c0022002c005c00220055004e0049002d00440045004d004f002d0031005c0022002c005c0022006e006f0074006900630065002d00610063006b005c0022002c0031002c005c002200730032005c0022005d0022002c00220041004300540049004f004e0022002c0022007300320022002c00220032003000320036002d00310031002d003200300022005d",
+            "base": "[\"GOVERNANCE\",\"UNI-DEMO-1\",\"notice-ack\",1,\"s2\"]",
+            "recipient": "s2",
+            "title": "Acknowledge notice: University experiential learning reporting circular \u2014 example",
+            "group": "GOVERNANCE",
+            "sourceId": "UNI-DEMO-1",
+            "route": "Notices",
+            "due": "2026-11-20",
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "ACTIVE",
+            "deliveredAt": "2026-10-25T12:38:34.924Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.924Z"
+              }
+            ]
+          },
+          {
+            "id": "NF-005b0022005b005c00220050004c0041004e004e0049004e0047005c0022002c005c00220049004e0031003700390032003900330031003900310034003900310039002d0031005c0022002c005c00220069006e00740061006b0065002d0072006f007500740069006e0067005c0022002c0031002c005c002200630031005c0022005d0022002c00220041004300540049004f004e0022002c0022006300310022002c006e0075006c006c005d",
+            "base": "[\"PLANNING\",\"IN1792931914919-1\",\"intake-routing\",1,\"c1\"]",
+            "recipient": "c1",
+            "title": "Review activity routing: Fictional Stage253B internship",
+            "group": "PLANNING",
+            "sourceId": "IN1792931914919-1",
+            "route": "Activity Intake",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "RESOLVED",
+            "deliveredAt": "2026-10-25T12:38:34.946Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.946Z"
+              },
+              {
+                "state": "RESOLVED",
+                "time": "2026-10-25T12:38:34.970Z"
+              }
+            ],
+            "resolvedAt": "2026-10-25T12:38:34.970Z"
+          },
+          {
+            "id": "NF-005b0022005b005c00220050004c0041004e004e0049004e0047005c0022002c005c00220049004e0031003700390032003900330031003900310034003900310039002d0031005c0022002c005c00220069006e00740061006b0065002d006d0065006e0074006f0072002d00610073007300690067006e005c0022002c0030002c005c002200630031005c0022005d0022002c00220041004300540049004f004e0022002c0022006300310022002c006e0075006c006c005d",
+            "base": "[\"PLANNING\",\"IN1792931914919-1\",\"intake-mentor-assign\",0,\"c1\"]",
+            "recipient": "c1",
+            "title": "Assign an intake mentor: Fictional Stage253B internship",
+            "group": "PLANNING",
+            "sourceId": "IN1792931914919-1",
+            "route": "Activity Intake",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 0,
+            "state": "RESOLVED",
+            "deliveredAt": "2026-10-25T12:38:34.970Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.970Z"
+              },
+              {
+                "state": "RESOLVED",
+                "time": "2026-10-25T12:38:34.988Z"
+              }
+            ],
+            "resolvedAt": "2026-10-25T12:38:34.988Z"
+          },
+          {
+            "id": "NF-005b0022005b005c00220050004c0041004e004e0049004e0047005c0022002c005c00220049004e0031003700390032003900330031003900310034003900310039002d0031005c0022002c005c00220069006e00740061006b0065002d006d0065006e0074006f0072002d0072006500730070006f006e00730065005c0022002c0031002c005c0022006d0031005c0022005d0022002c00220041004300540049004f004e0022002c0022006d00310022002c006e0075006c006c005d",
+            "base": "[\"PLANNING\",\"IN1792931914919-1\",\"intake-mentor-response\",1,\"m1\"]",
+            "recipient": "m1",
+            "title": "Respond to mentor assignment: Fictional Stage253B internship",
+            "group": "PLANNING",
+            "sourceId": "IN1792931914919-1",
+            "route": "Activity Intake",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "RESOLVED",
+            "deliveredAt": "2026-10-25T12:38:34.988Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:34.988Z"
+              },
+              {
+                "state": "RESOLVED",
+                "time": "2026-10-25T12:38:35.008Z"
+              }
+            ],
+            "resolvedAt": "2026-10-25T12:38:35.008Z"
+          },
+          {
+            "id": "NF-005b0022005b005c00220050004c0041004e004e0049004e0047005c0022002c005c00220049004e0031003700390032003900330031003900310034003900310039002d0031005c0022002c005c00220069006e007400650072006e0073006800690070002d006d0065006e0074006f0072005c0022002c0031002c005c0022006d0031005c0022005d0022002c00220041004300540049004f004e0022002c0022006d00310022002c006e0075006c006c005d",
+            "base": "[\"PLANNING\",\"IN1792931914919-1\",\"internship-mentor\",1,\"m1\"]",
+            "recipient": "m1",
+            "title": "Review internship placement: Fictional Stage253B internship",
+            "group": "PLANNING",
+            "sourceId": "IN1792931914919-1",
+            "route": "Activity Intake",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "RESOLVED",
+            "deliveredAt": "2026-10-25T12:38:35.022Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:35.022Z"
+              },
+              {
+                "state": "RESOLVED",
+                "time": "2026-10-25T12:38:35.039Z"
+              }
+            ],
+            "resolvedAt": "2026-10-25T12:38:35.039Z"
+          },
+          {
+            "id": "NF-005b0022005b005c00220050004c0041004e004e0049004e0047005c0022002c005c00220049004e0031003700390032003900330031003900310034003900310039002d0031005c0022002c005c00220069006e007400650072006e0073006800690070002d0061007000700072006f00760061006c005c0022002c0031002c005c002200640031005c0022005d0022002c00220041004300540049004f004e0022002c0022006400310022002c006e0075006c006c005d",
+            "base": "[\"PLANNING\",\"IN1792931914919-1\",\"internship-approval\",1,\"d1\"]",
+            "recipient": "d1",
+            "title": "Approve internship placement: Fictional Stage253B internship",
+            "group": "PLANNING",
+            "sourceId": "IN1792931914919-1",
+            "route": "Activity Intake",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "RESOLVED",
+            "deliveredAt": "2026-10-25T12:38:35.039Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:35.039Z"
+              },
+              {
+                "state": "RESOLVED",
+                "time": "2026-10-25T12:38:35.058Z"
+              }
+            ],
+            "resolvedAt": "2026-10-25T12:38:35.058Z"
+          },
+          {
+            "id": "NF-005b0022005b005c00220050004c0041004e004e0049004e0047005c0022002c005c00220049004e0031003700390032003900330031003900310034003900310039002d0031005c0022002c005c00220069006e007400650072006e0073006800690070002d006c00650074007400650072005c0022002c0031002c005c002200640031005c0022005d0022002c00220041004300540049004f004e0022002c0022006400310022002c006e0075006c006c005d",
+            "base": "[\"PLANNING\",\"IN1792931914919-1\",\"internship-letter\",1,\"d1\"]",
+            "recipient": "d1",
+            "title": "Issue internship approach letter: Fictional Stage253B internship",
+            "group": "PLANNING",
+            "sourceId": "IN1792931914919-1",
+            "route": "Activity Intake",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "RESOLVED",
+            "deliveredAt": "2026-10-25T12:38:35.058Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:35.058Z"
+              },
+              {
+                "state": "RESOLVED",
+                "time": "2026-10-25T12:38:35.078Z"
+              }
+            ],
+            "resolvedAt": "2026-10-25T12:38:35.078Z"
+          },
+          {
+            "id": "NF-005b0022005b005c00220050004c0041004e004e0049004e0047005c0022002c005c00220049004e0031003700390032003900330031003900310034003900310039002d0031005c0022002c005c00220069006e007400650072006e0073006800690070002d0068006f00730074002d0072006500730070006f006e00730065005c0022002c0031002c005c002200730031005c0022005d0022002c00220041004300540049004f004e0022002c0022007300310022002c006e0075006c006c005d",
+            "base": "[\"PLANNING\",\"IN1792931914919-1\",\"internship-host-response\",1,\"s1\"]",
+            "recipient": "s1",
+            "title": "Record organization response when received: Fictional Stage253B internship",
+            "group": "PLANNING",
+            "sourceId": "IN1792931914919-1",
+            "route": "Activity Intake",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": false,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "RESOLVED",
+            "deliveredAt": "2026-10-25T12:38:35.078Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:38:35.078Z"
+              },
+              {
+                "state": "RESOLVED",
+                "time": "2026-10-25T12:39:17.389Z"
+              }
+            ],
+            "resolvedAt": "2026-10-25T12:39:17.389Z"
+          },
+          {
+            "id": "NF-005b0022005b005c00220050004c0041004e004e0049004e0047005c0022002c005c00220049004e0031003700390032003900330031003900310034003900310039002d0031005c0022002c005c00220069006e007400650072006e0073006800690070002d00720065006100640069006e006500730073002d007200650076006900650077005c0022002c0031002c005c0022006d0031005c0022005d0022002c00220041004300540049004f004e0022002c0022006d00310022002c006e0075006c006c005d",
+            "base": "[\"PLANNING\",\"IN1792931914919-1\",\"internship-readiness-review\",1,\"m1\"]",
+            "recipient": "m1",
+            "title": "Verify host acceptance and learning agreement: Fictional Stage253B internship",
+            "group": "PLANNING",
+            "sourceId": "IN1792931914919-1",
+            "route": "Activity Intake",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "RESOLVED",
+            "deliveredAt": "2026-10-25T12:43:25.168Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:43:25.168Z"
+              },
+              {
+                "state": "RESOLVED",
+                "time": "2026-10-25T12:43:47.430Z"
+              }
+            ],
+            "resolvedAt": "2026-10-25T12:43:47.430Z"
+          },
+          {
+            "id": "NF-005b0022005b005c00220050004c0041004e004e0049004e0047005c0022002c005c00220049004e0031003700390032003900330031003900310034003900310039002d0031005c0022002c005c00220069006e007400650072006e0073006800690070002d00730074006100720074002d0061007000700072006f00760061006c005c0022002c0031002c005c002200640031005c0022005d0022002c00220041004300540049004f004e0022002c0022006400310022002c006e0075006c006c005d",
+            "base": "[\"PLANNING\",\"IN1792931914919-1\",\"internship-start-approval\",1,\"d1\"]",
+            "recipient": "d1",
+            "title": "Authorize internship commencement: Fictional Stage253B internship",
+            "group": "PLANNING",
+            "sourceId": "IN1792931914919-1",
+            "route": "Activity Intake",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "RESOLVED",
+            "deliveredAt": "2026-10-25T12:43:47.430Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:43:47.430Z"
+              },
+              {
+                "state": "RESOLVED",
+                "time": "2026-10-25T12:43:56.642Z"
+              }
+            ],
+            "resolvedAt": "2026-10-25T12:43:56.642Z"
+          },
+          {
+            "id": "NF-005b0022005b005c00220050004c0041004e004e0049004e0047005c0022002c005c00220049004e0031003700390032003900330031003900310034003900310039002d0031005c0022002c005c00220069006e007400650072006e0073006800690070002d0065007800650063007500740069006f006e002d00680061006e0064006f00660066005c0022002c0031002c005c002200630031005c0022005d0022002c00220041004300540049004f004e0022002c0022006300310022002c006e0075006c006c005d",
+            "base": "[\"PLANNING\",\"IN1792931914919-1\",\"internship-execution-handoff\",1,\"c1\"]",
+            "recipient": "c1",
+            "title": "Create authorized internship workspace: Fictional Stage253B internship",
+            "group": "PLANNING",
+            "sourceId": "IN1792931914919-1",
+            "route": "Activity Intake",
+            "due": null,
+            "phase": "ACTION",
+            "mandatory": true,
+            "policyVersion": null,
+            "sourceVersion": 1,
+            "state": "RESOLVED",
+            "deliveredAt": "2026-10-25T12:43:56.642Z",
+            "readAt": null,
+            "ackAt": null,
+            "history": [
+              {
+                "state": "DELIVERED_IN_APP",
+                "time": "2026-10-25T12:43:56.642Z"
+              },
+              {
+                "state": "RESOLVED",
+                "time": "2026-10-25T12:44:36.046Z"
+              }
+            ],
+            "resolvedAt": "2026-10-25T12:44:36.046Z"
+          }
+        ],
+        "notificationPreferences": {},
+        "notificationPolicies": [
+          {
+            "id": "NPOL-1",
+            "version": 1,
+            "state": "DRAFT",
+            "by": "a1",
+            "rules": {
+              "PROJECT": {
+                "soon": 0,
+                "supervisor": null,
+                "coordinator": null,
+                "administrative": null
+              },
+              "CLUB": {
+                "soon": 0,
+                "supervisor": null,
+                "coordinator": null,
+                "administrative": null
+              },
+              "FINANCE": {
+                "soon": 0,
+                "supervisor": null,
+                "coordinator": null,
+                "administrative": null
+              },
+              "GOVERNANCE": {
+                "soon": 0,
+                "supervisor": null,
+                "coordinator": null,
+                "administrative": null
+              },
+              "PLANNING": {
+                "soon": 0,
+                "supervisor": null,
+                "coordinator": null,
+                "administrative": null
+              }
+            }
+          }
+        ],
+        "controlledDocuments": [
+          {
+            "id": "DOC-DEMO-1",
+            "code": "DEMO-STA-001-SOP",
+            "title": "Student Activity Evidence Guidance",
+            "type": "SOP",
+            "issuer": "KCC",
+            "owner": "Student Affairs",
+            "author": "dc1",
+            "version": 1,
+            "state": "EFFECTIVE",
+            "effective": "2026-10-01",
+            "review": "2027-10-01",
+            "approvedAt": "2026-09-30T06:00:00Z",
+            "approvedBy": "da1",
+            "audience": "STUDENTS",
+            "classification": "Internal",
+            "retention": "Institutional academic records",
+            "mandatory": true,
+            "due": "2026-11-15",
+            "fileRef": "DEMO inline content \u2014 no official policy file",
+            "content": "FICTIONAL DEMONSTRATION GUIDANCE\nSubmit activity outputs and an individual account of your contribution. A mentor verifies evidence before recognition. This sample is not an approved KCC policy.",
+            "recipients": {
+              "s1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "s2": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              }
+            }
+          },
+          {
+            "id": "DOC-DEMO-FIN",
+            "code": "DEMO-FIN-001-FRM",
+            "title": "Club Settlement Reference Form",
+            "type": "Form",
+            "issuer": "KCC",
+            "owner": "Finance",
+            "author": "dc1",
+            "version": 1,
+            "state": "EFFECTIVE",
+            "effective": "2026-10-01",
+            "review": "2027-10-01",
+            "approvedAt": "2026-09-30T06:00:00Z",
+            "approvedBy": "da1",
+            "audience": "FINANCE",
+            "classification": "Confidential",
+            "retention": "Institutional financial records",
+            "mandatory": false,
+            "due": "2026-11-15",
+            "fileRef": "DEMO inline form",
+            "content": "FICTIONAL FORM\nActivity reference: ____\nApproved amount: ____\nActual expenditure: ____\nSupporting evidence references: ____\nVerification: ____",
+            "recipients": {
+              "f1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "fv1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              }
+            }
+          }
+        ],
+        "communications": [
+          {
+            "id": "NOTICE-N1",
+            "code": "DEMO-KCC-N1",
+            "title": "Semester project proposal deadline",
+            "issuer": "KCC",
+            "author": "np1",
+            "version": 1,
+            "state": "PUBLISHED",
+            "priority": "Normal",
+            "classification": "Internal",
+            "audience": "ALL",
+            "content": "Submit your project proposal and expected outcomes by 15 November 2026.",
+            "issue": "2026-10-16",
+            "effective": "2026-10-16",
+            "expiry": "2027-12-31",
+            "due": "2026-11-15",
+            "mandatory": true,
+            "contact": "Student Affairs (demonstration)",
+            "fileRef": "No attachment",
+            "publishedAt": "2026-10-25T12:35:55.622Z",
+            "approvedBy": "na1",
+            "recipients": {
+              "s1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "s2": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "m1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "c1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "a1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "d1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "r1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "g1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "sa1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "f1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "fv1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "m2": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "dc1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "da1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "np1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "na1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              }
+            }
+          },
+          {
+            "id": "NOTICE-N2",
+            "code": "DEMO-KCC-N2",
+            "title": "Evidence and reflection guidance",
+            "issuer": "KCC",
+            "author": "np1",
+            "version": 1,
+            "state": "PUBLISHED",
+            "priority": "Normal",
+            "classification": "Internal",
+            "audience": "ALL",
+            "content": "Each participant must submit an individual reflection. Evidence verification precedes certificate eligibility.",
+            "issue": "2026-10-16",
+            "effective": "2026-10-16",
+            "expiry": "2027-12-31",
+            "due": "2026-11-15",
+            "mandatory": true,
+            "contact": "Student Affairs (demonstration)",
+            "fileRef": "No attachment",
+            "publishedAt": "2026-10-25T12:35:55.622Z",
+            "approvedBy": "na1",
+            "recipients": {
+              "s1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "s2": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "m1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "c1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "a1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "d1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "r1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "g1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "sa1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "f1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "fv1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "m2": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "dc1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "da1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "np1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "na1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              }
+            }
+          },
+          {
+            "id": "UNI-DEMO-1",
+            "code": "DEMO-UNIVERSITY-01",
+            "title": "University experiential learning reporting circular \u2014 example",
+            "issuer": "University (fictional source)",
+            "author": "external-source",
+            "version": 1,
+            "state": "PUBLISHED",
+            "priority": "High",
+            "classification": "Internal",
+            "audience": "STUDENTS",
+            "content": "FICTIONAL UNIVERSITY CIRCULAR\nColleges are requested to coordinate semester experiential-learning reporting. This is a simulated source notice, not an actual university directive.",
+            "issue": "2026-10-16",
+            "effective": "2026-10-16",
+            "expiry": "2027-12-31",
+            "due": "2026-11-20",
+            "mandatory": true,
+            "contact": "University academic office (fictional)",
+            "fileRef": "DEMO source reference",
+            "publishedAt": "2026-10-25T12:35:55.622Z",
+            "approvedBy": "external-source",
+            "recipients": {
+              "s1": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              },
+              "s2": {
+                "delivery": "DELIVERED_IN_APP",
+                "deliveredAt": "2026-10-25T12:35:55.622Z",
+                "readAt": null,
+                "ackAt": null
+              }
+            }
+          }
+        ],
+        "rubrics": [
+          {
+            "id": "RU-DEMO-1",
+            "family": "RU-DEMO-1",
+            "version": 1,
+            "title": "Four-domain learning assessment \u2014 draft example",
+            "state": "DRAFT",
+            "criteria": [
+              {
+                "name": "Concept",
+                "weight": 25,
+                "max": 25,
+                "allowNA": false
+              },
+              {
+                "name": "Skills",
+                "weight": 25,
+                "max": 25,
+                "allowNA": false
+              },
+              {
+                "name": "Leadership",
+                "weight": 25,
+                "max": 25,
+                "allowNA": false
+              },
+              {
+                "name": "Impact",
+                "weight": 25,
+                "max": 25,
+                "allowNA": false
+              }
+            ],
+            "rounding": "HALF_UP",
+            "decimals": 2,
+            "naRule": "EXCLUDE_RENORMALIZE",
+            "passThreshold": null,
+            "certificateThreshold": null,
+            "author": "c1",
+            "effective": "2026-01-01",
+            "expires": "2027-12-31",
+            "purpose": "Demonstration configuration; institutional approval is not implied."
+          }
+        ]
+      }
+    }
+  ],
+  "serverAudit": [
+    {
+      "id": "ea89644b-34dc-4505-a937-b1a4d3930732",
+      "workspace": "KCC-MOCK-COHORT-LEDGER-V1",
+      "revision": 1,
+      "subject": "stage253-s1",
+      "actor": "c1",
+      "command": "cohort.mock.propose",
+      "record": "{\"kind\":\"KCC360_MOCK_COHORT_LEDGER_V1\",\"batchId\":\"MOCK_BATCH_666A4891_A003_4597_BB20_CA15B17F5564\",\"action\":\"PROPOSE\",\"bindingHash\":\"2f2c0e8986398e8efa9a6051a7403012b0a291cb397696ab49eb4fc7a0830cd9\",\"source\":{\"snapshotId\":\"MOCK_COHORT_SNAPSHOT_1\",\"version\":1,\"tenantId\":\"MOCK_KCC\",\"validUntil\":\"2028-01-01T00:00:00.000Z\"},\"counts\":{\"cohort\":6,\"included\":5,\"excludedLeftCollege\":1,\"advance\":5,\"finalReview\":0},\"revisionBefore\":0,\"revisionAfter\":1,\"officialWriteBack\":false}",
+      "time": "2026-10-25T12:46:37.598Z"
+    },
+    {
+      "id": "2a8d392b-38f9-4d44-9b91-1936075fb7d2",
+      "workspace": "KCC-MOCK-COHORT-LEDGER-V1",
+      "revision": 2,
+      "subject": "stage253-s1",
+      "actor": "d1",
+      "command": "cohort.mock.approve",
+      "record": "{\"kind\":\"KCC360_MOCK_COHORT_LEDGER_V1\",\"batchId\":\"MOCK_BATCH_666A4891_A003_4597_BB20_CA15B17F5564\",\"action\":\"APPROVE\",\"bindingHash\":\"2f2c0e8986398e8efa9a6051a7403012b0a291cb397696ab49eb4fc7a0830cd9\",\"source\":{\"snapshotId\":\"MOCK_COHORT_SNAPSHOT_1\",\"version\":1,\"tenantId\":\"MOCK_KCC\",\"validUntil\":\"2028-01-01T00:00:00.000Z\"},\"counts\":{\"cohort\":6,\"included\":5,\"excludedLeftCollege\":1,\"advance\":5,\"finalReview\":0},\"revisionBefore\":1,\"revisionAfter\":2,\"officialWriteBack\":false}",
+      "time": "2026-10-25T12:46:52.698Z"
+    },
+    {
+      "id": "abc33466-07e9-4cf2-a609-8ae3b5de3255",
+      "workspace": "KCC-MOCK-COHORT-LEDGER-V1",
+      "revision": 3,
+      "subject": "stage253-s1",
+      "actor": "c1",
+      "command": "cohort.mock.apply",
+      "record": "{\"kind\":\"KCC360_MOCK_COHORT_LEDGER_V1\",\"batchId\":\"MOCK_BATCH_666A4891_A003_4597_BB20_CA15B17F5564\",\"action\":\"APPLY\",\"bindingHash\":\"2f2c0e8986398e8efa9a6051a7403012b0a291cb397696ab49eb4fc7a0830cd9\",\"source\":{\"snapshotId\":\"MOCK_COHORT_SNAPSHOT_1\",\"version\":1,\"tenantId\":\"MOCK_KCC\",\"validUntil\":\"2028-01-01T00:00:00.000Z\"},\"counts\":{\"cohort\":6,\"included\":5,\"excludedLeftCollege\":1,\"advance\":5,\"finalReview\":0},\"revisionBefore\":2,\"revisionAfter\":3,\"officialWriteBack\":false}",
+      "time": "2026-10-25T12:46:58.794Z"
+    },
+    {
+      "id": "201115bf-f3c0-4e77-8fe6-b0725f76a2d0",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 1,
+      "subject": "stage253-s1",
+      "actor": "s1",
+      "command": "saveActivityIntake",
+      "record": null,
+      "time": "2026-10-25T12:38:34.927Z"
+    },
+    {
+      "id": "e517506b-04e2-48b0-b022-6c1b44fe7e7d",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 2,
+      "subject": "stage253-s1",
+      "actor": "s1",
+      "command": "submitActivityIntake",
+      "record": null,
+      "time": "2026-10-25T12:38:34.948Z"
+    },
+    {
+      "id": "265d7b5f-4ba5-48fd-8528-aa8aad0b4c98",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 3,
+      "subject": "stage253-s1",
+      "actor": "c1",
+      "command": "reviewActivityIntake",
+      "record": "{\"format\":\"KCC360_AUDIT_METADATA\",\"version\":1,\"metadata\":{\"correlationId\":\"265d7b5f-4ba5-48fd-8528-aa8aad0b4c98\",\"workspaceId\":\"KCC-OWNER-DEMO\",\"actorId\":\"c1\",\"action\":\"reviewActivityIntake\",\"occurredAt\":\"2026-10-25T12:38:34.972Z\",\"institutionId\":null,\"workspaceRevisionBefore\":2,\"workspaceRevisionAfter\":3,\"mapping\":\"MAPPED\",\"record\":{\"type\":\"INTAKE\",\"id\":\"IN1792931914919-1\",\"versionBefore\":1,\"versionAfter\":1,\"stateBefore\":\"SUBMITTED\",\"stateAfter\":\"ROUTING_CONFIRMED\"},\"reason\":{\"status\":\"REFERENCED\",\"reference\":{\"recordType\":\"INTAKE\",\"recordId\":\"IN1792931914919-1\",\"recordVersion\":1,\"field\":\"reason\"}}}}",
+      "time": "2026-10-25T12:38:34.972Z"
+    },
+    {
+      "id": "f8907efb-8fcd-4b0a-9361-5672c48213da",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 4,
+      "subject": "stage253-s1",
+      "actor": "c1",
+      "command": "assignIntakeMentor",
+      "record": "{\"format\":\"KCC360_AUDIT_METADATA\",\"version\":1,\"metadata\":{\"correlationId\":\"f8907efb-8fcd-4b0a-9361-5672c48213da\",\"workspaceId\":\"KCC-OWNER-DEMO\",\"actorId\":\"c1\",\"action\":\"assignIntakeMentor\",\"occurredAt\":\"2026-10-25T12:38:34.989Z\",\"institutionId\":null,\"workspaceRevisionBefore\":3,\"workspaceRevisionAfter\":4,\"mapping\":\"MAPPED\",\"record\":{\"type\":\"INTAKE_MENTOR_ASSIGNMENT\",\"id\":\"IMA1792931914986-1\",\"versionBefore\":null,\"versionAfter\":1,\"stateBefore\":null,\"stateAfter\":\"REQUESTED\"},\"reason\":{\"status\":\"REFERENCED\",\"reference\":{\"recordType\":\"INTAKE_MENTOR_ASSIGNMENT\",\"recordId\":\"IMA1792931914986-1\",\"recordVersion\":1,\"field\":\"reason\"}}}}",
+      "time": "2026-10-25T12:38:34.989Z"
+    },
+    {
+      "id": "6f173bd7-1127-41dc-8370-1c85bee92971",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 5,
+      "subject": "stage253-s1",
+      "actor": "m1",
+      "command": "respondIntakeMentor",
+      "record": "{\"format\":\"KCC360_AUDIT_METADATA\",\"version\":1,\"metadata\":{\"correlationId\":\"6f173bd7-1127-41dc-8370-1c85bee92971\",\"workspaceId\":\"KCC-OWNER-DEMO\",\"actorId\":\"m1\",\"action\":\"respondIntakeMentor\",\"occurredAt\":\"2026-10-25T12:38:35.009Z\",\"institutionId\":null,\"workspaceRevisionBefore\":4,\"workspaceRevisionAfter\":5,\"mapping\":\"MAPPED\",\"record\":{\"type\":\"INTAKE_MENTOR_ASSIGNMENT\",\"id\":\"IMA1792931914986-1\",\"versionBefore\":1,\"versionAfter\":1,\"stateBefore\":\"REQUESTED\",\"stateAfter\":\"ACCEPTED\"},\"reason\":{\"status\":\"REFERENCED\",\"reference\":{\"recordType\":\"INTAKE_MENTOR_ASSIGNMENT\",\"recordId\":\"IMA1792931914986-1\",\"recordVersion\":1,\"field\":\"reason\"}}}}",
+      "time": "2026-10-25T12:38:35.009Z"
+    },
+    {
+      "id": "b1fa83c5-b0af-42b1-8953-64d644902a49",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 6,
+      "subject": "stage253-s1",
+      "actor": "s1",
+      "command": "submitInternshipPlacement",
+      "record": null,
+      "time": "2026-10-25T12:38:35.024Z"
+    },
+    {
+      "id": "f4deae8d-1c9d-4066-9f37-7d838a4d768c",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 7,
+      "subject": "stage253-s1",
+      "actor": "m1",
+      "command": "reviewInternshipPlacement",
+      "record": null,
+      "time": "2026-10-25T12:38:35.041Z"
+    },
+    {
+      "id": "15674e9e-7d4c-4a67-af7a-dfe0973f7a91",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 8,
+      "subject": "stage253-s1",
+      "actor": "d1",
+      "command": "reviewInternshipPlacement",
+      "record": null,
+      "time": "2026-10-25T12:38:35.060Z"
+    },
+    {
+      "id": "6721a887-0009-4207-8a90-e0d90cb9c34e",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 9,
+      "subject": "stage253-s1",
+      "actor": "d1",
+      "command": "issueInternshipLetter",
+      "record": null,
+      "time": "2026-10-25T12:38:35.080Z"
+    },
+    {
+      "id": "9bc8cb5c-af4a-4ac3-b810-7e89fbf1c56e",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 10,
+      "subject": "stage253-s1",
+      "actor": "s1",
+      "command": "draftInternshipReadiness",
+      "record": null,
+      "time": "2026-10-25T12:39:17.391Z"
+    },
+    {
+      "id": "d59b3f9a-7939-47ca-a3d0-fe5a4c04b7cd",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 11,
+      "subject": "stage253-s1",
+      "actor": "s1",
+      "command": "file.upload",
+      "record": "IRD1792931957386-1",
+      "time": "2026-10-25T12:43:03.400Z"
+    },
+    {
+      "id": "6b705ef5-cfa4-4023-923f-de407ad14351",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 12,
+      "subject": "stage253-s1",
+      "actor": "s1",
+      "command": "submitInternshipReadiness",
+      "record": null,
+      "time": "2026-10-25T12:43:25.170Z"
+    },
+    {
+      "id": "487d2fbb-a4ce-4305-a725-2dc31b890b73",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 13,
+      "subject": "stage253-s1",
+      "actor": "m1",
+      "command": "reviewInternshipReadiness",
+      "record": null,
+      "time": "2026-10-25T12:43:47.431Z"
+    },
+    {
+      "id": "e4aaa8fd-2366-4d32-ab86-9b0d7a8702b7",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 14,
+      "subject": "stage253-s1",
+      "actor": "d1",
+      "command": "reviewInternshipReadiness",
+      "record": null,
+      "time": "2026-10-25T12:43:56.644Z"
+    },
+    {
+      "id": "86dce965-787e-46d7-90e3-339069636d26",
+      "workspace": "KCC-OWNER-DEMO",
+      "revision": 15,
+      "subject": "stage253-s1",
+      "actor": "c1",
+      "command": "handoffInternship",
+      "record": null,
+      "time": "2026-10-25T12:44:36.049Z"
+    }
+  ],
+  "files": [
+    {
+      "id": "d59b3f9a-7939-47ca-a3d0-fe5a4c04b7cd",
+      "kind": "internship",
+      "target": "IRD1792931957386-1",
+      "name": "fictional-stage253B-host.txt",
+      "mime": "text/plain",
+      "size": 116,
+      "sha256": "4ca5c9dd9f65cae8fb7502e42caed0fb718eb6c39abd8e1158b94ed3a9ec58c9",
+      "uploaded_by": "s1",
+      "status": "AVAILABLE",
+      "objectBytesVerified": true
+    }
+  ]
+}

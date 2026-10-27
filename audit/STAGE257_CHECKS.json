@@ -1,0 +1,21 @@
+{
+  "stage": 257,
+  "baseline": "0078629e41768850c97a2ddb5cc432f6ba7267b0",
+  "policyCasesPassed": 26,
+  "sqlitePersistenceCasesPassed": 14,
+  "sourceProjectionExit": 0,
+  "permissionPolicyExit": 0,
+  "typescriptExit": 0,
+  "productionBuildExit": 0,
+  "workflowRegression": "STAGE257_REGRESSION.json",
+  "liveApprovalEnforcement": false,
+  "annexPAcceptance": "NOT RUN",
+  "sourceHashes": {
+    "server/plan-approval-save.mjs": "9afc8eede37803a376c9da167229b4b67d2625f871b9d7ce400b2753997fd0f1",
+    "server/plan-approval-source.mjs": "e68d18124a2dd2948f35ee385d1c20d344e162ceb8c9af426cdd7b8fcd518184",
+    "scripts/prepare-workspace.mjs": "6678cdf8b10d66de4928d385795788f46082d37247ad19f5aa11d554dae9e122",
+    "server/engine.mjs": "e48c09b81de180de173765c3d0887f401c3a3aa5e3205a983aa7c3ac0fe66956",
+    "check-plan-approval-save.mjs": "cf02e28585a0ba875ea0b0ac0805a6b09a3e2207edfe8b8ef51493cc731f7d82",
+    "check-plan-approval-source.mjs": "e52dd6ed8bd4fe245b8ebc0e14e3cd45eeb19162b2de235ff67319b7791f7341"
+  }
+}

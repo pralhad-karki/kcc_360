@@ -1,0 +1,23 @@
+{
+  "stage": 265,
+  "baselineCommit": "61261ad37d75b0560fb6a388ab8fede43097b767",
+  "coreCases": 16,
+  "coreResult": "PASS",
+  "actualSharedServiceSQLite": "PASS",
+  "departmentalAP001FullRoute": "PASS with fictional trusted assignments; no institutional activation",
+  "browserScriptHarness": "PASS",
+  "broadGroups": 60,
+  "broadResult": "PASS",
+  "broadReport": "STAGE265_REGRESSION.json",
+  "typeScript": "PASS",
+  "bundleBuild": "run during final packaging",
+  "whitespace": "PASS",
+  "browserQA": "read-only fictional department/card/plan/service-item forms inspected; no backend save",
+  "temporaryFixtureRemoved": true,
+  "productionDatabaseChanged": false,
+  "institutionalActivation": false,
+  "newExecutionEnabled": false,
+  "jobPlacementPipelineImplemented": false,
+  "departmentWideInternshipOutcomeSourceConnected": false,
+  "note": "Final core/service/client rerun follows navigation/grid/plain-wording-only polish. Wider periodic monitoring/evaluation, placement cases and departmental amendments remain pending."
+}

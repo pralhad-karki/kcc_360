@@ -1,0 +1,17 @@
+// Offline feasibility check only: Python is not a dependency of the deployed app.
+import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';import {createEngine} from './server/engine.mjs';
+const python=`import sys,json,io,importlib.util
+sys.dont_write_bytecode=True
+from openpyxl import Workbook
+spec=importlib.util.spec_from_file_location('reader','scripts/read-plan-xlsx.py');reader=importlib.util.module_from_spec(spec);spec.loader.exec_module(reader)
+x=json.load(sys.stdin);w=Workbook();w.active.append(x['columns'])
+for r in x['rows']:w.active.append([str(r.get(k,'')) for k in x['columns']])
+b=io.BytesIO();w.save(b);print(json.dumps(reader.read_plan_xlsx(b.getvalue(),x['columns'])))`;
+const convert=(columns,rows)=>{const r=spawnSync('python',['-c',python],{input:JSON.stringify({columns,rows}),encoding:'utf8'});assert.equal(r.status,0,r.stderr);return JSON.parse(r.stdout).csv};
+let data=createEngine(null,'s1').snapshot();const pid=data.plans[0].id,columns=['externalId','title','start','end','duration','participants','venue','outcomes','competencies','outputs','sdg','evidence','evaluation','portfolio','reportDue','budget','resources','risks','kpi','baseline','target','template','type','lead'];
+const row={...data.plans[0].items[0],externalId:'XLSX-001',title:'Converted, "quoted" workbook activity',type:'Course project',lead:'s1'};const csv=convert(columns,[row,{...row,externalId:'XLSX-002',end:'2026-02-30'}]);const run=(actor,command,args)=>{data=createEngine(data,actor).run(command,args).data};
+run('m1','previewPlanCSV',[{form:{sourceReference:'OFFLINE-XLSX-TEST',csv}},pid]);const preview=data.plans[0].csvImports.at(-1);assert.equal(preview.rows[0].state,'VALID');assert.equal(preview.rows[1].state,'INVALID');const count=data.plans[0].items.length;run('m1','confirmPlanCSV',[{form:{confirm:'yes'}},pid,preview.id]);assert.equal(data.plans[0].items.length,count+1);assert.equal(data.plans[0].items.at(-1).title,row.title);run('m1','confirmPlanCSV',[{form:{confirm:'yes'}},pid,preview.id]);assert.equal(data.plans[0].items.length,count+1);
+const club=data.clubs[0];club.state='ACTIVE';run('s1','saveClubAnnual',[{form:{year:'2026–27',objective:'Workbook bridge test'}},club.id]);const clubId=club.id,planId=data.clubs[0].plans.at(-1).id,clubColumns=['externalId','title','start','end','reportDue','milestones','output','participants','venue','budget','funding','kpi','target','sdg','evidence','risk','type','priority','lead'];
+const clubRow={externalId:'XLSX-CLUB-001',title:'Fictional club workshop',start:'2026-11-01',end:'2026-11-15',reportDue:'2026-11-18',milestones:'Prepare; deliver',output:'Report',participants:'2',venue:'KCC',budget:'2500.50',funding:'College',kpi:'Verified outputs',target:'2',sdg:'4',evidence:'Report',risk:'Supervised',type:'Workshop',priority:'High',lead:'s1'};
+run('s1','previewClubCSV',[{form:{sourceReference:'OFFLINE-XLSX-CLUB',csv:convert(clubColumns,[clubRow])}},clubId,planId]);const cp=data.clubs[0].plans.at(-1),clubPreview=cp.csvImports.at(-1);assert.equal(clubPreview.rows[0].state,'VALID');run('s1','confirmClubCSV',[{form:{confirm:'yes'}},clubId,planId,clubPreview.id]);assert.equal(data.clubs[0].plans.at(-1).state,'DRAFT');
+console.log('PASS: offline XLSX conversion feeds unchanged academic/club preview validators, invalid-date row reporting, explicit valid-row confirmation, quoted-text preservation, duplicate confirmation denial and draft approval gates. No browser parser or live import enabled.');

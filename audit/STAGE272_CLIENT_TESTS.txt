@@ -1,0 +1,1 @@
+PASS approval client: inactive/invalid data hides controls, exact source versions, text-only rendering, explicit reason/confirmation, same-origin/no-store fetch, identical operation retry, frozen pending fields, no browser identity or local writes, accessible labels and contextual links. DOM harness only; active browser decision flow not asserted.

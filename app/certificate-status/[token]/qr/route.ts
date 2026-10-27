@@ -1,0 +1,4 @@
+import {readPublicCertificate,publicCertificateHeaders} from '../../../../server/public-certificates';
+import {shareQR} from '../../../../server/qr.mjs';
+export const dynamic='force-dynamic';
+export async function GET(request:Request,{params}:{params:Promise<{token:string}>}){try{const {token}=await params,record=await readPublicCertificate(token);if(!record)return new Response('Certificate status unavailable.',{status:404,headers:publicCertificateHeaders});const url=new URL('/certificate-status/'+encodeURIComponent(token),request.url).href;return new Response(await shareQR(url),{headers:{...publicCertificateHeaders,'Content-Type':'image/svg+xml; charset=utf-8','Content-Disposition':'inline; filename="KCC360-demo-certificate-status-QR.svg"'}})}catch{return new Response('Certificate QR temporarily unavailable.',{status:503,headers:publicCertificateHeaders})}}

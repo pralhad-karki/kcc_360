@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-25",
+  "timezone": "Asia/Kathmandu",
+  "checks": [
+    {
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/root/.codex/plugins/cache/openai-curated-remote/sites/1.1.2/scripts/build-site.mjs"
+      ],
+      "exitCode": 0,
+      "buildLogSHA256": "36e4968d3a2de17b529f09872fa5fdf415894c896bc753d5ccef8cbf9a7d173e"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "unchangedTestedInputs": "All STAGE253_SOURCE_MANIFEST.json hashes verified after report preparation; no runtime changes after successful build."
+}

@@ -1,0 +1,16 @@
+{
+  "stage": 267,
+  "baselineCommit": "ef154186dee12d8d9610de7bb094e38c3e726dd5",
+  "broadGroups": 62,
+  "broadResult": "PASS",
+  "protectedApprovalSQLiteAndAmendmentRoute": "PASS with fictional trusted identities/grants",
+  "browserScriptHarness": "PASS",
+  "typeScript": "PASS",
+  "browserQA": "read-only fictional approved v2 calendar inspected; no native identity/backend save",
+  "temporaryFixtureRemoved": true,
+  "productionDatabaseChanged": false,
+  "institutionalActivation": false,
+  "principalAnnualTargetsImplemented": false,
+  "majorMinorKPIAllocationImplemented": false,
+  "bundleBuild": "during final packaging"
+}

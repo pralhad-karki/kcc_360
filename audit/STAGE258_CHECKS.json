@@ -1,0 +1,26 @@
+{
+  "stage": 258,
+  "baseline": "60fc15da4cd30fa530bf8f1c868b98bd9603d1a3",
+  "trustedIntegrationCasesPassed": 13,
+  "sqlitePersistenceCasesPassed": 14,
+  "defaultRouteCheckExit": 0,
+  "clientDOMHarnessExit": 0,
+  "typescriptExit": 0,
+  "productionBuildExit": 0,
+  "workflowRegression": "STAGE258_REGRESSION.json",
+  "institutionalActivation": false,
+  "allPlanAdoption": false,
+  "executionAuthorized": false,
+  "browserScope": "New screen layout and actual unauthenticated API denial only; no active decision flow",
+  "sourceHashes": {
+    "server/plan-approval-runtime.mjs": "c36b09b465992e7423f9aa6d65febf0e8c958418b924dd228b80727f1b4579ad",
+    "server/plan-approval-review.mjs": "f7b3b5843629444eb07135d6442923c3fec818aea43621214834058853914e6f",
+    "server/plan-approval-api.ts": "e42a304fd9d7c893bb7b27a25bcfa6e96367e95cfccc0d7a1a44803c0749139d",
+    "server/plan-approval-guard.mjs": "3454018f1c984fcc37c562c893ddc0d34cabf766e4613ccefabbdfde5b818d33",
+    "app/api/plan-approvals/route.ts": "cdc90157480ba9c3bc0b203f4f41d10011863c04f298390ba3e02e7ed848ec70",
+    "prototype/plan-approvals.js": "73560ae069600597d989366aa6a066560e074867930b8ff7ba1fca63876c2215",
+    "prototype/plan-approvals.html": "059ca2b9ca877ef5ac42449d45b3e2f4abc463b4c588cd3cb1184e82c11c25bc",
+    "prototype/plan-review-links.js": "f364b59ca67de22308374f4c791a1c5712124ea56a12b03120238ce1ba8031dc",
+    "scripts/prepare-workspace.mjs": "a6b709bb8ea9cfcdc30b621ee6bf6b19b6bf0e4189e95b5117187c832fe361b6"
+  }
+}

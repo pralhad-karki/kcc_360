@@ -1,0 +1,16 @@
+{
+  "stage": 266,
+  "baselineCommit": "0dab890e729d4bc6e4c1ad0c1469e9568c14cad1",
+  "broadGroups": 61,
+  "broadResult": "PASS",
+  "broadReport": "STAGE266_REGRESSION.json",
+  "finalTargetedSummary": "PASS after never-submitted withdrawal exclusion",
+  "finalBrowserScriptHarness": "PASS",
+  "typeScript": "PASS",
+  "browserQA": "read-only fictional summary inspected; no backend/authentication test",
+  "temporaryFixtureRemoved": true,
+  "productionDataWritten": false,
+  "institutionalActivation": false,
+  "jobPlacementPipelineImplemented": false,
+  "bundleBuild": "during final packaging"
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "file": "check-linked-intake-delivery.mjs",
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "PASS linked Workshop/Seminar: protected intake programme/template, ordinary draft correction and retained return/resubmission versions, independent approval, delivery-plan return/approval before start, one-student verified session and required distinct outputs, returned-output correction, final reflection/evaluation and no automatic certificate/publication. Browser acceptance not run.\n"
+  },
+  {
+    "file": "check-task-mapping.mjs",
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "PASS: task mapping validation, ownership, mentor management, academic snapshots, revision and assignment histories, completion and closed-work guards.\nPASS: task board and mapping form render with mapped and historical records.\n"
+  },
+  {
+    "file": "check-intake-activity-handoff.mjs",
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "PASS individual intake handoff: accepted/current prerequisites, coordinator-only confirmed draft creation, one initiating participant, source/history/output preservation, no private staff basis, duplicates/stale/inconsistent-link denial, existing independent proposal approval/start, projected privacy and excluded research/team/club paths. Browser acceptance not run.\n"
+  },
+  {
+    "file": "check-internship-readiness.mjs",
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "PASS: actual private file upload/download and locks, student agreement, independent host/supervisor verification, declarations, immutable return/revision and proof binding, start authorization, withdrawal, stale letter rejection, scope privacy and no execution/credit/finance grants.\nPASS: all-role readiness rendering, retained supervisor/authorization history and private panel scope.\n"
+  },
+  {
+    "file": "check-club-event-enrolment.mjs",
+    "status": "FAIL",
+    "exitCode": 1,
+    "output": "save(){localStorage.setItem('kcc360-stage1',JSON.stringify(db))}function log(p,action){let e={time:new Date().toISOString(),actor:name(uid),action,project:p?.id||'Workspace'};db.audit.unshift(e);if(p)p.history.unshift(e);save()}function toast(s){$('#toast').textContent=s;$('#toast').style.display='block';setTimeout(()=>$('#toast').style.display='none',3200)}function pill(s){return `<span class=\"pill ${['COMPLETION_VERIFIED','CLOSED','ARCHIVED'].includes(s)?'green':['PENDING_APPROVAL','EVALUATION_PENDING'].includes(s)?'amber':''}\">${esc(label(s))}</span>`}function btn(text,action,cls=''){return `<button class=\"${cls}\" onclick=\"${action}\">${text}</button>`}function go(p){page=p;selected=null;if(p==='Activity Intake')intakeFocus=null;render()}function openProject(id){selected=id;page='Projects';tab='Overview';render()}function visible(){return db.projects.filter(canSee)}function heading(title,desc,action=''){return `<div class=\"top\"><div><div class=\"eyebrow\">KCC360 / LEARNING WORKSPACE</div><h1>${title}</h1><p>${desc}</p></div>${action}</div>${workspaceFreshness()}`}function modal(html){planXlsxCancel?.();planXlsxCancel=null;const dialog=$('#modal');dialog.innerHTML=html;const title=dialog.querySelector('h1,h2,h3,h4,h5,h6');dialog.removeAttribute('aria-label');dialog.removeAttribute('aria-labelledby');if(title){if(!title.id)title.id='modal-title';dialog.setAttribute('aria-labelledby',title.id)}else dialog.setAttribute('aria-label','Workspace dialog');dialog.showModal()}function closeModal(){planXlsxCancel?.();planXlsxCancel=null;$('#modal').close()}function pending(p){return (owner(p)&&['CREATED','APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','COMPLETION_VERIFIED'].includes(p.state))||(mentor(p)&&['PENDING_APPROVAL','EVALUATION_PENDING'].includes(p.state))||(mine(p)&&['REFLECTION_PENDING','EVALUATION_PENDING'].includes(p.state)&&!p.reflections[uid])}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            \n\nTypeError: dialog.querySelector is not a function\n    at modal (evalmachine.<anonymous>:12:2070)\n    at clubEventEnrolmentForm (evalmachine.<anonymous>:3:251)\n    at evalmachine.<anonymous>:1:1\n    at Script.runInContext (node:vm:149:12)\n    at Object.runInContext (node:vm:301:6)\n    at file:///workspace/sites/kcc360-workflow/check-club-event-enrolment.mjs:23:393\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n\nNode.js v24.22.1\n"
+  },
+  {
+    "file": "check-reflection-sharing.mjs",
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "PASS submitted-reflection sharing: actual submission before evaluation, preview/consent, minimal status-labelled snapshot, no achievement/publication side effects, anonymous escaped view, source invalidation, expiry/revocation/owner and atomic race guards.\n"
+  },
+  {
+    "file": "check-portfolio-export-api.mjs",
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "PASS: combined/declarations-only CV, selected-section whitelist, safe print text, peer isolation, empty/duplicate denial, changed-declaration digest rejection and no storage writes.\nPASS: own-current certificate-only CV, escaped minimal fields, duplicate/peer/revoked/superseded/paused/stale-evaluation denial, replacement re-selection, changed-content digest, independent public QR state and no writes.\nPASS: authenticated owner/student-only private export POST, exact actor/revision/selection, fresh digest/identity/session/storage rechecks, no workspace/audit/share writes, origin/type/size/JSON guards, protected no-store HTML headers and no public GET/token. No browser/PDF acceptance.\n"
+  }
+]

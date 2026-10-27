@@ -1,0 +1,357 @@
+{
+  "source": "Supplied v3.3 retains v3.2 Annexes J/K/L and adds Annex M; latest user-confirmed rules take precedence",
+  "baseline": "Version266 Stage254; preserved prior development contracts. Historical v3.1 Library item currently updated to v3.3; immutable original not available.",
+  "catalogue": "35 functional headings sharing the existing application/services, not 35 applications",
+  "rows": [
+    {
+      "Module": "M01",
+      "Requirement": "User and access management",
+      "Existing behavior": "Owner-private identity; demonstration personas; identity/grant adapters deny live activation",
+      "Required change": "Scoped effective-dated multi-role grants; appointment-led President activation and approved delegation templates",
+      "Affected modules": "M08 M14 M26",
+      "Dependencies": "Official SSO/trusted identity and named authorities",
+      "Implementation status": "Partial; institutional activation pending",
+      "Acceptance evidence": "check-intake-trusted-loader.mjs; AT-M01 not run"
+    },
+    {
+      "Module": "M02",
+      "Requirement": "Academic structure and master data",
+      "Existing behavior": "Academic profiles and fictional bulk progression; history preserved",
+      "Required change": "Course/class roster source snapshots, source freshness and reconciliation",
+      "Affected modules": "M03 M19 M34",
+      "Dependencies": "Official MIS source contract",
+      "Implementation status": "Partial; mock-only source integration",
+      "Acceptance evidence": "check-mis-adapter.mjs; STAGE253_PERSISTENCE_EVIDENCE.json; AT-M02 not run"
+    },
+    {
+      "Module": "M03",
+      "Requirement": "Semester learning activities",
+      "Existing behavior": "Workshop/seminar/project delivery and session evidence",
+      "Required change": "Conference/event scope separate from eligibility; assigned course roster; shared plan authority",
+      "Affected modules": "M02 M05 M30",
+      "Dependencies": "Roster mapping, templates and principal plan route",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "check-linked-intake-delivery.mjs; AT-M03 not run"
+    },
+    {
+      "Module": "M04",
+      "Requirement": "Project management",
+      "Existing behavior": "Individual intake and trusted team first-review backend; default provider registry empty",
+      "Required change": "Preserve faculty/Coordinator course routing; Academic endorsement before Research; shared final plan approval",
+      "Affected modules": "M14 M30 M31",
+      "Dependencies": "Current faculty/course mappings and trusted roles",
+      "Implementation status": "Partial; routing change pending",
+      "Acceptance evidence": "check-intake-activity-handoff.mjs; AT-X03 not run"
+    },
+    {
+      "Module": "M05",
+      "Requirement": "Task management",
+      "Existing behavior": "Assigned criteria, versioned submissions, evidence verification and human reviews",
+      "Required change": "Team counts/capacity, skill requirements separate from academic eligibility; appointed confirmed participants only",
+      "Affected modules": "M10 M14 M32",
+      "Dependencies": "Participant/recruitment contract",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "STAGE254_REGRESSION.json; AT-M05 not run"
+    },
+    {
+      "Module": "M06",
+      "Requirement": "Group and club membership",
+      "Existing behavior": "Requests, reviewer decisions and membership exit/history",
+      "Required change": "Approved capacity, open-until-full intake, waitlists and atomic last-seat acceptance",
+      "Affected modules": "M08 M10",
+      "Dependencies": "Approved capacities and concurrent CAS tests",
+      "Implementation status": "Partial; capacity not implemented",
+      "Acceptance evidence": "check-membership.mjs; AT-X02 not run"
+    },
+    {
+      "Module": "M07",
+      "Requirement": "Club lifecycle",
+      "Existing behavior": "Proposal, authorization, activation, renewal, suspension and historical records",
+      "Required change": "Reconcile formation, committee activation and plan authority without circular gates",
+      "Affected modules": "M08 M09 M13",
+      "Dependencies": "New committee and plan controls",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "check-club-event-enrolment.mjs; AT-M07 not run"
+    },
+    {
+      "Module": "M08",
+      "Requirement": "Club governance and leadership",
+      "Existing behavior": "Mentor appoints individual leader; leadership term/history retained",
+      "Required change": "9\u201311 committee, three-month succession, semester-six appointment snapshot, Student Affairs review, Principal confirmation, appointment letter then manager activation",
+      "Affected modules": "M01 M13 M23",
+      "Dependencies": "Term length, selection method, role templates and signatory holders",
+      "Implementation status": "Gap; new committee route pending",
+      "Acceptance evidence": "AT-X02 not run"
+    },
+    {
+      "Module": "M09",
+      "Requirement": "Club annual and strategic planning",
+      "Existing behavior": "Versioned annual plans; mentor then Student Affairs currently approves",
+      "Required change": "Unit review then mandatory Finance Administrator and Principal; preserve approved versions and apply change control",
+      "Affected modules": "M11 M30",
+      "Dependencies": "Shared approval route, named institutional authorities",
+      "Implementation status": "Conflict; first implementation priority",
+      "Acceptance evidence": "check-plan-imports.mjs; AT-X01 not run"
+    },
+    {
+      "Module": "M10",
+      "Requirement": "Club activities and events",
+      "Existing behavior": "Volunteer applications, selection, role tasks and confirmed event handoff",
+      "Required change": "Broader entry modes, waiting lists/replacements, appointment letters and organizer-specific final report",
+      "Affected modules": "M05 M30 M32",
+      "Dependencies": "Participant and committee authority",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "check-club-event-enrolment.mjs; AT-M10 not run"
+    },
+    {
+      "Module": "M11",
+      "Requirement": "Club budgets and resources",
+      "Existing behavior": "Budget review, revisions, release, expenses and settlement controls",
+      "Required change": "Mandatory pre-execution plan route; consolidated joint budgets; distinguish post-event settlement",
+      "Affected modules": "M09 M30 M32",
+      "Dependencies": "Finance Administrator versus financial/payment authority mapping",
+      "Implementation status": "Partial; route conflict",
+      "Acceptance evidence": "check-budget-revisions.mjs; AT-X01/AT-X07 not run"
+    },
+    {
+      "Module": "M12",
+      "Requirement": "Club portfolio and institutional memory",
+      "Existing behavior": "Club contribution summaries and historical records",
+      "Required change": "Term-linked committees, appointments, partnerships and finance obligations with privacy",
+      "Affected modules": "M13 M18 M33",
+      "Dependencies": "Verified source linkage and committee lifecycle",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "check-club-volunteer-achievement-chain.mjs; AT-M12 not run"
+    },
+    {
+      "Module": "M13",
+      "Requirement": "Club evaluation annual review and handover",
+      "Existing behavior": "Annual reviews, outgoing/incoming handover and verified club evaluation",
+      "Required change": "Committee-wide independent evaluation and persistent obligations under new appointment route",
+      "Affected modules": "M08 M14 M35",
+      "Dependencies": "Committee policy and alternate evaluator assignments",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "AT-M13 not run"
+    },
+    {
+      "Module": "M14",
+      "Requirement": "Mentorship and evaluation",
+      "Existing behavior": "Mentor acceptance, transfer/handover, independent task and individual evaluation",
+      "Required change": "One faculty account with separately scoped effective-dated responsibilities/workload; leadership never implies scoring",
+      "Affected modules": "M01 M15 M28",
+      "Dependencies": "Named assignments, authority windows and rubric policies",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "check-mentor-transfers.mjs; AT-M14 not run"
+    },
+    {
+      "Module": "M15",
+      "Requirement": "Reflection and learning assessment",
+      "Existing behavior": "Individual free-text reflection, human evaluation, immediate sharing and in-app submission acknowledgement",
+      "Required change": "Separate knowledge/skills/leadership/impact sections; advisory AI with human fallback; evaluator alerts",
+      "Affected modules": "M14 M18 M22",
+      "Dependencies": "Approved rubric/AI privacy configuration; AI not required for human path",
+      "Implementation status": "Partial; structured sections/AI pending",
+      "Acceptance evidence": "check-reflection-sharing.mjs; AT-X04 not run"
+    },
+    {
+      "Module": "M16",
+      "Requirement": "Certification",
+      "Existing behavior": "Independent issuance, correction, revocation and minimal verification",
+      "Required change": "Role-specific certificate categories; external credentials retain issuer; no registration-only achievement",
+      "Affected modules": "M17 M34",
+      "Dependencies": "Approved eligibility and issuer/signatory policies",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "AT-M16 not run"
+    },
+    {
+      "Module": "M17",
+      "Requirement": "Digital portfolio and CV",
+      "Existing behavior": "Self-declared CV separate from verified records; private export and consent sharing",
+      "Required change": "External verified status, role contribution and validity indicators",
+      "Affected modules": "M18 M34",
+      "Dependencies": "External achievement verification",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "check-portfolio-export-api.mjs; AT-M17 not run"
+    },
+    {
+      "Module": "M18",
+      "Requirement": "Integrated portfolio lifecycle",
+      "Existing behavior": "Verified individual/club projections and guarded source invalidation",
+      "Required change": "Lead, faculty, department and institution projections; duplicate-free shared event counts; independent learning recognition before settlement",
+      "Affected modules": "M12 M19 M32",
+      "Dependencies": "Shared source IDs and validity/revocation rules",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "check-club-volunteer-achievement-chain.mjs; AT-X04/AT-X05 not run"
+    },
+    {
+      "Module": "M19",
+      "Requirement": "Semester student learning portfolio",
+      "Existing behavior": "Task academic snapshots and historical period reporting",
+      "Required change": "Verified external achievements earned during enrollment and applicable completeness denominators",
+      "Affected modules": "M02 M18 M34",
+      "Dependencies": "Historical enrollment mappings",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "check-task-mapping.mjs; AT-M19 not run"
+    },
+    {
+      "Module": "M20",
+      "Requirement": "Notification trigger layer",
+      "Existing behavior": "Persistent workflow reminders and source-validity checks",
+      "Required change": "Capacity/succession/principal-plan/change-request triggers with source-version deduplication",
+      "Affected modules": "M22 M29 M30",
+      "Dependencies": "New workflow events and approved notification timing",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "AT-M20 not run"
+    },
+    {
+      "Module": "M21",
+      "Requirement": "Contextual messaging",
+      "Existing behavior": "Project/thread discussion and retained moderation history",
+      "Required change": "Extend record-scoped contexts to plans, budgets, research and meetings without authority substitution",
+      "Affected modules": "M25 M35",
+      "Dependencies": "Context permissions and retention policy",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "check-project-discussion.mjs; AT-M21 not run"
+    },
+    {
+      "Module": "M22",
+      "Requirement": "Notification Centre and escalation",
+      "Existing behavior": "In-app inbox and approved reminder policies; email sending disabled",
+      "Required change": "Current evaluator/Finance/Principal queues and reliable delivery reconciliation",
+      "Affected modules": "M14 M20 M30",
+      "Dependencies": "Live sender setup and new workflow events",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "check-reflection-email.mjs; AT-M22 not run"
+    },
+    {
+      "Module": "M23",
+      "Requirement": "Controlled documents",
+      "Existing behavior": "Versioned independent documents, acknowledgement and private attachments",
+      "Required change": "Approved committee/recruitment appointment letters with issuer/signatory/scope/dates; no fabricated signature",
+      "Affected modules": "M08 M30 M33",
+      "Dependencies": "Approved appointment and signing authority",
+      "Implementation status": "Partial; document revision defect corrected at Stage254",
+      "Acceptance evidence": "check-files.mjs; AT-M23 not run"
+    },
+    {
+      "Module": "M24",
+      "Requirement": "Notices and announcements",
+      "Existing behavior": "Audience-targeted notice drafts, approvals, acknowledgement and expiry",
+      "Required change": "Recruitment and approved-change propagation, no private/public boundary bypass",
+      "Affected modules": "M02 M20 M33",
+      "Dependencies": "Participant and approved-change source contracts",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "AT-M24 not run"
+    },
+    {
+      "Module": "M25",
+      "Requirement": "File management",
+      "Existing behavior": "Private allowlisted attachments, size/structure/hash checks and download role guards",
+      "Required change": "Malware scanning/quarantine and failure-unavailable states; confidentiality/retention",
+      "Affected modules": "M15 M31 M34",
+      "Dependencies": "Approved scanner and retention operations",
+      "Implementation status": "Partial; scanning absent",
+      "Acceptance evidence": "STAGE254_NATIVE_WORKER_EVIDENCE.json; AT-M25 not run"
+    },
+    {
+      "Module": "M26",
+      "Requirement": "Role dashboards",
+      "Existing behavior": "Student, mentor, coordinator, research, Student Affairs and administration demo dashboards",
+      "Required change": "Finance Administrator and Principal scoped plan queues; multi-responsibility faculty view",
+      "Affected modules": "M01 M14 M30",
+      "Dependencies": "Trusted role assignments",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "STAGE253_BROWSER_RUN_B.json; AT-M26 not run"
+    },
+    {
+      "Module": "M27",
+      "Requirement": "Club and portfolio analytics",
+      "Existing behavior": "Scoped verified metrics and denominator labels",
+      "Required change": "Cross-club unique event totals, committee/partnership measures and confidential drill-down",
+      "Affected modules": "M12 M18 M32",
+      "Dependencies": "Source identity/deduplication and approved measures",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "AT-M27 not run"
+    },
+    {
+      "Module": "M28",
+      "Requirement": "Academic dashboards",
+      "Existing behavior": "Faculty/mentor planning and task/learning views",
+      "Required change": "Course responsibility schedules, conflicts/vacancies and advisor/coordinator scope; not HR appraisal",
+      "Affected modules": "M02 M14 M31",
+      "Dependencies": "Academic role/roster source mapping",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "AT-M28 not run"
+    },
+    {
+      "Module": "M29",
+      "Requirement": "Dashboard Action Centre",
+      "Existing behavior": "Source-linked assigned actions and detailed-process navigation",
+      "Required change": "Distinct Finance/Principal plan, report and change-request actions; stale revalidation",
+      "Affected modules": "M05 M22 M30",
+      "Dependencies": "New review/propagation events",
+      "Implementation status": "Partial",
+      "Acceptance evidence": "AT-M29 not run"
+    },
+    {
+      "Module": "M30",
+      "Requirement": "Academic and institutional planning",
+      "Existing behavior": "Academic coordinator/department plan chain; club mentor/Student Affairs chain; versioned draft revision/import controls",
+      "Required change": "All plan kinds require unit \u2192 Finance Administrator \u2192 Principal, even zero cost; exact-version immutable approvals; Annex M controlled additions/extensions",
+      "Affected modules": "M03 M09 M11 M31 M32 M33 M35",
+      "Dependencies": "Named authorities; Principal-originated plan rule remains unresolved",
+      "Implementation status": "Conflict; route enforcement not yet adopted",
+      "Acceptance evidence": "AT-X01 and AT-CR01\u201310 not run"
+    },
+    {
+      "Module": "M31",
+      "Requirement": "Research project management",
+      "Existing behavior": "Research intake routing/mentor acceptance; trusted first-review helpers, execution handoff incomplete",
+      "Required change": "Academic screening/endorsement then Research review; faculty-led accepted groups, appointments, authorship and independent faculty-output review",
+      "Affected modules": "M04 M14 M30",
+      "Dependencies": "Ethics/IP, scope assignments and configuration",
+      "Implementation status": "Gap/partial foundations",
+      "Acceptance evidence": "AT-X03 not run"
+    },
+    {
+      "Module": "M32",
+      "Requirement": "Interclub joint events",
+      "Existing behavior": "Single-club source event and contribution chain",
+      "Required change": "One event/budget/report, partner acceptance/obligations and one accountable evaluator/student; unique institutional counts",
+      "Affected modules": "M10 M18 M30",
+      "Dependencies": "Shared event/partner identifiers and approval route",
+      "Implementation status": "New workflow pending",
+      "Acceptance evidence": "AT-X05 not run"
+    },
+    {
+      "Module": "M33",
+      "Requirement": "Club partnership management",
+      "Existing behavior": "Global supporting-unit intake and private listing boundaries; no complete agreement lifecycle",
+      "Required change": "National/international proposals, approved commitments, separate signing, expiry/renewal/withdrawal/closure and handover",
+      "Affected modules": "M08 M23 M30 M32",
+      "Dependencies": "Formal signatories, agreement policy and external guest boundary",
+      "Implementation status": "New workflow pending",
+      "Acceptance evidence": "AT-M33 not run"
+    },
+    {
+      "Module": "M34",
+      "Requirement": "External achievement verification",
+      "Existing behavior": "Self-declared CV only; not external credential verification",
+      "Required change": "Enrollment-date/issuer/credential/role/evidence/original units/hours/expiry; authenticity separate from evaluation; duplicates/revocation/appeal; no academic credit conversion",
+      "Affected modules": "M02 M15 M17",
+      "Dependencies": "Category reviewers, issuer checks and credit authority",
+      "Implementation status": "New workflow pending",
+      "Acceptance evidence": "AT-X06 not run"
+    },
+    {
+      "Module": "M35",
+      "Requirement": "Meetings and actions",
+      "Existing behavior": "Context discussion/tasks, not formal meeting records",
+      "Required change": "Agenda/invites/attendance/minutes/decisions/action owners/deadlines/follow-up, corrections and confidentiality",
+      "Affected modules": "M05 M21 M29 M30",
+      "Dependencies": "Minutes reviewer and context authority",
+      "Implementation status": "New workflow pending",
+      "Acceptance evidence": "AT-X08 not run"
+    }
+  ]
+}

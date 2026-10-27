@@ -1,0 +1,774 @@
+{
+  "kind": "KCC360_TASK_WORKFLOW_REGRESSION_V1",
+  "sourceCommit": "588ce4d0a09e99510317befa520c7e014647f3dd",
+  "startedAt": "2026-10-27T07:29:45.555Z",
+  "scope": "Isolated developer checks with fictional fixtures; no browser or institutional acceptance execution",
+  "results": [
+    {
+      "id": "website-v1-operator",
+      "command": [
+        "node",
+        "check-website-v1-operator.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 272
+    },
+    {
+      "id": "website-v1-mock",
+      "command": [
+        "node",
+        "check-website-v1-mock.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 403
+    },
+    {
+      "id": "plan-target-proof",
+      "command": [
+        "node",
+        "check-plan-target-proof.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 710
+    },
+    {
+      "id": "annual-target-plan-binding",
+      "command": [
+        "node",
+        "check-annual-target-plan-binding.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 163
+    },
+    {
+      "id": "annual-target-allocation",
+      "command": [
+        "node",
+        "check-annual-target-allocation.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 122
+    },
+    {
+      "id": "annual-targets",
+      "command": [
+        "node",
+        "check-annual-targets.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 79
+    },
+    {
+      "id": "approved-club-calendar",
+      "command": [
+        "node",
+        "check-approved-club-calendar.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 497
+    },
+    {
+      "id": "student-affairs-internship-summary",
+      "command": [
+        "node",
+        "check-student-affairs-internship-summary.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 832
+    },
+    {
+      "id": "student-affairs-planning",
+      "command": [
+        "node",
+        "check-student-affairs-planning.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 756
+    },
+    {
+      "id": "student-affairs-planning-save",
+      "command": [
+        "node",
+        "check-student-affairs-planning-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1164
+    },
+    {
+      "id": "student-affairs-planning-client",
+      "command": [
+        "node",
+        "check-student-affairs-planning-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 805
+    },
+    {
+      "id": "club-plan-governance",
+      "command": [
+        "node",
+        "check-club-plan-governance.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 617
+    },
+    {
+      "id": "club-plan-governance-save",
+      "command": [
+        "node",
+        "check-club-plan-governance-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 988
+    },
+    {
+      "id": "club-plan-governance-client",
+      "command": [
+        "node",
+        "check-club-plan-governance-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 691
+    },
+    {
+      "id": "club-evaluation",
+      "command": [
+        "node",
+        "check-club-evaluation.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 261
+    },
+    {
+      "id": "student-affairs-reports",
+      "command": [
+        "node",
+        "check-reports.cjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 199
+    },
+    {
+      "id": "monitoring-privacy",
+      "command": [
+        "node",
+        "check-monitoring-projection.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 293
+    },
+    {
+      "id": "mis-academic-import",
+      "command": [
+        "node",
+        "check-mis-academic-import.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 194
+    },
+    {
+      "id": "mis-upload-route",
+      "command": [
+        "node",
+        "check-mis-upload-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 374
+    },
+    {
+      "id": "mis-upload-staging",
+      "command": [
+        "node",
+        "check-mis-upload-staging.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 269
+    },
+    {
+      "id": "mis-manual-students",
+      "command": [
+        "node",
+        "check-mis-manual-import.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 111
+    },
+    {
+      "id": "department-task-csv",
+      "command": [
+        "node",
+        "check-department-task-csv.mjs"
+      ],
+      "status": "FAIL",
+      "exitCode": 1,
+      "signal": null,
+      "durationMs": 1231,
+      "failure": "\nPASS department preview, assigned mentor review, department confirmation reuse individual task mappings\nPASS students, unrelated staff and wrong mentor cannot prepare, approve or apply batches\nPASS invalid roster, duplicate task references, deadlines and missing criteria block the whole batch\nPASS CSV quoting, UTF-8/BOM, exact header, width, empty and batch limits are checked\nPASS roster, source dates and mentor changes invalidate a reviewed import\nPASS a returned file can be corrected with prior rows and reasons preserved\nPASS changed existing import content never overwrites work even under a new source reference\nPASS club events and student-submitted project routes cannot use department class-task CSV\nPASS responsible unit scope, independent mentor and controlled parent execution remain required\nPASS raw batch/roster information is hidden from student and unrelated admin views\n\nnode:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected task recorder, portfolio eligibility or surrounding app change\n+ actual - expected\n... Skipped lines\n\n  'let intakeFocus=null;\\n' +\n    \"let facultyDashboardView={actor:null,mode:'MENTOR'};\\n\" +\n    'let leadershipDashboardView={actor:null,enabled:false};\\n' +\n    \"let workspaceViewState={source:'Local demonstration',loadedAt:null,updatedAt:null,revision:null,issue:null};\\n\" +\n    'const clubEvaluationIndicators=[{\"key\": \"PLANNING\", \"title\": \"Planned versus completed activities\", \"kinds\": [\"PLAN\", \"ACTIVITY\"]}, {\"key\": \"ENGAGEMENT\", \"title\": \"Participation and membership engagement\", \"kinds\": [\"ATTENDANCE\", \"CONTRIBUTION\", \"ACTIVITY\"]}, {\"key\": \"LEADERSHIP\", \"title\": \"Leadership development and role fulfilment\", \"kinds\": [\"LEADERSHIP\", \"TASK\"]}, {\"key\": \"EXECUTION\", \"title\": \"Quality and timeliness of execution\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FINANCE\", \"title\": \"Budget compliance and financial clearance\", \"kinds\": [\"BUDGET\"]}, {\"key\": \"DOCUMENTATION\", \"title\": \"Documentation and evidence quality\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FEEDBACK\", \"title\": \"Student, participant or beneficiary feedback\", \"kinds\": [\"FEEDBACK\"]}, {\"key\": \"IMPACT\", \"title\": \"SDG and community impact\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"OUTPUTS\", \"title\": \"Partnership, publication, media or innovation outputs\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"GOVERNANCE\", \"title\": \"Governance compliance and continuity\", \"kinds\": [\"PLAN\", \"LEADERSHIP\", \"HANDOVER\"]}];\\n' +\n...\n    \"function projectWorkloadRows(){const student=['s1','s2'].includes(uid),reviewer=['m1','m2','c1','d1','sa1','a1'].includes(uid);if(!student&&!reviewer)return null;const scoped=[...new Map(visible().map(p=>[p.id,p])).values()].filter(p=>student||p.mentor===uid||['c1','d1','sa1','a1'].includes(uid));const students=student?[uid]:[...new Set(scoped.flatMap(p=>p.members.filter(id=>['s1','s2'].includes(id))))];return students.map(id=>{const participating=scoped.filter(p=>activeParticipant(p,id)&&p.activityControl?.state!=='CANCELLED'),pending=participating.filter(p=>['CREATED','PENDING_APPROVAL'].includes(p.state)),approved=participating.filter(p=>['APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING'].includes(p.state)),paused=approved.filter(p=>p.activityControl?.state==='POSTPONED'),current=approved.filter(activityControlActive),tasks=current.flatMap(p=>p.tasks.filter(t=>t.assignee===id).map(t=>({p,t}))),verified=tasks.filter(({p,t})=>!!t.mappingVersion&&taskAssessmentCurrent(p,t)).length;return {student:id,current:current.length,pending:pending.length,paused:paused.length,assigned:tasks.length,verified,other:tasks.length-verified}})}\\n\" +\n+   'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506251 more characters\n-   'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506168 more characters\n\n    at assertTaskMappingRecorderRefactor (file:///workspace/sites/kcc360-recovered270/scripts/assert-task-mapping-recorder-refactor.mjs:20:9)\n    at file:///workspace/sites/kcc360-recovered270/check-department-task-csv.mjs:30:321\n    at test (file:///workspace/sites/kcc360-recovered270/check-department-task-csv.mjs:19:36)\n    at file:///workspace/sites/kcc360-recovered270/check-department-task-csv.mjs:30:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 'let intakeFocus=null;\\n' +\n    \"let facultyDashboardView={actor:null,mode:'MENTOR'};\\n\" +\n    'let leadershipDashboardView={actor:null,enabled:false};\\n' +\n    \"let workspaceViewState={source:'Local demonstration',loadedAt:null,updatedAt:null,revision:null,issue:null};\\n\" +\n    'const clubEvaluationIndicators=[{\"key\": \"PLANNING\", \"title\": \"Planned versus completed activities\", \"kinds\": [\"PLAN\", \"ACTIVITY\"]}, {\"key\": \"ENGAGEMENT\", \"title\": \"Participation and membership engagement\", \"kinds\": [\"ATTENDANCE\", \"CONTRIBUTION\", \"ACTIVITY\"]}, {\"key\": \"LEADERSHIP\", \"title\": \"Leadership development and role fulfilment\", \"kinds\": [\"LEADERSHIP\", \"TASK\"]}, {\"key\": \"EXECUTION\", \"title\": \"Quality and timeliness of execution\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FINANCE\", \"title\": \"Budget compliance and financial clearance\", \"kinds\": [\"BUDGET\"]}, {\"key\": \"DOCUMENTATION\", \"title\": \"Documentation and evidence quality\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FEEDBACK\", \"title\": \"Student, participant or beneficiary feedback\", \"kinds\": [\"FEEDBACK\"]}, {\"key\": \"IMPACT\", \"title\": \"SDG and community impact\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"OUTPUTS\", \"title\": \"Partnership, publication, media or innovation outputs\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"GOVERNANCE\", \"title\": \"Governance compliance and continuity\", \"kinds\": [\"PLAN\", \"LEADERSHIP\", \"HANDOVER\"]}];\\n' +\n    \"let performanceSelection={actor:null,student:'',year:'',semester:''};\\n\" +\n    \"const taskDomainNames={CONCEPT:'Concept',SKILLS:'Skills',LEADERSHIP:'Leadership',SDG_IMPACT:'SDG Impact'};\\n\" +\n    \"const users=[{id:'s1',name:'Aarati Sharma',role:'Student / Project Lead'},{id:'s2',name:'Bikash Rai',role:'Student'},{id:'m1',name:'Dr. Maya Adhikari',role:'Mentor / Verifier'},{id:'c1',name:'Programme Coordinator',role:'Coordinator'},{id:'a1',name:'KCC Administrator',role:'Administrator'}];\\n\" +\n    \"const states=['CREATED','PENDING_APPROVAL','APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING','COMPLETION_VERIFIED','CLOSED','ARCHIVED'];\\n\" +\n    \"const titles=['Community Waste Mapping','Student Enterprise Studio','Accessible Campus Audit','Digital Literacy Outreach','Sustainable Water Survey','AI for Learning Workshop','Local Heritage Seminar','SDG Youth Research'];\\n\" +\n    \"function seed(){return {projects:titles.map((title,i)=>({id:'P'+(101+i),title,description:['Map community waste practices and propose a practical action plan.','Develop evidence-led solutions through student teamwork.'][i%2],programme:['BCA','BBA','BIT','Civil Engineering'][i%4],type:['SDG project','Course project','Field activity','Workshop'][i%4],state:['CREATED','PENDING_APPROVAL','APPROVED','IN_PROGRESS','IN_PROGRESS','CREATED','PENDING_APPROVAL','APPROVED'][i],owner:i%3?'s2':'s1',mentor:'m1',members:['s1','s2'],due:'2026-11-15',sdg:'4',tasks:[{id:'T'+i,title:'Prepare research and activity plan',assignee:'s1',done:i===3},{id:'U'+i,title:'Compile findings and deliverables',assignee:'s2',done:false}],evidence:[],reflections:{},evaluations:{},certs:{},published:{},messages:[],history:[]})),audit:[],notices:[{id:'N1',title:'Semester project proposal deadline',body:'Submit your project proposal and expected outcomes by 15 November 2026.',ack:[]},{id:'N2',title:'Evidence and reflection guidance',body:'Each participant must submit an individual reflection. Evidence verification precedes certificate eligibility.',ack:[]}]}}\\n\" +\n    'let db;try{db=JSON.parse(localStorage.getItem(\\'kcc360-stage1\\'))||seed()}catch{db=seed()};let uid=localStorage.getItem(\\'kcc360-user\\')||\\'s1\\',page=\\'Overview\\',selected=null,tab=\\'Overview\\',query=\\'\\',filter=\\'All\\';const $=s=>document.querySelector(s),esc=v=>String(v??\\'\\').replace(/[&<>\"\\']/g,c=>({\\'&\\':\\'&amp;\\',\\'<\\':\\'&lt;\\',\\'>\\':\\'&gt;\\',\\'\"\\':\\'&quot;\\',\"\\'\":\\'&#39;\\'}[c]));const user=()=>users.find(x=>x.id===uid)||users[0],staff=()=>[\\'m1\\',\\'m2\\',\\'c1\\',\\'d1\\',\\'sa1\\',\\'f1\\',\\'fv1\\',\\'dc1\\',\\'da1\\',\\'np1\\',\\'na1\\',\\'a1\\'].includes(uid),mine=p=>p.members.includes(uid),canSee=p=>[\\'a1\\',\\'c1\\',\\'d1\\',\\'sa1\\'].includes(uid)||p.mentor===uid||mine(p)||p.createdBy===uid&&[\\'CREATED\\',\\'PENDING_APPROVAL\\'].includes(p.state),owner=p=>p.owner===uid,mentor=p=>p.mentor===uid;const name=id=>users.find(x=>x.id===id)?.name||id;const label=s=>s.replaceAll(\\'_\\',\\' \\').toLowerCase().replace(/\\\\b\\\\w/g,c=>c.toUpperCase());function save(){localStorage.setItem(\\'kcc360-stage1\\',JSON.stringify(db))}function log(p,action){let e={time:new Date().toISOString(),actor:name(uid),action,project:p?.id||\\'Workspace\\'};db.audit.unshift(e);if(p)p.history.unshift(e);save()}function toast(s){$(\\'#toast\\').textContent=s;$(\\'#toast\\').style.display=\\'block\\';setTimeout(()=>$(\\'#toast\\').style.display=\\'none\\',3200)}function pill(s){return `<span class=\"pill ${[\\'COMPLETION_VERIFIED\\',\\'CLOSED\\',\\'ARCHIVED\\'].includes(s)?\\'green\\':[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(s)?\\'amber\\':\\'\\'}\">${esc(label(s))}</span>`}function btn(text,action,cls=\\'\\'){return `<button class=\"${cls}\" onclick=\"${action}\">${text}</button>`}function go(p){page=p;selected=null;if(p===\\'Activity Intake\\')intakeFocus=null;render()}function openProject(id){selected=id;page=\\'Projects\\';tab=\\'Overview\\';render()}function visible(){return db.projects.filter(canSee)}function heading(title,desc,action=\\'\\'){return `<div class=\"top\"><div><div class=\"eyebrow\">KCC360 / LEARNING WORKSPACE</div><h1>${title}</h1><p>${desc}</p></div>${action}</div>${workspaceFreshness()}`}function modal(html){planXlsxCancel?.();planXlsxCancel=null;const dialog=$(\\'#modal\\');dialog.innerHTML=html;const title=dialog.querySelector(\\'h1,h2,h3,h4,h5,h6\\');dialog.removeAttribute(\\'aria-label\\');dialog.removeAttribute(\\'aria-labelledby\\');if(title){if(!title.id)title.id=\\'modal-title\\';dialog.setAttribute(\\'aria-labelledby\\',title.id)}else dialog.setAttribute(\\'aria-label\\',\\'Workspace dialog\\');dialog.showModal()}function closeModal(){planXlsxCancel?.();planXlsxCancel=null;$(\\'#modal\\').close()}function pending(p){return (owner(p)&&[\\'CREATED\\',\\'APPROVED\\',\\'STARTED\\',\\'IN_PROGRESS\\',\\'EXECUTION_COMPLETED\\',\\'COMPLETION_VERIFIED\\'].includes(p.state))||(mentor(p)&&[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(p.state))||(mine(p)&&[\\'REFLECTION_PENDING\\',\\'EVALUATION_PENDING\\'].includes(p.state)&&!p.reflections[uid])}\\n' +\n    'function render(){initializeIntakeRepresentatives();db.activityIntakes??=[];initializeClubs();initializeMembershipHistory();initializeClubControls();initializeMentorTransfers();initializeAcademicProgression();db.clubEvaluations??=[];let placement=db.academicProfiles[uid];$(\\'.scope\\').textContent=placement?.programme?placement.programme+\\' · \\'+placement.period+\\' · \\'+placement.year+\\' · \\'+placement.academicYear:placement?\\'KCC · Academic placement not mapped\\':\\'KCC · Shared learning workspace\\';initializeNotifications();if(typeof initializeGovernance===\\'function\\')initializeGovernance();if(typeof initializeRubrics===\\'function\\')initializeRubrics();const nav=[\\'Overview\\',\\'Activity Intake\\',\\'Projects\\',\\'Action Centre\\',\\'Notifications\\',\\'My Portfolio\\',\\'Performance\\',\\'Development\\',\\'Academic Progression\\',\\'Activity Changes\\',\\'Club Evaluation\\',\\'Certificates\\',\\'Notices\\',\\'Academic Plans\\',\\'Clubs\\',\\'Club Finance\\',\\'My Documents\\',\\'Reports\\',\\'Assessment Settings\\',\\'Mentor Assignments\\',\\'SRS Coverage\\',\\'Audit & Demo\\'];$(\\'#nav\\').innerHTML=nav.map((n,i)=>`<button class=\"${page===n?\\'active\\':\\'\\'}\" onclick=\"go(\\'${n}\\');${n===\\'Notifications\\'?\\'refreshNotifications()\\':\\'\\'}\">${[\\'◈\\',\\'↳\\',\\'▤\\',\\'◷\\',\\'◉\\',\\'◇\\',\\'◈\\',\\'↗\\',\\'⇧\\',\\'↻\\',\\'⚑\\',\\'▧\\',\\'◉\\',\\'▦\\',\\'♧\\',\\'¤\\',\\'▣\\',\\'▥\\',\\'⚖\\',\\'⇄\\',\\'✓\\',\\'⚙\\'][i]} &nbsp; ${n}</button>`).join(\\'\\');$(\\'#crumb\\').textContent=page.toUpperCase();$(\\'#user\\').innerHTML=users.map(u=>`<option value=\"${u.id}\" ${u.id===uid?\\'selected\\':\\'\\'}>${u.name} · ${u.role}</option>`).join(\\'\\');$(\\'#app\\').innerHTML=selected?detail():({Overview:overview,\\'Activity Intake\\':activityIntakesPage,Projects:projects,\\'Action Centre\\':actions,\\'Notifications\\':notificationsPage,\\'My Portfolio\\':portfolio,Performance:performancePage,Development:developmentPage,\\'Academic Progression\\':academicProgressionPage,\\'Activity Changes\\':activityChangesPage,\\'Club Evaluation\\':clubEvaluationPage,Certificates:certificates,Notices:communicationPage,\\'Academic Plans\\':plansPage,\\'Clubs\\':clubsPage,\\'Club Finance\\':financePage,\\'My Documents\\':documentsPage,Reports:reportsPage,\\'Assessment Settings\\':assessmentSettings,\\'Mentor Assignments\\':mentorAssignmentPage,\\'SRS Coverage\\':coveragePage,\\'Audit & Demo\\':audit}[page])()}\\n' +\n    \"$('#user').onchange=e=>{uid=e.target.value;localStorage.setItem('kcc360-user',uid);selected=null;render();toast('Demo account changed')};\\n\" +\n    \"function overview(){if(leadershipDashboardEligible()&&leadershipDashboardView.actor===uid&&leadershipDashboardView.enabled)return leadershipDashboardOverview();return facultyDashboardEligible()&&facultyDashboardView.actor===uid&&facultyDashboardView.mode==='FACULTY'?facultyDashboardOverview():roleDashboardOverview()}\\n\" +\n    \"function projectWorkloadRows(){const student=['s1','s2'].includes(uid),reviewer=['m1','m2','c1','d1','sa1','a1'].includes(uid);if(!student&&!reviewer)return null;const scoped=[...new Map(visible().map(p=>[p.id,p])).values()].filter(p=>student||p.mentor===uid||['c1','d1','sa1','a1'].includes(uid));const students=student?[uid]:[...new Set(scoped.flatMap(p=>p.members.filter(id=>['s1','s2'].includes(id))))];return students.map(id=>{const participating=scoped.filter(p=>activeParticipant(p,id)&&p.activityControl?.state!=='CANCELLED'),pending=participating.filter(p=>['CREATED','PENDING_APPROVAL'].includes(p.state)),approved=participating.filter(p=>['APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING'].includes(p.state)),paused=approved.filter(p=>p.activityControl?.state==='POSTPONED'),current=approved.filter(activityControlActive),tasks=current.flatMap(p=>p.tasks.filter(t=>t.assignee===id).map(t=>({p,t}))),verified=tasks.filter(({p,t})=>!!t.mappingVersion&&taskAssessmentCurrent(p,t)).length;return {student:id,current:current.length,pending:pending.length,paused:paused.length,assigned:tasks.length,verified,other:tasks.length-verified}})}\\n\" +\n    'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506251 more characters,\n  expected: 'let intakeFocus=null;\\n' +\n    \"let facultyDashboardView={actor:null,mode:'MENTOR'};\\n\" +\n    'let leadershipDashboardView={actor:null,enabled:false};\\n' +\n    \"let workspaceViewState={source:'Local demonstration',loadedAt:null,updatedAt:null,revision:null,issue:null};\\n\" +\n    'const clubEvaluationIndicators=[{\"key\": \"PLANNING\", \"title\": \"Planned versus completed activities\", \"kinds\": [\"PLAN\", \"ACTIVITY\"]}, {\"key\": \"ENGAGEMENT\", \"title\": \"Participation and membership engagement\", \"kinds\": [\"ATTENDANCE\", \"CONTRIBUTION\", \"ACTIVITY\"]}, {\"key\": \"LEADERSHIP\", \"title\": \"Leadership development and role fulfilment\", \"kinds\": [\"LEADERSHIP\", \"TASK\"]}, {\"key\": \"EXECUTION\", \"title\": \"Quality and timeliness of execution\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FINANCE\", \"title\": \"Budget compliance and financial clearance\", \"kinds\": [\"BUDGET\"]}, {\"key\": \"DOCUMENTATION\", \"title\": \"Documentation and evidence quality\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FEEDBACK\", \"title\": \"Student, participant or beneficiary feedback\", \"kinds\": [\"FEEDBACK\"]}, {\"key\": \"IMPACT\", \"title\": \"SDG and community impact\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"OUTPUTS\", \"title\": \"Partnership, publication, media or innovation outputs\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"GOVERNANCE\", \"title\": \"Governance compliance and continuity\", \"kinds\": [\"PLAN\", \"LEADERSHIP\", \"HANDOVER\"]}];\\n' +\n    \"let performanceSelection={actor:null,student:'',year:'',semester:''};\\n\" +\n    \"const taskDomainNames={CONCEPT:'Concept',SKILLS:'Skills',LEADERSHIP:'Leadership',SDG_IMPACT:'SDG Impact'};\\n\" +\n    \"const users=[{id:'s1',name:'Aarati Sharma',role:'Student / Project Lead'},{id:'s2',name:'Bikash Rai',role:'Student'},{id:'m1',name:'Dr. Maya Adhikari',role:'Mentor / Verifier'},{id:'c1',name:'Programme Coordinator',role:'Coordinator'},{id:'a1',name:'KCC Administrator',role:'Administrator'}];\\n\" +\n    \"const states=['CREATED','PENDING_APPROVAL','APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING','COMPLETION_VERIFIED','CLOSED','ARCHIVED'];\\n\" +\n    \"const titles=['Community Waste Mapping','Student Enterprise Studio','Accessible Campus Audit','Digital Literacy Outreach','Sustainable Water Survey','AI for Learning Workshop','Local Heritage Seminar','SDG Youth Research'];\\n\" +\n    \"function seed(){return {projects:titles.map((title,i)=>({id:'P'+(101+i),title,description:['Map community waste practices and propose a practical action plan.','Develop evidence-led solutions through student teamwork.'][i%2],programme:['BCA','BBA','BIT','Civil Engineering'][i%4],type:['SDG project','Course project','Field activity','Workshop'][i%4],state:['CREATED','PENDING_APPROVAL','APPROVED','IN_PROGRESS','IN_PROGRESS','CREATED','PENDING_APPROVAL','APPROVED'][i],owner:i%3?'s2':'s1',mentor:'m1',members:['s1','s2'],due:'2026-11-15',sdg:'4',tasks:[{id:'T'+i,title:'Prepare research and activity plan',assignee:'s1',done:i===3},{id:'U'+i,title:'Compile findings and deliverables',assignee:'s2',done:false}],evidence:[],reflections:{},evaluations:{},certs:{},published:{},messages:[],history:[]})),audit:[],notices:[{id:'N1',title:'Semester project proposal deadline',body:'Submit your project proposal and expected outcomes by 15 November 2026.',ack:[]},{id:'N2',title:'Evidence and reflection guidance',body:'Each participant must submit an individual reflection. Evidence verification precedes certificate eligibility.',ack:[]}]}}\\n\" +\n    'let db;try{db=JSON.parse(localStorage.getItem(\\'kcc360-stage1\\'))||seed()}catch{db=seed()};let uid=localStorage.getItem(\\'kcc360-user\\')||\\'s1\\',page=\\'Overview\\',selected=null,tab=\\'Overview\\',query=\\'\\',filter=\\'All\\';const $=s=>document.querySelector(s),esc=v=>String(v??\\'\\').replace(/[&<>\"\\']/g,c=>({\\'&\\':\\'&amp;\\',\\'<\\':\\'&lt;\\',\\'>\\':\\'&gt;\\',\\'\"\\':\\'&quot;\\',\"\\'\":\\'&#39;\\'}[c]));const user=()=>users.find(x=>x.id===uid)||users[0],staff=()=>[\\'m1\\',\\'m2\\',\\'c1\\',\\'d1\\',\\'sa1\\',\\'f1\\',\\'fv1\\',\\'dc1\\',\\'da1\\',\\'np1\\',\\'na1\\',\\'a1\\'].includes(uid),mine=p=>p.members.includes(uid),canSee=p=>[\\'a1\\',\\'c1\\',\\'d1\\',\\'sa1\\'].includes(uid)||p.mentor===uid||mine(p)||p.createdBy===uid&&[\\'CREATED\\',\\'PENDING_APPROVAL\\'].includes(p.state),owner=p=>p.owner===uid,mentor=p=>p.mentor===uid;const name=id=>users.find(x=>x.id===id)?.name||id;const label=s=>s.replaceAll(\\'_\\',\\' \\').toLowerCase().replace(/\\\\b\\\\w/g,c=>c.toUpperCase());function save(){localStorage.setItem(\\'kcc360-stage1\\',JSON.stringify(db))}function log(p,action){let e={time:new Date().toISOString(),actor:name(uid),action,project:p?.id||\\'Workspace\\'};db.audit.unshift(e);if(p)p.history.unshift(e);save()}function toast(s){$(\\'#toast\\').textContent=s;$(\\'#toast\\').style.display=\\'block\\';setTimeout(()=>$(\\'#toast\\').style.display=\\'none\\',3200)}function pill(s){return `<span class=\"pill ${[\\'COMPLETION_VERIFIED\\',\\'CLOSED\\',\\'ARCHIVED\\'].includes(s)?\\'green\\':[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(s)?\\'amber\\':\\'\\'}\">${esc(label(s))}</span>`}function btn(text,action,cls=\\'\\'){return `<button class=\"${cls}\" onclick=\"${action}\">${text}</button>`}function go(p){page=p;selected=null;if(p===\\'Activity Intake\\')intakeFocus=null;render()}function openProject(id){selected=id;page=\\'Projects\\';tab=\\'Overview\\';render()}function visible(){return db.projects.filter(canSee)}function heading(title,desc,action=\\'\\'){return `<div class=\"top\"><div><div class=\"eyebrow\">KCC360 / LEARNING WORKSPACE</div><h1>${title}</h1><p>${desc}</p></div>${action}</div>${workspaceFreshness()}`}function modal(html){planXlsxCancel?.();planXlsxCancel=null;const dialog=$(\\'#modal\\');dialog.innerHTML=html;const title=dialog.querySelector(\\'h1,h2,h3,h4,h5,h6\\');dialog.removeAttribute(\\'aria-label\\');dialog.removeAttribute(\\'aria-labelledby\\');if(title){if(!title.id)title.id=\\'modal-title\\';dialog.setAttribute(\\'aria-labelledby\\',title.id)}else dialog.setAttribute(\\'aria-label\\',\\'Workspace dialog\\');dialog.showModal()}function closeModal(){planXlsxCancel?.();planXlsxCancel=null;$(\\'#modal\\').close()}function pending(p){return (owner(p)&&[\\'CREATED\\',\\'APPROVED\\',\\'STARTED\\',\\'IN_PROGRESS\\',\\'EXECUTION_COMPLETED\\',\\'COMPLETION_VERIFIED\\'].includes(p.state))||(mentor(p)&&[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(p.state))||(mine(p)&&[\\'REFLECTION_PENDING\\',\\'EVALUATION_PENDING\\'].includes(p.state)&&!p.reflections[uid])}\\n' +\n    'function render(){initializeIntakeRepresentatives();db.activityIntakes??=[];initializeClubs();initializeMembershipHistory();initializeClubControls();initializeMentorTransfers();initializeAcademicProgression();db.clubEvaluations??=[];let placement=db.academicProfiles[uid];$(\\'.scope\\').textContent=placement?.programme?placement.programme+\\' · \\'+placement.period+\\' · \\'+placement.year+\\' · \\'+placement.academicYear:placement?\\'KCC · Academic placement not mapped\\':\\'KCC · Shared learning workspace\\';initializeNotifications();if(typeof initializeGovernance===\\'function\\')initializeGovernance();if(typeof initializeRubrics===\\'function\\')initializeRubrics();const nav=[\\'Overview\\',\\'Activity Intake\\',\\'Projects\\',\\'Action Centre\\',\\'Notifications\\',\\'My Portfolio\\',\\'Performance\\',\\'Development\\',\\'Academic Progression\\',\\'Activity Changes\\',\\'Club Evaluation\\',\\'Certificates\\',\\'Notices\\',\\'Academic Plans\\',\\'Clubs\\',\\'Club Finance\\',\\'My Documents\\',\\'Reports\\',\\'Assessment Settings\\',\\'Mentor Assignments\\',\\'SRS Coverage\\',\\'Audit & Demo\\'];$(\\'#nav\\').innerHTML=nav.map((n,i)=>`<button class=\"${page===n?\\'active\\':\\'\\'}\" onclick=\"go(\\'${n}\\');${n===\\'Notifications\\'?\\'refreshNotifications()\\':\\'\\'}\">${[\\'◈\\',\\'↳\\',\\'▤\\',\\'◷\\',\\'◉\\',\\'◇\\',\\'◈\\',\\'↗\\',\\'⇧\\',\\'↻\\',\\'⚑\\',\\'▧\\',\\'◉\\',\\'▦\\',\\'♧\\',\\'¤\\',\\'▣\\',\\'▥\\',\\'⚖\\',\\'⇄\\',\\'✓\\',\\'⚙\\'][i]} &nbsp; ${n}</button>`).join(\\'\\');$(\\'#crumb\\').textContent=page.toUpperCase();$(\\'#user\\').innerHTML=users.map(u=>`<option value=\"${u.id}\" ${u.id===uid?\\'selected\\':\\'\\'}>${u.name} · ${u.role}</option>`).join(\\'\\');$(\\'#app\\').innerHTML=selected?detail():({Overview:overview,\\'Activity Intake\\':activityIntakesPage,Projects:projects,\\'Action Centre\\':actions,\\'Notifications\\':notificationsPage,\\'My Portfolio\\':portfolio,Performance:performancePage,Development:developmentPage,\\'Academic Progression\\':academicProgressionPage,\\'Activity Changes\\':activityChangesPage,\\'Club Evaluation\\':clubEvaluationPage,Certificates:certificates,Notices:communicationPage,\\'Academic Plans\\':plansPage,\\'Clubs\\':clubsPage,\\'Club Finance\\':financePage,\\'My Documents\\':documentsPage,Reports:reportsPage,\\'Assessment Settings\\':assessmentSettings,\\'Mentor Assignments\\':mentorAssignmentPage,\\'SRS Coverage\\':coveragePage,\\'Audit & Demo\\':audit}[page])()}\\n' +\n    \"$('#user').onchange=e=>{uid=e.target.value;localStorage.setItem('kcc360-user',uid);selected=null;render();toast('Demo account changed')};\\n\" +\n    \"function overview(){if(leadershipDashboardEligible()&&leadershipDashboardView.actor===uid&&leadershipDashboardView.enabled)return leadershipDashboardOverview();return facultyDashboardEligible()&&facultyDashboardView.actor===uid&&facultyDashboardView.mode==='FACULTY'?facultyDashboardOverview():roleDashboardOverview()}\\n\" +\n    \"function projectWorkloadRows(){const student=['s1','s2'].includes(uid),reviewer=['m1','m2','c1','d1','sa1','a1'].includes(uid);if(!student&&!reviewer)return null;const scoped=[...new Map(visible().map(p=>[p.id,p])).values()].filter(p=>student||p.mentor===uid||['c1','d1','sa1','a1'].includes(uid));const students=student?[uid]:[...new Set(scoped.flatMap(p=>p.members.filter(id=>['s1','s2'].includes(id))))];return students.map(id=>{const participating=scoped.filter(p=>activeParticipant(p,id)&&p.activityControl?.state!=='CANCELLED'),pending=participating.filter(p=>['CREATED','PENDING_APPROVAL'].includes(p.state)),approved=participating.filter(p=>['APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING'].includes(p.state)),paused=approved.filter(p=>p.activityControl?.state==='POSTPONED'),current=approved.filter(activityControlActive),tasks=current.flatMap(p=>p.tasks.filter(t=>t.assignee===id).map(t=>({p,t}))),verified=tasks.filter(({p,t})=>!!t.mappingVersion&&taskAssessmentCurrent(p,t)).length;return {student:id,current:current.length,pending:pending.length,paused:paused.length,assigned:tasks.length,verified,other:tasks.length-verified}})}\\n\" +\n    'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506168 more characters,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    },
+    {
+      "id": "department-task-csv-save",
+      "command": [
+        "node",
+        "check-department-task-csv-save.mjs"
+      ],
+      "status": "FAIL",
+      "exitCode": 1,
+      "signal": null,
+      "durationMs": 1440,
+      "failure": "\nPASS department preview, assigned mentor review, department confirmation reuse individual task mappings\nPASS students, unrelated staff and wrong mentor cannot prepare, approve or apply batches\nPASS invalid roster, duplicate task references, deadlines and missing criteria block the whole batch\nPASS CSV quoting, UTF-8/BOM, exact header, width, empty and batch limits are checked\nPASS roster, source dates and mentor changes invalidate a reviewed import\nPASS a returned file can be corrected with prior rows and reasons preserved\nPASS changed existing import content never overwrites work even under a new source reference\nPASS club events and student-submitted project routes cannot use department class-task CSV\nPASS responsible unit scope, independent mentor and controlled parent execution remain required\nPASS raw batch/roster information is hidden from student and unrelated admin views\n\nnode:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected task recorder, portfolio eligibility or surrounding app change\n+ actual - expected\n... Skipped lines\n\n  'let intakeFocus=null;\\n' +\n    \"let facultyDashboardView={actor:null,mode:'MENTOR'};\\n\" +\n    'let leadershipDashboardView={actor:null,enabled:false};\\n' +\n    \"let workspaceViewState={source:'Local demonstration',loadedAt:null,updatedAt:null,revision:null,issue:null};\\n\" +\n    'const clubEvaluationIndicators=[{\"key\": \"PLANNING\", \"title\": \"Planned versus completed activities\", \"kinds\": [\"PLAN\", \"ACTIVITY\"]}, {\"key\": \"ENGAGEMENT\", \"title\": \"Participation and membership engagement\", \"kinds\": [\"ATTENDANCE\", \"CONTRIBUTION\", \"ACTIVITY\"]}, {\"key\": \"LEADERSHIP\", \"title\": \"Leadership development and role fulfilment\", \"kinds\": [\"LEADERSHIP\", \"TASK\"]}, {\"key\": \"EXECUTION\", \"title\": \"Quality and timeliness of execution\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FINANCE\", \"title\": \"Budget compliance and financial clearance\", \"kinds\": [\"BUDGET\"]}, {\"key\": \"DOCUMENTATION\", \"title\": \"Documentation and evidence quality\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FEEDBACK\", \"title\": \"Student, participant or beneficiary feedback\", \"kinds\": [\"FEEDBACK\"]}, {\"key\": \"IMPACT\", \"title\": \"SDG and community impact\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"OUTPUTS\", \"title\": \"Partnership, publication, media or innovation outputs\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"GOVERNANCE\", \"title\": \"Governance compliance and continuity\", \"kinds\": [\"PLAN\", \"LEADERSHIP\", \"HANDOVER\"]}];\\n' +\n...\n    \"function projectWorkloadRows(){const student=['s1','s2'].includes(uid),reviewer=['m1','m2','c1','d1','sa1','a1'].includes(uid);if(!student&&!reviewer)return null;const scoped=[...new Map(visible().map(p=>[p.id,p])).values()].filter(p=>student||p.mentor===uid||['c1','d1','sa1','a1'].includes(uid));const students=student?[uid]:[...new Set(scoped.flatMap(p=>p.members.filter(id=>['s1','s2'].includes(id))))];return students.map(id=>{const participating=scoped.filter(p=>activeParticipant(p,id)&&p.activityControl?.state!=='CANCELLED'),pending=participating.filter(p=>['CREATED','PENDING_APPROVAL'].includes(p.state)),approved=participating.filter(p=>['APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING'].includes(p.state)),paused=approved.filter(p=>p.activityControl?.state==='POSTPONED'),current=approved.filter(activityControlActive),tasks=current.flatMap(p=>p.tasks.filter(t=>t.assignee===id).map(t=>({p,t}))),verified=tasks.filter(({p,t})=>!!t.mappingVersion&&taskAssessmentCurrent(p,t)).length;return {student:id,current:current.length,pending:pending.length,paused:paused.length,assigned:tasks.length,verified,other:tasks.length-verified}})}\\n\" +\n+   'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506251 more characters\n-   'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506168 more characters\n\n    at assertTaskMappingRecorderRefactor (file:///workspace/sites/kcc360-recovered270/scripts/assert-task-mapping-recorder-refactor.mjs:20:9)\n    at file:///workspace/sites/kcc360-recovered270/check-department-task-csv.mjs:30:321\n    at test (file:///workspace/sites/kcc360-recovered270/check-department-task-csv.mjs:19:36)\n    at file:///workspace/sites/kcc360-recovered270/check-department-task-csv.mjs:30:1\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 'let intakeFocus=null;\\n' +\n    \"let facultyDashboardView={actor:null,mode:'MENTOR'};\\n\" +\n    'let leadershipDashboardView={actor:null,enabled:false};\\n' +\n    \"let workspaceViewState={source:'Local demonstration',loadedAt:null,updatedAt:null,revision:null,issue:null};\\n\" +\n    'const clubEvaluationIndicators=[{\"key\": \"PLANNING\", \"title\": \"Planned versus completed activities\", \"kinds\": [\"PLAN\", \"ACTIVITY\"]}, {\"key\": \"ENGAGEMENT\", \"title\": \"Participation and membership engagement\", \"kinds\": [\"ATTENDANCE\", \"CONTRIBUTION\", \"ACTIVITY\"]}, {\"key\": \"LEADERSHIP\", \"title\": \"Leadership development and role fulfilment\", \"kinds\": [\"LEADERSHIP\", \"TASK\"]}, {\"key\": \"EXECUTION\", \"title\": \"Quality and timeliness of execution\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FINANCE\", \"title\": \"Budget compliance and financial clearance\", \"kinds\": [\"BUDGET\"]}, {\"key\": \"DOCUMENTATION\", \"title\": \"Documentation and evidence quality\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FEEDBACK\", \"title\": \"Student, participant or beneficiary feedback\", \"kinds\": [\"FEEDBACK\"]}, {\"key\": \"IMPACT\", \"title\": \"SDG and community impact\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"OUTPUTS\", \"title\": \"Partnership, publication, media or innovation outputs\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"GOVERNANCE\", \"title\": \"Governance compliance and continuity\", \"kinds\": [\"PLAN\", \"LEADERSHIP\", \"HANDOVER\"]}];\\n' +\n    \"let performanceSelection={actor:null,student:'',year:'',semester:''};\\n\" +\n    \"const taskDomainNames={CONCEPT:'Concept',SKILLS:'Skills',LEADERSHIP:'Leadership',SDG_IMPACT:'SDG Impact'};\\n\" +\n    \"const users=[{id:'s1',name:'Aarati Sharma',role:'Student / Project Lead'},{id:'s2',name:'Bikash Rai',role:'Student'},{id:'m1',name:'Dr. Maya Adhikari',role:'Mentor / Verifier'},{id:'c1',name:'Programme Coordinator',role:'Coordinator'},{id:'a1',name:'KCC Administrator',role:'Administrator'}];\\n\" +\n    \"const states=['CREATED','PENDING_APPROVAL','APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING','COMPLETION_VERIFIED','CLOSED','ARCHIVED'];\\n\" +\n    \"const titles=['Community Waste Mapping','Student Enterprise Studio','Accessible Campus Audit','Digital Literacy Outreach','Sustainable Water Survey','AI for Learning Workshop','Local Heritage Seminar','SDG Youth Research'];\\n\" +\n    \"function seed(){return {projects:titles.map((title,i)=>({id:'P'+(101+i),title,description:['Map community waste practices and propose a practical action plan.','Develop evidence-led solutions through student teamwork.'][i%2],programme:['BCA','BBA','BIT','Civil Engineering'][i%4],type:['SDG project','Course project','Field activity','Workshop'][i%4],state:['CREATED','PENDING_APPROVAL','APPROVED','IN_PROGRESS','IN_PROGRESS','CREATED','PENDING_APPROVAL','APPROVED'][i],owner:i%3?'s2':'s1',mentor:'m1',members:['s1','s2'],due:'2026-11-15',sdg:'4',tasks:[{id:'T'+i,title:'Prepare research and activity plan',assignee:'s1',done:i===3},{id:'U'+i,title:'Compile findings and deliverables',assignee:'s2',done:false}],evidence:[],reflections:{},evaluations:{},certs:{},published:{},messages:[],history:[]})),audit:[],notices:[{id:'N1',title:'Semester project proposal deadline',body:'Submit your project proposal and expected outcomes by 15 November 2026.',ack:[]},{id:'N2',title:'Evidence and reflection guidance',body:'Each participant must submit an individual reflection. Evidence verification precedes certificate eligibility.',ack:[]}]}}\\n\" +\n    'let db;try{db=JSON.parse(localStorage.getItem(\\'kcc360-stage1\\'))||seed()}catch{db=seed()};let uid=localStorage.getItem(\\'kcc360-user\\')||\\'s1\\',page=\\'Overview\\',selected=null,tab=\\'Overview\\',query=\\'\\',filter=\\'All\\';const $=s=>document.querySelector(s),esc=v=>String(v??\\'\\').replace(/[&<>\"\\']/g,c=>({\\'&\\':\\'&amp;\\',\\'<\\':\\'&lt;\\',\\'>\\':\\'&gt;\\',\\'\"\\':\\'&quot;\\',\"\\'\":\\'&#39;\\'}[c]));const user=()=>users.find(x=>x.id===uid)||users[0],staff=()=>[\\'m1\\',\\'m2\\',\\'c1\\',\\'d1\\',\\'sa1\\',\\'f1\\',\\'fv1\\',\\'dc1\\',\\'da1\\',\\'np1\\',\\'na1\\',\\'a1\\'].includes(uid),mine=p=>p.members.includes(uid),canSee=p=>[\\'a1\\',\\'c1\\',\\'d1\\',\\'sa1\\'].includes(uid)||p.mentor===uid||mine(p)||p.createdBy===uid&&[\\'CREATED\\',\\'PENDING_APPROVAL\\'].includes(p.state),owner=p=>p.owner===uid,mentor=p=>p.mentor===uid;const name=id=>users.find(x=>x.id===id)?.name||id;const label=s=>s.replaceAll(\\'_\\',\\' \\').toLowerCase().replace(/\\\\b\\\\w/g,c=>c.toUpperCase());function save(){localStorage.setItem(\\'kcc360-stage1\\',JSON.stringify(db))}function log(p,action){let e={time:new Date().toISOString(),actor:name(uid),action,project:p?.id||\\'Workspace\\'};db.audit.unshift(e);if(p)p.history.unshift(e);save()}function toast(s){$(\\'#toast\\').textContent=s;$(\\'#toast\\').style.display=\\'block\\';setTimeout(()=>$(\\'#toast\\').style.display=\\'none\\',3200)}function pill(s){return `<span class=\"pill ${[\\'COMPLETION_VERIFIED\\',\\'CLOSED\\',\\'ARCHIVED\\'].includes(s)?\\'green\\':[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(s)?\\'amber\\':\\'\\'}\">${esc(label(s))}</span>`}function btn(text,action,cls=\\'\\'){return `<button class=\"${cls}\" onclick=\"${action}\">${text}</button>`}function go(p){page=p;selected=null;if(p===\\'Activity Intake\\')intakeFocus=null;render()}function openProject(id){selected=id;page=\\'Projects\\';tab=\\'Overview\\';render()}function visible(){return db.projects.filter(canSee)}function heading(title,desc,action=\\'\\'){return `<div class=\"top\"><div><div class=\"eyebrow\">KCC360 / LEARNING WORKSPACE</div><h1>${title}</h1><p>${desc}</p></div>${action}</div>${workspaceFreshness()}`}function modal(html){planXlsxCancel?.();planXlsxCancel=null;const dialog=$(\\'#modal\\');dialog.innerHTML=html;const title=dialog.querySelector(\\'h1,h2,h3,h4,h5,h6\\');dialog.removeAttribute(\\'aria-label\\');dialog.removeAttribute(\\'aria-labelledby\\');if(title){if(!title.id)title.id=\\'modal-title\\';dialog.setAttribute(\\'aria-labelledby\\',title.id)}else dialog.setAttribute(\\'aria-label\\',\\'Workspace dialog\\');dialog.showModal()}function closeModal(){planXlsxCancel?.();planXlsxCancel=null;$(\\'#modal\\').close()}function pending(p){return (owner(p)&&[\\'CREATED\\',\\'APPROVED\\',\\'STARTED\\',\\'IN_PROGRESS\\',\\'EXECUTION_COMPLETED\\',\\'COMPLETION_VERIFIED\\'].includes(p.state))||(mentor(p)&&[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(p.state))||(mine(p)&&[\\'REFLECTION_PENDING\\',\\'EVALUATION_PENDING\\'].includes(p.state)&&!p.reflections[uid])}\\n' +\n    'function render(){initializeIntakeRepresentatives();db.activityIntakes??=[];initializeClubs();initializeMembershipHistory();initializeClubControls();initializeMentorTransfers();initializeAcademicProgression();db.clubEvaluations??=[];let placement=db.academicProfiles[uid];$(\\'.scope\\').textContent=placement?.programme?placement.programme+\\' · \\'+placement.period+\\' · \\'+placement.year+\\' · \\'+placement.academicYear:placement?\\'KCC · Academic placement not mapped\\':\\'KCC · Shared learning workspace\\';initializeNotifications();if(typeof initializeGovernance===\\'function\\')initializeGovernance();if(typeof initializeRubrics===\\'function\\')initializeRubrics();const nav=[\\'Overview\\',\\'Activity Intake\\',\\'Projects\\',\\'Action Centre\\',\\'Notifications\\',\\'My Portfolio\\',\\'Performance\\',\\'Development\\',\\'Academic Progression\\',\\'Activity Changes\\',\\'Club Evaluation\\',\\'Certificates\\',\\'Notices\\',\\'Academic Plans\\',\\'Clubs\\',\\'Club Finance\\',\\'My Documents\\',\\'Reports\\',\\'Assessment Settings\\',\\'Mentor Assignments\\',\\'SRS Coverage\\',\\'Audit & Demo\\'];$(\\'#nav\\').innerHTML=nav.map((n,i)=>`<button class=\"${page===n?\\'active\\':\\'\\'}\" onclick=\"go(\\'${n}\\');${n===\\'Notifications\\'?\\'refreshNotifications()\\':\\'\\'}\">${[\\'◈\\',\\'↳\\',\\'▤\\',\\'◷\\',\\'◉\\',\\'◇\\',\\'◈\\',\\'↗\\',\\'⇧\\',\\'↻\\',\\'⚑\\',\\'▧\\',\\'◉\\',\\'▦\\',\\'♧\\',\\'¤\\',\\'▣\\',\\'▥\\',\\'⚖\\',\\'⇄\\',\\'✓\\',\\'⚙\\'][i]} &nbsp; ${n}</button>`).join(\\'\\');$(\\'#crumb\\').textContent=page.toUpperCase();$(\\'#user\\').innerHTML=users.map(u=>`<option value=\"${u.id}\" ${u.id===uid?\\'selected\\':\\'\\'}>${u.name} · ${u.role}</option>`).join(\\'\\');$(\\'#app\\').innerHTML=selected?detail():({Overview:overview,\\'Activity Intake\\':activityIntakesPage,Projects:projects,\\'Action Centre\\':actions,\\'Notifications\\':notificationsPage,\\'My Portfolio\\':portfolio,Performance:performancePage,Development:developmentPage,\\'Academic Progression\\':academicProgressionPage,\\'Activity Changes\\':activityChangesPage,\\'Club Evaluation\\':clubEvaluationPage,Certificates:certificates,Notices:communicationPage,\\'Academic Plans\\':plansPage,\\'Clubs\\':clubsPage,\\'Club Finance\\':financePage,\\'My Documents\\':documentsPage,Reports:reportsPage,\\'Assessment Settings\\':assessmentSettings,\\'Mentor Assignments\\':mentorAssignmentPage,\\'SRS Coverage\\':coveragePage,\\'Audit & Demo\\':audit}[page])()}\\n' +\n    \"$('#user').onchange=e=>{uid=e.target.value;localStorage.setItem('kcc360-user',uid);selected=null;render();toast('Demo account changed')};\\n\" +\n    \"function overview(){if(leadershipDashboardEligible()&&leadershipDashboardView.actor===uid&&leadershipDashboardView.enabled)return leadershipDashboardOverview();return facultyDashboardEligible()&&facultyDashboardView.actor===uid&&facultyDashboardView.mode==='FACULTY'?facultyDashboardOverview():roleDashboardOverview()}\\n\" +\n    \"function projectWorkloadRows(){const student=['s1','s2'].includes(uid),reviewer=['m1','m2','c1','d1','sa1','a1'].includes(uid);if(!student&&!reviewer)return null;const scoped=[...new Map(visible().map(p=>[p.id,p])).values()].filter(p=>student||p.mentor===uid||['c1','d1','sa1','a1'].includes(uid));const students=student?[uid]:[...new Set(scoped.flatMap(p=>p.members.filter(id=>['s1','s2'].includes(id))))];return students.map(id=>{const participating=scoped.filter(p=>activeParticipant(p,id)&&p.activityControl?.state!=='CANCELLED'),pending=participating.filter(p=>['CREATED','PENDING_APPROVAL'].includes(p.state)),approved=participating.filter(p=>['APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING'].includes(p.state)),paused=approved.filter(p=>p.activityControl?.state==='POSTPONED'),current=approved.filter(activityControlActive),tasks=current.flatMap(p=>p.tasks.filter(t=>t.assignee===id).map(t=>({p,t}))),verified=tasks.filter(({p,t})=>!!t.mappingVersion&&taskAssessmentCurrent(p,t)).length;return {student:id,current:current.length,pending:pending.length,paused:paused.length,assigned:tasks.length,verified,other:tasks.length-verified}})}\\n\" +\n    'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506251 more characters,\n  expected: 'let intakeFocus=null;\\n' +\n    \"let facultyDashboardView={actor:null,mode:'MENTOR'};\\n\" +\n    'let leadershipDashboardView={actor:null,enabled:false};\\n' +\n    \"let workspaceViewState={source:'Local demonstration',loadedAt:null,updatedAt:null,revision:null,issue:null};\\n\" +\n    'const clubEvaluationIndicators=[{\"key\": \"PLANNING\", \"title\": \"Planned versus completed activities\", \"kinds\": [\"PLAN\", \"ACTIVITY\"]}, {\"key\": \"ENGAGEMENT\", \"title\": \"Participation and membership engagement\", \"kinds\": [\"ATTENDANCE\", \"CONTRIBUTION\", \"ACTIVITY\"]}, {\"key\": \"LEADERSHIP\", \"title\": \"Leadership development and role fulfilment\", \"kinds\": [\"LEADERSHIP\", \"TASK\"]}, {\"key\": \"EXECUTION\", \"title\": \"Quality and timeliness of execution\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FINANCE\", \"title\": \"Budget compliance and financial clearance\", \"kinds\": [\"BUDGET\"]}, {\"key\": \"DOCUMENTATION\", \"title\": \"Documentation and evidence quality\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FEEDBACK\", \"title\": \"Student, participant or beneficiary feedback\", \"kinds\": [\"FEEDBACK\"]}, {\"key\": \"IMPACT\", \"title\": \"SDG and community impact\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"OUTPUTS\", \"title\": \"Partnership, publication, media or innovation outputs\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"GOVERNANCE\", \"title\": \"Governance compliance and continuity\", \"kinds\": [\"PLAN\", \"LEADERSHIP\", \"HANDOVER\"]}];\\n' +\n    \"let performanceSelection={actor:null,student:'',year:'',semester:''};\\n\" +\n    \"const taskDomainNames={CONCEPT:'Concept',SKILLS:'Skills',LEADERSHIP:'Leadership',SDG_IMPACT:'SDG Impact'};\\n\" +\n    \"const users=[{id:'s1',name:'Aarati Sharma',role:'Student / Project Lead'},{id:'s2',name:'Bikash Rai',role:'Student'},{id:'m1',name:'Dr. Maya Adhikari',role:'Mentor / Verifier'},{id:'c1',name:'Programme Coordinator',role:'Coordinator'},{id:'a1',name:'KCC Administrator',role:'Administrator'}];\\n\" +\n    \"const states=['CREATED','PENDING_APPROVAL','APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING','COMPLETION_VERIFIED','CLOSED','ARCHIVED'];\\n\" +\n    \"const titles=['Community Waste Mapping','Student Enterprise Studio','Accessible Campus Audit','Digital Literacy Outreach','Sustainable Water Survey','AI for Learning Workshop','Local Heritage Seminar','SDG Youth Research'];\\n\" +\n    \"function seed(){return {projects:titles.map((title,i)=>({id:'P'+(101+i),title,description:['Map community waste practices and propose a practical action plan.','Develop evidence-led solutions through student teamwork.'][i%2],programme:['BCA','BBA','BIT','Civil Engineering'][i%4],type:['SDG project','Course project','Field activity','Workshop'][i%4],state:['CREATED','PENDING_APPROVAL','APPROVED','IN_PROGRESS','IN_PROGRESS','CREATED','PENDING_APPROVAL','APPROVED'][i],owner:i%3?'s2':'s1',mentor:'m1',members:['s1','s2'],due:'2026-11-15',sdg:'4',tasks:[{id:'T'+i,title:'Prepare research and activity plan',assignee:'s1',done:i===3},{id:'U'+i,title:'Compile findings and deliverables',assignee:'s2',done:false}],evidence:[],reflections:{},evaluations:{},certs:{},published:{},messages:[],history:[]})),audit:[],notices:[{id:'N1',title:'Semester project proposal deadline',body:'Submit your project proposal and expected outcomes by 15 November 2026.',ack:[]},{id:'N2',title:'Evidence and reflection guidance',body:'Each participant must submit an individual reflection. Evidence verification precedes certificate eligibility.',ack:[]}]}}\\n\" +\n    'let db;try{db=JSON.parse(localStorage.getItem(\\'kcc360-stage1\\'))||seed()}catch{db=seed()};let uid=localStorage.getItem(\\'kcc360-user\\')||\\'s1\\',page=\\'Overview\\',selected=null,tab=\\'Overview\\',query=\\'\\',filter=\\'All\\';const $=s=>document.querySelector(s),esc=v=>String(v??\\'\\').replace(/[&<>\"\\']/g,c=>({\\'&\\':\\'&amp;\\',\\'<\\':\\'&lt;\\',\\'>\\':\\'&gt;\\',\\'\"\\':\\'&quot;\\',\"\\'\":\\'&#39;\\'}[c]));const user=()=>users.find(x=>x.id===uid)||users[0],staff=()=>[\\'m1\\',\\'m2\\',\\'c1\\',\\'d1\\',\\'sa1\\',\\'f1\\',\\'fv1\\',\\'dc1\\',\\'da1\\',\\'np1\\',\\'na1\\',\\'a1\\'].includes(uid),mine=p=>p.members.includes(uid),canSee=p=>[\\'a1\\',\\'c1\\',\\'d1\\',\\'sa1\\'].includes(uid)||p.mentor===uid||mine(p)||p.createdBy===uid&&[\\'CREATED\\',\\'PENDING_APPROVAL\\'].includes(p.state),owner=p=>p.owner===uid,mentor=p=>p.mentor===uid;const name=id=>users.find(x=>x.id===id)?.name||id;const label=s=>s.replaceAll(\\'_\\',\\' \\').toLowerCase().replace(/\\\\b\\\\w/g,c=>c.toUpperCase());function save(){localStorage.setItem(\\'kcc360-stage1\\',JSON.stringify(db))}function log(p,action){let e={time:new Date().toISOString(),actor:name(uid),action,project:p?.id||\\'Workspace\\'};db.audit.unshift(e);if(p)p.history.unshift(e);save()}function toast(s){$(\\'#toast\\').textContent=s;$(\\'#toast\\').style.display=\\'block\\';setTimeout(()=>$(\\'#toast\\').style.display=\\'none\\',3200)}function pill(s){return `<span class=\"pill ${[\\'COMPLETION_VERIFIED\\',\\'CLOSED\\',\\'ARCHIVED\\'].includes(s)?\\'green\\':[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(s)?\\'amber\\':\\'\\'}\">${esc(label(s))}</span>`}function btn(text,action,cls=\\'\\'){return `<button class=\"${cls}\" onclick=\"${action}\">${text}</button>`}function go(p){page=p;selected=null;if(p===\\'Activity Intake\\')intakeFocus=null;render()}function openProject(id){selected=id;page=\\'Projects\\';tab=\\'Overview\\';render()}function visible(){return db.projects.filter(canSee)}function heading(title,desc,action=\\'\\'){return `<div class=\"top\"><div><div class=\"eyebrow\">KCC360 / LEARNING WORKSPACE</div><h1>${title}</h1><p>${desc}</p></div>${action}</div>${workspaceFreshness()}`}function modal(html){planXlsxCancel?.();planXlsxCancel=null;const dialog=$(\\'#modal\\');dialog.innerHTML=html;const title=dialog.querySelector(\\'h1,h2,h3,h4,h5,h6\\');dialog.removeAttribute(\\'aria-label\\');dialog.removeAttribute(\\'aria-labelledby\\');if(title){if(!title.id)title.id=\\'modal-title\\';dialog.setAttribute(\\'aria-labelledby\\',title.id)}else dialog.setAttribute(\\'aria-label\\',\\'Workspace dialog\\');dialog.showModal()}function closeModal(){planXlsxCancel?.();planXlsxCancel=null;$(\\'#modal\\').close()}function pending(p){return (owner(p)&&[\\'CREATED\\',\\'APPROVED\\',\\'STARTED\\',\\'IN_PROGRESS\\',\\'EXECUTION_COMPLETED\\',\\'COMPLETION_VERIFIED\\'].includes(p.state))||(mentor(p)&&[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(p.state))||(mine(p)&&[\\'REFLECTION_PENDING\\',\\'EVALUATION_PENDING\\'].includes(p.state)&&!p.reflections[uid])}\\n' +\n    'function render(){initializeIntakeRepresentatives();db.activityIntakes??=[];initializeClubs();initializeMembershipHistory();initializeClubControls();initializeMentorTransfers();initializeAcademicProgression();db.clubEvaluations??=[];let placement=db.academicProfiles[uid];$(\\'.scope\\').textContent=placement?.programme?placement.programme+\\' · \\'+placement.period+\\' · \\'+placement.year+\\' · \\'+placement.academicYear:placement?\\'KCC · Academic placement not mapped\\':\\'KCC · Shared learning workspace\\';initializeNotifications();if(typeof initializeGovernance===\\'function\\')initializeGovernance();if(typeof initializeRubrics===\\'function\\')initializeRubrics();const nav=[\\'Overview\\',\\'Activity Intake\\',\\'Projects\\',\\'Action Centre\\',\\'Notifications\\',\\'My Portfolio\\',\\'Performance\\',\\'Development\\',\\'Academic Progression\\',\\'Activity Changes\\',\\'Club Evaluation\\',\\'Certificates\\',\\'Notices\\',\\'Academic Plans\\',\\'Clubs\\',\\'Club Finance\\',\\'My Documents\\',\\'Reports\\',\\'Assessment Settings\\',\\'Mentor Assignments\\',\\'SRS Coverage\\',\\'Audit & Demo\\'];$(\\'#nav\\').innerHTML=nav.map((n,i)=>`<button class=\"${page===n?\\'active\\':\\'\\'}\" onclick=\"go(\\'${n}\\');${n===\\'Notifications\\'?\\'refreshNotifications()\\':\\'\\'}\">${[\\'◈\\',\\'↳\\',\\'▤\\',\\'◷\\',\\'◉\\',\\'◇\\',\\'◈\\',\\'↗\\',\\'⇧\\',\\'↻\\',\\'⚑\\',\\'▧\\',\\'◉\\',\\'▦\\',\\'♧\\',\\'¤\\',\\'▣\\',\\'▥\\',\\'⚖\\',\\'⇄\\',\\'✓\\',\\'⚙\\'][i]} &nbsp; ${n}</button>`).join(\\'\\');$(\\'#crumb\\').textContent=page.toUpperCase();$(\\'#user\\').innerHTML=users.map(u=>`<option value=\"${u.id}\" ${u.id===uid?\\'selected\\':\\'\\'}>${u.name} · ${u.role}</option>`).join(\\'\\');$(\\'#app\\').innerHTML=selected?detail():({Overview:overview,\\'Activity Intake\\':activityIntakesPage,Projects:projects,\\'Action Centre\\':actions,\\'Notifications\\':notificationsPage,\\'My Portfolio\\':portfolio,Performance:performancePage,Development:developmentPage,\\'Academic Progression\\':academicProgressionPage,\\'Activity Changes\\':activityChangesPage,\\'Club Evaluation\\':clubEvaluationPage,Certificates:certificates,Notices:communicationPage,\\'Academic Plans\\':plansPage,\\'Clubs\\':clubsPage,\\'Club Finance\\':financePage,\\'My Documents\\':documentsPage,Reports:reportsPage,\\'Assessment Settings\\':assessmentSettings,\\'Mentor Assignments\\':mentorAssignmentPage,\\'SRS Coverage\\':coveragePage,\\'Audit & Demo\\':audit}[page])()}\\n' +\n    \"$('#user').onchange=e=>{uid=e.target.value;localStorage.setItem('kcc360-user',uid);selected=null;render();toast('Demo account changed')};\\n\" +\n    \"function overview(){if(leadershipDashboardEligible()&&leadershipDashboardView.actor===uid&&leadershipDashboardView.enabled)return leadershipDashboardOverview();return facultyDashboardEligible()&&facultyDashboardView.actor===uid&&facultyDashboardView.mode==='FACULTY'?facultyDashboardOverview():roleDashboardOverview()}\\n\" +\n    \"function projectWorkloadRows(){const student=['s1','s2'].includes(uid),reviewer=['m1','m2','c1','d1','sa1','a1'].includes(uid);if(!student&&!reviewer)return null;const scoped=[...new Map(visible().map(p=>[p.id,p])).values()].filter(p=>student||p.mentor===uid||['c1','d1','sa1','a1'].includes(uid));const students=student?[uid]:[...new Set(scoped.flatMap(p=>p.members.filter(id=>['s1','s2'].includes(id))))];return students.map(id=>{const participating=scoped.filter(p=>activeParticipant(p,id)&&p.activityControl?.state!=='CANCELLED'),pending=participating.filter(p=>['CREATED','PENDING_APPROVAL'].includes(p.state)),approved=participating.filter(p=>['APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING'].includes(p.state)),paused=approved.filter(p=>p.activityControl?.state==='POSTPONED'),current=approved.filter(activityControlActive),tasks=current.flatMap(p=>p.tasks.filter(t=>t.assignee===id).map(t=>({p,t}))),verified=tasks.filter(({p,t})=>!!t.mappingVersion&&taskAssessmentCurrent(p,t)).length;return {student:id,current:current.length,pending:pending.length,paused:paused.length,assigned:tasks.length,verified,other:tasks.length-verified}})}\\n\" +\n    'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506168 more characters,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    },
+    {
+      "id": "department-task-csv-client",
+      "command": [
+        "node",
+        "check-department-task-csv-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 67
+    },
+    {
+      "id": "club-recruitment-plan",
+      "command": [
+        "node",
+        "check-club-recruitment-plan.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 448
+    },
+    {
+      "id": "club-volunteer-applications",
+      "command": [
+        "node",
+        "check-club-volunteer-applications.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 417
+    },
+    {
+      "id": "club-volunteer-selection",
+      "command": [
+        "node",
+        "check-club-volunteer-selection.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 485
+    },
+    {
+      "id": "club-volunteer-handoff",
+      "command": [
+        "node",
+        "check-club-volunteer-handoff.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 424
+    },
+    {
+      "id": "club-volunteer-domain-tasks",
+      "command": [
+        "node",
+        "check-club-volunteer-domain-tasks.mjs"
+      ],
+      "status": "FAIL",
+      "exitCode": 1,
+      "signal": null,
+      "durationMs": 633,
+      "failure": "\nPASS scoped domain delegation: authority, domain roster, stale/replay, private projected form/monitor, revocation, existing progress/submission and independent mentor verification\n\nnode:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unexpected task recorder, portfolio eligibility or surrounding app change\n+ actual - expected\n... Skipped lines\n\n  'let intakeFocus=null;\\n' +\n    \"let facultyDashboardView={actor:null,mode:'MENTOR'};\\n\" +\n    'let leadershipDashboardView={actor:null,enabled:false};\\n' +\n    \"let workspaceViewState={source:'Local demonstration',loadedAt:null,updatedAt:null,revision:null,issue:null};\\n\" +\n    'const clubEvaluationIndicators=[{\"key\": \"PLANNING\", \"title\": \"Planned versus completed activities\", \"kinds\": [\"PLAN\", \"ACTIVITY\"]}, {\"key\": \"ENGAGEMENT\", \"title\": \"Participation and membership engagement\", \"kinds\": [\"ATTENDANCE\", \"CONTRIBUTION\", \"ACTIVITY\"]}, {\"key\": \"LEADERSHIP\", \"title\": \"Leadership development and role fulfilment\", \"kinds\": [\"LEADERSHIP\", \"TASK\"]}, {\"key\": \"EXECUTION\", \"title\": \"Quality and timeliness of execution\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FINANCE\", \"title\": \"Budget compliance and financial clearance\", \"kinds\": [\"BUDGET\"]}, {\"key\": \"DOCUMENTATION\", \"title\": \"Documentation and evidence quality\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FEEDBACK\", \"title\": \"Student, participant or beneficiary feedback\", \"kinds\": [\"FEEDBACK\"]}, {\"key\": \"IMPACT\", \"title\": \"SDG and community impact\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"OUTPUTS\", \"title\": \"Partnership, publication, media or innovation outputs\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"GOVERNANCE\", \"title\": \"Governance compliance and continuity\", \"kinds\": [\"PLAN\", \"LEADERSHIP\", \"HANDOVER\"]}];\\n' +\n...\n    \"function projectWorkloadRows(){const student=['s1','s2'].includes(uid),reviewer=['m1','m2','c1','d1','sa1','a1'].includes(uid);if(!student&&!reviewer)return null;const scoped=[...new Map(visible().map(p=>[p.id,p])).values()].filter(p=>student||p.mentor===uid||['c1','d1','sa1','a1'].includes(uid));const students=student?[uid]:[...new Set(scoped.flatMap(p=>p.members.filter(id=>['s1','s2'].includes(id))))];return students.map(id=>{const participating=scoped.filter(p=>activeParticipant(p,id)&&p.activityControl?.state!=='CANCELLED'),pending=participating.filter(p=>['CREATED','PENDING_APPROVAL'].includes(p.state)),approved=participating.filter(p=>['APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING'].includes(p.state)),paused=approved.filter(p=>p.activityControl?.state==='POSTPONED'),current=approved.filter(activityControlActive),tasks=current.flatMap(p=>p.tasks.filter(t=>t.assignee===id).map(t=>({p,t}))),verified=tasks.filter(({p,t})=>!!t.mappingVersion&&taskAssessmentCurrent(p,t)).length;return {student:id,current:current.length,pending:pending.length,paused:paused.length,assigned:tasks.length,verified,other:tasks.length-verified}})}\\n\" +\n+   'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506251 more characters\n-   'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506168 more characters\n\n    at assertTaskMappingRecorderRefactor (file:///workspace/sites/kcc360-recovered270/scripts/assert-task-mapping-recorder-refactor.mjs:20:9)\n    at file:///workspace/sites/kcc360-recovered270/check-club-volunteer-domain-tasks.mjs:35:60\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 'let intakeFocus=null;\\n' +\n    \"let facultyDashboardView={actor:null,mode:'MENTOR'};\\n\" +\n    'let leadershipDashboardView={actor:null,enabled:false};\\n' +\n    \"let workspaceViewState={source:'Local demonstration',loadedAt:null,updatedAt:null,revision:null,issue:null};\\n\" +\n    'const clubEvaluationIndicators=[{\"key\": \"PLANNING\", \"title\": \"Planned versus completed activities\", \"kinds\": [\"PLAN\", \"ACTIVITY\"]}, {\"key\": \"ENGAGEMENT\", \"title\": \"Participation and membership engagement\", \"kinds\": [\"ATTENDANCE\", \"CONTRIBUTION\", \"ACTIVITY\"]}, {\"key\": \"LEADERSHIP\", \"title\": \"Leadership development and role fulfilment\", \"kinds\": [\"LEADERSHIP\", \"TASK\"]}, {\"key\": \"EXECUTION\", \"title\": \"Quality and timeliness of execution\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FINANCE\", \"title\": \"Budget compliance and financial clearance\", \"kinds\": [\"BUDGET\"]}, {\"key\": \"DOCUMENTATION\", \"title\": \"Documentation and evidence quality\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FEEDBACK\", \"title\": \"Student, participant or beneficiary feedback\", \"kinds\": [\"FEEDBACK\"]}, {\"key\": \"IMPACT\", \"title\": \"SDG and community impact\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"OUTPUTS\", \"title\": \"Partnership, publication, media or innovation outputs\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"GOVERNANCE\", \"title\": \"Governance compliance and continuity\", \"kinds\": [\"PLAN\", \"LEADERSHIP\", \"HANDOVER\"]}];\\n' +\n    \"let performanceSelection={actor:null,student:'',year:'',semester:''};\\n\" +\n    \"const taskDomainNames={CONCEPT:'Concept',SKILLS:'Skills',LEADERSHIP:'Leadership',SDG_IMPACT:'SDG Impact'};\\n\" +\n    \"const users=[{id:'s1',name:'Aarati Sharma',role:'Student / Project Lead'},{id:'s2',name:'Bikash Rai',role:'Student'},{id:'m1',name:'Dr. Maya Adhikari',role:'Mentor / Verifier'},{id:'c1',name:'Programme Coordinator',role:'Coordinator'},{id:'a1',name:'KCC Administrator',role:'Administrator'}];\\n\" +\n    \"const states=['CREATED','PENDING_APPROVAL','APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING','COMPLETION_VERIFIED','CLOSED','ARCHIVED'];\\n\" +\n    \"const titles=['Community Waste Mapping','Student Enterprise Studio','Accessible Campus Audit','Digital Literacy Outreach','Sustainable Water Survey','AI for Learning Workshop','Local Heritage Seminar','SDG Youth Research'];\\n\" +\n    \"function seed(){return {projects:titles.map((title,i)=>({id:'P'+(101+i),title,description:['Map community waste practices and propose a practical action plan.','Develop evidence-led solutions through student teamwork.'][i%2],programme:['BCA','BBA','BIT','Civil Engineering'][i%4],type:['SDG project','Course project','Field activity','Workshop'][i%4],state:['CREATED','PENDING_APPROVAL','APPROVED','IN_PROGRESS','IN_PROGRESS','CREATED','PENDING_APPROVAL','APPROVED'][i],owner:i%3?'s2':'s1',mentor:'m1',members:['s1','s2'],due:'2026-11-15',sdg:'4',tasks:[{id:'T'+i,title:'Prepare research and activity plan',assignee:'s1',done:i===3},{id:'U'+i,title:'Compile findings and deliverables',assignee:'s2',done:false}],evidence:[],reflections:{},evaluations:{},certs:{},published:{},messages:[],history:[]})),audit:[],notices:[{id:'N1',title:'Semester project proposal deadline',body:'Submit your project proposal and expected outcomes by 15 November 2026.',ack:[]},{id:'N2',title:'Evidence and reflection guidance',body:'Each participant must submit an individual reflection. Evidence verification precedes certificate eligibility.',ack:[]}]}}\\n\" +\n    'let db;try{db=JSON.parse(localStorage.getItem(\\'kcc360-stage1\\'))||seed()}catch{db=seed()};let uid=localStorage.getItem(\\'kcc360-user\\')||\\'s1\\',page=\\'Overview\\',selected=null,tab=\\'Overview\\',query=\\'\\',filter=\\'All\\';const $=s=>document.querySelector(s),esc=v=>String(v??\\'\\').replace(/[&<>\"\\']/g,c=>({\\'&\\':\\'&amp;\\',\\'<\\':\\'&lt;\\',\\'>\\':\\'&gt;\\',\\'\"\\':\\'&quot;\\',\"\\'\":\\'&#39;\\'}[c]));const user=()=>users.find(x=>x.id===uid)||users[0],staff=()=>[\\'m1\\',\\'m2\\',\\'c1\\',\\'d1\\',\\'sa1\\',\\'f1\\',\\'fv1\\',\\'dc1\\',\\'da1\\',\\'np1\\',\\'na1\\',\\'a1\\'].includes(uid),mine=p=>p.members.includes(uid),canSee=p=>[\\'a1\\',\\'c1\\',\\'d1\\',\\'sa1\\'].includes(uid)||p.mentor===uid||mine(p)||p.createdBy===uid&&[\\'CREATED\\',\\'PENDING_APPROVAL\\'].includes(p.state),owner=p=>p.owner===uid,mentor=p=>p.mentor===uid;const name=id=>users.find(x=>x.id===id)?.name||id;const label=s=>s.replaceAll(\\'_\\',\\' \\').toLowerCase().replace(/\\\\b\\\\w/g,c=>c.toUpperCase());function save(){localStorage.setItem(\\'kcc360-stage1\\',JSON.stringify(db))}function log(p,action){let e={time:new Date().toISOString(),actor:name(uid),action,project:p?.id||\\'Workspace\\'};db.audit.unshift(e);if(p)p.history.unshift(e);save()}function toast(s){$(\\'#toast\\').textContent=s;$(\\'#toast\\').style.display=\\'block\\';setTimeout(()=>$(\\'#toast\\').style.display=\\'none\\',3200)}function pill(s){return `<span class=\"pill ${[\\'COMPLETION_VERIFIED\\',\\'CLOSED\\',\\'ARCHIVED\\'].includes(s)?\\'green\\':[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(s)?\\'amber\\':\\'\\'}\">${esc(label(s))}</span>`}function btn(text,action,cls=\\'\\'){return `<button class=\"${cls}\" onclick=\"${action}\">${text}</button>`}function go(p){page=p;selected=null;if(p===\\'Activity Intake\\')intakeFocus=null;render()}function openProject(id){selected=id;page=\\'Projects\\';tab=\\'Overview\\';render()}function visible(){return db.projects.filter(canSee)}function heading(title,desc,action=\\'\\'){return `<div class=\"top\"><div><div class=\"eyebrow\">KCC360 / LEARNING WORKSPACE</div><h1>${title}</h1><p>${desc}</p></div>${action}</div>${workspaceFreshness()}`}function modal(html){planXlsxCancel?.();planXlsxCancel=null;const dialog=$(\\'#modal\\');dialog.innerHTML=html;const title=dialog.querySelector(\\'h1,h2,h3,h4,h5,h6\\');dialog.removeAttribute(\\'aria-label\\');dialog.removeAttribute(\\'aria-labelledby\\');if(title){if(!title.id)title.id=\\'modal-title\\';dialog.setAttribute(\\'aria-labelledby\\',title.id)}else dialog.setAttribute(\\'aria-label\\',\\'Workspace dialog\\');dialog.showModal()}function closeModal(){planXlsxCancel?.();planXlsxCancel=null;$(\\'#modal\\').close()}function pending(p){return (owner(p)&&[\\'CREATED\\',\\'APPROVED\\',\\'STARTED\\',\\'IN_PROGRESS\\',\\'EXECUTION_COMPLETED\\',\\'COMPLETION_VERIFIED\\'].includes(p.state))||(mentor(p)&&[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(p.state))||(mine(p)&&[\\'REFLECTION_PENDING\\',\\'EVALUATION_PENDING\\'].includes(p.state)&&!p.reflections[uid])}\\n' +\n    'function render(){initializeIntakeRepresentatives();db.activityIntakes??=[];initializeClubs();initializeMembershipHistory();initializeClubControls();initializeMentorTransfers();initializeAcademicProgression();db.clubEvaluations??=[];let placement=db.academicProfiles[uid];$(\\'.scope\\').textContent=placement?.programme?placement.programme+\\' · \\'+placement.period+\\' · \\'+placement.year+\\' · \\'+placement.academicYear:placement?\\'KCC · Academic placement not mapped\\':\\'KCC · Shared learning workspace\\';initializeNotifications();if(typeof initializeGovernance===\\'function\\')initializeGovernance();if(typeof initializeRubrics===\\'function\\')initializeRubrics();const nav=[\\'Overview\\',\\'Activity Intake\\',\\'Projects\\',\\'Action Centre\\',\\'Notifications\\',\\'My Portfolio\\',\\'Performance\\',\\'Development\\',\\'Academic Progression\\',\\'Activity Changes\\',\\'Club Evaluation\\',\\'Certificates\\',\\'Notices\\',\\'Academic Plans\\',\\'Clubs\\',\\'Club Finance\\',\\'My Documents\\',\\'Reports\\',\\'Assessment Settings\\',\\'Mentor Assignments\\',\\'SRS Coverage\\',\\'Audit & Demo\\'];$(\\'#nav\\').innerHTML=nav.map((n,i)=>`<button class=\"${page===n?\\'active\\':\\'\\'}\" onclick=\"go(\\'${n}\\');${n===\\'Notifications\\'?\\'refreshNotifications()\\':\\'\\'}\">${[\\'◈\\',\\'↳\\',\\'▤\\',\\'◷\\',\\'◉\\',\\'◇\\',\\'◈\\',\\'↗\\',\\'⇧\\',\\'↻\\',\\'⚑\\',\\'▧\\',\\'◉\\',\\'▦\\',\\'♧\\',\\'¤\\',\\'▣\\',\\'▥\\',\\'⚖\\',\\'⇄\\',\\'✓\\',\\'⚙\\'][i]} &nbsp; ${n}</button>`).join(\\'\\');$(\\'#crumb\\').textContent=page.toUpperCase();$(\\'#user\\').innerHTML=users.map(u=>`<option value=\"${u.id}\" ${u.id===uid?\\'selected\\':\\'\\'}>${u.name} · ${u.role}</option>`).join(\\'\\');$(\\'#app\\').innerHTML=selected?detail():({Overview:overview,\\'Activity Intake\\':activityIntakesPage,Projects:projects,\\'Action Centre\\':actions,\\'Notifications\\':notificationsPage,\\'My Portfolio\\':portfolio,Performance:performancePage,Development:developmentPage,\\'Academic Progression\\':academicProgressionPage,\\'Activity Changes\\':activityChangesPage,\\'Club Evaluation\\':clubEvaluationPage,Certificates:certificates,Notices:communicationPage,\\'Academic Plans\\':plansPage,\\'Clubs\\':clubsPage,\\'Club Finance\\':financePage,\\'My Documents\\':documentsPage,Reports:reportsPage,\\'Assessment Settings\\':assessmentSettings,\\'Mentor Assignments\\':mentorAssignmentPage,\\'SRS Coverage\\':coveragePage,\\'Audit & Demo\\':audit}[page])()}\\n' +\n    \"$('#user').onchange=e=>{uid=e.target.value;localStorage.setItem('kcc360-user',uid);selected=null;render();toast('Demo account changed')};\\n\" +\n    \"function overview(){if(leadershipDashboardEligible()&&leadershipDashboardView.actor===uid&&leadershipDashboardView.enabled)return leadershipDashboardOverview();return facultyDashboardEligible()&&facultyDashboardView.actor===uid&&facultyDashboardView.mode==='FACULTY'?facultyDashboardOverview():roleDashboardOverview()}\\n\" +\n    \"function projectWorkloadRows(){const student=['s1','s2'].includes(uid),reviewer=['m1','m2','c1','d1','sa1','a1'].includes(uid);if(!student&&!reviewer)return null;const scoped=[...new Map(visible().map(p=>[p.id,p])).values()].filter(p=>student||p.mentor===uid||['c1','d1','sa1','a1'].includes(uid));const students=student?[uid]:[...new Set(scoped.flatMap(p=>p.members.filter(id=>['s1','s2'].includes(id))))];return students.map(id=>{const participating=scoped.filter(p=>activeParticipant(p,id)&&p.activityControl?.state!=='CANCELLED'),pending=participating.filter(p=>['CREATED','PENDING_APPROVAL'].includes(p.state)),approved=participating.filter(p=>['APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING'].includes(p.state)),paused=approved.filter(p=>p.activityControl?.state==='POSTPONED'),current=approved.filter(activityControlActive),tasks=current.flatMap(p=>p.tasks.filter(t=>t.assignee===id).map(t=>({p,t}))),verified=tasks.filter(({p,t})=>!!t.mappingVersion&&taskAssessmentCurrent(p,t)).length;return {student:id,current:current.length,pending:pending.length,paused:paused.length,assigned:tasks.length,verified,other:tasks.length-verified}})}\\n\" +\n    'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506251 more characters,\n  expected: 'let intakeFocus=null;\\n' +\n    \"let facultyDashboardView={actor:null,mode:'MENTOR'};\\n\" +\n    'let leadershipDashboardView={actor:null,enabled:false};\\n' +\n    \"let workspaceViewState={source:'Local demonstration',loadedAt:null,updatedAt:null,revision:null,issue:null};\\n\" +\n    'const clubEvaluationIndicators=[{\"key\": \"PLANNING\", \"title\": \"Planned versus completed activities\", \"kinds\": [\"PLAN\", \"ACTIVITY\"]}, {\"key\": \"ENGAGEMENT\", \"title\": \"Participation and membership engagement\", \"kinds\": [\"ATTENDANCE\", \"CONTRIBUTION\", \"ACTIVITY\"]}, {\"key\": \"LEADERSHIP\", \"title\": \"Leadership development and role fulfilment\", \"kinds\": [\"LEADERSHIP\", \"TASK\"]}, {\"key\": \"EXECUTION\", \"title\": \"Quality and timeliness of execution\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FINANCE\", \"title\": \"Budget compliance and financial clearance\", \"kinds\": [\"BUDGET\"]}, {\"key\": \"DOCUMENTATION\", \"title\": \"Documentation and evidence quality\", \"kinds\": [\"ACTIVITY\", \"TASK\"]}, {\"key\": \"FEEDBACK\", \"title\": \"Student, participant or beneficiary feedback\", \"kinds\": [\"FEEDBACK\"]}, {\"key\": \"IMPACT\", \"title\": \"SDG and community impact\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"OUTPUTS\", \"title\": \"Partnership, publication, media or innovation outputs\", \"kinds\": [\"ACTIVITY\"]}, {\"key\": \"GOVERNANCE\", \"title\": \"Governance compliance and continuity\", \"kinds\": [\"PLAN\", \"LEADERSHIP\", \"HANDOVER\"]}];\\n' +\n    \"let performanceSelection={actor:null,student:'',year:'',semester:''};\\n\" +\n    \"const taskDomainNames={CONCEPT:'Concept',SKILLS:'Skills',LEADERSHIP:'Leadership',SDG_IMPACT:'SDG Impact'};\\n\" +\n    \"const users=[{id:'s1',name:'Aarati Sharma',role:'Student / Project Lead'},{id:'s2',name:'Bikash Rai',role:'Student'},{id:'m1',name:'Dr. Maya Adhikari',role:'Mentor / Verifier'},{id:'c1',name:'Programme Coordinator',role:'Coordinator'},{id:'a1',name:'KCC Administrator',role:'Administrator'}];\\n\" +\n    \"const states=['CREATED','PENDING_APPROVAL','APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING','COMPLETION_VERIFIED','CLOSED','ARCHIVED'];\\n\" +\n    \"const titles=['Community Waste Mapping','Student Enterprise Studio','Accessible Campus Audit','Digital Literacy Outreach','Sustainable Water Survey','AI for Learning Workshop','Local Heritage Seminar','SDG Youth Research'];\\n\" +\n    \"function seed(){return {projects:titles.map((title,i)=>({id:'P'+(101+i),title,description:['Map community waste practices and propose a practical action plan.','Develop evidence-led solutions through student teamwork.'][i%2],programme:['BCA','BBA','BIT','Civil Engineering'][i%4],type:['SDG project','Course project','Field activity','Workshop'][i%4],state:['CREATED','PENDING_APPROVAL','APPROVED','IN_PROGRESS','IN_PROGRESS','CREATED','PENDING_APPROVAL','APPROVED'][i],owner:i%3?'s2':'s1',mentor:'m1',members:['s1','s2'],due:'2026-11-15',sdg:'4',tasks:[{id:'T'+i,title:'Prepare research and activity plan',assignee:'s1',done:i===3},{id:'U'+i,title:'Compile findings and deliverables',assignee:'s2',done:false}],evidence:[],reflections:{},evaluations:{},certs:{},published:{},messages:[],history:[]})),audit:[],notices:[{id:'N1',title:'Semester project proposal deadline',body:'Submit your project proposal and expected outcomes by 15 November 2026.',ack:[]},{id:'N2',title:'Evidence and reflection guidance',body:'Each participant must submit an individual reflection. Evidence verification precedes certificate eligibility.',ack:[]}]}}\\n\" +\n    'let db;try{db=JSON.parse(localStorage.getItem(\\'kcc360-stage1\\'))||seed()}catch{db=seed()};let uid=localStorage.getItem(\\'kcc360-user\\')||\\'s1\\',page=\\'Overview\\',selected=null,tab=\\'Overview\\',query=\\'\\',filter=\\'All\\';const $=s=>document.querySelector(s),esc=v=>String(v??\\'\\').replace(/[&<>\"\\']/g,c=>({\\'&\\':\\'&amp;\\',\\'<\\':\\'&lt;\\',\\'>\\':\\'&gt;\\',\\'\"\\':\\'&quot;\\',\"\\'\":\\'&#39;\\'}[c]));const user=()=>users.find(x=>x.id===uid)||users[0],staff=()=>[\\'m1\\',\\'m2\\',\\'c1\\',\\'d1\\',\\'sa1\\',\\'f1\\',\\'fv1\\',\\'dc1\\',\\'da1\\',\\'np1\\',\\'na1\\',\\'a1\\'].includes(uid),mine=p=>p.members.includes(uid),canSee=p=>[\\'a1\\',\\'c1\\',\\'d1\\',\\'sa1\\'].includes(uid)||p.mentor===uid||mine(p)||p.createdBy===uid&&[\\'CREATED\\',\\'PENDING_APPROVAL\\'].includes(p.state),owner=p=>p.owner===uid,mentor=p=>p.mentor===uid;const name=id=>users.find(x=>x.id===id)?.name||id;const label=s=>s.replaceAll(\\'_\\',\\' \\').toLowerCase().replace(/\\\\b\\\\w/g,c=>c.toUpperCase());function save(){localStorage.setItem(\\'kcc360-stage1\\',JSON.stringify(db))}function log(p,action){let e={time:new Date().toISOString(),actor:name(uid),action,project:p?.id||\\'Workspace\\'};db.audit.unshift(e);if(p)p.history.unshift(e);save()}function toast(s){$(\\'#toast\\').textContent=s;$(\\'#toast\\').style.display=\\'block\\';setTimeout(()=>$(\\'#toast\\').style.display=\\'none\\',3200)}function pill(s){return `<span class=\"pill ${[\\'COMPLETION_VERIFIED\\',\\'CLOSED\\',\\'ARCHIVED\\'].includes(s)?\\'green\\':[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(s)?\\'amber\\':\\'\\'}\">${esc(label(s))}</span>`}function btn(text,action,cls=\\'\\'){return `<button class=\"${cls}\" onclick=\"${action}\">${text}</button>`}function go(p){page=p;selected=null;if(p===\\'Activity Intake\\')intakeFocus=null;render()}function openProject(id){selected=id;page=\\'Projects\\';tab=\\'Overview\\';render()}function visible(){return db.projects.filter(canSee)}function heading(title,desc,action=\\'\\'){return `<div class=\"top\"><div><div class=\"eyebrow\">KCC360 / LEARNING WORKSPACE</div><h1>${title}</h1><p>${desc}</p></div>${action}</div>${workspaceFreshness()}`}function modal(html){planXlsxCancel?.();planXlsxCancel=null;const dialog=$(\\'#modal\\');dialog.innerHTML=html;const title=dialog.querySelector(\\'h1,h2,h3,h4,h5,h6\\');dialog.removeAttribute(\\'aria-label\\');dialog.removeAttribute(\\'aria-labelledby\\');if(title){if(!title.id)title.id=\\'modal-title\\';dialog.setAttribute(\\'aria-labelledby\\',title.id)}else dialog.setAttribute(\\'aria-label\\',\\'Workspace dialog\\');dialog.showModal()}function closeModal(){planXlsxCancel?.();planXlsxCancel=null;$(\\'#modal\\').close()}function pending(p){return (owner(p)&&[\\'CREATED\\',\\'APPROVED\\',\\'STARTED\\',\\'IN_PROGRESS\\',\\'EXECUTION_COMPLETED\\',\\'COMPLETION_VERIFIED\\'].includes(p.state))||(mentor(p)&&[\\'PENDING_APPROVAL\\',\\'EVALUATION_PENDING\\'].includes(p.state))||(mine(p)&&[\\'REFLECTION_PENDING\\',\\'EVALUATION_PENDING\\'].includes(p.state)&&!p.reflections[uid])}\\n' +\n    'function render(){initializeIntakeRepresentatives();db.activityIntakes??=[];initializeClubs();initializeMembershipHistory();initializeClubControls();initializeMentorTransfers();initializeAcademicProgression();db.clubEvaluations??=[];let placement=db.academicProfiles[uid];$(\\'.scope\\').textContent=placement?.programme?placement.programme+\\' · \\'+placement.period+\\' · \\'+placement.year+\\' · \\'+placement.academicYear:placement?\\'KCC · Academic placement not mapped\\':\\'KCC · Shared learning workspace\\';initializeNotifications();if(typeof initializeGovernance===\\'function\\')initializeGovernance();if(typeof initializeRubrics===\\'function\\')initializeRubrics();const nav=[\\'Overview\\',\\'Activity Intake\\',\\'Projects\\',\\'Action Centre\\',\\'Notifications\\',\\'My Portfolio\\',\\'Performance\\',\\'Development\\',\\'Academic Progression\\',\\'Activity Changes\\',\\'Club Evaluation\\',\\'Certificates\\',\\'Notices\\',\\'Academic Plans\\',\\'Clubs\\',\\'Club Finance\\',\\'My Documents\\',\\'Reports\\',\\'Assessment Settings\\',\\'Mentor Assignments\\',\\'SRS Coverage\\',\\'Audit & Demo\\'];$(\\'#nav\\').innerHTML=nav.map((n,i)=>`<button class=\"${page===n?\\'active\\':\\'\\'}\" onclick=\"go(\\'${n}\\');${n===\\'Notifications\\'?\\'refreshNotifications()\\':\\'\\'}\">${[\\'◈\\',\\'↳\\',\\'▤\\',\\'◷\\',\\'◉\\',\\'◇\\',\\'◈\\',\\'↗\\',\\'⇧\\',\\'↻\\',\\'⚑\\',\\'▧\\',\\'◉\\',\\'▦\\',\\'♧\\',\\'¤\\',\\'▣\\',\\'▥\\',\\'⚖\\',\\'⇄\\',\\'✓\\',\\'⚙\\'][i]} &nbsp; ${n}</button>`).join(\\'\\');$(\\'#crumb\\').textContent=page.toUpperCase();$(\\'#user\\').innerHTML=users.map(u=>`<option value=\"${u.id}\" ${u.id===uid?\\'selected\\':\\'\\'}>${u.name} · ${u.role}</option>`).join(\\'\\');$(\\'#app\\').innerHTML=selected?detail():({Overview:overview,\\'Activity Intake\\':activityIntakesPage,Projects:projects,\\'Action Centre\\':actions,\\'Notifications\\':notificationsPage,\\'My Portfolio\\':portfolio,Performance:performancePage,Development:developmentPage,\\'Academic Progression\\':academicProgressionPage,\\'Activity Changes\\':activityChangesPage,\\'Club Evaluation\\':clubEvaluationPage,Certificates:certificates,Notices:communicationPage,\\'Academic Plans\\':plansPage,\\'Clubs\\':clubsPage,\\'Club Finance\\':financePage,\\'My Documents\\':documentsPage,Reports:reportsPage,\\'Assessment Settings\\':assessmentSettings,\\'Mentor Assignments\\':mentorAssignmentPage,\\'SRS Coverage\\':coveragePage,\\'Audit & Demo\\':audit}[page])()}\\n' +\n    \"$('#user').onchange=e=>{uid=e.target.value;localStorage.setItem('kcc360-user',uid);selected=null;render();toast('Demo account changed')};\\n\" +\n    \"function overview(){if(leadershipDashboardEligible()&&leadershipDashboardView.actor===uid&&leadershipDashboardView.enabled)return leadershipDashboardOverview();return facultyDashboardEligible()&&facultyDashboardView.actor===uid&&facultyDashboardView.mode==='FACULTY'?facultyDashboardOverview():roleDashboardOverview()}\\n\" +\n    \"function projectWorkloadRows(){const student=['s1','s2'].includes(uid),reviewer=['m1','m2','c1','d1','sa1','a1'].includes(uid);if(!student&&!reviewer)return null;const scoped=[...new Map(visible().map(p=>[p.id,p])).values()].filter(p=>student||p.mentor===uid||['c1','d1','sa1','a1'].includes(uid));const students=student?[uid]:[...new Set(scoped.flatMap(p=>p.members.filter(id=>['s1','s2'].includes(id))))];return students.map(id=>{const participating=scoped.filter(p=>activeParticipant(p,id)&&p.activityControl?.state!=='CANCELLED'),pending=participating.filter(p=>['CREATED','PENDING_APPROVAL'].includes(p.state)),approved=participating.filter(p=>['APPROVED','STARTED','IN_PROGRESS','EXECUTION_COMPLETED','REFLECTION_PENDING','EVALUATION_PENDING'].includes(p.state)),paused=approved.filter(p=>p.activityControl?.state==='POSTPONED'),current=approved.filter(activityControlActive),tasks=current.flatMap(p=>p.tasks.filter(t=>t.assignee===id).map(t=>({p,t}))),verified=tasks.filter(({p,t})=>!!t.mappingVersion&&taskAssessmentCurrent(p,t)).length;return {student:id,current:current.length,pending:pending.length,paused:paused.length,assigned:tasks.length,verified,other:tasks.length-verified}})}\\n\" +\n    'function projectWorkloadPanel(){const rows=projectWorkloadRows();if(rows===null)return \\'\\';return `<section class=\"panel\"><h2'... 506168 more characters,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    },
+    {
+      "id": "club-volunteer-achievement-chain",
+      "command": [
+        "node",
+        "check-club-volunteer-achievement-chain.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 692
+    },
+    {
+      "id": "plan-approval-policy",
+      "command": [
+        "node",
+        "check-plan-approval-policy.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 91
+    },
+    {
+      "id": "plan-approval-source",
+      "command": [
+        "node",
+        "check-plan-approval-source.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 125
+    },
+    {
+      "id": "plan-approval-persistence",
+      "command": [
+        "node",
+        "check-plan-approval-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 476
+    },
+    {
+      "id": "plan-amendment-integration",
+      "command": [
+        "node",
+        "check-plan-amendment.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 1182
+    },
+    {
+      "id": "plan-approval-client",
+      "command": [
+        "node",
+        "check-plan-approval-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 68
+    },
+    {
+      "id": "plan-approval-route",
+      "command": [
+        "node",
+        "check-plan-approval-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 395
+    },
+    {
+      "id": "trusted-loader",
+      "command": [
+        "node",
+        "check-intake-trusted-loader.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 79
+    },
+    {
+      "id": "command-route",
+      "command": [
+        "node",
+        "check-team-command-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 460
+    },
+    {
+      "id": "assignment-save",
+      "command": [
+        "node",
+        "check-intake-team-task-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6308
+    },
+    {
+      "id": "assignment-client",
+      "command": [
+        "node",
+        "check-intake-team-task-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 65
+    },
+    {
+      "id": "progress-save",
+      "command": [
+        "node",
+        "check-intake-team-task-progress-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6964
+    },
+    {
+      "id": "progress-client",
+      "command": [
+        "node",
+        "check-intake-team-task-progress-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6470
+    },
+    {
+      "id": "submission-save",
+      "command": [
+        "node",
+        "check-intake-team-task-submission-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7424
+    },
+    {
+      "id": "evidence-client",
+      "command": [
+        "node",
+        "check-intake-team-task-evidence-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6715
+    },
+    {
+      "id": "evidence-verification-save",
+      "command": [
+        "node",
+        "check-intake-team-evidence-verification-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7924
+    },
+    {
+      "id": "evidence-verification-client",
+      "command": [
+        "node",
+        "check-intake-team-evidence-verification-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7230
+    },
+    {
+      "id": "review-save",
+      "command": [
+        "node",
+        "check-intake-team-task-review-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 8358
+    },
+    {
+      "id": "review-client",
+      "command": [
+        "node",
+        "check-intake-team-task-review-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 7929
+    },
+    {
+      "id": "revision-save",
+      "command": [
+        "node",
+        "check-intake-team-task-revision-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 11121
+    },
+    {
+      "id": "revision-client",
+      "command": [
+        "node",
+        "check-intake-team-task-revision-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 9039
+    },
+    {
+      "id": "rereview-save",
+      "command": [
+        "node",
+        "check-intake-team-task-rereview-save.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 12611
+    },
+    {
+      "id": "rereview-client",
+      "command": [
+        "node",
+        "check-intake-team-task-rereview-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 10502
+    },
+    {
+      "id": "multiple-cycles",
+      "command": [
+        "node",
+        "check-intake-team-task-cycles.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 16447
+    },
+    {
+      "id": "history",
+      "command": [
+        "node",
+        "check-intake-team-task-history.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 67
+    },
+    {
+      "id": "dialog-naming",
+      "command": [
+        "node",
+        "check-dialog-accessibility.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 66
+    },
+    {
+      "id": "mis-mock-isolation",
+      "command": [
+        "node",
+        "check-mis-adapter.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 83
+    },
+    {
+      "id": "server-regression",
+      "command": [
+        "node",
+        "check-server.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 636
+    },
+    {
+      "id": "academic-progression-regression",
+      "command": [
+        "node",
+        "check-academic-progression.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 591
+    },
+    {
+      "id": "cohort-preview",
+      "command": [
+        "node",
+        "check-cohort-progression-preview.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 81
+    },
+    {
+      "id": "cohort-route",
+      "command": [
+        "node",
+        "check-cohort-progression-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 559
+    },
+    {
+      "id": "cohort-client",
+      "command": [
+        "node",
+        "check-cohort-progression-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 79
+    },
+    {
+      "id": "cohort-batch-core",
+      "command": [
+        "node",
+        "check-cohort-progression-batch.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 102
+    },
+    {
+      "id": "cohort-batch-storage-route",
+      "command": [
+        "node",
+        "check-cohort-progression-batches-route.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 829
+    },
+    {
+      "id": "cohort-batch-client",
+      "command": [
+        "node",
+        "check-cohort-progression-batches-client.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 132
+    },
+    {
+      "id": "cohort-batch-withdrawal",
+      "command": [
+        "node",
+        "check-cohort-progression-withdrawal.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 86
+    },
+    {
+      "id": "cohort-batch-comparison",
+      "command": [
+        "node",
+        "check-cohort-progression-comparison.mjs"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 117
+    },
+    {
+      "id": "layout-fixture",
+      "command": [
+        "node",
+        "scripts/task-layout-acceptance-server.mjs",
+        "--self-test"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 416
+    },
+    {
+      "id": "workflow-fixture",
+      "command": [
+        "node",
+        "scripts/team-acceptance-server.mjs",
+        "--self-test"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "signal": null,
+      "durationMs": 6820
+    }
+  ],
+  "finishedAt": "2026-10-27T07:32:19.852Z",
+  "passed": 65,
+  "failed": 3,
+  "externalDependencies": [
+    "Official MIS schema, access and sandbox for real roster/contact/status synchronization",
+    "Official SSO specification, trust registration and institutional identity activation",
+    "Approved Google sender and real mail/reconciliation configuration"
+  ],
+  "acceptanceNotExecuted": [
+    "Browser checks (prior recorded browser evidence remains separate)",
+    "Full application accessibility, screen reader and real touch-device acceptance",
+    "Official MIS/credit assertions and institutional acceptance"
+  ]
+}

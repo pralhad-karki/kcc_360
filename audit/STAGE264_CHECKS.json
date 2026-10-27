@@ -1,0 +1,22 @@
+{
+  "stage": 264,
+  "baselineCommit": "c7327ed8ed80bee9a6de5e2e0f3b6a63f26d5ec7",
+  "coreCases": 12,
+  "coreResult": "PASS",
+  "actualSharedServiceSQLite": "PASS",
+  "browserScriptHarness": "PASS",
+  "broadGroups": 57,
+  "broadResult": "PASS",
+  "broadReport": "STAGE264_REGRESSION.json",
+  "finalTargetedRerun": true,
+  "typeScript": "PASS",
+  "bundleBuild": "run during final packaging",
+  "whitespace": "PASS",
+  "browserQA": "Fictional read-only card/form visually inspected; no backend save",
+  "temporaryFixtureRemoved": true,
+  "productionDatabaseChanged": false,
+  "institutionalApprovalActivation": false,
+  "newClubExecutionEnabled": false,
+  "broaderStudentAffairsScope": "Club events, placement/career, internship coordination and wider student development recorded; full services remain incomplete",
+  "note": "Final targeted checks follow explicit plan-owner independence and checkbox layout/owner-button corrections. Existing approved history preserved; new legacy club execution blocked."
+}

@@ -1,0 +1,90 @@
+{
+  "run": "B",
+  "date": "2026-10-25",
+  "passed": 13,
+  "failed": 1,
+  "scope": "Scoped assertions; does not mean 13 full workflows or institutional acceptance",
+  "scenarios": [
+    {
+      "id": "dashboard-s1",
+      "actor": "s1",
+      "heading": "Student dashboard",
+      "status": "PASS",
+      "boundary": "Fictional owner-demo persona, not institutional authentication"
+    },
+    {
+      "id": "dashboard-m1",
+      "actor": "m1",
+      "heading": "Mentor dashboard",
+      "status": "PASS",
+      "boundary": "Fictional owner-demo persona, not institutional authentication"
+    },
+    {
+      "id": "dashboard-c1",
+      "actor": "c1",
+      "heading": "Academic Coordinator dashboard",
+      "status": "PASS",
+      "boundary": "Fictional owner-demo persona, not institutional authentication"
+    },
+    {
+      "id": "dashboard-a1",
+      "actor": "a1",
+      "heading": "Administration dashboard",
+      "status": "PASS",
+      "boundary": "Fictional owner-demo persona, not institutional authentication"
+    },
+    {
+      "id": "dashboard-r1",
+      "actor": "r1",
+      "heading": "Research dashboard",
+      "status": "PASS",
+      "boundary": "Fictional owner-demo persona, not institutional authentication"
+    },
+    {
+      "id": "peer-intake-privacy",
+      "status": "PASS",
+      "observed": "Peer cannot see private internship intake"
+    },
+    {
+      "id": "logout-login-persistence",
+      "status": "PASS",
+      "observed": "Saved authorization and file metadata survive fixture logout/login"
+    },
+    {
+      "id": "mock-cohort-application",
+      "status": "PASS",
+      "observed": "Approved and applied five included students; official Left College unchanged"
+    },
+    {
+      "id": "final-semester-no-auto-graduation",
+      "status": "PASS",
+      "observed": "Separate final-semester review; no automatic graduation"
+    },
+    {
+      "id": "anonymous-browser-denial",
+      "status": "PASS",
+      "observed": "Sign in to open the private demo"
+    },
+    {
+      "id": "internship-readiness-browser",
+      "status": "PASS",
+      "observed": "Draft, submit, mentor verify, independent authorization and coordinator handoff; placement preconditions created via actual controllers"
+    },
+    {
+      "id": "internship-premature-start",
+      "status": "PASS",
+      "observed": "Start execution only within the authorized placement period."
+    },
+    {
+      "id": "server-restart-persistence",
+      "status": "PASS",
+      "observed": "Readiness, private-file metadata and execution workspace remain after supervised server restart"
+    },
+    {
+      "id": "browser-upload-transport",
+      "status": "FAIL",
+      "classification": "Unresolved fictional test-session continuity; production defect not established",
+      "observed": "After file selection, upload and workspace GET returned 401 with no identity. No writes. Actual upload/download controllers separately passed."
+    }
+  ]
+}

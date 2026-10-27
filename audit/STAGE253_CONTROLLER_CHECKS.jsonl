@@ -1,0 +1,10 @@
+{"time":"2026-10-25T12:43:03.408Z","id":"private-file-upload","status":200,"before":{"workspaces":[{"id":"KCC-OWNER-DEMO","revision":10,"commitId":"9bc8cb5c-af4a-4ac3-b810-7e89fbf1c56e","sha256":"dec62adea69872dd08773f7ad7e84c5180521eb9547baf624b342729ba5d9608"}],"auditCount":10},"after":{"workspaces":[{"id":"KCC-OWNER-DEMO","revision":11,"commitId":"d59b3f9a-7939-47ca-a3d0-fe5a4c04b7cd","sha256":"8861d8f8ba23dc6c477bc9ea5ece03caf1038a4ba7e1c6056542e39e28de8d6e"}],"auditCount":11},"file":{"id":"d59b3f9a-7939-47ca-a3d0-fe5a4c04b7cd","name":"fictional-stage253B-host.txt","size":116,"sha256":"4ca5c9dd9f65cae8fb7502e42caed0fb718eb6c39abd8e1158b94ed3a9ec58c9"}}
+{"time":"2026-10-25T12:43:03.414Z","id":"private-file-download","status":200,"sha256":"4ca5c9dd9f65cae8fb7502e42caed0fb718eb6c39abd8e1158b94ed3a9ec58c9"}
+{"time":"2026-10-25T12:43:03.431Z","id":"peer-file-denial","status":403,"unchanged":true}
+{"time":"2026-10-25T12:43:03.445Z","id":"cross-origin","status":403,"unchanged":true}
+{"time":"2026-10-25T12:43:03.447Z","id":"forged-actor","status":409,"unchanged":true}
+{"time":"2026-10-25T12:43:03.449Z","id":"stale-revision","status":409,"unchanged":true}
+{"time":"2026-10-25T12:43:03.450Z","id":"unapproved-fields","status":400,"unchanged":true}
+{"time":"2026-10-25T12:43:03.468Z","id":"peer-workflow-denial","status":200,"unchanged":true,"message":"Upload host acceptance and supervisor/learning-agreement evidence to your current draft before submitting."}
+{"time":"2026-10-25T12:43:03.474Z","id":"fixture-checks-complete","status":"PASS","revision":11}
+{"time":"2026-10-25T12:43:03.476Z","id":"anonymous-workspace-denial","status":401,"unchanged":true}

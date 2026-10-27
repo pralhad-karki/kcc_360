@@ -1,0 +1,643 @@
+{
+  "stage": 122,
+  "testedBaseCommit": "0c64b2a54955973f0a186ca2cfd02810028ef1ba",
+  "candidateIncludesWorkingTreeChanges": true,
+  "completedAtUTC": "2026-10-19T08:34:11.492467+00:00",
+  "total": 105,
+  "passed": 105,
+  "failed": 0,
+  "typeScript": "Passed",
+  "scope": "Local fictional/VM/SQLite/controller checks; browser/keyboard/institutional acceptance Not run. Existing progression fixture is compatibility evidence only, with progression deferred.",
+  "checks": [
+    {
+      "file": "check-academic-progression.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.55
+    },
+    {
+      "file": "check-activity-changes.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.323
+    },
+    {
+      "file": "check-activity-intake.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.384
+    },
+    {
+      "file": "check-activity-website-dashboard.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.315
+    },
+    {
+      "file": "check-activity-website-delivery.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.318
+    },
+    {
+      "file": "check-activity-website-draft.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.446
+    },
+    {
+      "file": "check-activity-website-review.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.436
+    },
+    {
+      "file": "check-activity-website-submission.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.393
+    },
+    {
+      "file": "check-appeals.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.239
+    },
+    {
+      "file": "check-assessment.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.209
+    },
+    {
+      "file": "check-audit-command-map.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.163
+    },
+    {
+      "file": "check-audit-record-format.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.082
+    },
+    {
+      "file": "check-audit-repairs.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.355
+    },
+    {
+      "file": "check-audit-save.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.465
+    },
+    {
+      "file": "check-budget-revisions.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.326
+    },
+    {
+      "file": "check-cancellation-preview.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.352
+    },
+    {
+      "file": "check-cash-settlement.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.585
+    },
+    {
+      "file": "check-certificates.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.164
+    },
+    {
+      "file": "check-club-action-assignment.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.08
+    },
+    {
+      "file": "check-club-action-closure-pilot.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.07
+    },
+    {
+      "file": "check-club-action-identity.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.067
+    },
+    {
+      "file": "check-club-action-save-pilot.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.201
+    },
+    {
+      "file": "check-club-closure-sandbox.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.071
+    },
+    {
+      "file": "check-club-evaluation.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.28
+    },
+    {
+      "file": "check-club-imports.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.475
+    },
+    {
+      "file": "check-clubs.cjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.161
+    },
+    {
+      "file": "check-continuity.cjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.182
+    },
+    {
+      "file": "check-cv-declarations.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.214
+    },
+    {
+      "file": "check-delivery.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.615
+    },
+    {
+      "file": "check-development.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.295
+    },
+    {
+      "file": "check-evidence-amendments.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.388
+    },
+    {
+      "file": "check-external-participants.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.329
+    },
+    {
+      "file": "check-faculty-dashboard.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.232
+    },
+    {
+      "file": "check-faculty-responsibilities.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.17
+    },
+    {
+      "file": "check-files.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.606
+    },
+    {
+      "file": "check-freshness.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.339
+    },
+    {
+      "file": "check-governance.cjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.201
+    },
+    {
+      "file": "check-identity-grant-adapter.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.091
+    },
+    {
+      "file": "check-intake-mentors.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.37
+    },
+    {
+      "file": "check-intake-support.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.558
+    },
+    {
+      "file": "check-internship-date-amendments.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.914
+    },
+    {
+      "file": "check-internship-execution.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.616
+    },
+    {
+      "file": "check-internship-final.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.764
+    },
+    {
+      "file": "check-internship-host-replacement.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.746
+    },
+    {
+      "file": "check-internship-letters.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.601
+    },
+    {
+      "file": "check-internship-readiness.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.865
+    },
+    {
+      "file": "check-internship-schedule.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.446
+    },
+    {
+      "file": "check-leadership-dashboard.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.168
+    },
+    {
+      "file": "check-membership.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.322
+    },
+    {
+      "file": "check-mentor-transfers.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.249
+    },
+    {
+      "file": "check-monitoring-assignment-adapter.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.138
+    },
+    {
+      "file": "check-monitoring-projection.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.277
+    },
+    {
+      "file": "check-monitoring-review-pilot.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.117
+    },
+    {
+      "file": "check-monitoring-sandbox.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.075
+    },
+    {
+      "file": "check-monitoring-save-pilot.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.293
+    },
+    {
+      "file": "check-multi-club.cjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.158
+    },
+    {
+      "file": "check-multi-role-sandbox.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.135
+    },
+    {
+      "file": "check-notifications.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.224
+    },
+    {
+      "file": "check-outcomes.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.274
+    },
+    {
+      "file": "check-participation.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.244
+    },
+    {
+      "file": "check-performance.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.158
+    },
+    {
+      "file": "check-permission-policy.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.083
+    },
+    {
+      "file": "check-plan-imports.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.403
+    },
+    {
+      "file": "check-plan-xlsx-bridge.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.506
+    },
+    {
+      "file": "check-plan-xlsx-browser-pilot.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.322
+    },
+    {
+      "file": "check-plan-xlsx-reader.py",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.338
+    },
+    {
+      "file": "check-plan-xlsx-upload.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.117
+    },
+    {
+      "file": "check-plans.cjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.126
+    },
+    {
+      "file": "check-portfolio-export-api.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.575
+    },
+    {
+      "file": "check-portfolio-export-client.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.061
+    },
+    {
+      "file": "check-portfolio-export-pilot.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.119
+    },
+    {
+      "file": "check-portfolio-print-pilot.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.102
+    },
+    {
+      "file": "check-project-discussion.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.252
+    },
+    {
+      "file": "check-project-resource-policy.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.166
+    },
+    {
+      "file": "check-project-workload.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.215
+    },
+    {
+      "file": "check-public-certificates.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.308
+    },
+    {
+      "file": "check-publication-assigned-dashboard.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.33
+    },
+    {
+      "file": "check-publication-categories.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.363
+    },
+    {
+      "file": "check-publication-mentor.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.315
+    },
+    {
+      "file": "check-publication-navigation.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.367
+    },
+    {
+      "file": "check-publication-portfolio.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.321
+    },
+    {
+      "file": "check-reflection-approval.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.646
+    },
+    {
+      "file": "check-reflection-consent.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.334
+    },
+    {
+      "file": "check-reflection-delivery.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.437
+    },
+    {
+      "file": "check-reflection-editorial.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.481
+    },
+    {
+      "file": "check-reflection-nomination.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.255
+    },
+    {
+      "file": "check-reflection-publication.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.488
+    },
+    {
+      "file": "check-reports.cjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.175
+    },
+    {
+      "file": "check-research-report.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.193
+    },
+    {
+      "file": "check-role-dashboards.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.391
+    },
+    {
+      "file": "check-server.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.615
+    },
+    {
+      "file": "check-share-qr.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.164
+    },
+    {
+      "file": "check-sharing-client.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.067
+    },
+    {
+      "file": "check-sharing.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.635
+    },
+    {
+      "file": "check-special-activities.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.432
+    },
+    {
+      "file": "check-student-responsibilities.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.183
+    },
+    {
+      "file": "check-sync.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.176
+    },
+    {
+      "file": "check-task-assessment.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.225
+    },
+    {
+      "file": "check-task-execution.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.287
+    },
+    {
+      "file": "check-task-mapping.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.204
+    },
+    {
+      "file": "check-task-progress-notifications.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.367
+    },
+    {
+      "file": "check-task-templates.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.305
+    },
+    {
+      "file": "check-workload-policy-calculation.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.074
+    },
+    {
+      "file": "check-workload-policy-matching.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.094
+    },
+    {
+      "file": "check-workload-policy-pilot.mjs",
+      "exitCode": 0,
+      "status": "Passed",
+      "seconds": 0.075
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checks": 22,
+  "schema_checked": false,
+  "contract_state": "provisional",
+  "actual_kcc360_tested": false,
+  "live_integration": false
+}
