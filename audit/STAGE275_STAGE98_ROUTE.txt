@@ -1,0 +1,9 @@
+PASS compiled route keeps integration disabled and storage unchanged
+PASS actual identity, owner, origin, JSON and size guards preserve records
+PASS role, department and browser authority spoofing return bounded errors
+PASS approved event prepare and duplicate submission use one durable request
+PASS mock timeout and retry retain idempotency and require separate website approval
+PASS session revocation and re-login preserve request history
+PASS withdrawal receipt and delayed older requests cannot restore publication
+PASS unexpected internal exceptions return generic error without sensitive details
+PASS 8 compiled publication HTTP route groups. Platform identity is substituted; no hosted Worker/browser acceptance or live synchronization.
