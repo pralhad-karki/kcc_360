@@ -6,7 +6,7 @@ const fail=(ok,code,status=409)=>{if(!ok)throw Object.assign(Error(code),{code,s
 const text=x=>typeof x==='string'&&x.length>0&&x.length<=150&&x.trim()===x&&!/[\u0000-\u001f\u007f]/.test(x);
 const exact=(x,keys)=>x&&typeof x==='object'&&!Array.isArray(x)&&Object.keys(x).length===keys.length&&keys.every(k=>Object.hasOwn(x,k));
 const zoned=x=>typeof x==='string'&&/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d{3})?(Z|[+-]\d\d:\d\d)$/.test(x)&&Number.isFinite(Date.parse(x));
-function context(c,subject,eventId,now){
+export function assertWebsiteRegistrationContext(c,subject,eventId,now){
  fail(c?.authorized===true&&c.subject===subject&&c.eventId===eventId,'REGISTRATION_ACCESS_DENIED',403);
  fail(text(c.institutionId)&&text(c.issuer)&&text(c.websiteEventId)&&text(c.approvalReference)&&zoned(c.validUntil)&&Date.parse(c.validUntil)>Date.parse(now)&&Number.isSafeInteger(c.revision)&&c.revision>=0,'TRUSTED_REGISTRATION_CONTEXT_REQUIRED',503);
  fail(Array.isArray(c.students)&&Array.isArray(c.studentActors)&&Array.isArray(c.members)&&Array.isArray(c.crosswalk)&&Array.isArray(c.registrations),'TRUSTED_REGISTRATION_CONTEXT_REQUIRED',503);
@@ -23,7 +23,7 @@ export function createWebsiteRegistrationPreview({configuration=websiteRegistrat
   fail(text(subject),'SESSION_REQUIRED',401);fail(exact(input,['eventId'])&&text(input.eventId),'INVALID_REGISTRATION_PREVIEW',400);
   fail(peer?.mode==='mock'&&typeof peer.readRegistrations==='function'&&typeof reader==='function','MOCK_REGISTRATION_PROVIDERS_REQUIRED',503);
   const eventId=input.eventId,now=clock();fail(zoned(now),'TRUSTED_TIME_REQUIRED',503);
-  const c=structuredClone(await reader({subject,eventId}));context(c,subject,eventId,now);const contextDigest=await misDigest(c);
+  const c=structuredClone(await reader({subject,eventId}));assertWebsiteRegistrationContext(c,subject,eventId,now);const contextDigest=await misDigest(c);
   const items=[],seen=new Set();let after='',snapshot=null,complete=false;
   // All pages remain local and disposable until a complete checked refresh. A
   // timeout/409, legacy response, bad cursor or changed source exposes no partial preview.
@@ -41,7 +41,7 @@ export function createWebsiteRegistrationPreview({configuration=websiteRegistrat
    if(r.next_cursor===null){complete=true;break}after=r.next_cursor;
   }
   fail(complete,'REGISTRATION_REFRESH_LIMIT',413);
-  const refreshed=structuredClone(await reader({subject,eventId}));context(refreshed,subject,eventId,clock());fail(await misDigest(refreshed)===contextDigest,'REGISTRATION_CONTEXT_CHANGED');
+  const refreshed=structuredClone(await reader({subject,eventId}));assertWebsiteRegistrationContext(refreshed,subject,eventId,clock());fail(await misDigest(refreshed)===contextDigest,'REGISTRATION_CONTEXT_CHANGED');
   const multiplicity=new Map();for(const r of items)multiplicity.set(r.participant_reference,(multiplicity.get(r.participant_reference)||0)+1);
   const differences=items.map(r=>{
    const prior=c.registrations.find(x=>x.registrationId===r.registration_id),matches=c.crosswalk.filter(m=>m.issuer===c.issuer&&m.participantReference===r.participant_reference);

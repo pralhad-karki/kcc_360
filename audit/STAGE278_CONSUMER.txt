@@ -1,0 +1,18 @@
+PASS disabled defaults, live-mode denial and exact confirmation fields
+PASS unauthorized role, department, expired grant and read-only import denial
+PASS first-save audit failure and revoked authority leave no private ledger behind
+PASS confirmed save persists known registration and unresolved observation with one audit
+PASS retry survives peer outage and service reconstruction without extra records or audit
+PASS confirmation re-fetch rejects timeout and changed snapshot without writes
+PASS revoked or expired import authority also denies durable receipt replay
+PASS stale identity/source preview and unconfirmed requests cannot save
+PASS atomic audit failure rolls back the workspace and supports safe retry
+PASS authority fence revocation between checks and SQL prevents mutation
+PASS workspace CAS preserves a concurrent winning update
+PASS lost post-commit acknowledgement replays exactly once while peer is unavailable
+PASS concurrent duplicate confirmations create only one operation and audit
+PASS missing refresh rows preserve records and verified participation
+PASS explicit known and unresolved cancellations are sticky without roster changes
+PASS already imported identities never rebind automatically after crosswalk correction
+PASS size guard leaves oversized confirmation and audit unchanged
+{"passed":17,"consumer":"website service fixture","live":false,"registrationOnly":true}
