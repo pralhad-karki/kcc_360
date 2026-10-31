@@ -1,0 +1,1 @@
+PASS: roster snapshots, duplicate/overlap rejection, attendance bounds, mentor-only verification, immutable verified versions, corrected-version totals, learner/lead visibility, evidence-bound contribution deduplication, evidence verification and daily contribution limits.

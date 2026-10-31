@@ -1,0 +1,12 @@
+PASS disabled default and mock-only construction
+PASS role, department, session and forged identity context are denied
+PASS complete checked paging uses opaque token and existing MIS identity without attendance
+PASS repeated refresh is stable and stages no duplicate record
+PASS unmatched, ambiguous and unapproved mappings remain private exceptions
+PASS transport timeout or changed snapshot discards staged pages
+PASS legacy pages, private fields, foreign events and bad cursors are rejected
+PASS empty complete refresh and repeated cursor never imply cancellation
+PASS authority/source changes during fetching invalidate preview
+PASS explicit cancellation is distinct from missing registrations and participation
+PASS duplicate-student and namespace conflicts cannot create student records
+{"passed":11,"consumer":"bounded mock","live":false,"previewOnly":true}

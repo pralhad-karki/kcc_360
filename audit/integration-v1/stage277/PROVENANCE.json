@@ -1,0 +1,31 @@
+{
+  "repository": "pralhad-karki/kcc_website",
+  "branch": "development/cms-foundation",
+  "commit": "7930b367c644f449242c04d3e8004d88f0dad3ae",
+  "reviewedOn": "2026-10-31",
+  "contractState": "provisional",
+  "files": [
+    {
+      "path": "production/integration-v1/openapi.provisional.json",
+      "gitBlob": "44acb40067cf7a8b405c64ba1aca58d7cc3d7bc1"
+    },
+    {
+      "path": "production/integration-v1/publication-package.schema.json",
+      "gitBlob": "378657bfea7b8b9b87f16706d147259064aceb53"
+    },
+    {
+      "path": "production/docs/STAGE_91_PROGRESSIVE_INTEGRATION_REPORT.md",
+      "gitBlob": "0c5dcb76fd0a21d583190e856cd0991ea627539e"
+    },
+    {
+      "path": "production/integration-v1/registration-exchange.schema.json",
+      "gitBlob": "bf3109672f20a2f0d58f2ac3385aeb431ca477b6"
+    },
+    {
+      "path": "production/integration-v1/service.mjs",
+      "gitBlob": "63e730d4101fad6fc20034b25d145b69bbdd0e05"
+    }
+  ],
+  "testComposition": "Pinned current integration service with Stage 98 CMS/storage support fixture; not a complete current website checkout.",
+  "live": false
+}

@@ -16,5 +16,5 @@ if(website){const imp=p=>import(pathToFileURL(path.join(website,'production',p))
 const transport={mode:'mock',async send(p,key){if(!available)throw Error('timeout');if(deny)throw Object.assign(Error('rejected'),{status:403});const r=peer.receive(p,key);if(drop){drop=false;throw Error('lost acknowledgement')}if(late)await late;return responsePatch?responsePatch(structuredClone(r)):r}};
 const config={db,clock:()=>Date.now()+offset,configuration:{mode:'mock'},authorize:({actor,eventId:id})=>actor==='d1'&&id===eventId,loadRelease:release,options:()=>fixture.current().options,transport};let runtime=createWebsiteV1Mock(config),request;
 const state=()=>sqlite.prepare('SELECT * FROM kcc_workspaces').get(),rows=()=>JSON.parse(state().payload).websiteV1Outbox??[];
-export {runtime,eventId,deliveryId,approve,rows,db,config};
+export {runtime,eventId,deliveryId,approve,rows,db,config,peer};
 export const cleanup=()=>{closePeer();sqlite.close();fs.rmSync(dir,{recursive:true,force:true})};
