@@ -1,0 +1,11 @@
+file:///workspace/sites/kcc360-recovered270/server/intake-team-command-bridge.mjs:125
+ }catch(e){if(e instanceof IntakeTeamCommandError)throw e;const conflict=/REVISION_CONFLICT|CHANGED_BEFORE_SAVE/.test(e.message);throw new IntakeTeamCommandError(conflict?409:403,conflict?'Invitation data changed. Refresh before retrying.':'The invitation action is unavailable or outside this account’s scope.')}
+                                                                                                                                       ^
+
+IntakeTeamCommandError: The invitation action is unavailable or outside this account’s scope.
+    at dispatchIntakeTeamCommand (file:///workspace/sites/kcc360-recovered270/server/intake-team-command-bridge.mjs:125:136)
+    at async file:///workspace/sites/kcc360-recovered270/check-intake-team-task-save.mjs:50:137 {
+  status: 403
+}
+
+Node.js v24.22.1

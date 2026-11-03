@@ -1,0 +1,6 @@
+PASS 10,000 existing fictional sessions use read-only indexed lookup
+PASS simultaneous first-session creation preserves one row and concurrent actor selection
+PASS UTF-8 bytes above the workspace limit reject atomically through the actual route
+PASS valid large Nepali payload still saves once with matching audit
+PASS different-project simultaneous writes expose global contention without lost updates
+{"passed":5,"sessionRowsPerFixture":10000,"institutionalAccountsSimulated":false,"hostedAcceptance":false}

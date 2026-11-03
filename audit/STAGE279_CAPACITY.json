@@ -1,0 +1,952 @@
+{
+  "kind": "KCC360_LOCAL_CAPACITY_DIAGNOSTIC",
+  "planningTarget": {
+    "registeredUsers": 10000,
+    "years": 3,
+    "peakConcurrentInstitutionalUsers": "NOT_AGREED"
+  },
+  "baselineCommit": "7919b32dc384e6cec3fca4d18651913985a4c35f",
+  "candidateBaseCommit": "7919b32dc384e6cec3fca4d18651913985a4c35f",
+  "startedAt": "2026-11-03T12:12:25.274Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "linux",
+    "cpuModel": "INTEL(R) XEON(R) PLATINUM 8573C"
+  },
+  "scope": "Actual compiled workspace route/service/engine; disposable file-backed SQLite; fictional owner identity; no HTTP network, browser, D1, MIS, SSO or production workload",
+  "sessionRowsPerFixture": 10000,
+  "variants": [
+    {
+      "name": "baseline",
+      "scenarios": [
+        {
+          "projectCount": 8,
+          "initialPayloadBytes": 14081,
+          "reads": [
+            {
+              "status": 200,
+              "ms": 9.799,
+              "responseBytes": 15238
+            },
+            {
+              "status": 200,
+              "ms": 3.3,
+              "responseBytes": 15238
+            },
+            {
+              "status": 200,
+              "ms": 3.139,
+              "responseBytes": 15238
+            }
+          ],
+          "sequentialWrites": [
+            {
+              "status": 200,
+              "ms": 15.37,
+              "responseBytes": 18800
+            },
+            {
+              "status": 200,
+              "ms": 12.545,
+              "responseBytes": 19147
+            },
+            {
+              "status": 200,
+              "ms": 7.067,
+              "responseBytes": 19494
+            }
+          ],
+          "writeBursts": [
+            {
+              "parallelRequests": 2,
+              "distinctProjects": 2,
+              "loadedRevision": 3,
+              "succeeded": 1,
+              "conflicts": 1,
+              "durationMs": 17.292,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 16.9,
+                  "responseBytes": 19844
+                },
+                {
+                  "status": 409,
+                  "ms": 16.637,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 10,
+                "sessionInsertAttempts": 2,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 96110,
+                "workspaceBytesWritten": 49301,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            },
+            {
+              "parallelRequests": 8,
+              "distinctProjects": 8,
+              "loadedRevision": 4,
+              "succeeded": 1,
+              "conflicts": 7,
+              "durationMs": 62.682,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 61.179,
+                  "responseBytes": 20194
+                },
+                {
+                  "status": 409,
+                  "ms": 61.328,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 61.44,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 61.521,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 61.782,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 61.651,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 61.611,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 61.58,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 40,
+                "sessionInsertAttempts": 8,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 394408,
+                "workspaceBytesWritten": 50547,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            }
+          ],
+          "readMetrics": {
+            "queries": 9,
+            "sessionInsertAttempts": 3,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 42243,
+            "workspaceBytesWritten": 0,
+            "workspaceUpdates": 0,
+            "auditRowsInserted": 0
+          },
+          "sequentialMetrics": {
+            "queries": 15,
+            "sessionInsertAttempts": 3,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 106462,
+            "workspaceBytesWritten": 140436,
+            "workspaceUpdates": 3,
+            "auditRowsInserted": 3
+          },
+          "finalPayloadBytes": 50547
+        },
+        {
+          "projectCount": 100,
+          "initialPayloadBytes": 50417,
+          "reads": [
+            {
+              "status": 200,
+              "ms": 5.055,
+              "responseBytes": 81842
+            },
+            {
+              "status": 200,
+              "ms": 7.494,
+              "responseBytes": 81842
+            },
+            {
+              "status": 200,
+              "ms": 4.933,
+              "responseBytes": 81842
+            }
+          ],
+          "sequentialWrites": [
+            {
+              "status": 200,
+              "ms": 10.298,
+              "responseBytes": 85404
+            },
+            {
+              "status": 200,
+              "ms": 11.743,
+              "responseBytes": 85751
+            },
+            {
+              "status": 200,
+              "ms": 13.935,
+              "responseBytes": 86098
+            }
+          ],
+          "writeBursts": [
+            {
+              "parallelRequests": 2,
+              "distinctProjects": 2,
+              "loadedRevision": 3,
+              "succeeded": 1,
+              "conflicts": 1,
+              "durationMs": 18.36,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 17.193,
+                  "responseBytes": 86448
+                },
+                {
+                  "status": 409,
+                  "ms": 17.726,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 10,
+                "sessionInsertAttempts": 2,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 168782,
+                "workspaceBytesWritten": 85637,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            },
+            {
+              "parallelRequests": 8,
+              "distinctProjects": 8,
+              "loadedRevision": 4,
+              "succeeded": 1,
+              "conflicts": 7,
+              "durationMs": 96.477,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 94.52,
+                  "responseBytes": 86798
+                },
+                {
+                  "status": 409,
+                  "ms": 95.146,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 95.342,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 95.495,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 95.678,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 95.696,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 95.731,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 95.714,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 40,
+                "sessionInsertAttempts": 8,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 685096,
+                "workspaceBytesWritten": 86883,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            }
+          ],
+          "readMetrics": {
+            "queries": 9,
+            "sessionInsertAttempts": 3,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 151251,
+            "workspaceBytesWritten": 0,
+            "workspaceUpdates": 0,
+            "auditRowsInserted": 0
+          },
+          "sequentialMetrics": {
+            "queries": 15,
+            "sessionInsertAttempts": 3,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 215470,
+            "workspaceBytesWritten": 249444,
+            "workspaceUpdates": 3,
+            "auditRowsInserted": 3
+          },
+          "finalPayloadBytes": 86883
+        },
+        {
+          "projectCount": 500,
+          "initialPayloadBytes": 209217,
+          "reads": [
+            {
+              "status": 200,
+              "ms": 24.034,
+              "responseBytes": 372242
+            },
+            {
+              "status": 200,
+              "ms": 14.273,
+              "responseBytes": 372242
+            },
+            {
+              "status": 200,
+              "ms": 16.199,
+              "responseBytes": 372242
+            }
+          ],
+          "sequentialWrites": [
+            {
+              "status": 200,
+              "ms": 31.342,
+              "responseBytes": 375804
+            },
+            {
+              "status": 200,
+              "ms": 31.459,
+              "responseBytes": 376151
+            },
+            {
+              "status": 200,
+              "ms": 46.499,
+              "responseBytes": 376498
+            }
+          ],
+          "writeBursts": [
+            {
+              "parallelRequests": 2,
+              "distinctProjects": 2,
+              "loadedRevision": 3,
+              "succeeded": 1,
+              "conflicts": 1,
+              "durationMs": 55.651,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 53.267,
+                  "responseBytes": 376848
+                },
+                {
+                  "status": 409,
+                  "ms": 55.066,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 10,
+                "sessionInsertAttempts": 2,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 486382,
+                "workspaceBytesWritten": 244437,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            },
+            {
+              "parallelRequests": 8,
+              "distinctProjects": 8,
+              "loadedRevision": 4,
+              "succeeded": 1,
+              "conflicts": 7,
+              "durationMs": 327.869,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 324.177,
+                  "responseBytes": 377198
+                },
+                {
+                  "status": 409,
+                  "ms": 325.955,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 326.465,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 326.845,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 327.202,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 327.13,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 327.087,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 327.052,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 40,
+                "sessionInsertAttempts": 8,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 1955496,
+                "workspaceBytesWritten": 245683,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            }
+          ],
+          "readMetrics": {
+            "queries": 9,
+            "sessionInsertAttempts": 3,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 627651,
+            "workspaceBytesWritten": 0,
+            "workspaceUpdates": 0,
+            "auditRowsInserted": 0
+          },
+          "sequentialMetrics": {
+            "queries": 15,
+            "sessionInsertAttempts": 3,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 691870,
+            "workspaceBytesWritten": 725844,
+            "workspaceUpdates": 3,
+            "auditRowsInserted": 3
+          },
+          "finalPayloadBytes": 245683
+        }
+      ],
+      "serviceSourceSHA256": "b771bd9fa1bfa44a24d8f5cdb1923031a48d89ddb12448f83fc6d0539a5112e9",
+      "unicodeBoundary": {
+        "beforeBytes": 1998000,
+        "beforeCharacters": 675395,
+        "resultStatus": 200,
+        "afterBytes": 2032457,
+        "workspaceUnchanged": false,
+        "auditRows": 1
+      }
+    },
+    {
+      "name": "candidate",
+      "scenarios": [
+        {
+          "projectCount": 8,
+          "initialPayloadBytes": 14081,
+          "reads": [
+            {
+              "status": 200,
+              "ms": 2.53,
+              "responseBytes": 15238
+            },
+            {
+              "status": 200,
+              "ms": 8.892,
+              "responseBytes": 15238
+            },
+            {
+              "status": 200,
+              "ms": 3.12,
+              "responseBytes": 15238
+            }
+          ],
+          "sequentialWrites": [
+            {
+              "status": 200,
+              "ms": 5.644,
+              "responseBytes": 18800
+            },
+            {
+              "status": 200,
+              "ms": 5.979,
+              "responseBytes": 19147
+            },
+            {
+              "status": 200,
+              "ms": 5.511,
+              "responseBytes": 19494
+            }
+          ],
+          "writeBursts": [
+            {
+              "parallelRequests": 2,
+              "distinctProjects": 2,
+              "loadedRevision": 3,
+              "succeeded": 1,
+              "conflicts": 1,
+              "durationMs": 11.514,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 11.265,
+                  "responseBytes": 19844
+                },
+                {
+                  "status": 409,
+                  "ms": 11.257,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 8,
+                "sessionInsertAttempts": 0,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 96110,
+                "workspaceBytesWritten": 49301,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            },
+            {
+              "parallelRequests": 8,
+              "distinctProjects": 8,
+              "loadedRevision": 4,
+              "succeeded": 1,
+              "conflicts": 7,
+              "durationMs": 48.206,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 46.74,
+                  "responseBytes": 20194
+                },
+                {
+                  "status": 409,
+                  "ms": 46.968,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 47.339,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 47.452,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 47.692,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 47.718,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 47.703,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 47.686,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 32,
+                "sessionInsertAttempts": 0,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 394408,
+                "workspaceBytesWritten": 50547,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            }
+          ],
+          "readMetrics": {
+            "queries": 6,
+            "sessionInsertAttempts": 0,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 42243,
+            "workspaceBytesWritten": 0,
+            "workspaceUpdates": 0,
+            "auditRowsInserted": 0
+          },
+          "sequentialMetrics": {
+            "queries": 12,
+            "sessionInsertAttempts": 0,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 106462,
+            "workspaceBytesWritten": 140436,
+            "workspaceUpdates": 3,
+            "auditRowsInserted": 3
+          },
+          "finalPayloadBytes": 50547
+        },
+        {
+          "projectCount": 100,
+          "initialPayloadBytes": 50417,
+          "reads": [
+            {
+              "status": 200,
+              "ms": 4.282,
+              "responseBytes": 81842
+            },
+            {
+              "status": 200,
+              "ms": 3.769,
+              "responseBytes": 81842
+            },
+            {
+              "status": 200,
+              "ms": 3.877,
+              "responseBytes": 81842
+            }
+          ],
+          "sequentialWrites": [
+            {
+              "status": 200,
+              "ms": 13.559,
+              "responseBytes": 85404
+            },
+            {
+              "status": 200,
+              "ms": 10.056,
+              "responseBytes": 85751
+            },
+            {
+              "status": 200,
+              "ms": 10.086,
+              "responseBytes": 86098
+            }
+          ],
+          "writeBursts": [
+            {
+              "parallelRequests": 2,
+              "distinctProjects": 2,
+              "loadedRevision": 3,
+              "succeeded": 1,
+              "conflicts": 1,
+              "durationMs": 19.993,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 19.464,
+                  "responseBytes": 86448
+                },
+                {
+                  "status": 409,
+                  "ms": 19.63,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 8,
+                "sessionInsertAttempts": 0,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 168782,
+                "workspaceBytesWritten": 85637,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            },
+            {
+              "parallelRequests": 8,
+              "distinctProjects": 8,
+              "loadedRevision": 4,
+              "succeeded": 1,
+              "conflicts": 7,
+              "durationMs": 64.906,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 63.282,
+                  "responseBytes": 86798
+                },
+                {
+                  "status": 409,
+                  "ms": 63.786,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 63.962,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 64.112,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 64.212,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 64.214,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 64.182,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 64.163,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 32,
+                "sessionInsertAttempts": 0,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 685096,
+                "workspaceBytesWritten": 86883,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            }
+          ],
+          "readMetrics": {
+            "queries": 6,
+            "sessionInsertAttempts": 0,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 151251,
+            "workspaceBytesWritten": 0,
+            "workspaceUpdates": 0,
+            "auditRowsInserted": 0
+          },
+          "sequentialMetrics": {
+            "queries": 12,
+            "sessionInsertAttempts": 0,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 215470,
+            "workspaceBytesWritten": 249444,
+            "workspaceUpdates": 3,
+            "auditRowsInserted": 3
+          },
+          "finalPayloadBytes": 86883
+        },
+        {
+          "projectCount": 500,
+          "initialPayloadBytes": 209217,
+          "reads": [
+            {
+              "status": 200,
+              "ms": 23.741,
+              "responseBytes": 372242
+            },
+            {
+              "status": 200,
+              "ms": 13.703,
+              "responseBytes": 372242
+            },
+            {
+              "status": 200,
+              "ms": 14.294,
+              "responseBytes": 372242
+            }
+          ],
+          "sequentialWrites": [
+            {
+              "status": 200,
+              "ms": 28.277,
+              "responseBytes": 375804
+            },
+            {
+              "status": 200,
+              "ms": 27.854,
+              "responseBytes": 376151
+            },
+            {
+              "status": 200,
+              "ms": 31.973,
+              "responseBytes": 376498
+            }
+          ],
+          "writeBursts": [
+            {
+              "parallelRequests": 2,
+              "distinctProjects": 2,
+              "loadedRevision": 3,
+              "succeeded": 1,
+              "conflicts": 1,
+              "durationMs": 65.429,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 63.604,
+                  "responseBytes": 376848
+                },
+                {
+                  "status": 409,
+                  "ms": 64.803,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 8,
+                "sessionInsertAttempts": 0,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 486382,
+                "workspaceBytesWritten": 244437,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            },
+            {
+              "parallelRequests": 8,
+              "distinctProjects": 8,
+              "loadedRevision": 4,
+              "succeeded": 1,
+              "conflicts": 7,
+              "durationMs": 220.231,
+              "requestSamples": [
+                {
+                  "status": 200,
+                  "ms": 216.88,
+                  "responseBytes": 377198
+                },
+                {
+                  "status": 409,
+                  "ms": 218.706,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 219.018,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 219.366,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 219.631,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 219.646,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 219.636,
+                  "responseBytes": 59
+                },
+                {
+                  "status": 409,
+                  "ms": 219.619,
+                  "responseBytes": 59
+                }
+              ],
+              "metrics": {
+                "queries": 32,
+                "sessionInsertAttempts": 0,
+                "sessionRowsInserted": 0,
+                "workspaceBytesRead": 1955496,
+                "workspaceBytesWritten": 245683,
+                "workspaceUpdates": 1,
+                "auditRowsInserted": 1
+              },
+              "interpretation": "Different projects still compete on one workspace revision. Conflicts preserve data but are a scaling blocker, not user-capacity acceptance."
+            }
+          ],
+          "readMetrics": {
+            "queries": 6,
+            "sessionInsertAttempts": 0,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 627651,
+            "workspaceBytesWritten": 0,
+            "workspaceUpdates": 0,
+            "auditRowsInserted": 0
+          },
+          "sequentialMetrics": {
+            "queries": 12,
+            "sessionInsertAttempts": 0,
+            "sessionRowsInserted": 0,
+            "workspaceBytesRead": 691870,
+            "workspaceBytesWritten": 725844,
+            "workspaceUpdates": 3,
+            "auditRowsInserted": 3
+          },
+          "finalPayloadBytes": 245683
+        }
+      ],
+      "serviceSourceSHA256": "d402ef51cbdf4b6368c7b4d0e612ae8d880fd38cae527c3f599ae8ffb86fe56a",
+      "unicodeBoundary": {
+        "beforeBytes": 1998000,
+        "beforeCharacters": 675395,
+        "resultStatus": 413,
+        "afterBytes": 1998000,
+        "workspaceUnchanged": true,
+        "auditRows": 0
+      }
+    }
+  ],
+  "acceptance": "HOLD — diagnostics only; 10,000-user capacity not established",
+  "finishedAt": "2026-11-03T12:12:27.584Z",
+  "findings": [
+    "Existing session reads need zero insert attempts in the candidate",
+    "UTF-8 size enforcement protects Nepali text near the real byte limit",
+    "Unrelated project writes still share one revision; normalized hot-write storage remains required",
+    "Three timing samples per sequential case are diagnostic, not a production percentile or SLA",
+    "10,000 fictional session rows are not 10,000 institutional accounts or concurrent users",
+    "Identity/security, private-file storage, backup/restore, monitoring and hosted load acceptance remain open"
+  ]
+}

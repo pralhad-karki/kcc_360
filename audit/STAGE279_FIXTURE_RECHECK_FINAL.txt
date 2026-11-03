@@ -1,0 +1,1 @@
+PASS controlled team task assignment: verified lead/accepted mentor only, active confirmed candidates, four-domain criteria, current started source/mapping/holds, exact confirmation/token, preserved academic history and prior tasks, no automatic completion, SQLite rollback/CAS/audit, stale/duplicate/outside-team denial and generic self-completion blocked.
