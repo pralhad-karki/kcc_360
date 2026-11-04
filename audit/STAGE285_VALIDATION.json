@@ -1,0 +1,30 @@
+{
+  "baseline": "26c79a8fc766fd2142c2490350b5ba0b969c40ab",
+  "scope": "Local fictional checks; no hosted or institutional acceptance",
+  "results": [
+    {
+      "check": "recovery",
+      "command": "node check-private-recovery.mjs",
+      "startedAt": "2026-11-04T08:29:51.389987+00:00",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "audit/STAGE285_RECOVERY_CHECKS.txt"
+    },
+    {
+      "check": "typescript",
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "startedAt": "2026-11-04T08:30:02.852098+00:00",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "audit/STAGE285_TYPESCRIPT.txt"
+    },
+    {
+      "check": "build",
+      "command": "node scripts/run-framework.mjs build",
+      "startedAt": "2026-11-04T08:30:19.795027+00:00",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "audit/STAGE285_BUILD.txt"
+    }
+  ]
+}

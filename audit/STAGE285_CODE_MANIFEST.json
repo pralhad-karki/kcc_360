@@ -1,0 +1,25 @@
+{
+  "baseline": "26c79a8fc766fd2142c2490350b5ba0b969c40ab",
+  "baselineTree": "ff41d001099a7bd74ec43d63e876db3df8fa31ef",
+  "codeSHA256": {
+    "server/recovery/domain.ts": "d2c8f39ebc4396f2921841f7693a44564c72983eeb3cd855448c4ce082e6344e",
+    "server/recovery/application.ts": "5deeeac79afa38d7a0bf53e3901042e4022cc7a7bbc000207cd204aaf7118733",
+    "server/recovery/drizzle-reader.ts": "5c0eb9158518c794822e69f76e09edd6c988723cc21a46401cb858186969e50f",
+    "check-private-recovery.mjs": "07c077242193d9446b6d1846f19504076d9d334d050a3fe3e9efc4359ca2c400",
+    "fixtures/workspace-capacity.mjs": "7d323733ddadff5abf7d7e945d9a03b205c413366385c10ffbd3b909fb451ecb",
+    "scripts/check-task-workflow.mjs": "3014e9ebad0cb06d4e94a9afb06b36e7a9aa67670c44a6699e7c4f2f0a5d712f"
+  },
+  "verification": {
+    "recoveryChecks": 21,
+    "regressionGroups": 77,
+    "typescript": "PASS",
+    "build": "PASS",
+    "memoryAndSQLiteParity": true,
+    "actualPublicAndFileControllers": true
+  },
+  "fixtureOnly": true,
+  "liveIntegration": false,
+  "productionMigration": false,
+  "hostedRestore": false,
+  "institutionalReadiness": "HOLD"
+}

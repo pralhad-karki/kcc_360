@@ -1,0 +1,51 @@
+# Stage 285 — read-only recovery inventory and private restore rehearsal
+
+4 November 2026, Asia/Kathmandu. Continued from `26c79a8fc766fd2142c2490350b5ba0b969c40ab` on `development/website-mock-acceptance`. The existing recoverable checkout was clean and matched GitHub. Its code, working state, remote history and referenced reports were inspected before editing. No restart or replacement checkout was used for implementation.
+
+## Outcome
+
+Added an offline, explicitly authorized private DB/reference export and verification boundary. A disposable fictional rehearsal restores source, permanent withdrawal authority, audit and file references without overwriting an existing store. The restored actual public controller still denies a withdrawn link whose retained source says ACTIVE. The actual private-file controller requires the object and current source permission. This is local evidence, not hosted backup or institutional recovery acceptance.
+
+The grounded plan and table/namespace scope are in `STAGE285_RECOVERY_PLAN.md`. Existing portfolio exports are selected achievement/print projections and were not repurposed into a database backup. Existing source workflows, permissions, identifiers, canonical/private records, approvals, files, audit, migrations and integration defaults are retained.
+
+## Implementation
+
+- `server/recovery/domain.ts` defines typed versioned rows/package, deterministic canonical serialization/checksum, generic errors and known relationship validation. All workspace namespaces survive, including unknown future/private rows. The payload string is preserved byte-for-byte; it is parsed only for checks and counts. The inventory counts table rows, namespaces, top-level array entries, UTF-8 payload bytes, markers, known file references and referenced object bytes. Array counts are not a unique-ID census or full semantic relationship audit of every legacy module.
+- Marker keys and receipt fields reuse the Stage 284 pure validator/key function. Markers retain their own revision, commit and UTC time. A surviving withdrawal audit without its authoritative marker is rejected; correlated fields are checked. A marker without its old audit remains authoritative and the inventory reports `markersWithoutAudit`, respecting the existing audit-retention independence. Export does not prune either record.
+- File metadata is kept with stable object keys. AVAILABLE records must retain the source target/index and matching ID, name, MIME, size, hash, uploader and creation time. Embedded `files` references must have metadata. Every metadata-referenced object's byte count/SHA-256 must match, including historical statuses. Unknown or broken associations fail verification for review; nothing is deleted or guessed.
+- `application.ts` provides only export/verify methods behind injected authority, reader and private-object ports. Authorization is checked before reading and again before release. A second complete DB snapshot must equal the first after object reads. The package uses `KCC360_PRIVATE_RECOVERY_V1`, with a SHA-256 over schema and ordered exact rows. Verification requires the separately retained expected checksum. A recomputed altered package cannot substitute for that anchor. There is no default authority provider, HTTP route, runtime binding, writer or production restore method.
+- `drizzle-reader.ts` builds SELECTs through the existing ORM/schema and uses one transactional D1 read batch. It preserves private rows without prefix filtering and rejects failed, missing or truncated results. Driver failures become generic recovery errors. Limits are 10,000 rows/table, a 32 MiB serialized snapshot and a separate 32 MiB referenced-object total. This bounded in-memory utility is not a streaming campus-scale export service; byte limits are checked after reading rows.
+- The test-only restore verifies schema/checksum/relationships/objects before INSERT, checks all application recovery tables are empty, and inserts in one isolated SQLite transaction. An injected failure rolls back all three tables. A populated target is rejected. The reused local fixture adds an explicit fresh-empty application store option and isolated object-copy helpers; its existing defaults remain unchanged. No existing database is reset. Fictional sessions are separately initialized rather than replayed from an archive.
+
+## Fictional inventory and acceptance evidence
+
+The source fixture uses existing controllers to upload a private UTF-8 file, create a consented share and withdraw it with an oversized source. It also includes nine simple rows under established and unknown private namespaces to test lossless namespace retention, not to claim separate acceptance of their business schemas.
+
+| Item | Local result |
+| --- | --- |
+| Workspace rows | 11: canonical root, withdrawal marker and nine private/unknown rows |
+| Server audit | 3 rows: upload, share creation and correlated withdrawal |
+| Private file | 1 metadata/object pair; 45 UTF-8 bytes |
+| Source size | More than 2,000,000 UTF-8 bytes; preserved without compaction |
+| Withdrawal/file associations | 1 marker, 1 available file association and 1 embedded reference |
+| Missing withdrawal audit | 0 in intact fixture; a separate gap scenario is explicitly reported |
+| Session archive/replay | Excluded; fresh fictional sessions only |
+| Bucket orphan listing | Not implemented; inventory reports `objectListingComplete=false` |
+
+`STAGE285_RECOVERY_CHECKS.txt` records 21 focused grouped checks. They exercise memory/real ORM-backed SQLite parity; JSON serialization; repeatable version/checksum and independent Node hash parity; read-only preservation; unauthorized/revoked authority; DB drift; missing/corrupt objects; missing markers/audit/metadata, altered payload/version and duplicate IDs; independently anchored tamper rejection; malformed marker and broken association checks; failed restore rollback; exact fresh-store manifest restoration; populated-target refusal; actual public withdrawal/no-store behavior; actual owner/unauthorized file access; audit-retention gap reporting and generic storage/row-bound failures. Private bytes are copied separately, then verified through the restored store's object reader before controller tests.
+
+Final complete regression: **77/77 PASS**, zero failures. Final focused recovery: **21/21 PASS**; TypeScript and production build pass. The complete regression and compiler/build evidence are recorded in `STAGE285_REGRESSION.json` and `STAGE285_VALIDATION.json`. Code hashes are in `STAGE285_CODE_MANIFEST.json`. The complete regression exercised the production recovery modules; a final test-only refinement explicitly round-trips the manifest through JSON before restoration and is covered by the final focused rerun. No application behavior was changed after the regression's recovery group.
+
+Initial local fixture diagnostics exposed SQLite row-object prototype differences and a test INSERT placeholder count error. The adapter now normalizes returned row objects, and the test-only INSERT uses the actual 14-column file schema. The rollback test specifically requires the injected failure message, so it cannot pass merely because an INSERT is malformed. These failures occurred only in disposable fictional stores before acceptance; neither altered existing application sources or data. Aggregate final logs contain no bearer tokens, file contents, real identities, live archive or credentials.
+
+## Privacy, architectural and operational review
+
+New domain/application code has no framework/driver/SQL dependency; only the reader knows D1 and the existing ORM schema. Errors do not leak driver details. Native test stores use WAL. Versioned JSON and generic ports prepare a bounded future adapter contract; no PostgreSQL or language-migration equivalence is claimed. Existing raw-SQL/shared-root architecture debt remains. Existing Stage 284 manifest hashes remain identical except for the explicitly extended fixture and regression launcher; existing application services, schema, engine and migration files are unchanged.
+
+The private package contains full source/audit/reference data and must remain operator-private. Its all-namespace reader requires a database-wide recovery-operator capability; it is not a student export or tenant-filtered endpoint. This stage does not introduce encryption, digital signatures, key custody, retention or an institutional operator provider. The archive and copied bytes exist only in the disposable test process; GitHub receives implementation, reports and aggregate fictional evidence. Sessions are not included and no actual account authority is reconstructed.
+
+DB and object storage have no joint transaction. The DB recheck catches observed drift during object verification, not subsequent changes or a guaranteed global point-in-time snapshot. Unreferenced bucket objects, provider metadata/version history, all historical semantic relationships and a real production migration inventory are outside this bounded utility. Missing old audit does not negate a retained marker, but loss of both marker and audit cannot be inferred from old ACTIVE source without a newer trusted anchor. A matching old checksum is not permission to reopen service.
+
+Before hosted restore acceptance: establish consistent DB/object versions, retain current withdrawal authority outside rollback scope, independently protect the manifest, revalidate identity/grants/consent and delivery/publication state, agree recovery-time/data-loss targets, and test the actual hosted procedure. Source Git history is not a backup of hosted DB/files. No production database read/write/reset, production migration, deployment, email, live integration, public export route or storage cutover occurred.
+
+**Readiness remains HOLD.** Next: bound the exact discussion/history/audit/notification effect set and rehearse disabled atomic commit/rollback with durable receipts, preserving the Stage 281 ports and codec. Institutional tenancy/identity/header trust, shared-root contention, whole-workspace reads, hosted mixed-load and recovery acceptance remain open. Website/MIS/SSO and independent website-publication approval dependencies are unchanged.

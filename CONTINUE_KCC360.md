@@ -1,4 +1,24 @@
-# Continue KCC360 development — Stage 284 handover
+# Continue KCC360 development — Stage 285 recovery checkpoint
+
+4 November 2026, Asia/Kathmandu. Continue this branch and inspect actual HEAD/status/remote history before editing. Stage 285 is the successor to `26c79a8fc766fd2142c2490350b5ba0b969c40ab`; the Stage 284 handover below is retained as historical context. Its recovery-inventory next task is now implemented and rehearsed locally, with limits documented below.
+
+Read `audit/STAGE285_REPORT.md`, `audit/STAGE285_RECOVERY_PLAN.md`, `audit/STAGE285_CODE_MANIFEST.json`, `audit/STAGE285_REGRESSION.json` and `audit/STAGE285_VALIDATION.json`, then the relevant source/tests. The code manifest identifies the exact tested additions. Preserve all newer or unpublished changes and all existing records, identifiers, approvals, migrations and history.
+
+Stage 285 adds `server/recovery/` domain/application/read-only Drizzle repository, without a runtime composition, route, default authority provider, writer or storage switch. It creates a private versioned DB/reference manifest for all workspace namespaces, audit and file metadata, verifies referenced private-object bytes and repeats the database/authority checks before release. Full private payloads and byte copies exist only in disposable fictional tests; GitHub receives code, documentation and aggregate evidence, never a live archive.
+
+`check-private-recovery.mjs` rehearses JSON serialization, an independently retained checksum, restore into a fresh isolated SQLite/WAL store, exact DB/reference preservation, separately copied private objects, withdrawal denial through the actual public controller and file-access denial through the actual private controller. Restore is test-only, refuses populated targets and rolls back on injected failure. The reused fixture can explicitly create a fresh empty application store; it does not clear/reset an existing store. Existing fixture defaults are preserved.
+
+Sessions are deliberately excluded from archive/replay; fictional fixture sessions are created separately. Unknown/private rows are retained verbatim, while only known relationships are semantically validated. The inventory reports top-level array counts, not a certified full graph census. Object listing is incomplete for unreferenced bucket objects. The boundary is bounded to 10,000 rows/table, a 32 MiB serialized snapshot and a separate 32 MiB referenced-object total, not a streaming or hosted-capacity solution.
+
+A trusted independently retained checksum detects loss/change relative to the selected snapshot, but is not a digital signature or proof that the selected recovery point contains the latest withdrawals. A marker missing together with its audit cannot be inferred from old source alone. Hosted recovery still needs current withdrawal authority outside rollback scope, consistent DB/object versioning, identity/grant/consent revalidation, private encryption/key custody, approved operators and recovery objectives. A second DB read detects drift during object reads; it is not a joint DB/bucket transaction. Audit-retention gaps are reported while surviving markers remain authoritative. Do not reopen services merely because an archive checksum matches.
+
+**Next bounded development task:** resume the Stage 281 discussion transition: constrain the exact discussion/history/audit/notification effect set and rehearse disabled atomic commit/rollback with durable receipts. Reuse existing source/staged codecs, permissions and repository boundaries; do not activate storage cutover. Address any defects found in the recovery boundary first. Shared-root contention, whole-workspace reads, institutional identity/tenancy/header trust, hosted recovery/load and website/MIS/SSO coordination remain open. Institutional/capacity readiness remains HOLD.
+
+Keep fictional data only. No database reset, production migration, deployment, email, live integration, automatic website publication or force push. Routine completed/tested/privacy-reviewed GitHub updates remain authorized: verify remote head first, preserve history and compare the final remote tree with the intended local snapshot. No routine permission question is needed.
+
+---
+
+# Stage 284 handover — retained historical checkpoint
 
 Prepared 4 November 2026, Asia/Kathmandu, for Dr. Pralhad Karki. Continue the existing project; do not restart or redesign it. This document accompanies a documentation-only successor to the tested code checkpoint below. Inspect the actual current branch before editing; preserve newer work.
 

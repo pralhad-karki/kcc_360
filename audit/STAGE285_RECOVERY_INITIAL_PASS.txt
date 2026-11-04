@@ -1,0 +1,22 @@
+PASS read-only all-namespace export preserves source bytes, stable IDs, audit and references
+PASS stable versioned checksum matches independent Node hashing and memory/SQLite reader parity
+PASS unauthorized export and verify denied before any data read
+PASS authority revocation while hashing prevents release
+PASS database change during object read rejects inconsistent export
+PASS missing or corrupt object denies verification
+PASS marker loss/change fails trusted-anchor verification before restore
+PASS audit loss/change fails trusted-anchor verification before restore
+PASS metadata loss/change fails trusted-anchor verification before restore
+PASS payload loss/change fails trusted-anchor verification before restore
+PASS duplicate loss/change fails trusted-anchor verification before restore
+PASS version loss/change fails trusted-anchor verification before restore
+PASS recomputed tampered checksum cannot replace separately retained anchor
+PASS orphan audit, broken attachment and malformed marker fail even with new digest
+PASS fresh isolated restore rolls back completely on failure
+PASS fresh restore preserves exact database/reference digest and separately copied object
+PASS restore refuses populated store and leaves it unchanged
+PASS restored ACTIVE source cannot reopen withdrawn token through actual public controller
+PASS actual restored file controller permits owner, denies unrelated student and requires object
+PASS audit-retention gap is reported while permanent marker still denies disclosure
+PASS storage faults and row-bound overflow expose generic errors
+{"passed":21,"inventory":{"schema":"KCC360_RECOVERY_INVENTORY_V1","workspaceRows":11,"auditRows":3,"fileRows":1,"namespaces":{"FUTURE-PRIVATE:":1,"KCC-ANNUAL-TARGETS:":1,"KCC-DISCUSSION-STAGING:":1,"KCC-LOCAL-PROGRESSION:":1,"KCC-MIS-ACADEMIC:":1,"KCC-MIS-STAGING:":1,"KCC-MIS-STUDENTS:":1,"KCC-OWNER-DEMO":1,"KCC-SHARE-WITHDRAWAL:":1,"KCC-STRATEGIC-CATALOG:":1,"KCC-WEBSITE-REGISTRATIONS:":1},"collections":{"records":9,"history":0,"projects":8,"audit":2,"notices":2,"plans":1,"activityIntakes":0,"clubs":1,"mentorTransfers":0,"academicRules":0,"academicBatches":0,"clubEvaluations":0,"notificationInbox":0,"notificationPolicies":1,"controlledDocuments":2,"communications":3,"rubrics":1,"portfolioShares":1},"payloadBytes":2117307,"withdrawalMarkers":1,"markersWithoutAudit":0,"attachmentReferences":1,"embeddedReferences":1,"objectBytes":45,"sessionsIncluded":false,"objectListingComplete":false},"fixtureOnly":true,"sourceMutatedByExport":false,"hostedRestore":false,"institutionalReadiness":"HOLD"}

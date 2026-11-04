@@ -11,7 +11,7 @@ import ts from 'typescript';
 import {createEngine} from '../server/engine.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 export const bytes=value=>Buffer.byteLength(typeof value==='string'?value:JSON.stringify(value),'utf8');
-export async function workspaceCapacityFixture({projectCount=8,sessionCount=10_000,serviceSource=null,reflectionResponses=false}={}){
+export async function workspaceCapacityFixture({projectCount=8,sessionCount=10_000,serviceSource=null,reflectionResponses=false,emptyRecoveryStore=false}={}){
  if(!Number.isInteger(projectCount)||projectCount<8||projectCount>1000||!Number.isInteger(sessionCount)||sessionCount<2||sessionCount>10_000)throw Error('Bounded fictional fixture sizes required');
  const directory=fs.mkdtempSync(path.join(os.tmpdir(),'kcc-capacity-')),sqlite=new DatabaseSync(path.join(directory,'fictional.sqlite'));
  for(const migration of ['0000_motionless_nova.sql','0001_neat_tattoo.sql'])sqlite.exec(fs.readFileSync(root+'drizzle/'+migration,'utf8').replaceAll('--> statement-breakpoint',''));sqlite.exec('PRAGMA journal_mode=WAL');
@@ -36,10 +36,12 @@ export async function workspaceCapacityFixture({projectCount=8,sessionCount=10_0
  const service=await import(moduleURL(root+'server/service.ts')),route=await import(moduleURL(root+'app/api/workspace/route.ts'));
  const data=createEngine(null,'s1').snapshot(),template=structuredClone(data.projects[0]);
  data.projects=Array.from({length:projectCount},(_,i)=>({...structuredClone(template),id:'CAPACITY-'+i,title:'Fictional capacity project '+i,state:'IN_PROGRESS',owner:'s1',mentor:'m1',members:['s1','s2'],tasks:[],evidence:[],messages:[],history:[],reflections:{},evaluations:{},certs:{},published:{}}));
- sqlite.prepare('INSERT INTO kcc_workspaces VALUES(?,0,?,?,?)').run('KCC-OWNER-DEMO',JSON.stringify(data),'fictional-fixture',new Date().toISOString());
+ if(!emptyRecoveryStore)sqlite.prepare('INSERT INTO kcc_workspaces VALUES(?,0,?,?,?)').run('KCC-OWNER-DEMO',JSON.stringify(data),'fictional-fixture',new Date().toISOString());
  sqlite.exec('BEGIN');const insert=sqlite.prepare('INSERT INTO kcc_demo_sessions VALUES(?,?,?)');for(let i=0;i<sessionCount;i++)insert.run('fictional-session-'+i,'s1','2026-11-03T00:00:00.000Z');sqlite.exec('COMMIT');resetMetrics();
  const as=(subject,fn)=>context.run({identity:{userId:subject,email:'fictional-owner@example.test'}},fn);
  return {service,sqlite,db:DB,as,files:()=>import(moduleURL(root+'server/files.ts')),shares:()=>import(moduleURL(root+'server/shares.ts')),shareRoutes:()=>import(moduleURL(root+'app/api/portfolio-shares/route.ts')),publicShareRoute:()=>import(moduleURL(root+'app/share/[token]/route.ts')),bucketCount:()=>objects.size,bucketStats:()=>structuredClone(bucketStats),sourceHash:createHash('sha256').update(source).digest('hex'),resetMetrics,metrics:()=>structuredClone(metrics),hookNextRun:fn=>beforeRun=fn,
+  readRecoveryObject:async key=>objects.has(key)?objects.get(key).slice():null,
+  copyRecoveryObject:async(key,value)=>{if(!emptyRecoveryStore||objects.has(key))throw Error('Fresh fictional recovery object required');objects.set(key,new Uint8Array(value))},
   row:()=>sqlite.prepare('SELECT * FROM kcc_workspaces WHERE id=?').get('KCC-OWNER-DEMO'),
   auditCount:()=>sqlite.prepare('SELECT COUNT(*) n FROM kcc_server_audit').get().n,
   seedPayload:payload=>sqlite.prepare('UPDATE kcc_workspaces SET payload=? WHERE id=?').run(JSON.stringify(payload),'KCC-OWNER-DEMO'),
