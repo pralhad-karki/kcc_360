@@ -1,0 +1,22 @@
+{
+  "baseline": "30c1b82752acfde487f09e8771b4e80046b2a77b",
+  "scope": "Local fictional head/coordination rehearsal; no active cutover, hosted or institutional acceptance",
+  "results": [
+    {
+      "check": "typescript",
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "startedAt": "2026-11-04T15:22:38.917861+00:00",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "audit/STAGE287_TYPESCRIPT.txt"
+    },
+    {
+      "check": "build",
+      "command": "node scripts/run-framework.mjs build",
+      "startedAt": "2026-11-04T15:22:41.943589+00:00",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "audit/STAGE287_BUILD.txt"
+    }
+  ]
+}

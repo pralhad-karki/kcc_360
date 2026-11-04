@@ -1,0 +1,30 @@
+{
+  "baseline": "30c1b82752acfde487f09e8771b4e80046b2a77b",
+  "baselineTree": "4cb0f24f54642633714fb9a080b1280c79074360",
+  "codeSHA256": {
+    "server/discussion-migration/head-domain.ts": "a26257a98e4dee1214f09daddca3287ef7ea4e545edcf40c2b6b35f64441a411",
+    "server/discussion-migration/head-application.ts": "7233bfb4724460c9ef0debba0337b647b8780759cb939de0d4df912bee2415b9",
+    "server/discussion-migration/infrastructure/head-repository.ts": "1e972cd0b061f1c9501f70bf6ff63b2d381da8898ffbc8d41ce6baf1126b1f7a",
+    "fixtures/candidate-head.mjs": "0c328a0159ef71290e8e17b5dc5286561072da7eecc8a2a04bcd5cc461d00a6f",
+    "check-discussion-candidate-head.mjs": "254dc523f7040a4366f2f3ec9ee8c1e51189f99d4e96844608a6319245660b66",
+    "scripts/check-task-workflow.mjs": "328de6d91191e84cc37e5a369331efaaef355568a131dda23942538d350a24af"
+  },
+  "verification": {
+    "candidateHeadChecks": 65,
+    "regressionGroups": 79,
+    "typescript": "PASS",
+    "build": "PASS",
+    "memoryAndSQLiteParity": true,
+    "rollbackAndRecoveryPreservation": true,
+    "maxActiveCandidates": 8,
+    "maxObservedPrivateRows": 24,
+    "maximumTestedQueryBelow100Bindings": true
+  },
+  "canonicalSourceChanged": false,
+  "productionCommandPathChanged": false,
+  "activeCutover": false,
+  "productionMigration": false,
+  "liveIntegration": false,
+  "hostedAcceptance": false,
+  "institutionalReadiness": "HOLD"
+}

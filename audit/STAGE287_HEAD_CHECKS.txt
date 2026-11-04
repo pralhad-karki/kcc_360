@@ -1,0 +1,66 @@
+PASS memory disabled methods call no providers
+PASS memory initial inspect is read-only and exposes only private-safe summary
+PASS memory advance materializes exact engine result with atomic head/coordinator/receipt/audit
+PASS memory guarded reverse restores exact baseline and preserves monotonic versions and receipts
+PASS memory duplicate operation retry is historical and never reapplies head effects
+PASS memory same operation with changed kind/project/revisions/reference is rejected
+PASS memory concurrent identical operations commit once and replay the same receipt
+PASS memory competing same-project candidates cannot both advance one head revision
+PASS memory different-project races share a coordinator and cannot lose audit/reminder effects
+PASS memory independent canonical receipt cannot overwrite a newer virtual workspace
+PASS memory cross-project reversal is last-in-first-out even when all effects are no-ops
+PASS memory duplicate active candidate and obsolete ABA revisions are rejected
+PASS memory lost acknowledgement resolves by durable operation without another transition
+PASS memory coordinator failure rolls back all new rows and retry is safe
+PASS memory head failure rolls back all new rows and retry is safe
+PASS memory operation failure rolls back all new rows and retry is safe
+PASS memory audit failure rolls back all new rows and retry is safe
+PASS memory reverse audit failure restores the previous committed head/coordinator exactly
+PASS memory source race at commit preserves winning source and rejects all candidate-head writes
+PASS memory authority revocation at commit leaves no head or operation
+PASS memory immutable candidate commit witness change rejects delayed save
+PASS memory newer staged revision blocks advancement of an old candidate
+PASS memory wrong subject, forged fields and a different actor cannot advance the candidate
+PASS memory changed canonical data blocks materialization/reversal while authorized replay stays historical
+PASS memory replay after later transitions never rewinds a newer head
+PASS memory revoked access cannot inspect or retrieve an operation receipt
+PASS memory corrupt head/coordinator/operation rows fail closed
+PASS memory missing candidate or current transition receipt cannot be silently reconstructed
+PASS memory intact candidate swapped under another key fails binding validation
+PASS memory oversized transaction payload is rejected before any private state changes
+PASS memory bounded stack and query witnesses refuse further advancement without pruning
+PASS sqlite disabled methods call no providers
+PASS sqlite initial inspect is read-only and exposes only private-safe summary
+PASS sqlite advance materializes exact engine result with atomic head/coordinator/receipt/audit
+PASS sqlite guarded reverse restores exact baseline and preserves monotonic versions and receipts
+PASS sqlite duplicate operation retry is historical and never reapplies head effects
+PASS sqlite same operation with changed kind/project/revisions/reference is rejected
+PASS sqlite concurrent identical operations commit once and replay the same receipt
+PASS sqlite competing same-project candidates cannot both advance one head revision
+PASS sqlite different-project races share a coordinator and cannot lose audit/reminder effects
+PASS sqlite independent canonical receipt cannot overwrite a newer virtual workspace
+PASS sqlite cross-project reversal is last-in-first-out even when all effects are no-ops
+PASS sqlite duplicate active candidate and obsolete ABA revisions are rejected
+PASS sqlite lost acknowledgement resolves by durable operation without another transition
+PASS sqlite coordinator failure rolls back all new rows and retry is safe
+PASS sqlite head failure rolls back all new rows and retry is safe
+PASS sqlite operation failure rolls back all new rows and retry is safe
+PASS sqlite audit failure rolls back all new rows and retry is safe
+PASS sqlite reverse audit failure restores the previous committed head/coordinator exactly
+PASS sqlite source race at commit preserves winning source and rejects all candidate-head writes
+PASS sqlite authority revocation at commit leaves no head or operation
+PASS sqlite immutable candidate commit witness change rejects delayed save
+PASS sqlite newer staged revision blocks advancement of an old candidate
+PASS sqlite wrong subject, forged fields and a different actor cannot advance the candidate
+PASS sqlite changed canonical data blocks materialization/reversal while authorized replay stays historical
+PASS sqlite replay after later transitions never rewinds a newer head
+PASS sqlite revoked access cannot inspect or retrieve an operation receipt
+PASS sqlite corrupt head/coordinator/operation rows fail closed
+PASS sqlite missing candidate or current transition receipt cannot be silently reconstructed
+PASS sqlite intact candidate swapped under another key fails binding validation
+PASS sqlite oversized transaction payload is rejected before any private state changes
+PASS sqlite bounded stack and query witnesses refuse further advancement without pruning
+PASS sqlite maximum supported stack uses fewer than 100 bind parameters per query
+PASS sqlite Stage 285 recovery retains head/coordinator/history and rematerializes the recovered view
+PASS sqlite real missing-table failures expose no SQL or schema details
+{"passed":65,"contracts":["memory","drizzle-sqlite"],"canonicalSourceChanged":false,"activeCutover":false,"maxActiveCandidates":8,"hostedAcceptance":false}
