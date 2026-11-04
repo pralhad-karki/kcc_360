@@ -1,4 +1,22 @@
-# Continue KCC360 development — Stage 285 recovery checkpoint
+# Continue KCC360 development — Stage 286 atomic discussion rehearsal
+
+4 November 2026, Asia/Kathmandu. Stage 286 continues from `fd3df99418191801e2f8fa463c0a33d2f2e62011` on `development/website-mock-acceptance`. Inspect actual HEAD/tree/status and remote history before editing; preserve newer/unpublished changes. Read `audit/STAGE286_REPORT.md`, `audit/STAGE286_CODE_MANIFEST.json`, `audit/STAGE286_ATOMIC_CHECKS.txt`, `audit/STAGE286_REGRESSION.json` and `audit/STAGE286_VALIDATION.json`, then the relevant source/tests. Earlier handovers below are historical context; their next-task statements are superseded by this section.
+
+Stage 286 adds default-disabled private candidate-effect/receipt transactions under `server/discussion-migration/`. It bounds selected-project messages/events/history, matching root audit and actual in-app reminder reconciliation; reconstructs the exact engine candidate; and saves the private candidate plus immutable operation receipt and correlated audit atomically through existing tables. Source, staged copies, approvals, files and active command services stay unchanged. There is no runtime composition, route, provider, dispatcher or storage switch.
+
+Private namespace: `KCC-DISCUSSION-REHEARSAL:` plus SHA-256 of canonical JSON `[sourceWorkspaceId, operationId]`. Receipt schema: `KCC360_DISCUSSION_ATOMIC_REHEARSAL_V1`; effect schema: `KCC360_DISCUSSION_EFFECTS_V1`. Operation requests cannot supply actor/authority. Source, staged and authority revisions are required at commit. Retried or concurrent identical operations produce one receipt/audit; lost acknowledgements resolve from receipts without command reevaluation. Replay needs current access and a final authority fence, returns the original historical witness, and never applies old effects to newer source.
+
+These are independent private candidates, not a live or shadow command execution chain. The candidate and receipt are one immutable row, not a new per-project head. Rollback evidence is failed-transaction atomicity, not permission to undo canonical commands. Unexpected initialization outside the contract is rejected. Trusted legacy policy still controls access and notification generation; structural effect checks do not replace it. Notification reconciliation is intentionally workspace-wide and may change on discussion no-ops. Full private effects remain internal; summaries contain witnesses/hashes/flags only. A payload over 1,990,000 UTF-8 bytes is rejected without source deletion or compaction.
+
+`check-discussion-atomic-rehearsal.mjs` covers memory and real SQLite/WAL, full-engine parity, histories/IDs, notification lifecycle, durable receipts, races, rollback, lost acknowledgement and Stage 285 recovery inclusion. Tests remain fictional/disposable; no institutional authority or hosted acceptance is claimed. Existing service/engine/schema/migrations and earlier recovery/withdrawal modules are preserved.
+
+**Next bounded task:** define revisioned private candidate-head advancement and guarded reversal/materialization against durable receipts, including same-record conflicts and shared reminder/audit coordination, before any storage cutover. Keep the canonical path active and all new storage behavior disabled. Do not interpret candidate receipts as completed source writes or improved campus capacity. Shared-root contention, whole-workspace reads, trusted identity/tenancy/header provenance, current withdrawal authority outside rollback scope and hosted recovery/load remain open; readiness HOLD. Website/MIS/SSO, registration operator/reflection/PDF/fallback dependencies and independent website approval remain unchanged.
+
+Continue routine completed/tested/privacy-reviewed GitHub updates, checking remote head and final tree and preserving history without force push. Fictional data only; no existing database reset, production migration, deployment, email, live integration or automatic public publication. No routine permission question is needed.
+
+---
+
+# Stage 285 recovery checkpoint — retained historical handover
 
 4 November 2026, Asia/Kathmandu. Continue this branch and inspect actual HEAD/status/remote history before editing. Stage 285 is the successor to `26c79a8fc766fd2142c2490350b5ba0b969c40ab`; the Stage 284 handover below is retained as historical context. Its recovery-inventory next task is now implemented and rehearsed locally, with limits documented below.
 

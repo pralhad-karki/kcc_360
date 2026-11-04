@@ -1,0 +1,55 @@
+PASS memory disabled service touches no providers
+PASS memory post/reply/resolve effects reconstruct full unchanged-engine output and preserve source/staging
+PASS memory author and mentor reopen preserve existing thread identity and history
+PASS memory normalized no-op creates only private receipt/audit with empty effects
+PASS memory notification acknowledgements survive and real reopen resets them with retained history
+PASS memory intact receipt swapped between operation keys is rejected
+PASS memory authority fence is checked at the end of historical replay
+PASS memory stale no-op retains whole-workspace reminder reconciliation
+PASS memory same operation retries do not rerun engine or duplicate receipt/audit
+PASS memory concurrent identical attempts retain one durable receipt and audit
+PASS memory operation reuse with changed command or project is rejected
+PASS memory lost acknowledgement resolves from receipt without re-executing command
+PASS memory audit failure rolls back the entire private candidate/receipt and leaves source untouched
+PASS memory source revision change at commit rejects candidate and audit
+PASS memory authority revocation at commit rejects candidate and audit
+PASS memory staged revision change at commit rejects candidate
+PASS memory authorized replay is historical and cannot overwrite newer canonical source
+PASS memory denied subjects, forged fields and invalid clocks cannot create receipts
+PASS memory revoked authority cannot retrieve an existing private receipt
+PASS memory corrupt receipt fails closed instead of rerunning a saved operation
+PASS memory unexpected initialization is rejected rather than silently extending the scope
+PASS sqlite disabled service touches no providers
+PASS sqlite post/reply/resolve effects reconstruct full unchanged-engine output and preserve source/staging
+PASS sqlite author and mentor reopen preserve existing thread identity and history
+PASS sqlite normalized no-op creates only private receipt/audit with empty effects
+PASS sqlite notification acknowledgements survive and real reopen resets them with retained history
+PASS sqlite intact receipt swapped between operation keys is rejected
+PASS sqlite authority fence is checked at the end of historical replay
+PASS sqlite stale no-op retains whole-workspace reminder reconciliation
+PASS sqlite same operation retries do not rerun engine or duplicate receipt/audit
+PASS sqlite concurrent identical attempts retain one durable receipt and audit
+PASS sqlite operation reuse with changed command or project is rejected
+PASS sqlite lost acknowledgement resolves from receipt without re-executing command
+PASS sqlite audit failure rolls back the entire private candidate/receipt and leaves source untouched
+PASS sqlite source revision change at commit rejects candidate and audit
+PASS sqlite authority revocation at commit rejects candidate and audit
+PASS sqlite staged revision change at commit rejects candidate
+PASS sqlite authorized replay is historical and cannot overwrite newer canonical source
+PASS sqlite denied subjects, forged fields and invalid clocks cannot create receipts
+PASS sqlite revoked authority cannot retrieve an existing private receipt
+PASS sqlite corrupt receipt fails closed instead of rerunning a saved operation
+PASS sqlite unexpected initialization is rejected rather than silently extending the scope
+PASS sqlite unrelated project effect outside contract is rejected
+PASS sqlite project workflow effect outside contract is rejected
+PASS sqlite root permissions effect outside contract is rejected
+PASS sqlite rewritten old message effect outside contract is rejected
+PASS sqlite forged appended actor effect outside contract is rejected
+PASS sqlite rewritten history effect outside contract is rejected
+PASS sqlite root audit mismatch effect outside contract is rejected
+PASS sqlite notification removal effect outside contract is rejected
+PASS sqlite notification acknowledge forgery effect outside contract is rejected
+PASS sqlite Stage 285 private recovery retains candidate receipt and correlated audit
+PASS sqlite receipt byte budget rejects without source/copy/audit writes
+PASS sqlite real driver failure is translated without SQL/schema details
+{"passed":54,"contracts":["memory","drizzle-sqlite"],"canonicalSourceChanged":false,"activeCutover":false,"hostedAcceptance":false}

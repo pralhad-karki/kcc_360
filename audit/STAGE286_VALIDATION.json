@@ -1,0 +1,22 @@
+{
+  "baseline": "fd3df99418191801e2f8fa463c0a33d2f2e62011",
+  "scope": "Local fictional tests; no active storage cutover or hosted/institutional acceptance",
+  "results": [
+    {
+      "check": "typescript",
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "startedAt": "2026-11-04T08:57:51.289540+00:00",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "audit/STAGE286_TYPESCRIPT.txt"
+    },
+    {
+      "check": "build",
+      "command": "node scripts/run-framework.mjs build",
+      "startedAt": "2026-11-04T08:57:58.154905+00:00",
+      "status": "PASS",
+      "exitCode": 0,
+      "log": "audit/STAGE286_BUILD.txt"
+    }
+  ]
+}

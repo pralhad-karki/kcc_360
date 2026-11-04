@@ -1,0 +1,27 @@
+{
+  "baseline": "fd3df99418191801e2f8fa463c0a33d2f2e62011",
+  "baselineTree": "2b10d941b3ac2fd8ffe15a1bdd9b7779d26876e6",
+  "codeSHA256": {
+    "server/discussion-migration/effect-domain.ts": "95bc50bc130b2ddc040c715482060dda21c1a9d6a06c6b8c06821ed9d5aa5bc3",
+    "server/discussion-migration/atomic-application.ts": "ba063d4e42eedccace4881d4d7fe5d74bbcf09a73536fb84a42e283839681eef",
+    "server/discussion-migration/infrastructure/atomic-repository.ts": "bf8cfa62d241a6ef73a928f02689de3e60dda5a2e5c57a31c1fdd21bf7b68323",
+    "check-discussion-atomic-rehearsal.mjs": "0c9aa66a07bf62441d88d2360328d98016dd23c8deb0c7e0f5790ea2336708f3",
+    "fixtures/discussion-migration.mjs": "6c5ddfeffaaba7f474626c1d87b3fa2eb0b049250bec058af23caf91c8ee96fa",
+    "scripts/check-task-workflow.mjs": "2f3ae5a36ea5cc9cf2e79898cd31ffcb0368f6b7ba5bacacafdef4217df30821"
+  },
+  "verification": {
+    "atomicChecks": 54,
+    "regressionGroups": 78,
+    "typescript": "PASS",
+    "build": "PASS",
+    "memoryAndSQLiteContracts": true,
+    "recoveryInclusion": true
+  },
+  "canonicalSourceChanged": false,
+  "productionCommandPathChanged": false,
+  "activeCutover": false,
+  "liveIntegration": false,
+  "productionMigration": false,
+  "hostedAcceptance": false,
+  "institutionalReadiness": "HOLD"
+}
