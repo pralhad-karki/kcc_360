@@ -1,0 +1,32 @@
+PASS memory disabled rehearsal calls no providers
+PASS memory fresh staged copy reconstructs only its original project
+PASS memory post/reply/resolve previews match the unchanged engine and never save
+PASS memory repeated previews keep IDs, counts and history unchanged in storage
+PASS memory stale thread/count, resolved replies and nonauthor resolution keep legacy no-op behavior
+PASS memory author and current mentor reopen preserve versions, reason and side effects
+PASS memory cancelled/postponed/withdrawn and former-mentor access stays denied
+PASS memory missing, stale and corrupted staged copies cannot materialize
+PASS memory unrelated newer source revision also rejects delayed copies
+PASS memory source and access races reject obsolete preview results
+PASS memory staged revision race rejects the earlier proposal
+PASS memory authority actor/fence change and wrong subject fail closed
+PASS memory strict typed inputs exclude forged actors, metadata and non-JSON values
+PASS memory cross-project references and unauthorized project scope cannot be retargeted
+PASS memory read failures expose generic storage errors without changing source
+PASS sqlite disabled rehearsal calls no providers
+PASS sqlite fresh staged copy reconstructs only its original project
+PASS sqlite post/reply/resolve previews match the unchanged engine and never save
+PASS sqlite repeated previews keep IDs, counts and history unchanged in storage
+PASS sqlite stale thread/count, resolved replies and nonauthor resolution keep legacy no-op behavior
+PASS sqlite author and current mentor reopen preserve versions, reason and side effects
+PASS sqlite cancelled/postponed/withdrawn and former-mentor access stays denied
+PASS sqlite missing, stale and corrupted staged copies cannot materialize
+PASS sqlite unrelated newer source revision also rejects delayed copies
+PASS sqlite source and access races reject obsolete preview results
+PASS sqlite staged revision race rejects the earlier proposal
+PASS sqlite authority actor/fence change and wrong subject fail closed
+PASS sqlite strict typed inputs exclude forged actors, metadata and non-JSON values
+PASS sqlite cross-project references and unauthorized project scope cannot be retargeted
+PASS sqlite read failures expose generic storage errors without changing source
+PASS sqlite actual missing-table errors are sanitized at the repository boundary
+{"passed":31,"contracts":["memory","drizzle-sqlite"],"readOnly":true,"productionCommandPathChanged":false,"cutoverActivated":false,"hostedAcceptance":false}

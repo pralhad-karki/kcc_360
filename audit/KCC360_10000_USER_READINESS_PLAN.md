@@ -37,3 +37,8 @@ The Stage 278 registration operator/status controls, reflection publication, app
 Source-code Git history is not a backup of hosted databases or private-file storage. Restore tests must include those stores and revalidate identity, consent and publication state before service activation. No restoration or production reset was performed here.
 
 **Readiness: HOLD — the target remains unproven pending storage, security, recovery and realistic hosted-load acceptance.**
+
+
+## Migration preparation checkpoint — Stage 281
+
+Stage 280 verified disabled lossless discussion staging. Stage 281 adds a disabled read-only command rehearsal and materialized read checks against the actual legacy engine, including project history and notification reconciliation. It detects stale source/copy/authority and does not save command results. Neither step changes active storage contention or establishes campus capacity. Next: explicitly bound atomic discussion/history/audit/notification effects, then rehearse guarded commit and rollback before cutover. See [STAGE281_REPORT.md](STAGE281_REPORT.md).

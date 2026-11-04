@@ -1,0 +1,63 @@
+PASS memory disabled rehearsal calls no providers
+PASS memory fresh staged copy reconstructs only its original project
+PASS memory post/reply/resolve previews match the unchanged engine and never save
+PASS memory repeated previews keep IDs, counts and history unchanged in storage
+PASS memory stale thread/count, resolved replies and nonauthor resolution keep legacy no-op behavior
+PASS memory author and current mentor reopen preserve versions, reason and side effects
+PASS memory cancelled/postponed/withdrawn and former-mentor access stays denied
+PASS memory missing, stale and corrupted staged copies cannot materialize
+PASS memory unrelated newer source revision also rejects delayed copies
+PASS memory source and access races reject obsolete preview results
+PASS memory staged revision race rejects the earlier proposal
+PASS memory authority actor/fence change and wrong subject fail closed
+PASS memory strict typed inputs exclude forged actors, metadata and non-JSON values
+PASS memory cross-project references and unauthorized project scope cannot be retargeted
+PASS memory read failures expose generic storage errors without changing source
+PASS sqlite disabled rehearsal calls no providers
+PASS sqlite fresh staged copy reconstructs only its original project
+PASS sqlite post/reply/resolve previews match the unchanged engine and never save
+PASS sqlite repeated previews keep IDs, counts and history unchanged in storage
+PASS sqlite stale thread/count, resolved replies and nonauthor resolution keep legacy no-op behavior
+PASS sqlite author and current mentor reopen preserve versions, reason and side effects
+PASS sqlite cancelled/postponed/withdrawn and former-mentor access stays denied
+PASS sqlite missing, stale and corrupted staged copies cannot materialize
+PASS sqlite unrelated newer source revision also rejects delayed copies
+PASS sqlite source and access races reject obsolete preview results
+PASS sqlite staged revision race rejects the earlier proposal
+PASS sqlite authority actor/fence change and wrong subject fail closed
+PASS sqlite strict typed inputs exclude forged actors, metadata and non-JSON values
+PASS sqlite cross-project references and unauthorized project scope cannot be retargeted
+PASS sqlite read failures expose generic storage errors without changing source
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The validation function is expected to return "true". Received false
+
+Caught error:
+
+Error: no such table: kcc_workspaces
+    at async file:///workspace/sites/kcc360-recovered270/check-discussion-command-rehearsal.mjs:69:140
+    at async test (file:///workspace/sites/kcc360-recovered270/check-discussion-command-rehearsal.mjs:20:61)
+    at async file:///workspace/sites/kcc360-recovered270/check-discussion-command-rehearsal.mjs:69:2 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: Error: no such table: kcc_workspaces
+      at grant (file:///workspace/sites/kcc360-recovered270/fixtures/discussion-migration.mjs:21:24)
+      at Object.authorize (file:///workspace/sites/kcc360-recovered270/fixtures/discussion-migration.mjs:25:125)
+      at Object.authorize (file:///workspace/sites/kcc360-recovered270/check-discussion-command-rehearsal.mjs:15:84)
+      at DiscussionCommandRehearsalService.actor (<compiled-test-module>:22:40)
+      at DiscussionCommandRehearsalService.preview (<compiled-test-module>:39:30)
+      at file:///workspace/sites/kcc360-recovered270/check-discussion-command-rehearsal.mjs:69:180
+      at async test (file:///workspace/sites/kcc360-recovered270/check-discussion-command-rehearsal.mjs:20:61)
+      at async file:///workspace/sites/kcc360-recovered270/check-discussion-command-rehearsal.mjs:69:2 {
+    code: 'ERR_SQLITE_ERROR',
+    errcode: 1,
+    errstr: 'SQL logic error'
+  },
+  expected: [Function (anonymous)],
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.22.1

@@ -1,0 +1,26 @@
+PASS portable fictional codec vectors (independent canonical JSON/SHA expectations)
+PASS memory disabled service makes no repository/provider calls
+PASS memory lossless legacy IDs, optional fields, Unicode and rollback reconstruction
+PASS memory staging preserves source, IDs and private field boundaries, with durable replay
+PASS memory two project copies succeed independently; same-project stale copies conflict
+PASS memory legacy and restored discussions preserve existing reply/resolve/reopen behavior
+PASS memory source revision fence rejects change between validation and storage
+PASS memory source and authority fences reject changes at commit
+PASS memory changed source and unauthorized callers cannot stage
+PASS memory audit failure rolls back staged data without driver-error leakage
+PASS memory failed replacement retains the previous staged version and history
+PASS memory source update retains earlier staged versions and reconstructs current source
+PASS memory staged content checksum prevents corrupted replay or inspection
+PASS sqlite disabled service makes no repository/provider calls
+PASS sqlite lossless legacy IDs, optional fields, Unicode and rollback reconstruction
+PASS sqlite staging preserves source, IDs and private field boundaries, with durable replay
+PASS sqlite two project copies succeed independently; same-project stale copies conflict
+PASS sqlite legacy and restored discussions preserve existing reply/resolve/reopen behavior
+PASS sqlite source revision fence rejects change between validation and storage
+PASS sqlite source and authority fences reject changes at commit
+PASS sqlite changed source and unauthorized callers cannot stage
+PASS sqlite audit failure rolls back staged data without driver-error leakage
+PASS sqlite failed replacement retains the previous staged version and history
+PASS sqlite source update retains earlier staged versions and reconstructs current source
+PASS sqlite staged content checksum prevents corrupted replay or inspection
+{"passed":25,"contracts":["memory","drizzle-sqlite"],"liveDiscussionPathChanged":false,"migrationActivated":false,"capacityAcceptance":false}

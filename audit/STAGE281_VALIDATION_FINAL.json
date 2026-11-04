@@ -1,0 +1,59 @@
+{
+  "baseline": "95daa575c80d59e9a1da50d0f5578f19cd4de843",
+  "startedAt": "2026-11-04T05:12:20.904508+00:00",
+  "checks": [
+    {
+      "name": "migration",
+      "command": [
+        "node",
+        "check-discussion-migration.mjs"
+      ],
+      "exitCode": 0,
+      "evidence": "audit/STAGE281_MIGRATION.txt"
+    },
+    {
+      "name": "commands",
+      "command": [
+        "node",
+        "check-discussion-command-rehearsal.mjs"
+      ],
+      "exitCode": 0,
+      "evidence": "audit/STAGE281_COMMANDS_FINAL.txt"
+    },
+    {
+      "name": "typescript",
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exitCode": 0,
+      "evidence": "audit/STAGE281_TYPESCRIPT_FINAL.txt"
+    },
+    {
+      "name": "build",
+      "command": [
+        "node",
+        "scripts/run-framework.mjs",
+        "build"
+      ],
+      "exitCode": 0,
+      "evidence": "audit/STAGE281_BUILD_FINAL.txt"
+    }
+  ],
+  "finishedAt": "2026-11-04T05:12:40.206551+00:00",
+  "codeSHA256": {
+    "server/discussion-migration/command-application.ts": "f2c7bc9b31860167300a2403d40370575087352f550f51536e02ee2e486c63d0",
+    "server/discussion-migration/domain.ts": "8d509ef48b4ee3d08f4d8f7f3739a4e4c52ba3068766dbc0fa3399c47cfeeb74",
+    "server/discussion-migration/command-ports.ts": "4261a56a86d89677b7d4ce6e6c721bbbdf439cbfe96cc3548fe74133f1335448",
+    "server/discussion-migration/command-domain.ts": "4c3ef823527b59c0eadde57381a1ae41eff4dbb0aa918a260ab042d34eb23469",
+    "server/discussion-migration/ports.ts": "8cd38d6c1513f10b1bedf280ebc02c3d286a8c2052cb26b419eb078485d18e58",
+    "server/discussion-migration/application.ts": "2fcff56f5450784d015cf34b5a5ee44cd7b7b5b44eaf02d60a49ab085a2bb9dd",
+    "server/discussion-migration/infrastructure/legacy-command-adapter.ts": "7ce0501d78054bc3f063ff7b3db61e722c31e793c5dd667ca05c7c367dbf3452",
+    "server/discussion-migration/infrastructure/drizzle-repository.ts": "f26b11e1275350adc94cecd2e756ab50d00f523759f7229b905d48648f6d4247",
+    "check-discussion-migration.mjs": "a13f1874b96e1e34a875835be14502037c5207f4e30cb277e88331f7c7611380",
+    "check-discussion-command-rehearsal.mjs": "3fb5ff084a257ecce4bcc29e8669022f38106d92feaff9c76cedbaaff07446b3",
+    "fixtures/discussion-migration.mjs": "6069f48fed033d3bcdfc52a16e2f87a709568d21dd85b9d17f4f578007777814",
+    "scripts/check-task-workflow.mjs": "1b1a6d60475c903167c572e3ef5fe6e353e2b0db6363d18e0dda37d4fb4fb7f6"
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "check": "TYPESCRIPT",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exitCode": 0
+  },
+  {
+    "check": "BUILD",
+    "command": [
+      "node",
+      "scripts/run-framework.mjs",
+      "build"
+    ],
+    "exitCode": 0
+  }
+]

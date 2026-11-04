@@ -1,0 +1,24 @@
+PASS memory disabled rehearsal calls no providers
+PASS memory fresh staged copy reconstructs only its original project
+PASS memory post/reply/resolve previews match the unchanged engine and never save
+PASS memory repeated previews keep IDs, counts and history unchanged in storage
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+true !== false
+
+    at file:///workspace/sites/kcc360-recovered270/check-discussion-command-rehearsal.mjs:36:223
+    at async test (file:///workspace/sites/kcc360-recovered270/check-discussion-command-rehearsal.mjs:20:61)
+    at async file:///workspace/sites/kcc360-recovered270/check-discussion-command-rehearsal.mjs:35:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: true,
+  expected: false,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1

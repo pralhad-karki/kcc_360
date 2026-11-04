@@ -5,9 +5,9 @@ import {alias} from 'drizzle-orm/sqlite-core';
 import {drizzle} from 'drizzle-orm/d1';
 import {workspaces,serverAudit} from '../../../db/schema';
 import {DiscussionConflictError,DiscussionNotFoundError,DiscussionStorageError,validateSnapshot,jsonObject} from '../domain';
-import type {DiscussionMigrationRepository,StagedDiscussion} from '../ports';
+import type {DiscussionMigrationRepository,DiscussionWorkspaceReader,StagedDiscussion} from '../ports';
 type Envelope={current:StagedDiscussion;history:StagedDiscussion[]};
-export class DrizzleDiscussionMigrationRepository implements DiscussionMigrationRepository {
+export class DrizzleDiscussionMigrationRepository implements DiscussionMigrationRepository,DiscussionWorkspaceReader {
  private readonly orm;
  constructor(client:D1Database,private readonly sourceId='KCC-OWNER-DEMO'){this.orm=drizzle(client)}
  private key(projectId:string){return 'KCC-DISCUSSION-STAGING:'+JSON.stringify([this.sourceId,projectId])}
@@ -16,6 +16,11 @@ export class DrizzleDiscussionMigrationRepository implements DiscussionMigration
   if(!e?.current||e.current.format!==1||!Array.isArray(e.history)||!Number.isSafeInteger(e.current.revision))throw new DiscussionStorageError('Invalid staged storage.');
   for(const [index,d] of [...e.history,e.current].entries()){if(d.format!==1||d.revision!==index+1||d.snapshot.projectId!==e.current.snapshot.projectId)throw new DiscussionStorageError('Invalid staged version chain.');validateSnapshot(d.snapshot);}
   return e;
+ }
+ async readWorkspace(){
+  try{const row=await this.orm.select().from(workspaces).where(eq(workspaces.id,this.sourceId)).get();if(!row)throw new DiscussionNotFoundError('Legacy source unavailable.');
+   return {workspace:jsonObject(JSON.parse(row.payload)),fence:{recordId:this.sourceId,revision:row.revision}};
+  }catch(e){if(e instanceof DiscussionNotFoundError)throw e;throw new DiscussionStorageError('Cannot read legacy workspace.')}
  }
  async readLegacy(projectId:string){
   try{const row=await this.orm.select().from(workspaces).where(eq(workspaces.id,this.sourceId)).get();if(!row)throw new DiscussionNotFoundError('Legacy source unavailable.');

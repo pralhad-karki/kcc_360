@@ -1,38 +1,9 @@
-// Same application/repository contract exercised with memory and real SQLite.
-import fs from 'node:fs';import path from 'node:path';import os from 'node:os';import assert from 'node:assert/strict';
-import {pathToFileURL} from 'node:url';import {createHash} from 'node:crypto';import {DatabaseSync} from 'node:sqlite';import ts from 'typescript';
+// Shared fictional fixture; same contract with memory and real SQLite.
+import fs from 'node:fs';import assert from 'node:assert/strict';
 import {createEngine} from './server/engine.mjs';
-const root=process.cwd(),cache=new Map();
-function compile(file){file=path.resolve(file);if(cache.has(file))return cache.get(file);let code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
- code=code.replace(/(from\s*|import\s*)(['"])([^'"]+)\2/g,(whole,prefix,quote,spec)=>{if(spec.startsWith('.')){let target=path.resolve(path.dirname(file),spec);if(!path.extname(target))target+='.ts';return prefix+JSON.stringify(target.endsWith('.ts')?compile(target):pathToFileURL(target).href)}return spec.startsWith('node:')?whole:prefix+JSON.stringify(import.meta.resolve(spec))});
- const url='data:text/javascript;base64,'+Buffer.from(code).toString('base64');cache.set(file,url);return url;
-}
-const domain=await import(compile('server/discussion-migration/domain.ts')),{DiscussionMigrationService}=await import(compile('server/discussion-migration/application.ts')),{DrizzleDiscussionMigrationRepository}=await import(compile('server/discussion-migration/infrastructure/drizzle-repository.ts'));
+import {fixture,domain,digest,clock,engineAtFixedTime,DiscussionMigrationService} from './fixtures/discussion-migration.mjs';
 const {extractDiscussion,restoreDiscussion,canonicalJson,DiscussionConflictError,DiscussionAccessError,DiscussionStorageError,DiscussionValidationError}=domain;
-const digest={sha256:async v=>createHash('sha256').update(v).digest('hex')},clock=()=> '2026-11-04T00:00:00.000Z';let checks=0;
-function engineAtFixedTime(data,actor,command,args){const RealDate=Date;globalThis.Date=class extends RealDate{constructor(...a){super(...(a.length?a:[clock()]))}static now(){return RealDate.parse(clock())}};try{return createEngine(data,actor).run(command,args,{selected:'P101',page:'Projects'}).data}finally{globalThis.Date=RealDate}}
-
-const initial=()=>{const d=createEngine(null,'s1').snapshot();d.projects[0].state='IN_PROGRESS';d.projects[0].messages=[{by:'s1',text:'Fictional legacy नेपाली text',time:'2026-01-01T00:00:00.000Z',extra:{nullable:null,values:[0,false,'']}}];delete d.projects[0].discussionEvents;d.projects[0].privateEvaluation={feedback:'PRIVATE_GRADE'};d.projects[1].state='IN_PROGRESS';d.projects[1].messages=[];d.projects[1].discussionEvents=[];return d};
-function fixture(kind){
- let source=initial(),sourceRevision=0,grantRevision=0,allowed=true,heads=new Map(),audits=[],history=new Map(),beforeBatch=null,failAudit=false;
- const dir=kind==='sqlite'?fs.mkdtempSync(path.join(os.tmpdir(),'kcc-discussion-')):null,db=dir?new DatabaseSync(path.join(dir,'fictional.sqlite')):null;
- if(db){db.exec('PRAGMA journal_mode=WAL; PRAGMA foreign_keys=ON; PRAGMA busy_timeout=1000');assert.equal(db.prepare('PRAGMA journal_mode').get().journal_mode,'wal');db.exec(fs.readFileSync('drizzle/0000_motionless_nova.sql','utf8').replaceAll('--> statement-breakpoint',''));const insert=db.prepare('INSERT INTO kcc_workspaces VALUES(?,0,?,?,?)');insert.run('KCC-OWNER-DEMO',JSON.stringify(source),'fixture',clock());insert.run('MOCK-MIGRATION-GRANT',JSON.stringify({allowed:true}),'grant',clock());}
- const sourceRow=()=>db?db.prepare('SELECT * FROM kcc_workspaces WHERE id=?').get('KCC-OWNER-DEMO'):{revision:sourceRevision,payload:JSON.stringify(source)};
- const grant=()=>db?db.prepare('SELECT * FROM kcc_workspaces WHERE id=?').get('MOCK-MIGRATION-GRANT'):{revision:grantRevision,payload:JSON.stringify({allowed})};
- let tail=Promise.resolve();const client={prepare(q){let args=[];const raw=()=>db.prepare(q).all(...args);const runNow=()=>{if(failAudit&&q.startsWith('insert into "kcc_server_audit"'))throw Error('SQLITE private driver details');const r=db.prepare(q).run(...args);return {success:true,results:[],meta:{changes:Number(r.changes)}}};return {bind(...a){args=a;return this},async raw(){return raw().map(r=>Object.values(r))},async all(){return {results:raw()}},async run(){return runNow()},runNow}},async batch(statements){const task=tail.then(()=>{if(beforeBatch){const f=beforeBatch;beforeBatch=null;f()}db.exec('BEGIN IMMEDIATE');try{const r=statements.map(s=>s.runNow());db.exec('COMMIT');return r}catch(e){db.exec('ROLLBACK');throw e}});tail=task.catch(()=>{});return task}};
- const memory={async readLegacy(id){const p=source.projects.find(p=>p.id===id);if(!p)throw new domain.DiscussionNotFoundError('Missing');return {project:structuredClone(p),fence:{recordId:'KCC-OWNER-DEMO',revision:sourceRevision}}},async readStaged(id){return structuredClone(heads.get(id)??null)},async saveStage(i){if(beforeBatch){const f=beforeBatch;beforeBatch=null;f()}if(i.fences.some(f=>f.revision!==(f.recordId==='KCC-OWNER-DEMO'?sourceRevision:grantRevision))||(heads.get(i.projectId)?.revision??0)!==i.expectedRevision)throw new DiscussionConflictError('Changed');if(failAudit)throw new DiscussionStorageError('No driver details');history.set(i.projectId,[...(history.get(i.projectId)??[]),...(heads.has(i.projectId)?[heads.get(i.projectId)]:[])]);heads.set(i.projectId,structuredClone(i.document));audits.push(i.document.operationId)}};
- const repository=db?new DrizzleDiscussionMigrationRepository(client):memory;
- const authority={async authorize(subject,id){if(subject!=='migration-reviewer'||!['P101','P102'].includes(id)||!JSON.parse(grant().payload).allowed)throw new DiscussionAccessError('Migration denied');return {actor:'d1',fence:{recordId:'MOCK-MIGRATION-GRANT',revision:grant().revision}}}};
- const service=new DiscussionMigrationService(repository,authority,digest,clock,true),inspect=id=>service.inspect('migration-reviewer',id);
- const request=async(id,operationId)=>{const p=await inspect(id);return {projectId:id,operationId,expectedRevision:p.expectedRevision,sourceDigest:p.sourceDigest,discussionDigest:p.discussionDigest,sourceFence:p.sourceFence}};
- const setSource=next=>{if(db)db.prepare('UPDATE kcc_workspaces SET payload=?,revision=revision+1 WHERE id=?').run(JSON.stringify(next),'KCC-OWNER-DEMO');else{source=structuredClone(next);sourceRevision++}};
- return {service,repository,authority,request,inspect,sourceRow,setSource,source:()=>JSON.parse(sourceRow().payload),auditCount:()=>db?db.prepare('SELECT COUNT(*) n FROM kcc_server_audit').get().n:audits.length,
-  history:id=>db?JSON.parse(db.prepare('SELECT payload FROM kcc_workspaces WHERE id=?').get('KCC-DISCUSSION-STAGING:'+JSON.stringify(['KCC-OWNER-DEMO',id])).payload).history:history.get(id),
-  revoke(){if(db)db.prepare('UPDATE kcc_workspaces SET payload=?,revision=revision+1 WHERE id=?').run(JSON.stringify({allowed:false}),'MOCK-MIGRATION-GRANT');else{allowed=false;grantRevision++}},
-  race(fn){beforeBatch=fn},auditFailure(){failAudit=true},tamper(id){if(db){const key='KCC-DISCUSSION-STAGING:'+JSON.stringify(['KCC-OWNER-DEMO',id]),r=db.prepare('SELECT payload FROM kcc_workspaces WHERE id=?').get(key),e=JSON.parse(r.payload);e.current.snapshot.messages[0].text='CORRUPTED';db.prepare('UPDATE kcc_workspaces SET payload=? WHERE id=?').run(JSON.stringify(e),key)}else heads.get(id).snapshot.messages[0].text='CORRUPTED'},
-  async close(){await tail;if(db)db.close();if(dir)fs.rmSync(dir,{recursive:true,force:true})}
- };
-}
+let checks=0;
 async function test(kind,name,fn){const f=fixture(kind);try{await fn(f);checks++;console.log('PASS '+kind+' '+name)}finally{await f.close()}}
 const vectors=JSON.parse(fs.readFileSync('fixtures/discussion-migration-v1.json','utf8'));
 for(const v of vectors.cases){const s=extractDiscussion(v.source);assert.deepEqual(s,v.expectedSnapshot);assert.equal(canonicalJson(s),v.expectedCanonical);assert.equal(await digest.sha256(canonicalJson(s)),v.expectedSHA256);assert.deepEqual(restoreDiscussion(v.source,s),v.source)}checks++;console.log('PASS portable fictional codec vectors (independent canonical JSON/SHA expectations)');

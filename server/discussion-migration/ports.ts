@@ -10,3 +10,6 @@ export interface DiscussionMigrationRepository {
 }
 export interface MigrationAuthorityPort {authorize(subject:string,projectId:string):Promise<MigrationAuthority>}
 export interface DigestPort {sha256(value:string):Promise<string>}
+export interface DiscussionWorkspaceReader {
+ readWorkspace():Promise<{workspace:JsonObject;fence:RevisionFence}>;
+}
