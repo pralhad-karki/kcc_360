@@ -1,0 +1,1 @@
+PASS shared-reflection responses: same-origin bounded forms, explicit optional disclosure, source-bound private unverified acknowledgment, exact replay idempotency, owner-only response view, escaped rendering, no academic change, expiry/revocation/source checks and SQLite CAS/audit rollback.

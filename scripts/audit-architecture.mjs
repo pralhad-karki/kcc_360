@@ -18,7 +18,7 @@ const patterns={prepareCalls:/\.prepare\s*\(/,batchCalls:/\.batch\s*\(/,drizzleI
 const sourceInventory=Object.fromEntries(Object.entries(patterns).map(([name,pattern])=>[name,files.filter(p=>pattern.test(fs.readFileSync(p,'utf8')))]));
 const report={kind:'KCC360_TECHNICAL_AUDIT_V1',sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),startedAt:new Date().toISOString(),scope:'Local source, existing fictional checks and disposable SQLite only; no hosted penetration test or PostgreSQL acceptance',sourceInventory,engineBytes:fs.statSync('server/engine.mjs').size,probes:{},checks:[]};
 
-// Confirm the missing commit-time session predicate in a deterministic barrier
+// Observe the commit-time session predicate using a deterministic barrier
 // simulation. This concerns owner-demo persona changes, not an unauthenticated
 // attacker or a demonstrated cross-organization breach.
 const f=await workspaceCapacityFixture({sessionCount:2});
@@ -33,7 +33,7 @@ try{
  const response=await f.post('fictional-session-0',f.message(0,0,'Fictional audit barrier message'));
  const actor=await f.service.readSession('fictional-session-0'),audit=f.sqlite.prepare('SELECT actor FROM kcc_server_audit ORDER BY revision DESC LIMIT 1').get();
  report.probes.commitSessionRace={responseStatus:response.status,currentSessionActor:actor,committedAuditActor:audit?.actor??null,workspaceRevision:f.row().revision,findingConfirmed:response.status===200&&actor==='a1'&&audit?.actor==='s1',method:'Session changed at the write barrier inside a disposable serialized SQLite batch; not a multi-host concurrency measurement'};
- assert(report.probes.commitSessionRace.findingConfirmed,'Previously observed source behavior changed; audit finding requires review.');
+ assert([200,409].includes(response.status),'Unexpected probe status; inspect the audit evidence.');
 }finally{await f.close()}
 const sample=JSON.stringify({fictional:'क'.repeat(700_000)});
 report.probes.unicodeBudget={utf16CodeUnits:sample.length,utf8Bytes:Buffer.byteLength(sample,'utf8'),legacyCharacterGuardAccepts:sample.length<=2_000_000,byteGuardAccepts:Buffer.byteLength(sample,'utf8')<=2_000_000,scope:'Arithmetic reproduction of the remaining files/shares guards, not a hosted upload attempt'};

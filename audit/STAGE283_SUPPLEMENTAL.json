@@ -1,0 +1,76 @@
+{
+  "results": [
+    {
+      "file": "check-audit-command-map.mjs",
+      "exitCode": 0,
+      "output": "PASS: actual guarded CV create/edit/clear version mapping, content-free audit metadata, legacy reader correlation, no-op/invalid/denied suppression, peer identity isolation, malformed/version/classification/peer mutation rejection, explicit unmapped commands and preserved schema/non-CV writers.\n"
+    },
+    {
+      "file": "check-audit-save.mjs",
+      "exitCode": 0,
+      "output": "PASS: actual service CV atomic metadata save/read binding, no private fields or API metadata leak, create/edit/clear/no-op/denied/stale guards, audit-failure rollback/retry, client metadata rejection/ignoring, concurrent winner preservation, legacy command fallback and mapper-failure no-save. Real in-memory SQLite; no production database touched.\n"
+    },
+    {
+      "file": "check-discussion-audit-map.mjs",
+      "exitCode": 0,
+      "output": "PASS: isolated actual-engine discussion resolve/reopen mapping, legacy/new root references, per-thread version/state and content-free reason references, no-op/denied/stale suppression, immutable history/scope/malformed mutation rejection, ledger binding and preserved live authorization/schema/commands.\n"
+    },
+    {
+      "file": "check-discussion-audit-save.mjs",
+      "exitCode": 0,
+      "output": "PASS: real SQLite discussion atomic state/audit save, reason binding, mentor reopen, no-op/denied/stale rejection, insert-failure rollback/retry, concurrent winner preservation, client-field exclusion, content-free ledger and invalid mapping no-save.\n"
+    },
+    {
+      "file": "check-intake-handoff-audit.mjs",
+      "exitCode": 1,
+      "output": "file:///workspace/sites/kcc360-recovered270/check-intake-handoff-audit.mjs:13\nfunction ready(type='Project',support=false){data=createEngine(null,'s1').snapshot();const f={title:'Individual '+type,type,programme:'BCA',purpose:'Learn through individual work',outputs:'PRIVATE expected deliverable',start:'2026-11-01',due:'2026-12-01',primaryUnit:'ACADEMIC',alignmentReason:'Academic learning',reason:'Student request',...(support?{support_RESEARCH:'yes'}:{})};run('s1','saveActivityIntake',[form(f),'',0]);chosen=data.activityIntakes.at(-1).id;run('s1','submitActivityIntake',[chosen,1]);run('c1','reviewActivityIntake',[form({decision:'ROUTING_CONFIRMED',primaryUnit:'ACADEMIC',reason:'Confirm scope',...(support?{support_RESEARCH:'yes'}:{})}),chosen,1]);run('c1','assignIntakeMentor',[form({mentor:'m1',fit:'PRIVATE expertise assessment',capacity:'PRIVATE capacity assessment',reason:'Suitable mentor'}),chosen,0]);const a=data.activityIntakes.at(-1).mentorAssignments[0];run('m1','respondIntakeMentor',[form({decision:'ACCEPTED',noConflict:'yes',reason:'Available and independent'}),chosen,a.id,1]);}\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^\n\nTypeError: Cannot read properties of undefined (reading 'id')\n    at ready (file:///workspace/sites/kcc360-recovered270/check-intake-handoff-audit.mjs:13:462)\n    at file:///workspace/sites/kcc360-recovered270/check-intake-handoff-audit.mjs:17:46\n\nNode.js v24.22.1\n"
+    },
+    {
+      "file": "check-intake-review-audit.mjs",
+      "exitCode": 1,
+      "output": "file:///workspace/sites/kcc360-recovered270/check-intake-review-audit.mjs:22\nawait execute('s1','saveActivityIntake',[form(input),'',0]);const intakeId=record().id;await execute('s1','submitActivityIntake',[intakeId,1]);const baseProjects=data().projects.length;\n                                                                                   ^\n\nTypeError: Cannot read properties of undefined (reading 'id')\n    at file:///workspace/sites/kcc360-recovered270/check-intake-review-audit.mjs:22:84\n\nNode.js v24.22.1\n"
+    },
+    {
+      "file": "check-intake-withdrawal-support-audit.mjs",
+      "exitCode": 1,
+      "output": "file:///workspace/sites/kcc360-recovered270/check-intake-withdrawal-support-audit.mjs:24\n await execute('s1','saveActivityIntake',[form(input),'',0]);const id=record().id;\n                                                                              ^\n\nTypeError: Cannot read properties of undefined (reading 'id')\n    at intake (file:///workspace/sites/kcc360-recovered270/check-intake-withdrawal-support-audit.mjs:24:79)\n    at async file:///workspace/sites/kcc360-recovered270/check-intake-withdrawal-support-audit.mjs:30:11\n\nNode.js v24.22.1\n"
+    },
+    {
+      "file": "check-internship-readiness.mjs",
+      "exitCode": 1,
+      "output": "file:///workspace/sites/kcc360-recovered270/check-internship-readiness.mjs:2\nlet d=createEngine(null,'s1').snapshot(),base=d.projects.length;const f=x=>({form:x});function run(u,c,args){validateCommandForms(c,args);let out=createEngine(d,u).run(c,args,{page:'Activity Intake'});d=out.data;return out}let r=()=>d.activityIntakes.at(-1),ready=()=>r().internshipReadiness?.at(-1);run('s1','saveActivityIntake',[f({title:'Internship readiness',type:'Internship',programme:'BCA',purpose:'Professional skills',outputs:'Work and report',start:'2026-11-01',due:'2026-12-15',primaryUnit:'ACADEMIC',alignmentReason:'Academic placement',reason:'Student proposal'}),'',0]);let id=r().id;run('s1','submitActivityIntake',[id,1]);run('c1','reviewActivityIntake',[f({decision:'ROUTING_CONFIRMED',primaryUnit:'ACADEMIC',reason:'Confirmed'}),id,1]);run('c1','assignIntakeMentor',[f({mentor:'m1',fit:'Relevant experience',capacity:'Available',reason:'Assigned'}),id,0]);let ma=r().mentorAssignments.at(-1);run('m1','respondIntakeMentor',[f({decision:'ACCEPTED',noConflict:'yes',reason:'Can supervise'}),id,ma.id,1]);let rd={acceptanceReference:'HOST-ACCEPT-1',supervisorName:'Host Supervisor',supervisorDesignation:'Engineering Manager',supervisorConfirmation:'HOST-SUP-1',agreementReference:'LA-1',supervisorEmail:'supervisor@example.test',outcomes:'Apply software methods',milestones:'Build, review and document',schedule:'Weekday supervised work; weekly college check-in',evidencePlan:'Daily logbook and verified outputs',assessmentPlan:'Supervisor feedback, report and presentation',conditions:'Host induction and safety arrangements confirmed',acceptanceDate:'2026-10-17',studentAgreement:'yes',reason:'Record accepted host placement'};run('s1','draftInternshipReadiness',[f(rd),id,0]);assert.equal(ready(),undefined);run('s1','submitInternshipPlacement',[f({studentNumber:'KCC-001',organization:'Host Organization',address:'Kathmandu',recipient:'HR Manager',role:'Software intern',mode:'CURRICULAR',start:'2026-11-01',end:'2026-12-15',hours:'160',objectives:'Develop and report on a supervised application',reason:'Placement proposal'}),id,0]);let placement=r().internshipPlacements.at(-1);run('m1','reviewInternshipPlacement',[f({reason:'Suitable'}),id,placement.id,1,'MENTOR_REVIEWED']);run('d1','reviewInternshipPlacement',[f({reason:'Approach approved'}),id,placement.id,1,'APPROVED']);run('d1','issueInternshipLetter',[id,placement.id,1]);let lid=r().internshipLetters.at(-1).id;\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\n\nTypeError: Cannot read properties of undefined (reading 'id')\n    at file:///workspace/sites/kcc360-recovered270/check-internship-readiness.mjs:2:595\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n\nNode.js v24.22.1\n"
+    },
+    {
+      "file": "check-portfolio-export-api.mjs",
+      "exitCode": 0,
+      "output": "PASS: combined/declarations-only CV, selected-section whitelist, safe print text, peer isolation, empty/duplicate denial, changed-declaration digest rejection and no storage writes.\nPASS: own-current certificate-only CV, escaped minimal fields, duplicate/peer/revoked/superseded/paused/stale-evaluation denial, replacement re-selection, changed-content digest, independent public QR state and no writes.\nPASS: authenticated owner/student-only private export POST, exact actor/revision/selection, fresh digest/identity/session/storage rechecks, no workspace/audit/share writes, origin/type/size/JSON guards, protected no-store HTML headers and no public GET/token. No browser/PDF acceptance.\n"
+    },
+    {
+      "file": "check-reflection-email-delivery.mjs",
+      "exitCode": 0,
+      "output": "PASS disabled email delivery protocol: exact registered-contact/source revalidation, immutable target, persisted attempt model, no blind timeout retry, signed scoped accepted/delivered/bounce/no-send receipts, idempotent and ordered history, bounded backoff, private queue and isolated CAS/audit-before-send pattern. No actual transport or receipt endpoint installed.\n"
+    },
+    {
+      "file": "check-reflection-email-monitor.mjs",
+      "exitCode": 0,
+      "output": "Reflection email monitoring: read-only SQLite route, all persona guards, owner authentication, source privacy, state semantics and default readiness passed.\n"
+    },
+    {
+      "file": "check-reflection-email-runner.mjs",
+      "exitCode": 0,
+      "output": "PASS persisted email runner/store: disabled default, actual SQLite claim+audit before fake transport, academic/recipient/other-job isolation, concurrent/CAS/audit failure protection, post-claim source/workspace recheck and safe cancellation, uncertain/result-save recovery via authenticated lookup without resend, bounded safe retries and private outcomes. No real mail provider or scheduler enabled.\n"
+    },
+    {
+      "file": "check-reflection-email-save.mjs",
+      "exitCode": 0,
+      "output": "PASS evaluation appreciation: submission never queues, final human evaluation + private queue atomicity, approved department sender, duplicate guard, blocked-source save preservation, injection denial, audit rollback and persona/workspace CAS. Sending remains disabled.\n"
+    },
+    {
+      "file": "check-reflection-sharing.mjs",
+      "exitCode": 0,
+      "output": "PASS submitted-reflection sharing: actual submission before evaluation, preview/consent, minimal status-labelled snapshot, no achievement/publication side effects, anonymous escaped view, source invalidation, expiry/revocation/owner and atomic race guards.\n"
+    }
+  ],
+  "passed": 10,
+  "failed": 4
+}

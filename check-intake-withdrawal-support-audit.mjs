@@ -1,14 +1,17 @@
+// Historical fictional start dates require the original October review clock.
+import {mock as fixtureClock} from 'node:test';
+fixtureClock.timers.enable({apis:['Date'],now:Date.parse('2026-10-19T08:00:00.000Z')});
 import fs from 'node:fs';import assert from 'node:assert/strict';import {DatabaseSync} from 'node:sqlite';import ts from 'typescript';import {pathToFileURL} from 'node:url';import {readAuditRecordMetadata} from './server/audit-record-format.mjs';
 const sql=new DatabaseSync(':memory:');sql.exec(fs.readFileSync('drizzle/0000_motionless_nova.sql','utf8').replaceAll('--> statement-breakpoint',''));let beforeBatch=()=>{};
 const DB={prepare(query){let values=[];return {bind(...v){values=v;return this},async first(){return sql.prepare(query).get(...values)||null},async run(){return {meta:{changes:Number(sql.prepare(query).run(...values).changes)}}}}},async batch(statements){beforeBatch();beforeBatch=()=>{};sql.exec('BEGIN');try{const result=[];for(const statement of statements)result.push(await statement.run());sql.exec('COMMIT');return result}catch(e){sql.exec('ROLLBACK');throw e}}};
 globalThis.__auditEnv={DB,KCC_DEMO_OWNER_EMAIL:'owner@example.test'};globalThis.__auditIdentity={userId:'owner-subject',email:'owner@example.test'};
-const url=file=>JSON.stringify(pathToFileURL(process.cwd()+'/server/'+file).href);let source=fs.readFileSync('server/service.ts','utf8').replace("import { env } from 'cloudflare:workers';",'const env=globalThis.__auditEnv;').replace("import { getChatGPTUser } from '../app/chatgpt-auth';",'const getChatGPTUser=async()=>globalThis.__auditIdentity;');for(const file of ['engine.mjs','form-fields.mjs','audit-command-map.mjs'])source=source.replace("'./"+file+"'",url(file));const svc=await import('data:text/javascript;base64,'+Buffer.from(ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText).toString('base64'));
+const url=file=>JSON.stringify(pathToFileURL(process.cwd()+'/server/'+file).href);let source=fs.readFileSync('server/service.ts','utf8').replaceAll("'./workspace-write-policy.mjs'",JSON.stringify(new URL('./server/workspace-write-policy.mjs',import.meta.url).href)).replace("import { env } from 'cloudflare:workers';",'const env=globalThis.__auditEnv;').replace("import { getChatGPTUser } from '../app/chatgpt-auth';",'const getChatGPTUser=async()=>globalThis.__auditIdentity;');for(const file of ['engine.mjs','form-fields.mjs','audit-command-map.mjs'])source=source.replace("'./"+file+"'",url(file));const svc=await import('data:text/javascript;base64,'+Buffer.from(ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText).toString('base64'));
 
 import {mapIntakeReviewAuditMetadata} from './server/intake-review-audit-map.mjs';
 await svc.workspaceResponse('owner-subject');
 const load=()=>sql.prepare('SELECT * FROM kcc_workspaces').get(),data=()=>JSON.parse(load().payload),audits=()=>sql.prepare('SELECT * FROM kcc_server_audit ORDER BY revision').all(),snapshot=()=>JSON.stringify({workspace:load(),audit:audits()}),record=()=>data().activityIntakes.at(-1);
 const form=x=>({form:x}),cases=[];
-async function actor(id){await svc.selectActor('owner-subject',id)}
+async function actor(id){fixtureClock.timers.tick(1);await svc.selectActor('owner-subject',id)}
 function body(id,command,args,revision=load().revision){return {actor:id,command,args,revision,context:{page:'Activity Intake'},auditMetadata:{record:'FORGED-RECORD',actor:'a1',reason:'PRIVATE FORGED REASON'}}}
 async function execute(id,command,args){await actor(id);return svc.execute('owner-subject',body(id,command,args))}
 async function mapped(id,command,args,expected){
@@ -62,3 +65,5 @@ assert.equal(data().projects.length,projectCount);
 // Mapping failure does not accept forged actor or withdrawal-state metadata.
 for(const c of cases){const after=structuredClone(c.after),r=after.activityIntakes.at(-1);if(c.command==='withdrawActivityIntake')r.decisions.at(-1).by='s2';else if(c.command==='withdrawIntakeMentor')r.mentorAssignments.at(-1).withdrawal.priorState='WRONG';else {const changed=r.supportRequests.find((q,i)=>JSON.stringify(q)!==JSON.stringify(c.before.activityIntakes.at(-1).supportRequests?.[i]));if(c.command==='requestIntakeSupport')changed.version+=1;else if(c.command==='respondIntakeSupport')changed.response.by='s2';else changed.withdrawal.priorState='WRONG'}assert.throws(()=>mapIntakeReviewAuditMetadata({...c,after}),/INVALID_INTAKE_REVIEW_AUDIT_TRANSITION/)}
 sql.close();console.log('PASS: actual SQLite draft/submitted/returned student withdrawal, accepted mentor withdrawal, multi-target support request/decline/retry/accept/withdraw with per-target versions; private metadata, original decisions retained, rollback/retry, duplicate/stale/actor/declaration/source/linkage denial, non-last request mapping and no activity creation.');
+
+fixtureClock.timers.reset();

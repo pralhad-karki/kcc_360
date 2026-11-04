@@ -128,3 +128,8 @@ Recommended sequence:
 **Six-rule status:** separation is partial; ORM abstraction is incomplete; dynamic data mostly remains plain text JSON; generic errors are inconsistent outside new boundaries; WAL is verified in local fixtures rather than a configurable D1 guarantee; local decoupled tests exist but cross-driver/hosted acceptance remains open. Do not claim full compliance yet.
 
 Primary references checked: [PostgreSQL INSERT and ON CONFLICT](https://www.postgresql.org/docs/current/sql-insert.html), [Cloudflare D1 binding and batch transaction semantics](https://developers.cloudflare.com/d1/worker-api/d1-database/), [Drizzle dialect schema example](https://orm.drizzle.team/docs/schemas). These document platform differences; source findings above come from the pinned KCC360 checkpoint. Website contract, source approvals, consent rules and integration readiness are unchanged by this audit.
+
+
+## Local remediation follow-up — Stage 283
+
+The original findings above describe pinned source 2c0616f and are retained as historical audit evidence. [STAGE283_REPORT.md](STAGE283_REPORT.md) records the subsequent bounded fixes. TA-06's reproduced owner-demo selected-persona save race is now rejected at commit for generic commands, uploads and authenticated share writes, including same-actor/new-generation changes. TA-07's identified character-based workspace save guards now use the shared UTF-8 limit. This does not close institutional identity/tenancy, hosting trust, storage architecture or recovery acceptance. A quota-denied revocation leaves the existing link unchanged; safe recovery/withdrawal for already-oversized state remains a rollout dependency.

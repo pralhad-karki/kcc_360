@@ -1,0 +1,37 @@
+PASS byte policy accepts exact UTF-8 boundary and rejects multibyte overflow/non-string
+PASS session selection strictly advances under a frozen/backward clock, including ABA
+PASS concurrent persona selections preserve one valid monotonically versioned row
+PASS malformed stored session timestamps fail closed
+PASS generic command rejects commit-time persona change
+PASS generic command rejects commit-time same-actor new generation
+PASS deleted sessions cannot commit previously authorized commands
+PASS current command saves once, stale retry conflicts and audit failure rolls back
+PASS upload rejects commit-time persona change and removes its object
+PASS upload rejects commit-time session generation change and removes its object
+PASS upload above byte budget rejects before object persistence
+PASS valid large Nepali upload retains one private object, metadata and audit
+PASS share creation rejects persona change
+PASS share creation rejects same-actor session generation change
+PASS share revoke race preserves the current link and consent
+PASS share creation above byte budget changes neither consent nor audit
+PASS share revocation above byte budget fails without partially withdrawing consent
+PASS valid large Nepali share keeps minimal public fields and durable revocation
+PASS internal email ledger rejects overflow atomically
+PASS internal email ledger accepts valid large Nepali payload
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: {"ok":false,"reason":"INVALID_COMMAND","changed":false}
+    at file:///workspace/sites/kcc360-recovered270/check-workspace-write-guards.mjs:37:608
+    at async test (file:///workspace/sites/kcc360-recovered270/check-workspace-write-guards.mjs:10:91)
+    at async file:///workspace/sites/kcc360-recovered270/check-workspace-write-guards.mjs:37:1 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.1

@@ -1,3 +1,4 @@
+import {assertUnchangedOrReviewedWorkspaceWrite} from './scripts/assert-reviewed-workspace-write.mjs';
 import {assertServiceAuditOnlyChange} from './scripts/assert-service-audit-only-change.mjs';
 import assert from 'node:assert/strict';import fs from 'node:fs';import {execFileSync} from 'node:child_process';import {resolvePermission,PERMISSION_POLICY_VERSION,PERMISSION_CATALOG} from './server/permission-policy.mjs';
 const now='2026-10-17T12:00:00.000Z',principal={personId:'person-a',tenantId:'KCC',active:true},grant={id:'g-mentor',version:1,personId:'person-a',roleId:'MENTOR',status:'APPROVED',effect:'ALLOW',scope:{tenantId:'KCC',projectId:'project-1'},permissions:['ACTIVITY.APPROVE','EVIDENCE.VERIFY'],clearance:'CONFIDENTIAL',validFrom:'2026-10-01T00:00:00Z',validUntil:'2026-11-01T00:00:00Z',relationships:['ASSIGNED_MENTOR']},request={permission:'ACTIVITY.APPROVE',scope:{tenantId:'KCC',projectId:'project-1'},classification:'INTERNAL',relationships:['ASSIGNED_MENTOR'],record:{createdBy:'faculty-b',owner:'student-c',members:['student-c']}},personMap={'faculty-b':'person-b','student-c':'person-c','mentor-a':'person-a','coordinator-alias':'person-a'};
@@ -17,7 +18,7 @@ const fileGrant={...grant,permissions:['FILE.READ'],relationships:['OWNER']},fil
 why({grants:[{...grant,scope:Object.create({tenantId:'OTHER'})}]},'INVALID_GRANTS');why({request:{...request,scope:Object.create({tenantId:'KCC'})}},'SCOPE_DENIED');
 const frozen=JSON.stringify(base);resolvePermission(base);assert.equal(JSON.stringify(base),frozen);assert.ok(!JSON.stringify(resolve()).includes('student-c'));
 // This stage must not activate new policy or change existing identity/session authorization.
-for(const path of ['server/files.ts','server/shares.ts','server/certificates.ts','server/public-certificates.ts','server/internship-letters.ts','app/api/session/route.ts'])assert.equal(fs.readFileSync(path,'utf8'),execFileSync('git',['show','HEAD:'+path],{encoding:'utf8'}),path+' changed unexpectedly');
+for(const path of ['server/files.ts','server/shares.ts','server/certificates.ts','server/public-certificates.ts','server/internship-letters.ts','app/api/session/route.ts'])assertUnchangedOrReviewedWorkspaceWrite(path);
 console.log('PASS: scoped multi-role capability union, complete-grant matching, tenant isolation, classification, explicit deny precedence, relationship constraints, pending/revoked/expired boundaries, same-person aliases, unknown legacy identity denial, provenance, input immutability and unchanged live authorization entry points.');
 
 // Workflow generation may evolve; the permission pilots must remain disconnected.

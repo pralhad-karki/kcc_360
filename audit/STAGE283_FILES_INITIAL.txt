@@ -1,0 +1,1 @@
+PASS: upload format/size/signature checks, PDF active-content rejection, private object persistence, SHA-256, protected downloads, stale/role/verified-evidence guards, orphan cleanup, record association and server form-field tampering prevention.

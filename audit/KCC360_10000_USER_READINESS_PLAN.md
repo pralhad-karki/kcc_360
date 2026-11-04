@@ -42,3 +42,8 @@ Source-code Git history is not a backup of hosted databases or private-file stor
 ## Migration preparation checkpoint — Stage 281
 
 Stage 280 verified disabled lossless discussion staging. Stage 281 adds a disabled read-only command rehearsal and materialized read checks against the actual legacy engine, including project history and notification reconciliation. It detects stale source/copy/authority and does not save command results. Neither step changes active storage contention or establishes campus capacity. Next: explicitly bound atomic discussion/history/audit/notification effects, then rehearse guarded commit and rollback before cutover. See [STAGE281_REPORT.md](STAGE281_REPORT.md).
+
+
+## Audit remediation checkpoint — Stage 283
+
+Captured session-generation predicates now guard changed generic demo commands, uploads and authenticated shares; known workspace character-count limits use UTF-8 bytes. These are integrity fixes, not capacity improvements or institutional identity activation. Shared-root contention and whole-workspace serialization remain. Keep readiness HOLD. Address non-destructive over-budget recovery/withdrawal before real consented records, then resume the bounded atomic discussion transition. See [STAGE283_REPORT.md](STAGE283_REPORT.md).

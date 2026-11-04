@@ -1,3 +1,4 @@
+import {assertUnchangedOrReviewedWorkspaceWrite} from './scripts/assert-reviewed-workspace-write.mjs';
 import {assertDiscussionCommandAdditions} from './scripts/assert-discussion-command-additions.mjs';
 import {assertServiceAuditOnlyChange} from './scripts/assert-service-audit-only-change.mjs';
 import assert from 'node:assert/strict';import fs from 'node:fs';import {execFileSync} from 'node:child_process';import {createEngine} from './server/engine.mjs';import {mapAuditCommandMetadata} from './server/audit-command-map.mjs';import {readAuditRecordMetadata} from './server/audit-record-format.mjs';
@@ -11,7 +12,7 @@ assert.deepEqual(mapAuditCommandMetadata({...context,command:'savePlanForm'}),{s
 for(const mutate of [x=>x.after.cvDeclarations.s1.version=3,x=>x.after.cvDeclarations.s1.classification='VERIFIED',x=>x.after.cvDeclarations.s1.content.privateText='PRIVATE LEAK',x=>x.after.cvDeclarations.s1.updatedAt='not-time',x=>x.after.cvDeclarations.s2=structuredClone(x.after.cvDeclarations.s1),x=>x.actor='m1',x=>x.commit.revisionAfter=5,x=>x.commit.reason='PRIVATE LEAK']){let x=structuredClone(context);mutate(x);assert.throws(()=>mapAuditCommandMetadata(x))}
 const changedOnlyTime=structuredClone(context);changedOnlyTime.before=structuredClone(after);changedOnlyTime.after=structuredClone(after);changedOnlyTime.after.cvDeclarations.s1.version=2;changedOnlyTime.after.cvDeclarations.s1.updatedAt='2026-10-19T08:21:00Z';assert.throws(()=>mapAuditCommandMetadata(changedOnlyTime));
 const peerEngine=createEngine(after,'s2'),peerAfter=peerEngine.run('saveCVDeclarations',[{form:{...form,summary:'SECOND PRIVATE PERSON'}}]).data;let peerMap=mapAuditCommandMetadata({...context,actor:'s2',before:after,after:peerAfter});assert.equal(readAuditRecordMetadata(peerMap.recordValue).metadata.record.id,'s2');assert.ok(!peerMap.recordValue.includes('PRIVATE'));
-for(const file of ['server/files.ts','server/shares.ts','db/schema.ts','drizzle/0000_motionless_nova.sql'])assert.equal(fs.readFileSync(file,'utf8'),execFileSync('git',['show','HEAD:'+file],{encoding:'utf8'}));
+for(const file of ['server/files.ts','server/shares.ts','db/schema.ts','drizzle/0000_motionless_nova.sql'])assertUnchangedOrReviewedWorkspaceWrite(file);
 console.log('PASS: actual guarded CV create/edit/clear version mapping, content-free audit metadata, legacy reader correlation, no-op/invalid/denied suppression, peer identity isolation, malformed/version/classification/peer mutation rejection, explicit unmapped commands and preserved schema/non-CV writers.');
 
 const removed={...structuredClone(context),before:structuredClone(after),after:structuredClone(after)};delete removed.after.cvDeclarations.s1;assert.throws(()=>mapAuditCommandMetadata(removed));

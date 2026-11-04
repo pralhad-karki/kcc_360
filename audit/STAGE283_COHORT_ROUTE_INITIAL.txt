@@ -1,0 +1,1 @@
+PASS durable mock cohort API/service/store on SQLite: owner/role/source/session/revision guards, contention, atomic audit rollback, uncertain receipts, independent review/application, no-source withdrawal with retained approval, fresh changed-source proposal, replay/final denial, corrupt-store no reset and unchanged/private ordinary workspace.

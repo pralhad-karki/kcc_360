@@ -1,3 +1,4 @@
+import {workspacePayloadFits} from './workspace-write-policy.mjs';
 import {createMockCohortLedger,transitionMockCohortBatch} from './cohort-progression-batch.mjs';
 
 // Separate server-private record in the existing schema. Never load it through
@@ -23,7 +24,7 @@ export function createMockCohortStore({db}){
    const transition=await transitionMockCohortBatch({ledger:current.ledger,actor:session.actor,revision,action,batchId,bindingHash,reason,input,now});
    if(!transition.ok)return transition;
    const next=transition.ledger,payload=JSON.stringify({kind,ledger:next});
-   if(payload.length>2_000_000)return failure('LEDGER_SIZE_LIMIT');
+   if(!workspacePayloadFits(payload))return failure('LEDGER_SIZE_LIMIT');
    const id=crypto.randomUUID(),scope=MOCK_COHORT_WORKSPACE;
    const guard='EXISTS (SELECT 1 FROM kcc_demo_sessions WHERE subject=? AND actor=? AND updated_at=?)';
    const write=current.exists

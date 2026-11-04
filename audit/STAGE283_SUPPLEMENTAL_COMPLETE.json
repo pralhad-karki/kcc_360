@@ -1,0 +1,76 @@
+{
+  "results": [
+    {
+      "file": "check-audit-command-map.mjs",
+      "exitCode": 0,
+      "output": "PASS: actual guarded CV create/edit/clear version mapping, content-free audit metadata, legacy reader correlation, no-op/invalid/denied suppression, peer identity isolation, malformed/version/classification/peer mutation rejection, explicit unmapped commands and preserved schema/non-CV writers.\n"
+    },
+    {
+      "file": "check-audit-save.mjs",
+      "exitCode": 0,
+      "output": "PASS: actual service CV atomic metadata save/read binding, no private fields or API metadata leak, create/edit/clear/no-op/denied/stale guards, audit-failure rollback/retry, client metadata rejection/ignoring, concurrent winner preservation, legacy command fallback and mapper-failure no-save. Real in-memory SQLite; no production database touched.\n"
+    },
+    {
+      "file": "check-discussion-audit-map.mjs",
+      "exitCode": 0,
+      "output": "PASS: isolated actual-engine discussion resolve/reopen mapping, legacy/new root references, per-thread version/state and content-free reason references, no-op/denied/stale suppression, immutable history/scope/malformed mutation rejection, ledger binding and preserved live authorization/schema/commands.\n"
+    },
+    {
+      "file": "check-discussion-audit-save.mjs",
+      "exitCode": 0,
+      "output": "PASS: real SQLite discussion atomic state/audit save, reason binding, mentor reopen, no-op/denied/stale rejection, insert-failure rollback/retry, concurrent winner preservation, client-field exclusion, content-free ledger and invalid mapping no-save.\n"
+    },
+    {
+      "file": "check-intake-handoff-audit.mjs",
+      "exitCode": 0,
+      "output": "PASS: actual SQLite service handoff source/activity audit binding, private-content exclusion, rollback/retry, duplicate/stale no-save, invalid transition rejection, report count once/draft not verified, role denial and preservation guard negative probe.\n"
+    },
+    {
+      "file": "check-intake-review-audit.mjs",
+      "exitCode": 0,
+      "output": "PASS: actual SQLite routing return/resubmit/confirm, mentor request/reassignment/replacement/acceptance audit references and versions; private-content exclusion, immutable prior records, all-command rollback/retry, duplicate/stale/unauthorized/conflict declaration denial and concurrent-winner preservation.\n"
+    },
+    {
+      "file": "check-intake-withdrawal-support-audit.mjs",
+      "exitCode": 0,
+      "output": "PASS: actual SQLite draft/submitted/returned student withdrawal, accepted mentor withdrawal, multi-target support request/decline/retry/accept/withdraw with per-target versions; private metadata, original decisions retained, rollback/retry, duplicate/stale/actor/declaration/source/linkage denial, non-last request mapping and no activity creation.\n"
+    },
+    {
+      "file": "check-internship-readiness.mjs",
+      "exitCode": 0,
+      "output": "PASS: actual private file upload/download and locks, student agreement, independent host/supervisor verification, declarations, immutable return/revision and proof binding, start authorization, withdrawal, stale letter rejection, scope privacy and no execution/credit/finance grants.\nPASS: all-role readiness rendering, retained supervisor/authorization history and private panel scope.\n"
+    },
+    {
+      "file": "check-portfolio-export-api.mjs",
+      "exitCode": 0,
+      "output": "PASS: combined/declarations-only CV, selected-section whitelist, safe print text, peer isolation, empty/duplicate denial, changed-declaration digest rejection and no storage writes.\nPASS: own-current certificate-only CV, escaped minimal fields, duplicate/peer/revoked/superseded/paused/stale-evaluation denial, replacement re-selection, changed-content digest, independent public QR state and no writes.\nPASS: authenticated owner/student-only private export POST, exact actor/revision/selection, fresh digest/identity/session/storage rechecks, no workspace/audit/share writes, origin/type/size/JSON guards, protected no-store HTML headers and no public GET/token. No browser/PDF acceptance.\n"
+    },
+    {
+      "file": "check-reflection-email-delivery.mjs",
+      "exitCode": 0,
+      "output": "PASS disabled email delivery protocol: exact registered-contact/source revalidation, immutable target, persisted attempt model, no blind timeout retry, signed scoped accepted/delivered/bounce/no-send receipts, idempotent and ordered history, bounded backoff, private queue and isolated CAS/audit-before-send pattern. No actual transport or receipt endpoint installed.\n"
+    },
+    {
+      "file": "check-reflection-email-monitor.mjs",
+      "exitCode": 0,
+      "output": "Reflection email monitoring: read-only SQLite route, all persona guards, owner authentication, source privacy, state semantics and default readiness passed.\n"
+    },
+    {
+      "file": "check-reflection-email-runner.mjs",
+      "exitCode": 0,
+      "output": "PASS persisted email runner/store: disabled default, actual SQLite claim+audit before fake transport, academic/recipient/other-job isolation, concurrent/CAS/audit failure protection, post-claim source/workspace recheck and safe cancellation, uncertain/result-save recovery via authenticated lookup without resend, bounded safe retries and private outcomes. No real mail provider or scheduler enabled.\n"
+    },
+    {
+      "file": "check-reflection-email-save.mjs",
+      "exitCode": 0,
+      "output": "PASS evaluation appreciation: submission never queues, final human evaluation + private queue atomicity, approved department sender, duplicate guard, blocked-source save preservation, injection denial, audit rollback and persona/workspace CAS. Sending remains disabled.\n"
+    },
+    {
+      "file": "check-reflection-sharing.mjs",
+      "exitCode": 0,
+      "output": "PASS submitted-reflection sharing: actual submission before evaluation, preview/consent, minimal status-labelled snapshot, no achievement/publication side effects, anonymous escaped view, source invalidation, expiry/revocation/owner and atomic race guards.\n"
+    }
+  ],
+  "passed": 14,
+  "failed": 0
+}

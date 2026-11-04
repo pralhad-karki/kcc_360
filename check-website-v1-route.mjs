@@ -11,7 +11,7 @@ const abs=p=>JSON.stringify(pathToFileURL(process.cwd()+'/'+p).href);
 const compile=s=>'data:text/javascript;base64,'+Buffer.from(ts.transpileModule(s,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText).toString('base64');
 globalThis.__websiteRouteEnv={DB:db,KCC_DEMO_OWNER_EMAIL:'owner@example.test'};
 globalThis.__websiteRouteIdentity={userId:'fixture-reviewer',email:'owner@example.test'};
-let service=fs.readFileSync('server/service.ts','utf8')
+let service=fs.readFileSync('server/service.ts','utf8').replaceAll("'./workspace-write-policy.mjs'",JSON.stringify(new URL('./server/workspace-write-policy.mjs',import.meta.url).href))
  .replace("import { env } from 'cloudflare:workers';",'const env=globalThis.__websiteRouteEnv;')
  .replace("import { getChatGPTUser } from '../app/chatgpt-auth';",'const getChatGPTUser=async()=>globalThis.__websiteRouteIdentity;');
 for(const name of ['engine.mjs','form-fields.mjs','audit-command-map.mjs'])service=service.replace(JSON.stringify('./'+name).replaceAll('"',"'"),abs('server/'+name));

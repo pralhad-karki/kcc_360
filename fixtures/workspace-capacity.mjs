@@ -14,13 +14,14 @@ export const bytes=value=>Buffer.byteLength(typeof value==='string'?value:JSON.s
 export async function workspaceCapacityFixture({projectCount=8,sessionCount=10_000,serviceSource=null}={}){
  if(!Number.isInteger(projectCount)||projectCount<8||projectCount>1000||!Number.isInteger(sessionCount)||sessionCount<2||sessionCount>10_000)throw Error('Bounded fictional fixture sizes required');
  const directory=fs.mkdtempSync(path.join(os.tmpdir(),'kcc-capacity-')),sqlite=new DatabaseSync(path.join(directory,'fictional.sqlite'));
- sqlite.exec(fs.readFileSync(root+'drizzle/0000_motionless_nova.sql','utf8').replaceAll('--> statement-breakpoint',''));sqlite.exec('PRAGMA journal_mode=WAL');
+ for(const migration of ['0000_motionless_nova.sql','0001_neat_tattoo.sql'])sqlite.exec(fs.readFileSync(root+'drizzle/'+migration,'utf8').replaceAll('--> statement-breakpoint',''));sqlite.exec('PRAGMA journal_mode=WAL');
  const context=new AsyncLocalStorage(),key='__kccCapacity'+randomUUID().replaceAll('-','');
  let metrics,beforeRun=null,tail=Promise.resolve();
  const resetMetrics=()=>metrics={queries:0,sessionInsertAttempts:0,sessionRowsInserted:0,workspaceBytesRead:0,workspaceBytesWritten:0,workspaceUpdates:0,auditRowsInserted:0};resetMetrics();
  const DB={prepare(query){let values=[];const runNow=()=>{metrics.queries++;if(beforeRun){const hook=beforeRun;beforeRun=null;hook(sqlite,query)}const result=sqlite.prepare(query).run(...values),changes=Number(result.changes);if(query.startsWith('INSERT OR IGNORE INTO kcc_demo_sessions')){metrics.sessionInsertAttempts++;metrics.sessionRowsInserted+=changes}if(query.startsWith('UPDATE kcc_workspaces SET payload')&&changes){metrics.workspaceUpdates+=changes;metrics.workspaceBytesWritten+=bytes(values[0])}if(query.startsWith('INSERT INTO kcc_server_audit'))metrics.auditRowsInserted+=changes;return {meta:{changes}}};return {bind(...v){values=v;return this},async first(){metrics.queries++;const row=sqlite.prepare(query).get(...values)||null;if(row?.payload)metrics.workspaceBytesRead+=bytes(row.payload);return row},async all(){metrics.queries++;return {results:sqlite.prepare(query).all(...values)}},async run(){return runNow()},runNow}},async batch(statements){const task=tail.then(()=>{sqlite.exec('BEGIN IMMEDIATE');try{const result=statements.map(s=>s.runNow());sqlite.exec('COMMIT');return result}catch(e){sqlite.exec('ROLLBACK');throw e}});tail=task.catch(()=>{});return task}};
  const source=serviceSource??fs.readFileSync(root+'server/service.ts','utf8');
- globalThis[key]={env:{DB,KCC_DEMO_OWNER_EMAIL:'fictional-owner@example.test'},context};
+ const objects=new Map(),bucketStats={puts:0,deletes:0},BUCKET={async put(name,value){bucketStats.puts++;objects.set(name,new Uint8Array(value))},async delete(name){bucketStats.deletes++;objects.delete(name)},async get(name){return objects.has(name)?{body:objects.get(name)}:null}};
+ globalThis[key]={env:{DB,BUCKET,KCC_DEMO_OWNER_EMAIL:'fictional-owner@example.test'},context};
  const cache=new Map();
  function moduleURL(filename){
   filename=path.resolve(filename);if(cache.has(filename))return cache.get(filename);
@@ -36,7 +37,7 @@ export async function workspaceCapacityFixture({projectCount=8,sessionCount=10_0
  sqlite.prepare('INSERT INTO kcc_workspaces VALUES(?,0,?,?,?)').run('KCC-OWNER-DEMO',JSON.stringify(data),'fictional-fixture',new Date().toISOString());
  sqlite.exec('BEGIN');const insert=sqlite.prepare('INSERT INTO kcc_demo_sessions VALUES(?,?,?)');for(let i=0;i<sessionCount;i++)insert.run('fictional-session-'+i,'s1','2026-11-03T00:00:00.000Z');sqlite.exec('COMMIT');resetMetrics();
  const as=(subject,fn)=>context.run({identity:{userId:subject,email:'fictional-owner@example.test'}},fn);
- return {service,sqlite,sourceHash:createHash('sha256').update(source).digest('hex'),resetMetrics,metrics:()=>structuredClone(metrics),hookNextRun:fn=>beforeRun=fn,
+ return {service,sqlite,db:DB,as,files:()=>import(moduleURL(root+'server/files.ts')),shares:()=>import(moduleURL(root+'server/shares.ts')),bucketCount:()=>objects.size,bucketStats:()=>structuredClone(bucketStats),sourceHash:createHash('sha256').update(source).digest('hex'),resetMetrics,metrics:()=>structuredClone(metrics),hookNextRun:fn=>beforeRun=fn,
   row:()=>sqlite.prepare('SELECT * FROM kcc_workspaces WHERE id=?').get('KCC-OWNER-DEMO'),
   auditCount:()=>sqlite.prepare('SELECT COUNT(*) n FROM kcc_server_audit').get().n,
   seedPayload:payload=>sqlite.prepare('UPDATE kcc_workspaces SET payload=? WHERE id=?').run(JSON.stringify(payload),'KCC-OWNER-DEMO'),

@@ -1,0 +1,12 @@
+{
+  "engineSHA256": "f4929e9bb1d8ae761d4b952d5e60314d1703c644d0d09f4f66a9d4b4dfd07e0e",
+  "current": {
+    "created": 0,
+    "message": "Use your current draft, valid activity dates/content and distinct primary/supporting units, with a revision reason."
+  },
+  "fixed": {
+    "created": 1,
+    "message": ""
+  },
+  "productionRuleChanged": false
+}
