@@ -1,0 +1,130 @@
+{
+  "format": 1,
+  "purpose": "Internal fictional migration codec vectors; not a website wire contract",
+  "cases": [
+    {
+      "case": "legacy-no-id",
+      "source": {
+        "id": "FIXTURE-1",
+        "messages": [
+          {
+            "by": "fictional-student",
+            "text": "नमस्ते KCC",
+            "time": "2026-01-01T00:00:00.000Z",
+            "extra": {
+              "nullable": null,
+              "values": [
+                0,
+                false,
+                ""
+              ]
+            }
+          }
+        ],
+        "tasks": [
+          {
+            "id": "fictional-task"
+          }
+        ],
+        "privateField": "FICTIONAL_EXCLUDED_FIELD"
+      },
+      "expectedSnapshot": {
+        "projectId": "FIXTURE-1",
+        "messages": [
+          {
+            "by": "fictional-student",
+            "text": "नमस्ते KCC",
+            "time": "2026-01-01T00:00:00.000Z",
+            "extra": {
+              "nullable": null,
+              "values": [
+                0,
+                false,
+                ""
+              ]
+            }
+          }
+        ],
+        "eventsPresent": false,
+        "events": []
+      },
+      "expectedCanonical": "{\"events\":[],\"eventsPresent\":false,\"messages\":[{\"by\":\"fictional-student\",\"extra\":{\"nullable\":null,\"values\":[0,false,\"\"]},\"text\":\"नमस्ते KCC\",\"time\":\"2026-01-01T00:00:00.000Z\"}],\"projectId\":\"FIXTURE-1\"}",
+      "expectedSHA256": "a345ab3b824ef630fcdddac04aca67ec2f6ae3a9bab209add4e6e2222a91385a"
+    },
+    {
+      "case": "explicit-empty-events",
+      "source": {
+        "id": "FIXTURE-2",
+        "messages": [],
+        "discussionEvents": [],
+        "title": "Fictional project"
+      },
+      "expectedSnapshot": {
+        "projectId": "FIXTURE-2",
+        "messages": [],
+        "eventsPresent": true,
+        "events": []
+      },
+      "expectedCanonical": "{\"events\":[],\"eventsPresent\":true,\"messages\":[],\"projectId\":\"FIXTURE-2\"}",
+      "expectedSHA256": "0cf853db6e5e97c5c788359b9a9e752c12f7d2ba57713945b92b4b510fa9aed6"
+    },
+    {
+      "case": "thread-and-resolution",
+      "source": {
+        "id": "FIXTURE-3",
+        "messages": [
+          {
+            "id": "FIXTURE-3:message:1",
+            "by": "fictional-student",
+            "text": "Root"
+          },
+          {
+            "id": "FIXTURE-3:message:2",
+            "by": "fictional-peer",
+            "parentRef": "FIXTURE-3:message:1",
+            "text": "Reply"
+          }
+        ],
+        "discussionEvents": [
+          {
+            "threadRef": "FIXTURE-3:message:1",
+            "version": 1,
+            "state": "RESOLVED",
+            "by": "fictional-mentor",
+            "time": "2026-01-02T00:00:00.000Z",
+            "reason": "Fictional resolution"
+          }
+        ]
+      },
+      "expectedSnapshot": {
+        "projectId": "FIXTURE-3",
+        "messages": [
+          {
+            "id": "FIXTURE-3:message:1",
+            "by": "fictional-student",
+            "text": "Root"
+          },
+          {
+            "id": "FIXTURE-3:message:2",
+            "by": "fictional-peer",
+            "parentRef": "FIXTURE-3:message:1",
+            "text": "Reply"
+          }
+        ],
+        "eventsPresent": true,
+        "events": [
+          {
+            "threadRef": "FIXTURE-3:message:1",
+            "version": 1,
+            "state": "RESOLVED",
+            "by": "fictional-mentor",
+            "time": "2026-01-02T00:00:00.000Z",
+            "reason": "Fictional resolution"
+          }
+        ]
+      },
+      "expectedCanonical": "{\"events\":[{\"by\":\"fictional-mentor\",\"reason\":\"Fictional resolution\",\"state\":\"RESOLVED\",\"threadRef\":\"FIXTURE-3:message:1\",\"time\":\"2026-01-02T00:00:00.000Z\",\"version\":1}],\"eventsPresent\":true,\"messages\":[{\"by\":\"fictional-student\",\"id\":\"FIXTURE-3:message:1\",\"text\":\"Root\"},{\"by\":\"fictional-peer\",\"id\":\"FIXTURE-3:message:2\",\"parentRef\":\"FIXTURE-3:message:1\",\"text\":\"Reply\"}],\"projectId\":\"FIXTURE-3\"}",
+      "expectedSHA256": "7be9206856426240b86336cf9b2d0cbebba971b0bd35ddd409156ad6c700bf47"
+    }
+  ]
+}
