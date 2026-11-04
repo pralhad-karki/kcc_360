@@ -47,3 +47,8 @@ Stage 280 verified disabled lossless discussion staging. Stage 281 adds a disabl
 ## Audit remediation checkpoint — Stage 283
 
 Captured session-generation predicates now guard changed generic demo commands, uploads and authenticated shares; known workspace character-count limits use UTF-8 bytes. These are integrity fixes, not capacity improvements or institutional identity activation. Shared-root contention and whole-workspace serialization remain. Keep readiness HOLD. Address non-destructive over-budget recovery/withdrawal before real consented records, then resume the bounded atomic discussion transition. See [STAGE283_REPORT.md](STAGE283_REPORT.md).
+
+
+## Withdrawal/recovery checkpoint — Stage 284
+
+A bounded consent-denial marker now permits withdrawal when a root rewrite exceeds its byte cap. It preserves all source data and does not resolve source size, whole-workspace reads or ordinary-write contention. Retain private markers in backup/restore and exclude them from generic audit/workspace cleanup. Next recovery inventory must include source, markers, audit and file references. Readiness remains HOLD; see [STAGE284_REPORT.md](STAGE284_REPORT.md).

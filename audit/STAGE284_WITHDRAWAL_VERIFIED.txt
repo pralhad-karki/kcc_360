@@ -1,0 +1,39 @@
+PASS independent fictional withdrawal key vector
+PASS memory immutable withdrawal receipt preserves source and supports replay
+PASS memory competing identical requests create exactly one receipt
+PASS memory ownership, subject, revision and timestamp validation fail closed
+PASS memory session race at insert writes no receipt
+PASS memory source race at insert writes no receipt
+PASS memory audit failure is atomic and hides driver details
+PASS memory lost acknowledgement is resolved by the durable receipt
+PASS memory a revoked session cannot replay its old proof
+PASS memory namespace and token identity stay distinct
+PASS memory corrupted receipt cannot be interpreted as no withdrawal
+PASS sqlite immutable withdrawal receipt preserves source and supports replay
+PASS sqlite competing identical requests create exactly one receipt
+PASS sqlite ownership, subject, revision and timestamp validation fail closed
+PASS sqlite session race at insert writes no receipt
+PASS sqlite source race at insert writes no receipt
+PASS sqlite audit failure is atomic and hides driver details
+PASS sqlite lost acknowledgement is resolved by the durable receipt
+PASS sqlite a revoked session cannot replay its old proof
+PASS sqlite namespace and token identity stay distinct
+PASS sqlite corrupted receipt cannot be interpreted as no withdrawal
+PASS API oversized source stays byte-identical while public and operator views become withdrawn
+PASS API ordinary audit pruning cannot reactivate a link
+PASS API source repair/replay of an older ACTIVE snapshot cannot reopen the original token
+PASS API duplicate and competing withdrawals preserve one audit event
+PASS API unauthorized roles, owners, subjects and forged fields cannot use fallback
+PASS API session change at insert denies withdrawal and preserves the winning state
+PASS API source change at insert denies withdrawal and preserves the winning state
+PASS API failed audit insert changes neither source nor public link; retry succeeds
+PASS API a lost acknowledgement does not expose content or duplicate a withdrawal on retry
+PASS API corrupted ledger fails public reads closed
+PASS API delayed public read observes a withdrawal completed after its source was loaded
+PASS API new explicit consent creates a separate usable link after source-size recovery
+PASS API withdrawn links are excluded from active-link quota after recovery
+PASS API normal writes remain quota-limited while withdrawal is independent
+PASS API optional reflection response cannot commit behind a withdrawal winner
+PASS API actual private/public controllers enforce withdrawal and retain no-store headers
+PASS API ledger storage failure returns a generic public 503 instead of content
+{"passed":38,"contracts":["memory","drizzle-sqlite"],"sourceRewrittenByFallback":false,"productionMigration":false,"liveIntegration":false,"hostedAcceptance":false}

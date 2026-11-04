@@ -1,0 +1,1 @@
+PASS: preview-bound explicit consent, minimal public snapshots, token hashing/entropy, anonymous selective route, cache/CSP/robots/referrer controls, expiry, ownership, permanent revocation, source/consent invalidation, HTML escaping and atomic conflict/audit handling.

@@ -1,0 +1,25 @@
+PASS independent fictional withdrawal key vector
+PASS memory immutable withdrawal receipt preserves source and supports replay
+PASS memory competing identical requests create exactly one receipt
+PASS memory ownership, subject, revision and timestamp validation fail closed
+PASS memory session race at insert writes no receipt
+PASS memory source race at insert writes no receipt
+PASS memory audit failure is atomic and hides driver details
+PASS memory lost acknowledgement is resolved by the durable receipt
+PASS memory a revoked session cannot replay its old proof
+PASS memory namespace and token identity stay distinct
+PASS memory corrupted receipt cannot be interpreted as no withdrawal
+<compiled-test-module>:30
+            throw new WithdrawalStorageError('Withdrawal status is unavailable.');
+                  ^
+
+WithdrawalStorageError: Withdrawal status is unavailable.
+    at DrizzleShareWithdrawalRepository.find (<compiled-test-module>:30:19)
+    at async ShareWithdrawalService.withdraw (<compiled-test-module>:12:59)
+    at async file:///workspace/sites/kcc360-recovered270/check-share-quota-withdrawal.mjs:33:176
+    at async runContract (file:///workspace/sites/kcc360-recovered270/check-share-quota-withdrawal.mjs:31:75)
+    at async file:///workspace/sites/kcc360-recovered270/check-share-quota-withdrawal.mjs:33:2 {
+  code: 'WITHDRAWAL_UNAVAILABLE'
+}
+
+Node.js v24.22.1

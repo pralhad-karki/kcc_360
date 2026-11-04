@@ -1,0 +1,63 @@
+[
+  {
+    "check": "WITHDRAWAL",
+    "command": [
+      "node",
+      "check-share-quota-withdrawal.mjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "check": "WRITE_GUARDS",
+    "command": [
+      "node",
+      "check-workspace-write-guards.mjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "check": "AUDIT",
+    "command": [
+      "node",
+      "scripts/audit-architecture.mjs",
+      "--fictional-local-audit",
+      "--report",
+      "audit/STAGE284_AUDIT_EVIDENCE.json"
+    ],
+    "exitCode": 0
+  },
+  {
+    "check": "VISITOR",
+    "command": [
+      "node",
+      "check-reflection-responses.mjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "check": "REFLECTION_SHARING",
+    "command": [
+      "node",
+      "check-reflection-sharing.mjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "check": "TYPESCRIPT",
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exitCode": 0
+  },
+  {
+    "check": "BUILD",
+    "command": [
+      "node",
+      "scripts/run-framework.mjs",
+      "build"
+    ],
+    "exitCode": 0
+  }
+]

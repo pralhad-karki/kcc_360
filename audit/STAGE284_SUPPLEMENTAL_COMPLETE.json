@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "file": "check-audit-command-map.mjs",
+      "exitCode": 0,
+      "output": "PASS: actual guarded CV create/edit/clear version mapping, content-free audit metadata, legacy reader correlation, no-op/invalid/denied suppression, peer identity isolation, malformed/version/classification/peer mutation rejection, explicit unmapped commands and preserved schema/non-CV writers.\n"
+    },
+    {
+      "file": "check-discussion-audit-map.mjs",
+      "exitCode": 0,
+      "output": "PASS: isolated actual-engine discussion resolve/reopen mapping, legacy/new root references, per-thread version/state and content-free reason references, no-op/denied/stale suppression, immutable history/scope/malformed mutation rejection, ledger binding and preserved live authorization/schema/commands.\n"
+    },
+    {
+      "file": "check-portfolio-export-api.mjs",
+      "exitCode": 0,
+      "output": "PASS: combined/declarations-only CV, selected-section whitelist, safe print text, peer isolation, empty/duplicate denial, changed-declaration digest rejection and no storage writes.\nPASS: own-current certificate-only CV, escaped minimal fields, duplicate/peer/revoked/superseded/paused/stale-evaluation denial, replacement re-selection, changed-content digest, independent public QR state and no writes.\nPASS: authenticated owner/student-only private export POST, exact actor/revision/selection, fresh digest/identity/session/storage rechecks, no workspace/audit/share writes, origin/type/size/JSON guards, protected no-store HTML headers and no public GET/token. No browser/PDF acceptance.\n"
+    },
+    {
+      "file": "check-sharing-client.mjs",
+      "exitCode": 0,
+      "output": "PASS: unselected defaults, preview-before-consent, no create without explicit consent, bound request, one-time link/QR UI and revocation flow.\n"
+    },
+    {
+      "file": "check-reflection-sharing-client.mjs",
+      "exitCode": 0,
+      "output": "PASS reflection-share client: own submitted entry before review, escaped exact preview, explicit consent, duplicate/failed-save no replay, old-account and closed-window response suppression.\nPASS server-confirmed reflection submission appreciation and immediate/later sharing guidance.\n"
+    },
+    {
+      "file": "check-reflection-email-delivery.mjs",
+      "exitCode": 0,
+      "output": "PASS disabled email delivery protocol: exact registered-contact/source revalidation, immutable target, persisted attempt model, no blind timeout retry, signed scoped accepted/delivered/bounce/no-send receipts, idempotent and ordered history, bounded backoff, private queue and isolated CAS/audit-before-send pattern. No actual transport or receipt endpoint installed.\n"
+    },
+    {
+      "file": "check-reflection-email-monitor.mjs",
+      "exitCode": 0,
+      "output": "Reflection email monitoring: read-only SQLite route, all persona guards, owner authentication, source privacy, state semantics and default readiness passed.\n"
+    },
+    {
+      "file": "check-reflection-email-runner.mjs",
+      "exitCode": 0,
+      "output": "PASS persisted email runner/store: disabled default, actual SQLite claim+audit before fake transport, academic/recipient/other-job isolation, concurrent/CAS/audit failure protection, post-claim source/workspace recheck and safe cancellation, uncertain/result-save recovery via authenticated lookup without resend, bounded safe retries and private outcomes. No real mail provider or scheduler enabled.\n"
+    },
+    {
+      "file": "check-reflection-email-save.mjs",
+      "exitCode": 0,
+      "output": "PASS evaluation appreciation: submission never queues, final human evaluation + private queue atomicity, approved department sender, duplicate guard, blocked-source save preservation, injection denial, audit rollback and persona/workspace CAS. Sending remains disabled.\n"
+    }
+  ],
+  "passed": 9,
+  "failed": 0
+}

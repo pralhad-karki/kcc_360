@@ -133,3 +133,8 @@ Primary references checked: [PostgreSQL INSERT and ON CONFLICT](https://www.post
 ## Local remediation follow-up — Stage 283
 
 The original findings above describe pinned source 2c0616f and are retained as historical audit evidence. [STAGE283_REPORT.md](STAGE283_REPORT.md) records the subsequent bounded fixes. TA-06's reproduced owner-demo selected-persona save race is now rejected at commit for generic commands, uploads and authenticated share writes, including same-actor/new-generation changes. TA-07's identified character-based workspace save guards now use the shared UTF-8 limit. This does not close institutional identity/tenancy, hosting trust, storage architecture or recovery acceptance. A quota-denied revocation leaves the existing link unchanged; safe recovery/withdrawal for already-oversized state remains a rollout dependency.
+
+
+## Local withdrawal follow-up — Stage 284
+
+[STAGE284_REPORT.md](STAGE284_REPORT.md) supersedes Stage 283's quota-denied per-link revocation limit: a private permanent withdrawal marker and atomic audit now stop the original token without rewriting or pruning the oversized source. Public/management readers enforce it even if old source state is restored or ordinary audit logs are pruned. This is local owner-demo verification; source-size recovery, complete marker/audit/file backup restoration, institutional identity/tenancy and hosting trust remain open.

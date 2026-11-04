@@ -1,5 +1,5 @@
 // Existing historical tests freeze unrelated files against HEAD. Permit only
-// the exact Stage 283 reviewed patch while that patch is still uncommitted.
+// the exact reviewed patches pinned by the accompanying hash manifest while uncommitted.
 // Once committed, the ordinary equality check applies again. Behavioral tests
 // independently exercise the session and Unicode rules through actual services.
 import fs from 'node:fs';

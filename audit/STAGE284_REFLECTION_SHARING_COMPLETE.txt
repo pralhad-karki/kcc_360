@@ -1,0 +1,1 @@
+PASS submitted-reflection sharing: actual submission before evaluation, preview/consent, minimal status-labelled snapshot, no achievement/publication side effects, anonymous escaped view, source invalidation, expiry/revocation/owner and atomic race guards.

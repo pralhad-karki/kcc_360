@@ -11,7 +11,7 @@ import ts from 'typescript';
 import {createEngine} from '../server/engine.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 export const bytes=value=>Buffer.byteLength(typeof value==='string'?value:JSON.stringify(value),'utf8');
-export async function workspaceCapacityFixture({projectCount=8,sessionCount=10_000,serviceSource=null}={}){
+export async function workspaceCapacityFixture({projectCount=8,sessionCount=10_000,serviceSource=null,reflectionResponses=false}={}){
  if(!Number.isInteger(projectCount)||projectCount<8||projectCount>1000||!Number.isInteger(sessionCount)||sessionCount<2||sessionCount>10_000)throw Error('Bounded fictional fixture sizes required');
  const directory=fs.mkdtempSync(path.join(os.tmpdir(),'kcc-capacity-')),sqlite=new DatabaseSync(path.join(directory,'fictional.sqlite'));
  for(const migration of ['0000_motionless_nova.sql','0001_neat_tattoo.sql'])sqlite.exec(fs.readFileSync(root+'drizzle/'+migration,'utf8').replaceAll('--> statement-breakpoint',''));sqlite.exec('PRAGMA journal_mode=WAL');
@@ -28,8 +28,10 @@ export async function workspaceCapacityFixture({projectCount=8,sessionCount=10_0
   let code;
   if(filename===path.join(root,'app/chatgpt-auth.ts'))code=`export async function getChatGPTUser(){return globalThis[${JSON.stringify(key)}].context.getStore()?.identity||null}`;
   else code=(filename===path.join(root,'server/service.ts')?source:fs.readFileSync(filename,'utf8')).replace(/import\s*\{\s*env\s*\}\s*from\s*['"]cloudflare:workers['"];?/g,`const env=globalThis[${JSON.stringify(key)}].env;`);
-  code=code.replace(/(from\s*|import\s*)(['"])(\.[^'"]+)\2/g,(full,prefix,quote,spec)=>{let target=path.resolve(path.dirname(filename),spec);if(!path.extname(target))target+='.ts';return prefix+JSON.stringify(target.endsWith('.ts')?moduleURL(target):pathToFileURL(target).href)});
-  const compiled=ts.transpileModule(code,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText,url='data:text/javascript;base64,'+Buffer.from(compiled).toString('base64');cache.set(filename,url);return url;
+  if(reflectionResponses&&filename===path.join(root,'server/shares.ts'))code=code.replace('reflectionResponseConfiguration=Object.freeze({enabled:false})','reflectionResponseConfiguration=Object.freeze({enabled:true})');
+  code=ts.transpileModule(code,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
+  code=code.replace(/(from\s*|import\s*)(['"])([^'"]+)\2/g,(full,prefix,quote,spec)=>{if(spec.startsWith('.')){let target=path.resolve(path.dirname(filename),spec);if(!path.extname(target))target+='.ts';return prefix+JSON.stringify(target.endsWith('.ts')?moduleURL(target):pathToFileURL(target).href)}return /^(?:node:|file:|data:)/.test(spec)?full:prefix+JSON.stringify(import.meta.resolve(spec))});
+  const url='data:text/javascript;base64,'+Buffer.from(code).toString('base64');cache.set(filename,url);return url;
  }
  const service=await import(moduleURL(root+'server/service.ts')),route=await import(moduleURL(root+'app/api/workspace/route.ts'));
  const data=createEngine(null,'s1').snapshot(),template=structuredClone(data.projects[0]);
@@ -37,7 +39,7 @@ export async function workspaceCapacityFixture({projectCount=8,sessionCount=10_0
  sqlite.prepare('INSERT INTO kcc_workspaces VALUES(?,0,?,?,?)').run('KCC-OWNER-DEMO',JSON.stringify(data),'fictional-fixture',new Date().toISOString());
  sqlite.exec('BEGIN');const insert=sqlite.prepare('INSERT INTO kcc_demo_sessions VALUES(?,?,?)');for(let i=0;i<sessionCount;i++)insert.run('fictional-session-'+i,'s1','2026-11-03T00:00:00.000Z');sqlite.exec('COMMIT');resetMetrics();
  const as=(subject,fn)=>context.run({identity:{userId:subject,email:'fictional-owner@example.test'}},fn);
- return {service,sqlite,db:DB,as,files:()=>import(moduleURL(root+'server/files.ts')),shares:()=>import(moduleURL(root+'server/shares.ts')),bucketCount:()=>objects.size,bucketStats:()=>structuredClone(bucketStats),sourceHash:createHash('sha256').update(source).digest('hex'),resetMetrics,metrics:()=>structuredClone(metrics),hookNextRun:fn=>beforeRun=fn,
+ return {service,sqlite,db:DB,as,files:()=>import(moduleURL(root+'server/files.ts')),shares:()=>import(moduleURL(root+'server/shares.ts')),shareRoutes:()=>import(moduleURL(root+'app/api/portfolio-shares/route.ts')),publicShareRoute:()=>import(moduleURL(root+'app/share/[token]/route.ts')),bucketCount:()=>objects.size,bucketStats:()=>structuredClone(bucketStats),sourceHash:createHash('sha256').update(source).digest('hex'),resetMetrics,metrics:()=>structuredClone(metrics),hookNextRun:fn=>beforeRun=fn,
   row:()=>sqlite.prepare('SELECT * FROM kcc_workspaces WHERE id=?').get('KCC-OWNER-DEMO'),
   auditCount:()=>sqlite.prepare('SELECT COUNT(*) n FROM kcc_server_audit').get().n,
   seedPayload:payload=>sqlite.prepare('UPDATE kcc_workspaces SET payload=? WHERE id=?').run(JSON.stringify(payload),'KCC-OWNER-DEMO'),

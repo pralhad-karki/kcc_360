@@ -1,0 +1,11 @@
+PASS check-permission-policy.mjs
+PASS check-identity-grant-adapter.mjs
+PASS check-project-resource-policy.mjs
+PASS check-intake-trusted-loader.mjs
+PASS check-files.mjs
+PASS check-sharing.mjs
+PASS check-project-discussion.mjs
+PASS check-workspace-reliability.mjs
+PASS check-discussion-migration.mjs
+PASS check-discussion-command-rehearsal.mjs
+{"checksPassed":10,"checksFailed":0,"commitSessionRaceConfirmed":false,"hostedTest":false}

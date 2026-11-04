@@ -1,0 +1,37 @@
+{
+  "baseline": "226d80b5167b5af0089241ce28ca5071e50dc8a3",
+  "codeSHA256": {
+    "check-share-quota-withdrawal.mjs": "82a51e65fcf52432d069678a5863a825b335bf232cedc01cc60b27add0123535",
+    "fixtures/share-withdrawal-v1.json": "97862984bf5708a1ef723d9ed44af6e057ac38a95194ae6c68e4c5c7eb3faff8",
+    "fixtures/typescript-modules.mjs": "c5515c576e20aa7fff32eadd5a9b4ac3d18d47a745aab520919ec7e7fd98c895",
+    "server/share-withdrawal/application.ts": "167965a9dfe9da8b9d15dc4a102672dd939e3cbe72132f56b01167dd5ce5e1bb",
+    "server/share-withdrawal/domain.ts": "9ce4d9d000d27a1cb8342ea9719de28c10e8744c407bab89b9861d46bfedcdbb",
+    "server/share-withdrawal/drizzle-repository.ts": "3562b83f3d24b3046621a5bae46a2b981914e2597be3cb89af21ef5b43ee1ca2",
+    "server/share-withdrawal/runtime.ts": "bf51a0902868652bb7fe4099f60fdf687b1d3a166edd6fcc3587a6c8223b6103",
+    "check-cohort-progression-batches-route.mjs": "daa2b2c7b634218f3a7648d29a6929457acfff18ce9fdfd6665a3249ca977a0d",
+    "check-cohort-progression-route.mjs": "a3713f14f1cd8218a1ff07e24bea7052f760b92bc46b49fd603a40c6c8d4baf6",
+    "check-reflection-email-delivery.mjs": "1651e6cfc5fe50ad8dfef5d5d74586049adc04e464cedb1879e535009e192b72",
+    "check-reflection-email-monitor.mjs": "8126683b7fb0d5a2e7e4869f03400f8d197fc4e403a445b34a9ad61f3086c16e",
+    "check-reflection-email-runner.mjs": "5da07fec8c47db0f4fda0f9dddb56325d13e8d04c2afa70773b43fa3afb7831a",
+    "check-reflection-email-save.mjs": "9c9aeadae2e525261f577449f6aa869a10931e5408781a2816e8486a7c042924",
+    "check-reflection-responses.mjs": "6df989552dd13c1af11ee7a27902e5cc0bb22e67ccb509351fddd88b32f63220",
+    "check-reflection-sharing.mjs": "f266bceec3bc4d34afcec5ad7a560cb9533cab149ee92e28a244120466e0fff3",
+    "check-sharing.mjs": "7373bb3c97ff794289a7882088869d673db06657bc648d5094cab9128e78a633",
+    "check-workspace-write-guards.mjs": "fb9e2b7d00d884823862c657cc0d47433f548d87c327085d0a7b3d79631a1933",
+    "fixtures/workspace-capacity.mjs": "13ccb49122171504a116422629fcf01318cff527d5c595978a2e45df89fd7214",
+    "scripts/assert-reviewed-workspace-write.mjs": "60f2e57570ade9823dcb0bb9f3abd024c33280c3ccb23c718baba11589616402",
+    "scripts/check-task-workflow.mjs": "6200efffe97912004a2520d5acc9cbc812fe7d63ff33298ef3aead7c1a67ee68",
+    "scripts/workspace-write-remediation-hashes.json": "f2ad37d881ea0f5fdb723429403aa0c6f3a55ecb6aa96580849bea0b4236647e",
+    "server/shares.ts": "8117432c615d7570d2fead4981f53fe9929af77bf0b8a4ed7630b392d75cc378"
+  },
+  "verification": {
+    "withdrawalChecks": 39,
+    "regressionGroups": 76,
+    "supplementalSuites": 9,
+    "auditSuites": 10,
+    "typescript": "PASS",
+    "build": "PASS"
+  },
+  "liveIntegration": false,
+  "productionMigration": false
+}

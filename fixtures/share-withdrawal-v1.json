@@ -1,0 +1,9 @@
+{
+  "binding": {
+    "workspaceId": "KCC-OWNER-DEMO",
+    "shareId": "fictional-share-1",
+    "tokenHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "expectedKey": "KCC-SHARE-WITHDRAWAL:5ae66af35c9e3bb9017ab7853fca6f39cc694949f87438e4ecd0a083c8b9636e",
+  "fictional": true
+}

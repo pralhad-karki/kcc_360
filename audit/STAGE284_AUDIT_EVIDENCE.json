@@ -1,0 +1,191 @@
+{
+  "kind": "KCC360_TECHNICAL_AUDIT_V1",
+  "sourceCommit": "226d80b5167b5af0089241ce28ca5071e50dc8a3",
+  "startedAt": "2026-11-04T07:45:36.486Z",
+  "scope": "Local source, existing fictional checks and disposable SQLite only; no hosted penetration test or PostgreSQL acceptance",
+  "sourceInventory": {
+    "prepareCalls": [
+      "server/annual-target-save.mjs",
+      "server/club-action-save-pilot.mjs",
+      "server/cohort-progression-batches.ts",
+      "server/cohort-progression-store.mjs",
+      "server/files.ts",
+      "server/intake-first-review-decision-save.mjs",
+      "server/intake-team-consultation-response-save.mjs",
+      "server/intake-team-consultation-save.mjs",
+      "server/intake-team-consultation-scope-save.mjs",
+      "server/intake-team-consultation-withdrawal-save.mjs",
+      "server/intake-team-evidence-verification-save.mjs",
+      "server/intake-team-final-review-save.mjs",
+      "server/intake-team-first-review-save.mjs",
+      "server/intake-team-handoff-save.mjs",
+      "server/intake-team-mentor-response-save.mjs",
+      "server/intake-team-mentor-save.mjs",
+      "server/intake-team-mentor-withdrawal-save.mjs",
+      "server/intake-team-start-save.mjs",
+      "server/intake-team-task-progress-save.mjs",
+      "server/intake-team-task-rereview-save.mjs",
+      "server/intake-team-task-review-save.mjs",
+      "server/intake-team-task-revision-save.mjs",
+      "server/intake-team-task-save.mjs",
+      "server/intake-team-task-submission-save.mjs",
+      "server/mis-manual-save.mjs",
+      "server/mis-upload-staging.mjs",
+      "server/monitoring-save-pilot.mjs",
+      "server/plan-amendment-save.mjs",
+      "server/plan-approval-save.mjs",
+      "server/public-certificates.ts",
+      "server/reflection-email-store.mjs",
+      "server/service.ts",
+      "server/share-withdrawal/drizzle-repository.ts",
+      "server/shares.ts",
+      "server/team-invitation-save-pilot.mjs",
+      "server/website-registration-store.mjs",
+      "server/website-v1-mock.mjs"
+    ],
+    "batchCalls": [
+      "server/annual-target-save.mjs",
+      "server/club-action-save-pilot.mjs",
+      "server/cohort-progression-store.mjs",
+      "server/discussion-migration/infrastructure/drizzle-repository.ts",
+      "server/files.ts",
+      "server/intake-first-review-decision-save.mjs",
+      "server/intake-team-consultation-response-save.mjs",
+      "server/intake-team-consultation-save.mjs",
+      "server/intake-team-consultation-scope-save.mjs",
+      "server/intake-team-consultation-withdrawal-save.mjs",
+      "server/intake-team-evidence-verification-save.mjs",
+      "server/intake-team-final-review-save.mjs",
+      "server/intake-team-first-review-save.mjs",
+      "server/intake-team-handoff-save.mjs",
+      "server/intake-team-mentor-response-save.mjs",
+      "server/intake-team-mentor-save.mjs",
+      "server/intake-team-mentor-withdrawal-save.mjs",
+      "server/intake-team-start-save.mjs",
+      "server/intake-team-task-progress-save.mjs",
+      "server/intake-team-task-rereview-save.mjs",
+      "server/intake-team-task-review-save.mjs",
+      "server/intake-team-task-revision-save.mjs",
+      "server/intake-team-task-save.mjs",
+      "server/intake-team-task-submission-save.mjs",
+      "server/mis-manual-save.mjs",
+      "server/mis-upload-staging.mjs",
+      "server/monitoring-save-pilot.mjs",
+      "server/plan-amendment-save.mjs",
+      "server/plan-approval-save.mjs",
+      "server/reflection-email-store.mjs",
+      "server/service.ts",
+      "server/share-withdrawal/drizzle-repository.ts",
+      "server/shares.ts",
+      "server/team-invitation-save-pilot.mjs",
+      "server/website-registration-store.mjs",
+      "server/website-v1-mock.mjs"
+    ],
+    "drizzleImports": [
+      "server/discussion-migration/infrastructure/drizzle-repository.ts",
+      "server/share-withdrawal/drizzle-repository.ts"
+    ],
+    "sqliteInsertOrIgnore": [
+      "server/service.ts"
+    ],
+    "namedSqliteJsonDateFunctions": []
+  },
+  "engineBytes": 1223373,
+  "probes": {
+    "ownerDemoPersonaSelection": {
+      "selectedActor": "a1",
+      "institutionalImpersonationAccepted": false
+    },
+    "commitSessionRace": {
+      "responseStatus": 409,
+      "currentSessionActor": "a1",
+      "committedAuditActor": null,
+      "workspaceRevision": 0,
+      "findingConfirmed": false,
+      "method": "Session changed at the write barrier inside a disposable serialized SQLite batch; not a multi-host concurrency measurement"
+    },
+    "unicodeBudget": {
+      "utf16CodeUnits": 700016,
+      "utf8Bytes": 2100016,
+      "legacyCharacterGuardAccepts": true,
+      "byteGuardAccepts": false,
+      "scope": "Arithmetic reproduction of the remaining files/shares guards, not a hosted upload attempt"
+    }
+  },
+  "checks": [
+    {
+      "file": "check-permission-policy.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 165,
+      "output": "PASS: scoped multi-role capability union, complete-grant matching, tenant isolation, classification, explicit deny precedence, relationship constraints, pending/revoked/expired boundaries, same-person aliases, unknown legacy identity denial, provenance, input immutability and unchanged live authorization entry points.\n"
+    },
+    {
+      "file": "check-identity-grant-adapter.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 153,
+      "output": "PASS: trusted snapshot/issuer/person mapping, multi-role preparation, same-person aliases, unresolved legacy records, tenant/version/expiry/revocation denial, independent approval provenance, duplicate binding rejection, context transition horizon, detached outputs and unchanged live entry points.\n"
+    },
+    {
+      "file": "check-project-resource-policy.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 287,
+      "output": "PASS: trusted project scope/classification binding, CAS revision/index freshness, actual-record relationship derivation, same-person approval denial, protected summary read intersecting existing access, no private fields, scope/clearance denials, no input mutation and preserved route authentication with only reviewed disabled invitation dispatch.\nPASS: isolated one-person Faculty/Mentor reads across separate projects, Coordinator alias identity, complete grant provenance, private-field minimization, partial revocation, expiry, explicit denial, stale authority, actor mismatch, same-person approval denial and no data mutation. This does not implement faculty evaluation or live multi-role sessions.\n"
+    },
+    {
+      "file": "check-intake-trusted-loader.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 118,
+      "output": "PASS trusted intake loader: default disabled, server provider requirements, fresh verified person/tenant mapping, approved dated sources, workspace/proposal scope, revocation/expiry during load, detached outputs, captured providers, forged-field denial and sanitized failures.\n"
+    },
+    {
+      "file": "check-files.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 852,
+      "output": "PASS: upload format/size/signature checks, PDF active-content rejection, private object persistence, SHA-256, protected downloads, stale/role/verified-evidence guards, orphan cleanup, record association and server form-field tampering prevention.\n"
+    },
+    {
+      "file": "check-sharing.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 1499,
+      "output": "PASS: preview-bound explicit consent, minimal public snapshots, token hashing/entropy, anonymous selective route, cache/CSP/robots/referrer controls, expiry, ownership, permanent revocation, source/consent invalidation, HTML escaping and atomic conflict/audit handling.\n"
+    },
+    {
+      "file": "check-project-discussion.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 481,
+      "output": "PASS: preserved legacy messages, record-bound replies, author/current-mentor reasoned resolve/reopen history, resolved/stale/cross-record/invalid/role/outcome/control denial, safe read-only rendering and all-role raw/projected privacy parity. No browser acceptance.\n"
+    },
+    {
+      "file": "check-workspace-reliability.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 1933,
+      "output": "PASS 10,000 existing fictional sessions use read-only indexed lookup\nPASS simultaneous first-session creation preserves one row and concurrent actor selection\nPASS UTF-8 bytes above the workspace limit reject atomically through the actual route\nPASS valid large Nepali payload still saves once with matching audit\nPASS different-project simultaneous writes expose global contention without lost updates\n{\"passed\":5,\"sessionRowsPerFixture\":10000,\"institutionalAccountsSimulated\":false,\"hostedAcceptance\":false}\n"
+    },
+    {
+      "file": "check-discussion-migration.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 1980,
+      "output": "PASS portable fictional codec vectors (independent canonical JSON/SHA expectations)\nPASS memory disabled service makes no repository/provider calls\nPASS memory lossless legacy IDs, optional fields, Unicode and rollback reconstruction\nPASS memory staging preserves source, IDs and private field boundaries, with durable replay\nPASS memory two project copies succeed independently; same-project stale copies conflict\nPASS memory legacy and restored discussions preserve existing reply/resolve/reopen behavior\nPASS memory source revision fence rejects change between validation and storage\nPASS memory source and authority fences reject changes at commit\nPASS memory changed source and unauthorized callers cannot stage\nPASS memory audit failure rolls back staged data without driver-error leakage\nPASS memory failed replacement retains the previous staged version and history\nPASS memory source update retains earlier staged versions and reconstructs current source\nPASS memory staged content checksum prevents corrupted replay or inspection\nPASS sqlite disabled service makes no repository/provider calls\nPASS sqlite lossless legacy IDs, optional fields, Unicode and rollback reconstruction\nPASS sqlite staging preserves source, IDs and private field boundaries, with durable replay\nPASS sqlite two project copies succeed independently; same-project stale copies conflict\nPASS sqlite legacy and restored discussions preserve existing reply/resolve/reopen behavior\nPASS sqlite source revision fence rejects change between validation and storage\nPASS sqlite source and authority fences reject changes at commit\nPASS sqlite changed source and unauthorized callers cannot stage\nPASS sqlite audit failure rolls back staged data without driver-error leakage\nPASS sqlite failed replacement retains the previous staged version and history\nPASS sqlite source update retains earlier staged versions and reconstructs current source\nPASS sqlite staged content checksum prevents corrupted replay or inspection\n{\"passed\":25,\"contracts\":[\"memory\",\"drizzle-sqlite\"],\"liveDiscussionPathChanged\":false,\"migrationActivated\":false,\"capacityAcceptance\":false}\n"
+    },
+    {
+      "file": "check-discussion-command-rehearsal.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 2500,
+      "output": "PASS memory disabled rehearsal calls no providers\nPASS memory fresh staged copy reconstructs only its original project\nPASS memory post/reply/resolve previews match the unchanged engine and never save\nPASS memory repeated previews keep IDs, counts and history unchanged in storage\nPASS memory stale thread/count, resolved replies and nonauthor resolution keep legacy no-op behavior\nPASS memory author and current mentor reopen preserve versions, reason and side effects\nPASS memory cancelled/postponed/withdrawn and former-mentor access stays denied\nPASS memory missing, stale and corrupted staged copies cannot materialize\nPASS memory unrelated newer source revision also rejects delayed copies\nPASS memory source and access races reject obsolete preview results\nPASS memory staged revision race rejects the earlier proposal\nPASS memory authority actor/fence change and wrong subject fail closed\nPASS memory strict typed inputs exclude forged actors, metadata and non-JSON values\nPASS memory cross-project references and unauthorized project scope cannot be retargeted\nPASS memory read failures expose generic storage errors without changing source\nPASS sqlite disabled rehearsal calls no providers\nPASS sqlite fresh staged copy reconstructs only its original project\nPASS sqlite post/reply/resolve previews match the unchanged engine and never save\nPASS sqlite repeated previews keep IDs, counts and history unchanged in storage\nPASS sqlite stale thread/count, resolved replies and nonauthor resolution keep legacy no-op behavior\nPASS sqlite author and current mentor reopen preserve versions, reason and side effects\nPASS sqlite cancelled/postponed/withdrawn and former-mentor access stays denied\nPASS sqlite missing, stale and corrupted staged copies cannot materialize\nPASS sqlite unrelated newer source revision also rejects delayed copies\nPASS sqlite source and access races reject obsolete preview results\nPASS sqlite staged revision race rejects the earlier proposal\nPASS sqlite authority actor/fence change and wrong subject fail closed\nPASS sqlite strict typed inputs exclude forged actors, metadata and non-JSON values\nPASS sqlite cross-project references and unauthorized project scope cannot be retargeted\nPASS sqlite read failures expose generic storage errors without changing source\nPASS sqlite actual missing-table errors are sanitized at the repository boundary\n{\"passed\":31,\"contracts\":[\"memory\",\"drizzle-sqlite\"],\"readOnly\":true,\"productionCommandPathChanged\":false,\"cutoverActivated\":false,\"hostedAcceptance\":false}\n"
+    }
+  ],
+  "finishedAt": "2026-11-04T07:45:46.750Z",
+  "passed": 10,
+  "failed": 0,
+  "interpretation": "Passing isolated security components does not establish that live routes use them. Confirmed-risk probes are findings, not acceptance passes."
+}
