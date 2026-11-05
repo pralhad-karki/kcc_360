@@ -1,3 +1,13 @@
+# Continue KCC360 development — Stage 289 private discussion recovery
+
+5 November 2026, Asia/Kathmandu. Stage 289 follows `4f4600cbe3d39fdd78df23dd332966113a293d2d` on `development/website-mock-acceptance`. Verify the actual checkout and remote history before editing. See the [Stage 289 report](audit/STAGE289_REPORT.md).
+
+The fictional SQLite rehearsal restores an active discussion stack and a pending resolution. A fresh service reproduces the restored view, replays existing receipts, advances the pending resolution and reverses the stack in order. Current authority still governs replay.
+
+The next stage combines discussion recovery, private file object verification and withdrawal markers in one fictional export. Preserve the source records, staged copies, receipts, files, withdrawal authority, migrations and audit history. Keep rehearsal features disabled by default. Routine tested and privacy-reviewed GitHub synchronization remains authorized.
+
+---
+
 # Continue KCC360 development — Stage 288 private command preparation
 
 5 November 2026, Asia/Kathmandu. Stage 288 follows `7adeae9d3d78b742794a7230eb51ac8bac416808` on `development/website-mock-acceptance`. Verify the checkout and remote history before editing. Read [Stage 288 evidence](audit/STAGE288_REPORT.md) and the previous preservation constraints below.

@@ -2,26 +2,15 @@ import assert from 'node:assert/strict';
 import {workspaceCapacityFixture} from './fixtures/workspace-capacity.mjs';
 import {compileTSModule} from './fixtures/typescript-modules.mjs';
 import {createHash} from 'node:crypto';
+import {readClient,restoreFictionalSQLite} from './fixtures/private-recovery-sqlite.mjs';
 const {PrivateRecoveryService}=await import(compileTSModule('server/recovery/application.ts'));
 const {DrizzleRecoveryReader}=await import(compileTSModule('server/recovery/drizzle-reader.ts'));
 const {RecoveryError,canonical,sha256,MAX_RECOVERY_ROWS}=await import(compileTSModule('server/recovery/domain.ts'));
 const root='KCC-OWNER-DEMO',subject='fictional-session-0',reviewer='fictional-recovery-reviewer';let passed=0;
 const test=async(name,fn)=>{await fn();passed++;console.log('PASS '+name)};
-// SQLite implementation of D1's read-only transactional batch. Rejects any
-// mutation, including an accidental future change in the production reader.
-function readClient(sqlite){return {prepare(sql){assert.match(sql,/^select /i);let args=[];return {bind(...values){args=values;return this},read(){return {success:true,results:sqlite.prepare(sql).all(...args)}}}},async batch(statements){sqlite.exec('BEGIN');try{const result=statements.map(s=>s.read());sqlite.exec('COMMIT');return result}catch(e){sqlite.exec('ROLLBACK');throw e}}};}
 function service(f,objects,authority={async assertPrivateRecovery(s){assert.equal(s,reviewer)}}){return new PrivateRecoveryService(new DrizzleRecoveryReader(readClient(f.sqlite)),objects,authority)}
-// Restore exists only inside this disposable test. Refuse any nonempty target,
-// verify the trusted independent digest and all objects before first INSERT.
-async function restore(f,objects,bundle,anchor,{fail=false}={}){
- const checked=await service(f,objects).verifyPrivate(reviewer,bundle,anchor);
- for(const table of ['kcc_workspaces','kcc_server_audit','kcc_stored_files'])assert.equal(f.sqlite.prepare('SELECT count(*) n FROM '+table).get().n,0,'Never overwrite an existing store');
- f.sqlite.exec('BEGIN');try{
-  for(const r of checked.snapshot.workspaces)f.sqlite.prepare('INSERT INTO kcc_workspaces VALUES(?,?,?,?,?)').run(r.id,r.revision,r.payload,r.commitId,r.updatedAt);
-  for(const r of checked.snapshot.audit)f.sqlite.prepare('INSERT INTO kcc_server_audit VALUES(?,?,?,?,?,?,?,?)').run(r.id,r.workspace,r.revision,r.subject,r.actor,r.command,r.record,r.time);
-  for(const r of checked.snapshot.files)f.sqlite.prepare('INSERT INTO kcc_stored_files VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)').run(r.id,r.workspace,r.kind,r.target,r.evidenceIndex,r.objectKey,r.name,r.mime,r.size,r.sha256,r.uploadedBy,r.subject,r.createdAt,r.status);
-  if(fail)throw Error('fictional restore failure');f.sqlite.exec('COMMIT');
- }catch(e){f.sqlite.exec('ROLLBACK');throw e}
+function restore(f,objects,bundle,anchor,options){
+ return restoreFictionalSQLite(f.sqlite,service(f,objects),reviewer,bundle,anchor,options);
 }
 const f=await workspaceCapacityFixture({sessionCount:2}),target=await workspaceCapacityFixture({sessionCount:2,emptyRecoveryStore:true}),fileBytes=new TextEncoder().encode('Fictional private findings नेपाली');
 try{

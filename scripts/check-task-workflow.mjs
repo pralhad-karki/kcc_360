@@ -3,6 +3,7 @@ import {spawnSync,execFileSync} from 'node:child_process';
 import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const checks=[
+ ['discussion-head-recovery','check-discussion-head-recovery.mjs'],
  ['discussion-head-preparation','check-discussion-head-preparation.mjs'],
  ['discussion-candidate-head','check-discussion-candidate-head.mjs'],
  ['discussion-atomic-rehearsal','check-discussion-atomic-rehearsal.mjs'],
