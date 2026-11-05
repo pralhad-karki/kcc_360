@@ -33,14 +33,52 @@ export async function decodeCoordinator(row:PrivateHeadRow|null,d:DigestPort){
 export async function decodeOperation(row:PrivateHeadRow|null,d:DigestPort){
  const r=await decodePrivate<HeadOperation>(row,'KCC360_DISCUSSION_HEAD_OPERATION_V1','schema,sourceId,projectId,operationId,kind,subject,actor,requestDigest,candidateKey,candidateDigest,headRevision,workspaceRevision,beforeDigest,afterDigest,previousOperationKey,occurredAt,digest',d);if(r){ensure(row!.revision===1);for(const v of [r.sourceId,r.projectId,r.operationId,r.subject,r.actor])requireId(v);candidateKey(r.candidateKey);ensure(['ADVANCE','REVERSE'].includes(r.kind)&&[r.requestDigest,r.candidateDigest,r.beforeDigest,r.afterDigest].every(hash)&&[r.headRevision,r.workspaceRevision].every(v=>Number.isSafeInteger(v)&&v>=1)&&(r.previousOperationKey===null||/^KCC-DISCUSSION-HEAD-OP:[a-f0-9]{64}$/.test(r.previousOperationKey)));}return r;
 }
-export async function readCandidate(row:PrivateHeadRow|null,key:string,d:DigestPort){
- try{ensure(row&&row.id===key&&row.revision===1);const r=await validateAtomicReceipt(JSON.parse(row.payload),d);ensure(row.updatedAt===r.occurredAt&&key==='KCC-DISCUSSION-REHEARSAL:'+await d.sha256(canonicalJson([r.sourceFence.recordId,r.operationId])));return r;}catch{throw new DiscussionStorageError('Stored discussion candidate failed integrity validation.');}
+export interface CandidateBasis {
+ headRevision:number;
+ workspaceRevision:number;
+ sourceDigest:string;
+ stagedCommitId:string;
+}
+
+export interface HeadBoundCandidate {
+ schema:'KCC360_DISCUSSION_HEAD_CANDIDATE_V1';
+ receipt:AtomicDiscussionReceipt;
+ basis:CandidateBasis;
+ digest:string;
+}
+
+// The stack uses the envelope digest for head-bound candidates. Legacy receipts
+// retain their original digest and remain readable.
+export type StoredCandidate=AtomicDiscussionReceipt & {basis?:CandidateBasis;candidateDigest:string};
+
+export async function readCandidate(row:PrivateHeadRow|null,key:string,d:DigestPort):Promise<StoredCandidate>{
+ try {
+  ensure(row&&row.id===key&&row.revision===1);
+  const value=jsonObject(JSON.parse(row.payload));
+  const bound=value.schema==='KCC360_DISCUSSION_HEAD_CANDIDATE_V1';
+  const receipt=await validateAtomicReceipt(bound?value.receipt:value,d);
+  ensure(row.updatedAt===receipt.occurredAt);
+  ensure(key==='KCC-DISCUSSION-REHEARSAL:'+await d.sha256(canonicalJson([receipt.sourceFence.recordId,receipt.operationId])));
+  if(!bound)return {...receipt,candidateDigest:receipt.digest};
+
+  const envelope=value as unknown as HeadBoundCandidate;
+  const {basis,digest,...rest}=envelope;
+  ensure(Object.keys(value).sort().join(',')==='basis,digest,receipt,schema');
+  ensure(basis&&Object.keys(basis).sort().join(',')==='headRevision,sourceDigest,stagedCommitId,workspaceRevision');
+  ensure([basis.headRevision,basis.workspaceRevision].every(revision=>Number.isSafeInteger(revision)&&revision>=0));
+  ensure(basis.headRevision<=basis.workspaceRevision&&hash(basis.sourceDigest));
+  requireId(basis.stagedCommitId);
+  ensure(hash(digest)&&await d.sha256(canonicalJson({...rest,basis}))===digest);
+  return {...receipt,basis,candidateDigest:digest};
+ }catch{
+  throw new DiscussionStorageError('Stored discussion candidate failed integrity validation.');
+ }
 }
 export function reverseEffects(e:DiscussionEffects):DiscussionEffects {const invert=(list:DiscussionEffects['project'])=>list.map(f=>({field:f.field,beforePresent:f.afterPresent,before:f.after,afterPresent:f.beforePresent,after:f.before}));return {schema:e.schema,projectId:e.projectId,project:invert(e.project),workspace:invert(e.workspace)};}
 // Internal only: reconstruct exact prospective workspace, retaining all other
 // source fields. Full before/after hashes coordinate shared audit and reminders.
-export async function materializeCandidateStack(source:JsonObject,sourceFence:RevisionFence,stack:StackEntry[],load:(key:string)=>Promise<AtomicDiscussionReceipt>,d:DigestPort){
+export async function materializeCandidateStack(source:JsonObject,sourceFence:RevisionFence,stack:StackEntry[],load:(key:string)=>Promise<StoredCandidate>,d:DigestPort){
  ensure(stack.length<=MAX_CANDIDATE_DEPTH);let current=jsonObject(source);const perProject=new Map<string,StackEntry>();
- for(const e of stack){const r=await load(e.candidateKey),prior=perProject.get(e.projectId);ensure(r.projectId===e.projectId&&r.digest===e.candidateDigest&&canonicalJson(r.sourceFence)===canonicalJson(sourceFence)&&(prior?.candidateKey??null)===e.priorCandidateKey&&(prior?.candidateDigest??null)===e.priorCandidateDigest);conflict(await d.sha256(canonicalJson(current))===r.beforeDigest);current=applyDiscussionEffects(current,r.effects);ensure(await d.sha256(canonicalJson(current))===r.afterDigest);perProject.set(e.projectId,e);}
+ for(const e of stack){const r=await load(e.candidateKey),prior=perProject.get(e.projectId);ensure(r.projectId===e.projectId&&r.candidateDigest===e.candidateDigest&&canonicalJson(r.sourceFence)===canonicalJson(sourceFence)&&(prior?.candidateKey??null)===e.priorCandidateKey&&(prior?.candidateDigest??null)===e.priorCandidateDigest);conflict(await d.sha256(canonicalJson(current))===r.beforeDigest);current=applyDiscussionEffects(current,r.effects);ensure(await d.sha256(canonicalJson(current))===r.afterDigest);perProject.set(e.projectId,e);}
  return current;
 }

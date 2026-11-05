@@ -1,19 +1,33 @@
-import {canonicalJson,jsonObject,requireId,DiscussionAccessError,DiscussionConflictError,DiscussionValidationError,DiscussionStorageError} from './domain';
-import {discussionProject} from './command-domain';
-import {applyDiscussionEffects} from './effect-domain';
+import {canonicalJson,extractDiscussion,jsonObject,requireId,DiscussionAccessError,DiscussionConflictError,DiscussionValidationError,DiscussionStorageError} from './domain';
+import {discussionProject,validateDiscussionCommand} from './command-domain';
+import {applyDiscussionEffects,constrainDiscussionEffects} from './effect-domain';
 import {headKeys,decodeHead,decodeCoordinator,decodeOperation,readCandidate,materializeCandidateStack,reverseEffects,candidateKey,seal,ensure,conflict,fence,utc,MAX_CANDIDATE_DEPTH} from './head-domain';
-import type {PrivateHeadRow,Observation,CandidateHead,CandidateCoordinator,HeadOperation,StackEntry} from './head-domain';
-import type {DiscussionWorkspaceReader,MigrationAuthorityPort,MigrationAuthority,DigestPort,RevisionFence} from './ports';
+import type {PrivateHeadRow,Observation,CandidateHead,CandidateCoordinator,HeadOperation,StackEntry,StoredCandidate} from './head-domain';
+import type {DiscussionWorkspaceReader,MigrationAuthorityPort,MigrationAuthority,DigestPort,RevisionFence,DiscussionMigrationRepository} from './ports';
+import type {AtomicDiscussionReceipt} from './atomic-application';
+import type {DiscussionTransitionPort} from './command-ports';
+
+export interface CandidateWrite {
+ source:RevisionFence;
+ authority:RevisionFence;
+ observed:Observation[];
+ row:PrivateHeadRow;
+ audit:{subject:string;actor:string;record:string};
+}
+
 export interface HeadCommit {source:RevisionFence;authority:RevisionFence;observed:Observation[];coordinator:PrivateHeadRow;head:PrivateHeadRow;operation:PrivateHeadRow;audit:{subject:string;actor:string;time:string;record:string}}
 export interface CandidateHeadRepository {
  read(id:string):Promise<PrivateHeadRow|null>;
  assertCurrent(source:RevisionFence,authority:RevisionFence,observed:Observation[]):Promise<void>;
  commit(input:HeadCommit):Promise<boolean>;
+ prepareCandidate?(input:CandidateWrite):Promise<boolean>;
 }
 // Disabled private rehearsal. No canonical writer, policy bypass, dispatcher,
 // production composition, database reset or new storage activation.
 export class DiscussionCandidateHeadService {
- constructor(private readonly source:DiscussionWorkspaceReader,private readonly authority:MigrationAuthorityPort,private readonly repository:CandidateHeadRepository,private readonly digest:DigestPort,private readonly clock:()=>string,private readonly enabled=false){}
+ constructor(private readonly source:DiscussionWorkspaceReader,private readonly authority:MigrationAuthorityPort,private readonly repository:CandidateHeadRepository,private readonly digest:DigestPort,private readonly clock:()=>string,private readonly enabled=false,
+  private readonly preparation?:{transition:DiscussionTransitionPort;copies:Pick<DiscussionMigrationRepository,'readStaged'>},
+ ){}
  private async actor(subject:string,projectId:string){requireId(subject);requireId(projectId);const a=await this.authority.authorize(subject,projectId);if(!a?.fence)throw new DiscussionAccessError('Current candidate-head authority required.');requireId(a.actor);fence(a.fence);return a;}
  private async recheck(subject:string,projectId:string,a:MigrationAuthority,source:RevisionFence,observed:Observation[]){const again=await this.actor(subject,projectId);conflict(canonicalJson(a)===canonicalJson(again));await this.repository.assertCurrent(source,a.fence,observed);}
  private summary(r:HeadOperation,replayed:boolean){return {available:true as const,mode:'PRIVATE_CANDIDATE_HEAD_REHEARSAL' as const,operationId:r.operationId,kind:r.kind,projectId:r.projectId,headRevision:r.headRevision,workspaceRevision:r.workspaceRevision,beforeDigest:r.beforeDigest,afterDigest:r.afterDigest,operationDigest:r.digest,replayed,historical:replayed,sourcePreserved:true as const};}
@@ -37,6 +51,84 @@ export class DiscussionCandidateHeadService {
   if(!this.enabled)return {available:false as const};const a=await this.actor(subject,projectId),source=await this.source.readWorkspace(),keys=await headKeys(this.digest,source.fence.recordId,projectId),reader=this.reader(),v=await this.view(source,projectId,keys,reader.read);
   await this.recheck(subject,projectId,a,source.fence,reader.observed());return {available:true as const,mode:'PRIVATE_CANDIDATE_HEAD_REHEARSAL' as const,projectId,sourceFence:source.fence,headRevision:v.headRow?.revision??0,workspaceRevision:v.coordinatorRow?.revision??0,baseDigest:v.baseDigest,virtualDigest:v.virtualDigest,stackDepth:v.stack.length,candidateKey:v.head?.candidateKey??null,sourcePreserved:true as const};
  }
+ async prepare(subject:string,input:unknown){
+  if(!this.enabled)return {available:false as const};
+  const preparation=this.preparation;
+  if(!preparation||!this.repository.prepareCandidate)
+   throw new DiscussionStorageError('Private candidate preparation is unavailable.');
+
+  const request=jsonObject(input);
+  if(Object.keys(request).sort().join(',')!=='command,expectedHeadRevision,expectedWorkspaceRevision,operationId,projectId'||
+     ![request.expectedHeadRevision,request.expectedWorkspaceRevision].every(value=>Number.isSafeInteger(value)&&Number(value)>=0))
+   throw new DiscussionValidationError('Exact versioned candidate preparation fields required.');
+  requireId(request.operationId);
+  requireId(request.projectId);
+  const {projectId,operationId}=request;
+  const command=validateDiscussionCommand(request.command);
+  const authority=await this.actor(subject,projectId);
+  const source=await this.source.readWorkspace();
+  const sourceId=source.fence.recordId;
+  const key='KCC-DISCUSSION-REHEARSAL:'+await this.digest.sha256(canonicalJson([sourceId,operationId]));
+  const requestDigest=await this.digest.sha256(canonicalJson(['PRIVATE_HEAD_CANDIDATE',subject,authority.actor,{...request,command}]));
+  const reader=this.reader();
+  const summary=(receipt:StoredCandidate,replayed:boolean)=>{
+   const basis=receipt.basis;
+   ensure(basis);
+   return {available:true as const,mode:'PRIVATE_HEAD_CANDIDATE' as const,projectId,operationId,candidateKey:key,
+    candidateDigest:receipt.candidateDigest,beforeDigest:receipt.beforeDigest,afterDigest:receipt.afterDigest,
+    headRevision:basis.headRevision,workspaceRevision:basis.workspaceRevision,replayed};
+  };
+  const replay=async(row:PrivateHeadRow)=>{
+   const receipt=await readCandidate(row,key,this.digest);
+   conflict(receipt.basis&&receipt.subject===subject&&receipt.actor===authority.actor&&receipt.projectId===projectId&&receipt.requestDigest===requestDigest);
+   await this.recheck(subject,projectId,authority,source.fence,[{id:key,revision:row.revision,commitId:row.commitId}]);
+   return summary(receipt,true);
+  };
+  const existing=await reader.read(key);
+  if(existing)return replay(existing);
+
+  const keys=await headKeys(this.digest,sourceId,projectId);
+  const view=await this.view(source,projectId,keys,reader.read);
+  const headRevision=view.headRow?.revision??0;
+  const workspaceRevision=view.coordinatorRow?.revision??0;
+  conflict(headRevision===request.expectedHeadRevision&&workspaceRevision===request.expectedWorkspaceRevision&&view.stack.length<MAX_CANDIDATE_DEPTH);
+  const stage=await reader.read('KCC-DISCUSSION-STAGING:'+JSON.stringify([sourceId,projectId]));
+  const copy=await preparation.copies.readStaged(projectId);
+  const canonicalProject=discussionProject(source.workspace,projectId);
+  conflict(stage&&copy&&copy.format===1&&stage.revision===copy.revision&&copy.revision>=1&&
+   canonicalJson(copy.sourceFence)===canonicalJson(source.fence)&&
+   copy.sourceDigest===await this.digest.sha256(canonicalJson(canonicalProject))&&
+   canonicalJson(copy.snapshot)===canonicalJson(extractDiscussion(canonicalProject))&&
+   copy.discussionDigest===await this.digest.sha256(canonicalJson(copy.snapshot)));
+
+  const after=jsonObject(await preparation.transition.run(jsonObject(view.workspace),authority.actor,projectId,command));
+  const effects=constrainDiscussionEffects(view.workspace,after,projectId,authority.actor,command);
+  ensure(canonicalJson(applyDiscussionEffects(view.workspace,effects))===canonicalJson(after));
+  const occurredAt=this.clock();
+  if(!utc(occurredAt))throw new DiscussionValidationError('Explicit UTC preparation clock required.');
+  const receipt:AtomicDiscussionReceipt=await seal({
+   schema:'KCC360_DISCUSSION_ATOMIC_REHEARSAL_V1' as const,operationId,subject,actor:authority.actor,projectId,
+   requestDigest,sourceFence:source.fence,authorityFence:authority.fence,stagedRevision:copy.revision,occurredAt,
+   beforeDigest:view.virtualDigest,afterDigest:await this.digest.sha256(canonicalJson(after)),effects,
+  },this.digest);
+  const basis={headRevision,workspaceRevision,sourceDigest:view.baseDigest,stagedCommitId:stage.commitId};
+  const candidate=await seal({schema:'KCC360_DISCUSSION_HEAD_CANDIDATE_V1',receipt,basis},this.digest);
+
+  await this.recheck(subject,projectId,authority,source.fence,[]);
+  const stored=await this.repository.prepareCandidate({
+   source:source.fence,authority:authority.fence,observed:reader.observed(),
+   row:{id:key,revision:1,payload:JSON.stringify(candidate),commitId:'',updatedAt:occurredAt},
+   audit:{subject,actor:authority.actor,record:JSON.stringify({
+    schema:'KCC360_DISCUSSION_HEAD_PREPARATION_AUDIT_V1',projectId,operationId,
+    candidateDigest:candidate.digest,headRevision,workspaceRevision,
+    beforeDigest:receipt.beforeDigest,afterDigest:receipt.afterDigest,
+   })},
+  });
+  if(stored)return summary({...receipt,basis,candidateDigest:candidate.digest},false);
+  const concurrent=await this.repository.read(key);
+  if(concurrent)return replay(concurrent);
+  throw new DiscussionConflictError('Candidate preparation lost its revision or authority fence.');
+ }
  async transition(subject:string,input:unknown){
   if(!this.enabled)return {available:false as const};
   const request=jsonObject(input);if(Object.keys(request).sort().join(',')!=='candidateKey,expectedHeadRevision,expectedWorkspaceRevision,kind,operationId,projectId'||!['ADVANCE','REVERSE'].includes(String(request.kind))||![request.expectedHeadRevision,request.expectedWorkspaceRevision].every(v=>Number.isSafeInteger(v)&&Number(v)>=0))throw new DiscussionValidationError('Exact versioned candidate-head request required.');
@@ -51,17 +143,23 @@ export class DiscussionCandidateHeadService {
   if(kind==='ADVANCE'){
    conflict(v.stack.length<MAX_CANDIDATE_DEPTH&&!v.stack.some(e=>e.candidateKey===request.candidateKey)&&candidate.beforeDigest===v.virtualDigest);
    const stagedId='KCC-DISCUSSION-STAGING:'+JSON.stringify([source.fence.recordId,projectId]),staged=await reader.read(stagedId);conflict(staged?.revision===candidate.stagedRevision);
+   if(candidate.basis){
+    conflict(candidate.basis.headRevision===(v.headRow?.revision??0)&&
+     candidate.basis.workspaceRevision===(v.coordinatorRow?.revision??0)&&
+     candidate.basis.sourceDigest===v.baseDigest&&candidate.basis.stagedCommitId===staged.commitId&&
+     canonicalJson(candidate.authorityFence)===canonicalJson(a.fence));
+   }
    workspace=applyDiscussionEffects(v.workspace,candidate.effects);ensure(await this.digest.sha256(canonicalJson(workspace))===candidate.afterDigest);
-   stack=[...v.stack,{projectId,candidateKey:request.candidateKey,candidateDigest:candidate.digest,operationKey:keys.operation,priorCandidateKey:v.head?.candidateKey??null,priorCandidateDigest:v.head?.candidateDigest??null}];nextCandidateKey=request.candidateKey;nextCandidateDigest=candidate.digest;
+   stack=[...v.stack,{projectId,candidateKey:request.candidateKey,candidateDigest:candidate.candidateDigest,operationKey:keys.operation,priorCandidateKey:v.head?.candidateKey??null,priorCandidateDigest:v.head?.candidateDigest??null}];nextCandidateKey=request.candidateKey;nextCandidateDigest=candidate.candidateDigest;
   }else{
-   const top=v.stack.at(-1);conflict(top?.projectId===projectId&&top?.candidateKey===request.candidateKey&&top?.candidateDigest===candidate.digest&&v.head?.candidateKey===request.candidateKey&&v.virtualDigest===candidate.afterDigest);
+   const top=v.stack.at(-1);conflict(top?.projectId===projectId&&top?.candidateKey===request.candidateKey&&top?.candidateDigest===candidate.candidateDigest&&v.head?.candidateKey===request.candidateKey&&v.virtualDigest===candidate.afterDigest);
    workspace=applyDiscussionEffects(v.workspace,reverseEffects(candidate.effects));ensure(await this.digest.sha256(canonicalJson(workspace))===candidate.beforeDigest);stack=v.stack.slice(0,-1);
    const rematerialized=await materializeCandidateStack(source.workspace,source.fence,stack,v.load,this.digest);ensure(canonicalJson(workspace)===canonicalJson(rematerialized));nextCandidateKey=top.priorCandidateKey;nextCandidateDigest=top.priorCandidateDigest;
   }
   const afterDigest=await this.digest.sha256(canonicalJson(workspace)),headRevision=(v.headRow?.revision??0)+1,workspaceRevision=(v.coordinatorRow?.revision??0)+1,occurredAt=this.clock();if(!utc(occurredAt))throw new DiscussionValidationError('Explicit UTC candidate-head clock required.');
   const coordinator=await seal({schema:'KCC360_DISCUSSION_COORDINATOR_V1' as const,revision:workspaceRevision,sourceFence:source.fence,sourceDigest:v.baseDigest,virtualDigest:afterDigest,stack,lastOperationKey:keys.operation,occurredAt},this.digest);
   const head=await seal({schema:'KCC360_DISCUSSION_HEAD_V1' as const,sourceId:source.fence.recordId,projectId,revision:headRevision,candidateKey:nextCandidateKey,candidateDigest:nextCandidateDigest,lastOperationKey:keys.operation,occurredAt},this.digest);
-  const operation=await seal({schema:'KCC360_DISCUSSION_HEAD_OPERATION_V1' as const,sourceId:source.fence.recordId,projectId,operationId,kind,subject,actor:a.actor,requestDigest,candidateKey:request.candidateKey,candidateDigest:candidate.digest,headRevision,workspaceRevision,beforeDigest:v.virtualDigest,afterDigest,previousOperationKey:v.coordinator?.lastOperationKey??null,occurredAt},this.digest);
+  const operation=await seal({schema:'KCC360_DISCUSSION_HEAD_OPERATION_V1' as const,sourceId:source.fence.recordId,projectId,operationId,kind,subject,actor:a.actor,requestDigest,candidateKey:request.candidateKey,candidateDigest:candidate.candidateDigest,headRevision,workspaceRevision,beforeDigest:v.virtualDigest,afterDigest,previousOperationKey:v.coordinator?.lastOperationKey??null,occurredAt},this.digest);
   await this.recheck(subject,projectId,a,source.fence,[]);
   const row=(id:string,revision:number,body:object):PrivateHeadRow=>({id,revision,payload:JSON.stringify(body),commitId:'',updatedAt:occurredAt});
   const committed=await this.repository.commit({source:source.fence,authority:a.fence,observed:reader.observed(),coordinator:row(keys.coordinator,workspaceRevision,coordinator),head:row(keys.head,headRevision,head),operation:row(keys.operation,1,operation),audit:{subject,actor:a.actor,time:occurredAt,record:JSON.stringify({schema:'KCC360_DISCUSSION_HEAD_AUDIT_V1',projectId,operationId,kind,headId:keys.head,coordinatorId:keys.coordinator,candidateKey:request.candidateKey,operationDigest:operation.digest,beforeDigest:v.virtualDigest,afterDigest,headRevision,workspaceRevision,sourcePreserved:true})}});

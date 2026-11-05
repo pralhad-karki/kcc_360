@@ -4,7 +4,7 @@ import {drizzle} from 'drizzle-orm/d1';
 import {workspaces,serverAudit} from '../../../db/schema';
 import {DiscussionConflictError,DiscussionStorageError} from '../domain';
 import type {PrivateHeadRow,Observation} from '../head-domain';
-import type {CandidateHeadRepository,HeadCommit} from '../head-application';
+import type {CandidateHeadRepository,HeadCommit,CandidateWrite} from '../head-application';
 import type {RevisionFence} from '../ports';
 // All new SQL is built by the existing ORM. The first guarded write captures
 // every observed row; subsequent writes require this attempt's commit UUID.
@@ -18,6 +18,44 @@ export class DrizzleCandidateHeadRepository implements CandidateHeadRepository {
   return [...[source,authority].map(v=>exists(this.orm.select({one:sql<number>`1`}).from(f).where(and(eq(f.id,v.recordId),eq(f.revision,v.revision))))),...observed.map(v=>'absent'in v?notExists(this.orm.select({one:sql<number>`1`}).from(f).where(eq(f.id,v.id))):exists(this.orm.select({one:sql<number>`1`}).from(f).where(and(eq(f.id,v.id),eq(f.revision,v.revision),eq(f.commitId,v.commitId)))))];
  }
  async assertCurrent(source:RevisionFence,authority:RevisionFence,observed:Observation[]){try{const q=this.orm.select({id:workspaces.id}).from(workspaces).where(and(eq(workspaces.id,source.recordId),...this.guards(source,authority,observed))).toSQL();if(!await this.db.prepare(q.sql).bind(...q.params).first())throw new DiscussionConflictError('Candidate-head witnesses changed.');}catch(e){if(e instanceof DiscussionConflictError||e instanceof DiscussionStorageError)throw e;throw new DiscussionStorageError('Candidate-head witnesses are unavailable.');}}
+ async prepareCandidate(input:CandidateWrite){
+  try {
+   const {row,source,authority,observed,audit}=input;
+   if(!/^KCC-DISCUSSION-REHEARSAL:[a-f0-9]{64}$/.test(row.id)||row.revision!==1||
+      !observed.some(witness=>witness.id===row.id&&'absent'in witness)||
+      new TextEncoder().encode(row.payload).length>1_990_000)
+    throw new DiscussionStorageError('Invalid or oversized prepared candidate.');
+
+   const commitId=crypto.randomUUID();
+   const insert=this.orm.insert(workspaces).select(this.orm.select({
+    id:sql<string>`${row.id}`.as('id'),
+    revision:sql<number>`1`.as('revision'),
+    payload:sql<string>`${row.payload}`.as('payload'),
+    commitId:sql<string>`${commitId}`.as('commit_id'),
+    updatedAt:sql<string>`${row.updatedAt}`.as('updated_at'),
+   }).from(workspaces).where(and(eq(workspaces.id,source.recordId),...this.guards(source,authority,observed))));
+   const auditInsert=this.orm.insert(serverAudit).select(this.orm.select({
+    id:sql<string>`${commitId}`.as('id'),
+    workspace:sql<string>`${row.id}`.as('workspace'),
+    revision:sql<number>`1`.as('revision'),
+    subject:sql<string>`${audit.subject}`.as('subject'),
+    actor:sql<string>`${audit.actor}`.as('actor'),
+    command:sql<string>`'discussion.candidate.prepare'`.as('command'),
+    record:sql<string>`${audit.record}`.as('record'),
+    time:sql<string>`${row.updatedAt}`.as('time'),
+   }).from(workspaces).where(and(eq(workspaces.id,row.id),eq(workspaces.commitId,commitId))));
+   const [candidate,auditResult]=await this.db.batch([insert,auditInsert].map(statement=>{
+    const query=statement.toSQL();
+    return this.db.prepare(query.sql).bind(...query.params);
+   }));
+   if(candidate.meta.changes===1&&auditResult.meta.changes!==1)
+    throw new DiscussionStorageError('Candidate preparation audit was not confirmed.');
+   return candidate.meta.changes===1;
+  }catch(error){
+   if(error instanceof DiscussionStorageError)throw error;
+   throw new DiscussionStorageError('Candidate preparation transaction failed.');
+  }
+ }
  async commit(input:HeadCommit){
   try{
    const {source,authority,observed,coordinator,head,operation,audit}=input;

@@ -1,3 +1,13 @@
+# Continue KCC360 development — Stage 288 private command preparation
+
+5 November 2026, Asia/Kathmandu. Stage 288 follows `7adeae9d3d78b742794a7230eb51ac8bac416808` on `development/website-mock-acceptance`. Verify the checkout and remote history before editing. Read [Stage 288 evidence](audit/STAGE288_REPORT.md) and the previous preservation constraints below.
+
+The disabled rehearsal can now prepare a command against the exact materialized private workspace, persist its receipt and audit atomically, and advance it with canonical, staged, authority, project and shared revision checks. The existing engine handles the command. The rehearsal tests post, reply, resolve and reverse across both memory and SQLite.
+
+The next stage restores a nonempty prepared stack from the existing private recovery format into a fresh fictional SQLite store. Verify durable replay and guarded reversal using a fresh service instance. Keep all rehearsal behavior disabled and preserve canonical source, staged copies, earlier receipts, migrations, files, withdrawal authority and audit history. Routine tested and privacy-reviewed GitHub synchronization remains authorized.
+
+---
+
 # Continue KCC360 development — Stage 287 private candidate heads
 
 4 November 2026, Asia/Kathmandu. Continue from the actual branch after checking HEAD/tree/status and remote history. Stage 287 succeeds `30c1b82752acfde487f09e8771b4e80046b2a77b` on `development/website-mock-acceptance`. Read `audit/STAGE287_REPORT.md`, `audit/STAGE287_CODE_MANIFEST.json`, `audit/STAGE287_HEAD_CHECKS.txt`, `audit/STAGE287_REGRESSION.json` and `audit/STAGE287_VALIDATION.json`, then the relevant source/fixtures. Preserve newer/unpublished work, records, IDs, approvals, files, migrations and audit history. Earlier handover sections below remain historical evidence; this next-task statement takes precedence.
